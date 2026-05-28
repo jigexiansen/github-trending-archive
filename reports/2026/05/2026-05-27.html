@@ -89,24 +89,6 @@ header {
 
 .logo span { color: var(--text2); font-weight: 400; }
 
-.header-pills {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.pill {
-  padding: 4px 12px;
-  border-radius: 2px;
-  border: 1px solid var(--border2);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .1em;
-  color: var(--text2);
-}
-
-.pill.active { border-color: var(--glow); color: var(--glow); background: rgba(0,255,136,.06); }
-
 .header-date {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
@@ -489,14 +471,30 @@ footer span { color: var(--glow); }
 </head>
 <body>
 
+<style>
+.arc-nav{position:sticky;top:0;z-index:9999;height:38px;display:flex;align-items:center;padding:0 20px;gap:0;background:rgba(3,6,14,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;}
+.arc-nav-home{color:rgba(255,255,255,.4);text-decoration:none;transition:color .15s;white-space:nowrap;}
+.arc-nav-home:hover{color:rgba(255,255,255,.85);}
+.arc-nav-sep{color:rgba(255,255,255,.12);margin:0 10px;}
+.arc-nav-month{color:rgba(255,255,255,.28);white-space:nowrap;}
+.arc-nav-dates{margin-left:auto;display:flex;gap:4px;}
+.arc-nav-d{width:26px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:3px;font-size:10px;text-decoration:none;color:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.07);transition:all .15s;}
+.arc-nav-d:hover{color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.2);}
+.arc-nav-d.cur{color:#fff;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);pointer-events:none;}
+</style>
+<nav class="arc-nav">
+  <a class="arc-nav-home" href="../../../index.html">← Archive</a>
+  <span class="arc-nav-sep">/</span>
+  <span class="arc-nav-month">May 2026</span>
+  <div class="arc-nav-dates">
+    <a class="arc-nav-d" href="./2026-05-28.html">28</a>
+    <a class="arc-nav-d cur" href="./2026-05-27.html">27</a>
+    <a class="arc-nav-d" href="./2026-05-26.html">26</a>
+  </div>
+</nav>
 <header>
   <div class="header-inner">
     <div class="logo">GH://TRENDING<span>/daily</span></div>
-    <div class="header-pills">
-      <div class="pill active">Today</div>
-      <div class="pill">This Week</div>
-      <div class="pill">This Month</div>
-    </div>
     <div class="header-date">2026-05-27 · UTC</div>
   </div>
 </header>

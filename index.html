@@ -1,39 +1,31 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GitHub Trending Archive</title>
 <meta name="description" content="Every day on GitHub, something new takes off. This is the record.">
 <link rel="canonical" href="https://jigexiansen.github.io/github-trending-archive/">
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jigexiansen.github.io/github-trending-archive/">
 <meta property="og:title" content="GitHub Trending Archive">
-<meta property="og:description" content="Every day on GitHub, something new takes off. This is the record. Beautiful, standalone HTML snapshots of the daily trending page — stored forever.">
-<meta property="og:site_name" content="GitHub Trending Archive">
-<!-- Twitter Card -->
+<meta property="og:description" content="Every day on GitHub, something new takes off. This is the record.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub Trending Archive">
 <meta name="twitter:description" content="Every day on GitHub, something new takes off. This is the record.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:       #070d1a;
-  --surface:  #0c1528;
-  --card:     #0f1c35;
-  --card-h:   #132240;
-  --border:   #1a2e50;
-  --border-h: #2a4878;
-  --cyan:     #00d4aa;
-  --blue:     #4fa8ff;
-  --violet:   #8b5cf6;
-  --gold:     #f59e0b;
-  --red:      #ef4444;
-  --text:     #c8daf0;
-  --muted:    #5a7a9a;
-  --dim:      #2a4060;
+  --bg:       #f2ebe1;
+  --surface:  #faf7f3;
+  --border:   #ddd5c8;
+  --text:     #1a130b;
+  --muted:    #7a6c60;
+  --dim:      #b5a898;
+  --accent:   #1c4f3c;
+  --gold:     #a8700f;
+  --ink:      #0f0a06;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,225 +37,249 @@ body {
   font-family: 'Noto Sans SC', sans-serif;
   font-weight: 300;
   min-height: 100vh;
-  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* grid bg */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(0,212,170,.018) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,212,170,.018) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
-
-/* ── HEADER ── */
-header {
-  padding: 60px 0 48px;
+/* ── SITE NAV ── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 52px;
+  background: rgba(242,235,225,.92);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
 
-.header-tag {
+.site-nav-logo {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .35em;
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: var(--muted);
   text-transform: uppercase;
-  color: var(--cyan);
-  margin-bottom: 16px;
-  opacity: 0;
-  animation: up .5s ease forwards .05s;
 }
 
-h1 {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: clamp(1.6rem, 4vw, 2.6rem);
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -.02em;
-  line-height: 1.1;
-  opacity: 0;
-  animation: up .5s ease forwards .15s;
-}
-
-h1 .accent { color: var(--cyan); }
-
-.tagline {
-  margin-top: 12px;
-  font-size: 13px;
-  color: var(--muted);
-  max-width: 520px;
-  opacity: 0;
-  animation: up .5s ease forwards .25s;
-}
-
-.meta-row {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-top: 28px;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: up .5s ease forwards .35s;
-}
-
-.meta-chip {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.site-nav-link {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  color: var(--muted);
-  letter-spacing: .05em;
-}
-
-.meta-chip .val {
-  color: var(--text);
-  font-weight: 500;
-}
-
-.meta-chip .dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--cyan);
-  box-shadow: 0 0 6px var(--cyan);
-}
-
-.gh-link {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  letter-spacing: .06em;
   color: var(--muted);
   text-decoration: none;
-  padding: 7px 14px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  transition: border-color .2s, color .2s;
-  letter-spacing: .05em;
+  transition: color .15s;
 }
 
-.gh-link:hover { border-color: var(--cyan); color: var(--cyan); }
+.site-nav-link:hover { color: var(--accent); }
 
-.gh-link svg { width: 14px; height: 14px; fill: currentColor; }
+/* ── HERO ── */
+.hero {
+  padding: 80px 40px 72px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
 
-/* ── YEAR SECTION ── */
-.year-section { padding: 40px 0 0; }
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -80px;
+  width: 500px; height: 500px;
+  background: radial-gradient(ellipse, rgba(28,79,60,.06) 0%, transparent 65%);
+  pointer-events: none;
+}
 
-.year-label {
+.hero-eyebrow {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
   letter-spacing: .3em;
   text-transform: uppercase;
-  color: var(--dim);
-  margin-bottom: 6px;
+  color: var(--accent);
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: up .5s ease forwards .1s;
 }
 
-.month-group { margin-bottom: 40px; }
+.hero-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  opacity: 0;
+  animation: up .6s ease forwards .2s;
+}
 
-.month-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  letter-spacing: .15em;
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-tagline {
+  margin-top: 24px;
+  font-size: 16px;
   color: var(--muted);
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 16px;
+  line-height: 1.7;
+  max-width: 480px;
+  font-weight: 300;
+  opacity: 0;
+  animation: up .5s ease forwards .35s;
+}
+
+.hero-stats {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-top: 36px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .06em;
+  color: var(--dim);
+  opacity: 0;
+  animation: up .5s ease forwards .5s;
 }
 
-.month-label .count {
-  font-size: 10px;
+.hero-stats .sep { color: var(--border); }
+
+/* ── MAIN ── */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 40px 96px;
+}
+
+/* ── SECTION ── */
+.archive-section { margin-bottom: 64px; }
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+
+.section-year {
+  font-family: 'DM Serif Display', serif;
+  font-size: 13px;
   color: var(--dim);
-  font-weight: 300;
+  letter-spacing: .04em;
+}
+
+.section-month {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.section-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .12em;
+  color: var(--dim);
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
+/* ── CARD GRID ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 800px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .hero { padding: 56px 24px 48px; }
+  main { padding: 40px 24px 64px; }
+  .site-nav { padding: 0 24px; }
+}
+
+@media (min-width: 801px) and (max-width: 1024px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── REPORT CARD ── */
-.report-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 12px;
-}
-
 .report-card {
-  display: block;
-  background: var(--card);
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 20px;
+  border-top: 3px solid transparent;
+  border-radius: 2px;
+  padding: 24px;
   text-decoration: none;
   color: inherit;
-  position: relative;
-  overflow: hidden;
-  transition: border-color .2s, background .2s, transform .2s;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(8px);
+  position: relative;
 }
 
 .report-card.in {
   opacity: 1;
   transform: none;
-  transition: border-color .2s, background .2s, transform .2s, opacity .4s, translateY .4s;
-}
-
-.report-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--cyan), var(--violet));
-  opacity: 0;
-  transition: opacity .2s;
 }
 
 .report-card:hover {
-  border-color: var(--border-h);
-  background: var(--card-h);
+  box-shadow: 0 4px 24px rgba(0,0,0,.08);
   transform: translateY(-2px);
 }
 
-.report-card:hover::before { opacity: 1; }
+/* Per-report accent colors */
+.report-card[data-style="terminal"] { border-top-color: #0891b2; }
+.report-card[data-style="cyberpunk"] { border-top-color: #059669; }
+.report-card[data-style="editorial"] { border-top-color: #b45309; }
+
+.report-card[data-style="terminal"]:hover { box-shadow: 0 4px 24px rgba(8,145,178,.12); }
+.report-card[data-style="cyberpunk"]:hover { box-shadow: 0 4px 24px rgba(5,150,105,.12); }
+.report-card[data-style="editorial"]:hover { box-shadow: 0 4px 24px rgba(180,83,9,.12); }
 
 .card-date {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--cyan);
-  letter-spacing: .1em;
-  margin-bottom: 12px;
+  font-size: 10px;
+  letter-spacing: .16em;
+  color: var(--dim);
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.card-date .arrow {
+.card-arrow {
   color: var(--dim);
-  font-size: 12px;
-  transition: color .2s, transform .2s;
+  font-size: 14px;
+  transition: transform .2s, color .2s;
 }
 
-.report-card:hover .arrow {
-  color: var(--cyan);
-  transform: translateX(3px);
+.report-card:hover .card-arrow {
+  transform: translateX(4px);
+  color: var(--text);
 }
 
-.card-top-repo {
+.card-repo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 8px;
+  letter-spacing: -.01em;
+}
+
+.card-org {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  font-weight: 500;
-  color: #fff;
-  margin-bottom: 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 10px;
+  color: var(--dim);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 2px;
+  letter-spacing: .04em;
 }
 
 .card-stars {
@@ -271,77 +287,68 @@ h1 .accent { color: var(--cyan); }
   font-size: 11px;
   color: var(--gold);
   margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  letter-spacing: .04em;
 }
 
 .card-highlight {
-  font-size: 12px;
+  font-size: 12.5px;
   color: var(--muted);
-  line-height: 1.5;
-  margin-bottom: 14px;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 20px;
+  font-weight: 300;
 }
 
-.card-style {
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.card-style-tag {
   font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--dim);
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
-.style-dot {
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--violet);
-}
-
-/* ── EMPTY STATE ── */
-.empty {
-  text-align: center;
-  padding: 60px 0;
+.card-open {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: var(--dim);
+  font-size: 10px;
   letter-spacing: .08em;
+  color: var(--dim);
+  transition: color .15s;
 }
+
+.report-card:hover .card-open { color: var(--accent); }
 
 /* ── FOOTER ── */
 footer {
-  margin-top: 60px;
-  padding: 24px 0 40px;
   border-top: 1px solid var(--border);
+  padding: 24px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   flex-wrap: wrap;
-  gap: 12px;
-}
-
-.footer-left {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
+  letter-spacing: .06em;
   color: var(--dim);
-  letter-spacing: .08em;
-  line-height: 1.8;
 }
 
-.footer-left a { color: var(--muted); text-decoration: none; transition: color .15s; }
-.footer-left a:hover { color: var(--cyan); }
-
-.footer-right {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: var(--dim);
-  letter-spacing: .12em;
-  text-align: right;
+footer a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .15s;
 }
 
-/* ── ANIMATIONS ── */
+footer a:hover { color: var(--accent); }
+
+/* ── ANIMATION ── */
 @keyframes up {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: none; }
@@ -350,115 +357,94 @@ footer {
 </head>
 <body>
 
-<div class="wrap">
+<nav class="site-nav">
+  <span class="site-nav-logo">GitHub Trending Archive</span>
+  <a class="site-nav-link" href="https://github.com/jigexiansen/github-trending-archive" target="_blank">GitHub ↗</a>
+</nav>
 
-  <!-- HEADER -->
-  <header>
-    <div class="header-tag">// Open Source Intelligence · 开源情报归档</div>
-    <h1>GitHub Trending<br><span class="accent">Archive</span></h1>
-    <p class="tagline">Every day on GitHub, something new takes off. This is the record.</p>
-
-    <div class="meta-row">
-      <div class="meta-chip">
-        <span class="dot"></span>
-        <span>Reports&nbsp;</span><span class="val" id="total-count">—</span>
-      </div>
-      <div class="meta-chip">
-        Since&nbsp;<span class="val">2026-05-26</span>
-      </div>
-      <div class="meta-chip">
-        Updated&nbsp;<span class="val">daily</span>
-      </div>
-      <a class="gh-link" href="https://github.com/jigexiansen/github-trending-archive/blob/main/README_CN.md" target="_blank" style="font-size:12px;letter-spacing:.08em;">中文</a>
-      <a class="gh-link" href="https://github.com/jigexiansen/github-trending-archive" target="_blank">
-        <svg viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
-        GitHub
-      </a>
-    </div>
-  </header>
-
-  <!-- REPORTS -->
-  <div class="year-section">
-    <div class="year-label">// 2026</div>
-
-    <div class="month-group">
-      <div class="month-label">
-        May 2026
-        <span class="count">3 reports</span>
-      </div>
-
-      <div class="report-grid" id="grid">
-
-        <a class="report-card" href="reports/2026/05/2026-05-28.html">
-          <div class="card-date">
-            2026 · 05 · 28
-            <span class="arrow">→</span>
-          </div>
-          <div class="card-top-repo">Lum1104 / Understand-Anything</div>
-          <div class="card-stars">⭐ +4,465 today</div>
-          <div class="card-highlight">反 AI 套话浪潮 · Skills 生态持续爆发 · 代码知识图谱</div>
-          <div class="card-style"><span class="style-dot"></span>全息终端仪表盘 · Orbitron</div>
-        </a>
-
-        <a class="report-card" href="reports/2026/05/2026-05-27.html">
-          <div class="card-date">
-            2026 · 05 · 27
-            <span class="arrow">→</span>
-          </div>
-          <div class="card-top-repo">Lum1104 / Understand-Anything</div>
-          <div class="card-stars">⭐ +4,697 today</div>
-          <div class="card-highlight">Skills 生态首次爆发 · Anthropic 官方插件入榜</div>
-          <div class="card-style"><span class="style-dot"></span>赛博朋克仪表盘 · Space Grotesk</div>
-        </a>
-
-        <a class="report-card" href="reports/2026/05/2026-05-26.html">
-          <div class="card-date">
-            2026 · 05 · 26
-            <span class="arrow">→</span>
-          </div>
-          <div class="card-top-repo">Hmbown / DeepSeek-TUI</div>
-          <div class="card-stars">⭐ +5,787 today</div>
-          <div class="card-highlight">AI Agent 基础设施生产化 · 终端原生工具崛起</div>
-          <div class="card-style"><span class="style-dot"></span>深色社论风 · DM Serif Display</div>
-        </a>
-
-      </div>
-    </div>
+<div class="hero">
+  <div class="hero-eyebrow">Open Source Intelligence</div>
+  <h1 class="hero-title">GitHub Trending<br><em>Archive</em></h1>
+  <p class="hero-tagline">Every day on GitHub, something new takes off.<br>This is the record.</p>
+  <div class="hero-stats">
+    <span id="report-count">—</span> Reports
+    <span class="sep">·</span>
+    Since May 2026
+    <span class="sep">·</span>
+    Daily
   </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-left">
-      Data source: <a href="https://github.com/trending" target="_blank">github.com/trending</a><br>
-      Generated daily with <a href="https://claude.ai/code" target="_blank">Claude Code</a>
-    </div>
-    <div class="footer-right">
-      GITHUB TRENDING ARCHIVE<br>
-      © 2026 jigexiansen · MIT
-    </div>
-  </footer>
-
 </div>
 
-<script>
-  // Count and display total
-  const cards = document.querySelectorAll('.report-card');
-  document.getElementById('total-count').textContent = cards.length;
+<main>
+  <div class="archive-section">
+    <div class="section-head">
+      <span class="section-year">2026 /</span>
+      <span class="section-month">May</span>
+      <span class="section-count" id="month-count">— reports</span>
+    </div>
 
-  // Staggered entrance
+    <div class="card-grid" id="grid">
+
+      <a class="report-card" href="reports/2026/05/2026-05-28.html" data-style="terminal">
+        <div class="card-date">2026 · 05 · 28 <span class="card-arrow">→</span></div>
+        <span class="card-org">Lum1104 /</span>
+        <div class="card-repo">Understand-Anything</div>
+        <div class="card-stars">+4,465 stars today</div>
+        <div class="card-highlight">反 AI 套话浪潮 · Skills 生态持续爆发 · 将任意代码转化为可交互知识图谱</div>
+        <div class="card-footer">
+          <span class="card-style-tag">全息终端仪表盘</span>
+          <span class="card-open">Open ↗</span>
+        </div>
+      </a>
+
+      <a class="report-card" href="reports/2026/05/2026-05-27.html" data-style="cyberpunk">
+        <div class="card-date">2026 · 05 · 27 <span class="card-arrow">→</span></div>
+        <span class="card-org">Lum1104 /</span>
+        <div class="card-repo">Understand-Anything</div>
+        <div class="card-stars">+4,697 stars today</div>
+        <div class="card-highlight">Skills 生态首次爆发 · Anthropic 官方插件入榜 · 代码知识图谱工具崛起</div>
+        <div class="card-footer">
+          <span class="card-style-tag">赛博朋克仪表盘</span>
+          <span class="card-open">Open ↗</span>
+        </div>
+      </a>
+
+      <a class="report-card" href="reports/2026/05/2026-05-26.html" data-style="editorial">
+        <div class="card-date">2026 · 05 · 26 <span class="card-arrow">→</span></div>
+        <span class="card-org">Hmbown /</span>
+        <div class="card-repo">DeepSeek-TUI</div>
+        <div class="card-stars">+5,787 stars today</div>
+        <div class="card-highlight">AI Agent 基础设施生产化 · 终端原生工具崛起 · Rust 实现的极简终端 Agent</div>
+        <div class="card-footer">
+          <span class="card-style-tag">深色社论风</span>
+          <span class="card-open">Open ↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span>Data: <a href="https://github.com/trending" target="_blank">github.com/trending</a> · Generated with <a href="https://claude.ai/code" target="_blank">Claude Code</a> · <a href="https://github.com/jigexiansen/github-trending-archive/blob/main/LICENSE" target="_blank">MIT</a></span>
+  <a href="https://github.com/jigexiansen/github-trending-archive" target="_blank">View on GitHub ↗</a>
+</footer>
+
+<script>
+  const cards = document.querySelectorAll('.report-card');
+  document.getElementById('report-count').textContent = cards.length;
+  document.getElementById('month-count').textContent = cards.length + ' reports';
+
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
+    entries.forEach((e, i) => {
       if (e.isIntersecting) {
-        e.target.classList.add('in');
+        setTimeout(() => e.target.classList.add('in'), i * 100);
         obs.unobserve(e.target);
       }
     });
   }, { threshold: 0.05 });
 
-  cards.forEach((card, i) => {
-    card.style.transitionDelay = `${i * 80}ms`;
-    obs.observe(card);
-  });
+  cards.forEach(c => obs.observe(c));
 </script>
 
 </body>
