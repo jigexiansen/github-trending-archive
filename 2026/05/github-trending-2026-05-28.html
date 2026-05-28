@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending · 2026-05-28</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #030a14;
+    --bg-secondary: #060f1e;
+    --bg-card: #081628;
+    --bg-card-hover: #0d2040;
+    --accent-cyan: #00f5d4;
+    --accent-violet: #7b2fff;
+    --accent-pink: #ff006e;
+    --accent-gold: #ffd700;
+    --text-primary: #e8f4f8;
+    --text-secondary: #7aa8c0;
+    --text-dim: #3d6070;
+    --border-glow: rgba(0, 245, 212, 0.15);
+    --border-dim: rgba(0, 245, 212, 0.06);
+    --lang-ts: #3178c6;
+    --lang-py: #3572a5;
+    --lang-js: #f1e05a;
+    --lang-sh: #89e051;
+    --lang-other: #8a8a8a;
+    --hex-size: 44px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Noto Sans SC', 'JetBrains Mono', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* ─── SCANLINE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.08) 2px,
+      rgba(0,0,0,0.08) 4px
+    );
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* ─── HEX GRID BACKGROUND ─── */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='70'%3E%3Cpolygon points='30,5 55,20 55,50 30,65 5,50 5,20' fill='none' stroke='rgba(0,245,212,0.04)' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 60px 70px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── HEADER ─── */
+  header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--border-glow);
+    position: relative;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .edition-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  .main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, #4fa8ff 50%, var(--accent-violet) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    position: relative;
+  }
+
+  .main-title::after {
+    content: 'GITHUB TRENDING';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, #4fa8ff 50%, var(--accent-violet) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: blur(12px);
+    opacity: 0.4;
+    z-index: -1;
+  }
+
+  .date-badge {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    letter-spacing: 0.15em;
+    margin-top: 6px;
+  }
+
+  /* ─── STATS ROW ─── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    border-radius: 8px;
+    padding: 16px 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .stat-card:hover { border-color: rgba(0,245,212,0.35); }
+  .stat-card:hover::before { opacity: 1; }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .stat-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    text-shadow: 0 0 20px rgba(0,245,212,0.4);
+    line-height: 1;
+  }
+
+  .stat-unit {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+
+  /* ─── MAIN LAYOUT ─── */
+  .main-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 28px;
+    padding: 32px 0;
+    align-items: start;
+  }
+
+  /* ─── CARDS ─── */
+  .cards-section { display: flex; flex-direction: column; gap: 16px; }
+
+  .repo-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0;
+    transform: translateX(-24px);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .repo-card.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .repo-card:hover {
+    border-color: rgba(0,245,212,0.4);
+    background: var(--bg-card-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,245,212,0.08), 0 0 0 1px rgba(0,245,212,0.15);
+  }
+
+  .repo-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,245,212,0.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* ─── HEXAGONAL RANK ─── */
+  .rank-hex {
+    flex-shrink: 0;
+    width: var(--hex-size);
+    height: calc(var(--hex-size) * 1.15);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rank-hex::before,
+  .rank-hex::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-primary);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  .rank-hex::before {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+    transform: scale(1.05);
+  }
+
+  .rank-hex::after {
+    background: var(--bg-card);
+    transform: scale(0.88);
+  }
+
+  .rank-hex .rank-num {
+    position: relative;
+    z-index: 1;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    text-shadow: 0 0 12px rgba(0,245,212,0.6);
+  }
+
+  .rank-hex.top3::before {
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-pink));
+  }
+
+  .rank-hex.top3 .rank-num {
+    color: var(--accent-gold);
+    text-shadow: 0 0 12px rgba(255,215,0,0.7);
+  }
+
+  .card-meta {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .repo-path {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .repo-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .repo-desc {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .lang-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-secondary);
+  }
+
+  .lang-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    padding: 3px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .tag-ai    { background: rgba(123,47,255,0.2); color: #a06fff; border: 1px solid rgba(123,47,255,0.3); }
+  .tag-ml    { background: rgba(0,245,212,0.1);  color: #00f5d4; border: 1px solid rgba(0,245,212,0.25); }
+  .tag-tool  { background: rgba(255,0,110,0.1);  color: #ff6699; border: 1px solid rgba(255,0,110,0.25); }
+  .tag-infra { background: rgba(79,168,255,0.1); color: #4fa8ff; border: 1px solid rgba(79,168,255,0.25); }
+  .tag-oss   { background: rgba(137,224,81,0.1); color: #89e051; border: 1px solid rgba(137,224,81,0.25); }
+  .tag-sec   { background: rgba(255,215,0,0.1);  color: #ffd700; border: 1px solid rgba(255,215,0,0.25); }
+  .tag-media { background: rgba(255,126,0,0.1);  color: #ff9940; border: 1px solid rgba(255,126,0,0.25); }
+
+  .total-stars {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-left: auto;
+  }
+
+  /* ─── STAR BAR ─── */
+  .star-bar-wrap {
+    margin-top: 14px;
+  }
+
+  .star-bar-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  .star-today-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  .star-today-val {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    text-shadow: 0 0 10px rgba(0,245,212,0.5);
+  }
+
+  .star-today-val .star-icon { color: var(--accent-gold); margin-right: 4px; }
+
+  .star-bar-track {
+    height: 4px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .star-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    background: linear-gradient(90deg, var(--accent-violet), var(--accent-cyan));
+    position: relative;
+  }
+
+  .star-bar-fill.top3 {
+    background: linear-gradient(90deg, var(--accent-pink), var(--accent-gold));
+    box-shadow: 0 0 8px rgba(255,215,0,0.4);
+  }
+
+  .star-bar-fill::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -2px;
+    width: 4px;
+    height: 8px;
+    background: var(--accent-cyan);
+    border-radius: 2px;
+    box-shadow: 0 0 6px var(--accent-cyan);
+  }
+
+  .star-bar-fill.top3::after {
+    background: var(--accent-gold);
+    box-shadow: 0 0 6px var(--accent-gold);
+  }
+
+  /* ─── SIDEBAR ─── */
+  .sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+  .sidebar-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sidebar-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-violet), transparent);
+  }
+
+  .sidebar-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    color: var(--accent-violet);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ─── LANGUAGE CHART ─── */
+  .lang-chart { display: flex; flex-direction: column; gap: 12px; }
+
+  .lang-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .lang-row-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .lang-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-secondary);
+  }
+
+  .lang-pct {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    color: var(--text-dim);
+  }
+
+  .lang-track {
+    height: 3px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .lang-fill {
+    height: 100%;
+    border-radius: 2px;
+    width: 0;
+    transition: width 1.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  /* ─── INSIGHT ─── */
+  .insight-text {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 12px;
+    line-height: 1.85;
+    color: var(--text-secondary);
+    font-weight: 300;
+  }
+
+  .insight-text strong {
+    color: var(--accent-cyan);
+    font-weight: 700;
+  }
+
+  .insight-highlight {
+    display: inline-block;
+    background: rgba(0,245,212,0.07);
+    border-left: 2px solid var(--accent-cyan);
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 0 4px 4px 0;
+    font-size: 11px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border-dim);
+    padding: 20px 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: gap;
+    gap: 12px;
+  }
+
+  .footer-left {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-left a {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  .footer-left a:hover { opacity: 1; }
+
+  .footer-right {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.25em;
+  }
+
+  /* ─── DECORATION ─── */
+  .glow-line {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-violet), transparent);
+    margin: 0;
+    opacity: 0.3;
+    position: relative;
+    z-index: 1;
+  }
+
+  .terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 14px;
+    background: var(--accent-cyan);
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 4px;
+    opacity: 0.8;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0; }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 8px rgba(0,245,212,0.3); }
+    50% { box-shadow: 0 0 24px rgba(0,245,212,0.7), 0 0 48px rgba(0,245,212,0.2); }
+  }
+
+  @keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+  }
+
+  .scan-line {
+    position: fixed;
+    left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0,245,212,0.15), transparent);
+    animation: scan 6s linear infinite;
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  @media (max-width: 900px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .sidebar { order: -1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="scan-line"></div>
+
+<div class="container">
+
+  <!-- ─── HEADER ─── -->
+  <header>
+    <div class="header-top">
+      <div class="masthead">
+        <div class="edition-label">// SYSTEM FEED · DAILY SNAPSHOT · v2.0</div>
+        <h1 class="main-title">GITHUB TRENDING<span class="terminal-cursor"></span></h1>
+        <div class="date-badge">2026 · 05 · 28 &nbsp;|&nbsp; DAILY EDITION</div>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-label">// repos tracked</div>
+        <div class="stat-value">10</div>
+        <div class="stat-unit">TOP REPOSITORIES</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">// today's stars</div>
+        <div class="stat-value">14.4k</div>
+        <div class="stat-unit">TOTAL ⭐ TODAY</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">// languages</div>
+        <div class="stat-value">5</div>
+        <div class="stat-unit">DISTINCT LANGS</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">// ai projects</div>
+        <div class="stat-value">9</div>
+        <div class="stat-unit">AI-ADJACENT REPOS</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="glow-line"></div>
+
+  <!-- ─── MAIN LAYOUT ─── -->
+  <div class="main-layout">
+
+    <!-- ─── CARDS ─── -->
+    <div class="cards-section" id="cards">
+
+      <!-- Card 1 -->
+      <a class="repo-card" href="https://github.com/Lum1104/Understand-Anything" target="_blank" data-delay="0" data-pct="100" data-top="true">
+        <div class="card-header">
+          <div class="rank-hex top3"><span class="rank-num">#1</span></div>
+          <div class="card-meta">
+            <div class="repo-path">Lum1104 /</div>
+            <div class="repo-name">Understand-Anything</div>
+            <div class="repo-desc">将任意代码库转化为可交互知识图谱——能探索、能搜索、能问答，让陌生系统一目了然</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-label">
+            <span class="star-today-label">TODAY'S STARS</span>
+            <span class="star-today-val"><span class="star-icon">⭐</span>4,465</span>
+          </div>
+          <div class="star-bar-track"><div class="star-bar-fill top3"></div></div>
+        </div>
+        <div class="card-footer">
+          <div class="lang-badge"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</div>
+          <span class="tag tag-ai">AI</span>
+          <span class="tag tag-tool">Tool</span>
+          <span class="total-stars">★ 40.7k total</span>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a class="repo-card" href="https://github.com/Leonxlnx/taste-skill" target="_blank" data-delay="80" data-pct="60.8" data-top="true">
+        <div class="card-header">
+          <div class="rank-hex top3"><span class="rank-num">#2</span></div>
+          <div class="card-meta">
+            <div class="repo-path">Leonxlnx /</div>
+            <div class="repo-name">taste-skill</div>
+            <div class="repo-desc">给 AI 注入审美基因——终结千篇一律的模板化输出，让生成内容真正有品位</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-label">
+            <span class="star-today-label">TODAY'S STARS</span>
+            <span class="star-today-val"><span class="star-icon">⭐</span>2,715</span>
+          </div>
+          <div class="star-bar-track"><div class="star-bar-fill top3"></div></div>
+        </div>
+        <div class="card-footer">
+          <div class="lang-badge"><span class="lang-dot" style="background:#89e051"></span>Shell</div>
+          <span class="tag tag-ai">AI</span>
+          <span class="tag tag-tool">Tool</span>
+          <span class="total-stars">★ 24.7k total</span>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a class="repo-card" href="https://github.com/affaan-m/ECC" target="_blank" data-delay="160" data-pct="46.2" data-top="true">
+        <div class="card-header">
+          <div class="rank-hex top3"><span class="rank-num">#3</span></div>
+          <div class="card-meta">
+            <div class="repo-path">affaan-m /</div>
+            <div class="repo-name">ECC</div>
+            <div class="repo-desc">AI 编程智能体的性能优化框架——集成技能、记忆、安全与研究优先开发，通吃 Claude Code / Codex / Cursor</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-label">
+            <span class="star-today-label">TODAY'S STARS</span>
+            <span class="star-today-val"><span class="star-icon">⭐</span>2,062</span>
+          </div>
+          <div class="star-bar-track"><div class="star-bar-fill top3"></div></div>
+        </div>
+        <div class="card-footer">
+          <div class="lang-badge"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</div>
+          <span class="tag tag-ai">AI</span>
+          <span class="tag tag-infra">Infra</span>
+          <span class="total-stars">★ 196.3k total</span>
+        </div>
+      </a>
+
+      <!-- Card 4 -->
+      <a class="repo-card" href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" data-delay="240" data-pct="39.0">
+        <div class="card-header">
+          <div class="rank-hex"><span class="rank-num">#4</span></div>
+          <div class="card-meta">
+            <div class="repo-path">harry0703 /</div>
+            <div class="repo-name">MoneyPrinterTurbo</div>
+            <div class="repo-desc">基于大语言模型的一键短视频生成工具，自动完成脚本、配音、字幕与剪辑全流程</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-label">
+            <span class="star-today-label">TODAY'S STARS</span>
+            <span class="star-today-val"><span class="star-icon">⭐</span>1,742</span>
+          </div>
+          <div class="star-bar-track"><div class="star-bar-fill"></div></div>
+        </div>
+        <div class="card-footer">
+          <div class="lang-badge"><span class="lang-dot" style="background:#3572a5"></span>Python</div>
+          <span class="tag tag-ai">AI</span>
+          <span class="tag tag-media">Media</span>
+          <span class="total-stars">★ 63.2k total</span>
+        </div>
+      </a>
+
+      <!-- Card 5 -->
+      <a class="repo-card" href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank" data-delay="320" data-pct="19.8">
+        <div class="card-header">
+          <div class="rank-hex"><span class="rank-num">#5</span></div>
+          <div class="card-meta">
+            <div class="repo-path">mukul975 /</div>
+            <div class="repo-name">Anthropic-Cybersecurity-Skills</div>
+            <div class="repo-desc">754 个结构化网络安全技能库，全面映射 MITRE ATT&amp;CK、NIST CSF 2.0 等五大行业框架</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-label">
+            <span class="star-today-label">TODAY'S STARS</span>
+            <span class="star-today-val"><span class="star-icon">⭐</span>886</span>
+          </div>
+          <div class="star-bar-track"><div class="star-bar-fill"></div></div>
+        </div>
+        <div class="card-footer">
+          <div class="lang-badge"><span class="lang-dot" style="background:#3572a5"></span>Python</div>
+          <span class="tag tag-sec">Sec</span>
+          <span class="tag tag-ai">AI</span>
+          <span class="total-stars">★ 11.1k total</span>
+        </div>
+      </a>
+
+      <!-- Card 6 -->
+      <a class="repo-card" href="https://github.com/anthropics/knowledge-work-plugins" target="_blank" data-delay="400" data-pct="15.6">
+        <div class="card-header">
+          <div class="rank-hex"><span class="rank-num">#6</span></div>
+          <div class="card-meta">
+            <div class="repo-path">anthropics /</div>
+            <div class="repo-name">knowledge-work-plugins</div>
+            <div class="repo-desc">Anthropic 官方开源插件集，专为知识工作者与 Claude Cowork 深度整合而设计</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-label">
+            <span class="star-today-label">TODAY'S STARS</span>
+            <span class="star-today-val"><span class="star-icon">⭐</span>695</span>
+          </div>
+          <div class="star-bar-track"><div class="star-bar-fill"></div></div>
+        </div>
+        <div class="card-footer">
+          <div class="lang-badge"><span class="lang-dot" style="background:#3572a5"></span>Python</div>
+          <span class="tag tag-ai">AI</span>
+          <span class="tag tag-oss">OSS</span>
+          <span class="total-stars">★ 17.4k total</span>
+        </div>
+      </a>
+
+      <!-- Card 7 -->
+      <a class="repo-card" href="https://github.com/hardikpandya/stop-slop" target="_blank" data-delay="480" data-pct="14.9">
+        <div class="card-header">
+          <div class="rank-hex"><span class="rank-num">#7</span></div>
+          <div class="card-meta">
+            <div class="repo-path">hardikpandya /</div>
+            <div class="repo-name">stop-slop</div>
+            <div class="repo-desc">消除 AI 写作痕迹的技能文件——过滤模板套话，让文字找回真实的人味</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-label">
+            <span class="star-today-label">TODAY'S STARS</span>
+            <span class="star-today-val"><span class="star-icon">⭐</span>664</span>
+          </div>
+          <div class="star-bar-track"><div class="star-bar-fill"></div></div>
+        </div>
+        <div class="card-footer">
+          <div class="lang-badge"><span class="lang-dot" style="background:#8a8a8a"></span>Other</div>
+          <span class="tag tag-ai">AI</span>
+          <span class="tag tag-tool">Tool</span>
+          <span class="total-stars">★ 5.9k total</span>
+        </div>
+      </a>
+
+      <!-- Card 8 -->
+      <a class="repo-card" href="https://github.com/twentyhq/twenty" target="_blank" data-delay="560" data-pct="11.6">
+        <div class="card-header">
+          <div class="rank-hex"><span class="rank-num">#8</span></div>
+          <div class="card-meta">
+            <div class="repo-path">twentyhq /</div>
+            <div class="repo-name">twenty</div>
+            <div class="repo-desc">原生为 AI 时代而生的 Salesforce 开源替代品——告别昂贵授权，自主掌控企业 CRM</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-label">
+            <span class="star-today-label">TODAY'S STARS</span>
+            <span class="star-today-val"><span class="star-icon">⭐</span>519</span>
+          </div>
+          <div class="star-bar-track"><div class="star-bar-fill"></div></div>
+        </div>
+        <div class="card-footer">
+          <div class="lang-badge"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</div>
+          <span class="tag tag-oss">OSS</span>
+          <span class="tag tag-tool">Tool</span>
+          <span class="total-stars">★ 47.4k total</span>
+        </div>
+      </a>
+
+      <!-- Card 9 -->
+      <a class="repo-card" href="https://github.com/shiyu-coder/Kronos" target="_blank" data-delay="640" data-pct="9.0">
+        <div class="card-header">
+          <div class="rank-hex"><span class="rank-num">#9</span></div>
+          <div class="card-meta">
+            <div class="repo-path">shiyu-coder /</div>
+            <div class="repo-name">Kronos</div>
+            <div class="repo-desc">面向金融市场语言的基础模型——将量化信号与自然语言统一建模，重塑策略研究范式</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-label">
+            <span class="star-today-label">TODAY'S STARS</span>
+            <span class="star-today-val"><span class="star-icon">⭐</span>401</span>
+          </div>
+          <div class="star-bar-track"><div class="star-bar-fill"></div></div>
+        </div>
+        <div class="card-footer">
+          <div class="lang-badge"><span class="lang-dot" style="background:#3572a5"></span>Python</div>
+          <span class="tag tag-ai">AI</span>
+          <span class="tag tag-ml">ML</span>
+          <span class="total-stars">★ 27.0k total</span>
+        </div>
+      </a>
+
+      <!-- Card 10 -->
+      <a class="repo-card" href="https://github.com/p-e-w/heretic" target="_blank" data-delay="720" data-pct="4.7">
+        <div class="card-header">
+          <div class="rank-hex"><span class="rank-num">#10</span></div>
+          <div class="card-meta">
+            <div class="repo-path">p-e-w /</div>
+            <div class="repo-name">heretic</div>
+            <div class="repo-desc">全自动移除语言模型审查过滤——解锁原始推理能力，还原未经裁剪的完整输出</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-label">
+            <span class="star-today-label">TODAY'S STARS</span>
+            <span class="star-today-val"><span class="star-icon">⭐</span>211</span>
+          </div>
+          <div class="star-bar-track"><div class="star-bar-fill"></div></div>
+        </div>
+        <div class="card-footer">
+          <div class="lang-badge"><span class="lang-dot" style="background:#3572a5"></span>Python</div>
+          <span class="tag tag-ai">AI</span>
+          <span class="tag tag-tool">Tool</span>
+          <span class="total-stars">★ 22.1k total</span>
+        </div>
+      </a>
+
+    </div><!-- /cards -->
+
+    <!-- ─── SIDEBAR ─── -->
+    <div class="sidebar">
+
+      <!-- LANG CHART -->
+      <div class="sidebar-card">
+        <div class="sidebar-title">// LANG · BY STARS TODAY</div>
+        <div class="lang-chart" id="langChart">
+
+          <div class="lang-row">
+            <div class="lang-row-header">
+              <div class="lang-name">
+                <span class="lang-dot" style="background:#3178c6"></span>TypeScript
+              </div>
+              <span class="lang-pct">34.7%</span>
+            </div>
+            <div class="lang-track"><div class="lang-fill" style="background:#3178c6" data-pct="34.7"></div></div>
+          </div>
+
+          <div class="lang-row">
+            <div class="lang-row-header">
+              <div class="lang-name">
+                <span class="lang-dot" style="background:#3572a5"></span>Python
+              </div>
+              <span class="lang-pct">27.4%</span>
+            </div>
+            <div class="lang-track"><div class="lang-fill" style="background:#3572a5" data-pct="27.4"></div></div>
+          </div>
+
+          <div class="lang-row">
+            <div class="lang-row-header">
+              <div class="lang-name">
+                <span class="lang-dot" style="background:#89e051"></span>Shell
+              </div>
+              <span class="lang-pct">18.9%</span>
+            </div>
+            <div class="lang-track"><div class="lang-fill" style="background:#89e051" data-pct="18.9"></div></div>
+          </div>
+
+          <div class="lang-row">
+            <div class="lang-row-header">
+              <div class="lang-name">
+                <span class="lang-dot" style="background:#f1e05a"></span>JavaScript
+              </div>
+              <span class="lang-pct">14.4%</span>
+            </div>
+            <div class="lang-track"><div class="lang-fill" style="background:#f1e05a" data-pct="14.4"></div></div>
+          </div>
+
+          <div class="lang-row">
+            <div class="lang-row-header">
+              <div class="lang-name">
+                <span class="lang-dot" style="background:#8a8a8a"></span>Other
+              </div>
+              <span class="lang-pct">4.6%</span>
+            </div>
+            <div class="lang-track"><div class="lang-fill" style="background:#8a8a8a" data-pct="4.6"></div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TREND INSIGHT -->
+      <div class="sidebar-card">
+        <div class="sidebar-title">// TREND · INSIGHT</div>
+        <div class="insight-text">
+          今日榜单呈现出双重叙事：<strong>代码理解基础设施</strong>与<strong>反 AI 套话运动</strong>同步爆发。<br><br>
+          <strong>Understand-Anything</strong> 以 4,465 今日 star 碾压全场，印证开发者对"读懂陌生代码库"的强烈刚需——知识图谱正成为 AI 辅助开发的新入口。<br><br>
+          taste-skill 与 stop-slop 的集体走红则折射出社区对 AI 生成内容同质化的集体厌倦：<strong>反套话技能正在成为新的基础设施</strong>。ECC 的强劲表现证明 Claude Code 生态工具链正快速成熟。
+          <div class="insight-highlight">
+            今日 AI 相关项目占比 90% · 合计 12,896 今日 star
+          </div>
+        </div>
+      </div>
+
+      <!-- VISUAL STYLE TAG -->
+      <div class="sidebar-card">
+        <div class="sidebar-title">// VISUAL · STYLE</div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-secondary); line-height:1.8;">
+          <div style="color:var(--accent-cyan); margin-bottom:6px;">全息终端仪表盘</div>
+          Holographic Terminal<br>
+          深空黑 · 荧光青 · 幻紫<br>
+          六边形徽章 · 扫描线<br>
+          <span style="color:var(--text-dim)">Orbitron + JetBrains Mono</span>
+        </div>
+      </div>
+
+    </div><!-- /sidebar -->
+
+  </div><!-- /main-layout -->
+
+  <div class="glow-line"></div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-left">
+      DATA SOURCE: <a href="https://github.com/trending" target="_blank">github.com/trending</a>
+      &nbsp;·&nbsp; GENERATED 2026-05-28
+      &nbsp;·&nbsp; DAILY EDITION
+    </div>
+    <div class="footer-right">TRENDING · ARCHIVE · 2026</div>
+  </footer>
+
+</div><!-- /container -->
+
+<script>
+  // ── Staggered card entrance ──
+  const cards = document.querySelectorAll('.repo-card');
+  const fills = document.querySelectorAll('.star-bar-fill');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const card = entry.target;
+        const delay = parseInt(card.dataset.delay) || 0;
+        const pct = parseFloat(card.dataset.pct) || 0;
+        const isTop = card.dataset.top === 'true';
+
+        setTimeout(() => {
+          card.classList.add('visible');
+          // animate the fill bar inside this card
+          const fill = card.querySelector('.star-bar-fill');
+          if (fill) {
+            setTimeout(() => {
+              fill.style.width = pct + '%';
+            }, 200);
+          }
+        }, delay);
+
+        observer.unobserve(card);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  cards.forEach(card => observer.observe(card));
+
+  // ── Language chart bars ──
+  const langFills = document.querySelectorAll('.lang-fill');
+  const langObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      langFills.forEach((fill, i) => {
+        setTimeout(() => {
+          fill.style.width = fill.dataset.pct + '%';
+        }, i * 120);
+      });
+      langObserver.disconnect();
+    }
+  }, { threshold: 0.5 });
+
+  const langChart = document.getElementById('langChart');
+  if (langChart) langObserver.observe(langChart);
+</script>
+
+</body>
+</html>
