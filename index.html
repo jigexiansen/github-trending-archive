@@ -13,19 +13,21 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub Trending Archive">
 <meta name="twitter:description" content="Every day on GitHub, something new takes off. This is the record.">
+<script src="https://kit.fontawesome.com/371954d95b.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:       #f2ebe1;
-  --surface:  #faf7f3;
-  --border:   #ddd5c8;
-  --text:     #1a130b;
-  --muted:    #7a6c60;
-  --dim:      #b5a898;
-  --accent:   #1c4f3c;
-  --gold:     #a8700f;
-  --ink:      #0f0a06;
+  --bg:       #ffffff;
+  --surface:  #f5f5f7;
+  --border:   #d2d2d7;
+  --text:     #1d1d1f;
+  --muted:    #6e6e73;
+  --dim:      #aeaeb2;
+  --accent:   #0071e3;
+  --accent-h: #0077ed;
+  --green:    #34c759;
+  --gold:     #ff9f0a;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,173 +36,211 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 300;
-  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', 'Noto Sans SC', -apple-system, sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── SITE NAV ── */
-.site-nav {
+/* ── NAV ── */
+.nav {
   position: sticky;
   top: 0;
   z-index: 100;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
-  height: 52px;
-  background: rgba(242,235,225,.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  background: rgba(255,255,255,.82);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0,0,0,.06);
 }
 
-.site-nav-logo {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  letter-spacing: .08em;
-  color: var(--muted);
-  text-transform: uppercase;
+.nav-logo {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.site-nav-link {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: .06em;
+.nav-logo i {
+  color: var(--accent);
+  font-size: 17px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  font-size: 13px;
+  font-weight: 500;
   color: var(--muted);
   text-decoration: none;
   transition: color .15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.site-nav-link:hover { color: var(--accent); }
+.nav-link:hover { color: var(--accent); }
 
 /* ── HERO ── */
 .hero {
-  padding: 80px 40px 72px;
-  border-bottom: 1px solid var(--border);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -100px; right: -80px;
-  width: 500px; height: 500px;
-  background: radial-gradient(ellipse, rgba(28,79,60,.06) 0%, transparent 65%);
-  pointer-events: none;
+  text-align: center;
+  padding: 96px 24px 80px;
 }
 
 .hero-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .3em;
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .02em;
   color: var(--accent);
-  margin-bottom: 24px;
-  opacity: 0;
-  animation: up .5s ease forwards .1s;
+  margin-bottom: 20px;
 }
+
+.hero-eyebrow i { font-size: 12px; }
 
 .hero-title {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -.02em;
-  color: var(--ink);
-  opacity: 0;
-  animation: up .6s ease forwards .2s;
-}
-
-.hero-title em {
-  font-style: italic;
-  color: var(--accent);
+  font-size: clamp(44px, 7vw, 72px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+  color: var(--text);
+  margin-bottom: 20px;
 }
 
 .hero-tagline {
-  margin-top: 24px;
-  font-size: 16px;
-  color: var(--muted);
-  line-height: 1.7;
-  max-width: 480px;
+  font-size: 19px;
   font-weight: 300;
-  opacity: 0;
-  animation: up .5s ease forwards .35s;
+  color: var(--muted);
+  line-height: 1.55;
+  max-width: 500px;
+  margin: 0 auto 36px;
 }
 
-.hero-stats {
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 13px 28px;
+  border-radius: 980px;
+  transition: background .2s, transform .15s;
+}
+
+.hero-cta:hover {
+  background: var(--accent-h);
+  transform: translateY(-1px);
+}
+
+/* ── STATS BAR ── */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.stat-item {
+  flex: 1;
+  max-width: 220px;
+  text-align: center;
+  padding: 32px 16px;
+  border-right: 1px solid var(--border);
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-value {
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  display: block;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-top: 36px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: .06em;
-  color: var(--dim);
-  opacity: 0;
-  animation: up .5s ease forwards .5s;
+  justify-content: center;
+  gap: 6px;
 }
 
-.hero-stats .sep { color: var(--border); }
+.stat-label i { font-size: 11px; }
 
 /* ── MAIN ── */
 main {
-  max-width: 1100px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 56px 40px 96px;
+  padding: 64px 24px 96px;
 }
 
 /* ── SECTION ── */
-.archive-section { margin-bottom: 64px; }
+.section { margin-bottom: 64px; }
 
-.section-head {
+.section-header {
   display: flex;
-  align-items: baseline;
-  gap: 12px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 28px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
 }
 
-.section-year {
-  font-family: 'DM Serif Display', serif;
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title i {
+  color: var(--accent);
+  font-size: 18px;
+}
+
+.section-meta {
   font-size: 13px;
   color: var(--dim);
-  letter-spacing: .04em;
-}
-
-.section-month {
-  font-family: 'DM Serif Display', serif;
-  font-size: 22px;
-  color: var(--text);
-  font-weight: 400;
-}
-
-.section-count {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .12em;
-  color: var(--dim);
-  text-transform: uppercase;
-  margin-left: auto;
 }
 
 /* ── CARD GRID ── */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 16px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 860px) {
   .card-grid { grid-template-columns: 1fr; }
-  .hero { padding: 56px 24px 48px; }
-  main { padding: 40px 24px 64px; }
-  .site-nav { padding: 0 24px; }
+  .stats-bar { flex-wrap: wrap; }
+  .stat-item { border-right: none; border-bottom: 1px solid var(--border); min-width: 50%; }
+  .hero { padding: 64px 20px 56px; }
+  main { padding: 48px 20px 64px; }
+  .nav { padding: 0 20px; }
 }
 
-@media (min-width: 801px) and (max-width: 1024px) {
+@media (min-width: 861px) and (max-width: 1100px) {
   .card-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -208,17 +248,15 @@ main {
 .report-card {
   display: flex;
   flex-direction: column;
-  background: var(--surface);
+  background: var(--bg);
   border: 1px solid var(--border);
-  border-top: 3px solid transparent;
-  border-radius: 2px;
-  padding: 24px;
+  border-radius: 18px;
+  padding: 26px;
   text-decoration: none;
   color: inherit;
-  transition: border-color .2s, box-shadow .2s, transform .2s;
+  transition: box-shadow .25s, transform .25s, border-color .25s;
   opacity: 0;
-  transform: translateY(8px);
-  position: relative;
+  transform: translateY(10px);
 }
 
 .report-card.in {
@@ -227,116 +265,123 @@ main {
 }
 
 .report-card:hover {
-  box-shadow: 0 4px 24px rgba(0,0,0,.08);
-  transform: translateY(-2px);
+  border-color: transparent;
+  box-shadow: 0 8px 40px rgba(0,0,0,.1);
+  transform: translateY(-3px);
 }
 
-/* Per-report accent colors */
-.report-card[data-style="terminal"] { border-top-color: #0891b2; }
-.report-card[data-style="cyberpunk"] { border-top-color: #059669; }
-.report-card[data-style="editorial"] { border-top-color: #b45309; }
-
-.report-card[data-style="terminal"]:hover { box-shadow: 0 4px 24px rgba(8,145,178,.12); }
-.report-card[data-style="cyberpunk"]:hover { box-shadow: 0 4px 24px rgba(5,150,105,.12); }
-.report-card[data-style="editorial"]:hover { box-shadow: 0 4px 24px rgba(180,83,9,.12); }
-
-.card-date {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .16em;
-  color: var(--dim);
-  margin-bottom: 16px;
+.card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 18px;
 }
 
-.card-arrow {
+.card-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .06em;
   color: var(--dim);
-  font-size: 14px;
-  transition: transform .2s, color .2s;
+}
+
+.card-date i { font-size: 10px; }
+
+.card-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--muted);
+  transition: background .2s, color .2s, transform .2s;
 }
 
 .report-card:hover .card-arrow {
-  transform: translateX(4px);
-  color: var(--text);
-}
-
-.card-repo {
-  font-family: 'DM Serif Display', serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--ink);
-  line-height: 1.2;
-  margin-bottom: 8px;
-  letter-spacing: -.01em;
+  background: var(--accent);
+  color: #fff;
+  transform: translateX(2px);
 }
 
 .card-org {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: var(--dim);
+  font-size: 11px;
   font-weight: 400;
-  display: block;
-  margin-bottom: 2px;
+  color: var(--dim);
+  font-family: 'JetBrains Mono', monospace;
   letter-spacing: .04em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.card-repo {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 10px;
 }
 
 .card-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
   color: var(--gold);
-  margin-bottom: 12px;
-  letter-spacing: .04em;
+  margin-bottom: 14px;
 }
+
+.card-stars i { font-size: 11px; }
 
 .card-highlight {
-  font-size: 12.5px;
+  font-size: 13px;
+  font-weight: 300;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.65;
   flex: 1;
   margin-bottom: 20px;
-  font-weight: 300;
 }
 
-.card-footer {
+.card-footer-line {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding-top: 14px;
-  border-top: 1px solid var(--border);
-}
-
-.card-style-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--dim);
+  border-top: 1px solid var(--surface);
 }
 
 .card-open {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .08em;
-  color: var(--dim);
-  transition: color .15s;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  opacity: 0;
+  transition: opacity .2s;
 }
 
-.report-card:hover .card-open { color: var(--accent); }
+.card-open i { font-size: 10px; }
+
+.report-card:hover .card-open { opacity: 1; }
 
 /* ── FOOTER ── */
 footer {
   border-top: 1px solid var(--border);
-  padding: 24px 40px;
+  padding: 24px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .06em;
+  font-size: 12px;
   color: var(--dim);
 }
 
@@ -348,76 +393,130 @@ footer a {
 
 footer a:hover { color: var(--accent); }
 
-/* ── ANIMATION ── */
-@keyframes up {
+.footer-links { display: flex; align-items: center; gap: 16px; }
+
+/* ── ENTER ANIMATION ── */
+@keyframes fadeUp {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: none; }
 }
+
+.hero-eyebrow { animation: fadeUp .5s ease forwards .05s; opacity: 0; }
+.hero-title   { animation: fadeUp .55s ease forwards .15s; opacity: 0; }
+.hero-tagline { animation: fadeUp .5s ease forwards .25s; opacity: 0; }
+.hero-cta     { animation: fadeUp .5s ease forwards .35s; opacity: 0; }
 </style>
 </head>
 <body>
 
-<nav class="site-nav">
-  <span class="site-nav-logo">GitHub Trending Archive</span>
-  <a class="site-nav-link" href="https://github.com/jigexiansen/github-trending-archive" target="_blank">GitHub ↗</a>
+<nav class="nav">
+  <a class="nav-logo" href="#">
+    <i class="fa-brands fa-github"></i>
+    Trending Archive
+  </a>
+  <div class="nav-right">
+    <a class="nav-link" href="https://github.com/jigexiansen/github-trending-archive" target="_blank">
+      <i class="fa-brands fa-github"></i> GitHub
+    </a>
+  </div>
 </nav>
 
 <div class="hero">
-  <div class="hero-eyebrow">Open Source Intelligence</div>
-  <h1 class="hero-title">GitHub Trending<br><em>Archive</em></h1>
+  <div class="hero-eyebrow">
+    <i class="fa-solid fa-fire"></i>
+    Open Source Intelligence
+  </div>
+  <h1 class="hero-title">GitHub Trending<br>Archive</h1>
   <p class="hero-tagline">Every day on GitHub, something new takes off.<br>This is the record.</p>
-  <div class="hero-stats">
-    <span id="report-count">—</span> Reports
-    <span class="sep">·</span>
-    Since May 2026
-    <span class="sep">·</span>
-    Daily
+  <a class="hero-cta" href="#reports">
+    Browse Reports <i class="fa-solid fa-arrow-down"></i>
+  </a>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-value" id="report-count">—</span>
+    <div class="stat-label"><i class="fa-regular fa-file-lines"></i> Reports</div>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value">2026</span>
+    <div class="stat-label"><i class="fa-regular fa-calendar"></i> Since May</div>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value">Daily</span>
+    <div class="stat-label"><i class="fa-solid fa-rotate"></i> Auto-updated</div>
   </div>
 </div>
 
 <main>
-  <div class="archive-section">
-    <div class="section-head">
-      <span class="section-year">2026 /</span>
-      <span class="section-month">May</span>
-      <span class="section-count" id="month-count">— reports</span>
+  <div class="section" id="reports">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fa-regular fa-calendar"></i>
+        May 2026
+      </h2>
+      <span class="section-meta" id="month-count">— reports</span>
     </div>
 
     <div class="card-grid" id="grid">
 
-      <a class="report-card" href="reports/2026/05/2026-05-28.html" data-style="terminal">
-        <div class="card-date">2026 · 05 · 28 <span class="card-arrow">→</span></div>
+      <a class="report-card" href="reports/2026/05/2026-05-28.html">
+        <div class="card-top">
+          <div class="card-date">
+            <i class="fa-regular fa-calendar-days"></i>
+            2026 · 05 · 28
+          </div>
+          <div class="card-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
         <span class="card-org">Lum1104 /</span>
         <div class="card-repo">Understand-Anything</div>
-        <div class="card-stars">+4,465 stars today</div>
-        <div class="card-highlight">反 AI 套话浪潮 · Skills 生态持续爆发 · 将任意代码转化为可交互知识图谱</div>
-        <div class="card-footer">
-          <span class="card-style-tag">全息终端仪表盘</span>
-          <span class="card-open">Open ↗</span>
+        <div class="card-stars">
+          <i class="fa-solid fa-star"></i>
+          +4,465 stars today
+        </div>
+        <p class="card-highlight">反 AI 套话浪潮 · Skills 生态持续爆发 · 将任意代码转化为可交互知识图谱</p>
+        <div class="card-footer-line">
+          <span class="card-open">Open report <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </div>
       </a>
 
-      <a class="report-card" href="reports/2026/05/2026-05-27.html" data-style="cyberpunk">
-        <div class="card-date">2026 · 05 · 27 <span class="card-arrow">→</span></div>
+      <a class="report-card" href="reports/2026/05/2026-05-27.html">
+        <div class="card-top">
+          <div class="card-date">
+            <i class="fa-regular fa-calendar-days"></i>
+            2026 · 05 · 27
+          </div>
+          <div class="card-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
         <span class="card-org">Lum1104 /</span>
         <div class="card-repo">Understand-Anything</div>
-        <div class="card-stars">+4,697 stars today</div>
-        <div class="card-highlight">Skills 生态首次爆发 · Anthropic 官方插件入榜 · 代码知识图谱工具崛起</div>
-        <div class="card-footer">
-          <span class="card-style-tag">赛博朋克仪表盘</span>
-          <span class="card-open">Open ↗</span>
+        <div class="card-stars">
+          <i class="fa-solid fa-star"></i>
+          +4,697 stars today
+        </div>
+        <p class="card-highlight">Skills 生态首次爆发 · Anthropic 官方插件入榜 · 代码知识图谱工具崛起</p>
+        <div class="card-footer-line">
+          <span class="card-open">Open report <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </div>
       </a>
 
-      <a class="report-card" href="reports/2026/05/2026-05-26.html" data-style="editorial">
-        <div class="card-date">2026 · 05 · 26 <span class="card-arrow">→</span></div>
+      <a class="report-card" href="reports/2026/05/2026-05-26.html">
+        <div class="card-top">
+          <div class="card-date">
+            <i class="fa-regular fa-calendar-days"></i>
+            2026 · 05 · 26
+          </div>
+          <div class="card-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
         <span class="card-org">Hmbown /</span>
         <div class="card-repo">DeepSeek-TUI</div>
-        <div class="card-stars">+5,787 stars today</div>
-        <div class="card-highlight">AI Agent 基础设施生产化 · 终端原生工具崛起 · Rust 实现的极简终端 Agent</div>
-        <div class="card-footer">
-          <span class="card-style-tag">深色社论风</span>
-          <span class="card-open">Open ↗</span>
+        <div class="card-stars">
+          <i class="fa-solid fa-star"></i>
+          +5,787 stars today
+        </div>
+        <p class="card-highlight">AI Agent 基础设施生产化 · 终端原生工具崛起 · Rust 实现的极简终端 Agent</p>
+        <div class="card-footer-line">
+          <span class="card-open">Open report <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </div>
       </a>
 
@@ -427,7 +526,11 @@ footer a:hover { color: var(--accent); }
 
 <footer>
   <span>Data: <a href="https://github.com/trending" target="_blank">github.com/trending</a> · Generated with <a href="https://claude.ai/code" target="_blank">Claude Code</a> · <a href="https://github.com/jigexiansen/github-trending-archive/blob/main/LICENSE" target="_blank">MIT</a></span>
-  <a href="https://github.com/jigexiansen/github-trending-archive" target="_blank">View on GitHub ↗</a>
+  <div class="footer-links">
+    <a href="https://github.com/jigexiansen/github-trending-archive" target="_blank">
+      <i class="fa-brands fa-github"></i> View on GitHub
+    </a>
+  </div>
 </footer>
 
 <script>
@@ -438,7 +541,7 @@ footer a:hover { color: var(--accent); }
   const obs = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('in'), i * 100);
+        setTimeout(() => e.target.classList.add('in'), i * 80);
         obs.unobserve(e.target);
       }
     });

@@ -9,7 +9,7 @@
 [![Last Update](https://img.shields.io/badge/Last%20Update-2026--05--28-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-28.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-00f5d4.svg)](LICENSE)
 
-[中文版](README_CN.md) · [Live Archive →](https://jigexiansen.github.io/github-trending-archive/)
+[简体中文](README_zh-CN.md) · [Live Archive →](https://jigexiansen.github.io/github-trending-archive/)
 
 </div>
 
@@ -37,7 +37,7 @@ Each daily report is a single, self-contained HTML file:
 | ⭐ **Star velocity bars** | Visual comparison of how fast each project is moving |
 | 🗺️ **Language breakdown** | Weighted by today's activity, not repo count |
 | 💡 **Trend insight** | A short written take on what the day's data actually means |
-| 🎨 **Unique visual identity** | Editorial, dashboard, brutalist, minimal… no two reports look the same |
+| 🎨 **Distinct visual design** | Every report has its own look — no two days feel the same |
 | 📦 **Zero dependencies** | Open it today, open it in 10 years — it just works |
 
 ---
@@ -47,11 +47,11 @@ Each daily report is a single, self-contained HTML file:
 <details open>
 <summary><strong>2026 · May</strong> — 3 reports</summary>
 
-| Date | Top Project | Highlights | Visual Style |
-|------|------------|-----------|--------------|
-| [2026-05-28](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-28.html) | Understand-Anything +4,465⭐ | 反 AI 套话浪潮 · Skills 生态持续爆发 | 全息终端仪表盘 |
-| [2026-05-27](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-27.html) | Understand-Anything +4,697⭐ | Skills 生态首次爆发 · Anthropic 插件官方入榜 | 赛博朋克仪表盘 |
-| [2026-05-26](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-26.html) | DeepSeek-TUI +5,787⭐ | AI Agent 基础设施生产化 · 终端原生工具崛起 | 深色社论风 |
+| Date | Top Project | Highlights |
+|------|------------|-----------|
+| [2026-05-28](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-28.html) | Understand-Anything +4,465⭐ | 反 AI 套话浪潮 · Skills 生态持续爆发 |
+| [2026-05-27](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-27.html) | Understand-Anything +4,697⭐ | Skills 生态首次爆发 · Anthropic 插件官方入榜 |
+| [2026-05-26](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-26.html) | DeepSeek-TUI +5,787⭐ | AI Agent 基础设施生产化 · 终端原生工具崛起 |
 
 </details>
 

@@ -37,7 +37,7 @@ GitHub Trending 每 24 小时重置一次。那些今天备受瞩目的项目，
 | ⭐ **Star 速度条** | 直观对比各项目今天有多热 |
 | 🗺️ **语言分布图** | 按今日 Star 权重聚合，不是项目数量 |
 | 💡 **趋势洞察** | 对当天数据的简短解读，提炼背后的主题 |
-| 🎨 **独一无二的视觉风格** | 社论风、仪表盘、极简、粗野主义……每天不同 |
+| 🎨 **独特的视觉设计** | 每份报告都有自己的风格，每天打开都有新鲜感 |
 | 📦 **零依赖** | 今天打开能用，十年后打开还能用 |
 
 ---
@@ -47,11 +47,11 @@ GitHub Trending 每 24 小时重置一次。那些今天备受瞩目的项目，
 <details open>
 <summary><strong>2026 年 5 月</strong> — 3 份报告</summary>
 
-| 日期 | 当日榜首 | 亮点 | 视觉风格 |
-|------|---------|------|---------|
-| [2026-05-28](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-28.html) | Understand-Anything +4,465⭐ | 反 AI 套话浪潮 · Skills 生态持续爆发 | 全息终端仪表盘 |
-| [2026-05-27](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-27.html) | Understand-Anything +4,697⭐ | Skills 生态首次爆发 · Anthropic 插件官方入榜 | 赛博朋克仪表盘 |
-| [2026-05-26](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-26.html) | DeepSeek-TUI +5,787⭐ | AI Agent 基础设施生产化 · 终端原生工具崛起 | 深色社论风 |
+| 日期 | 当日榜首 | 亮点 |
+|------|---------|------|
+| [2026-05-28](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-28.html) | Understand-Anything +4,465⭐ | 反 AI 套话浪潮 · Skills 生态持续爆发 |
+| [2026-05-27](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-27.html) | Understand-Anything +4,697⭐ | Skills 生态首次爆发 · Anthropic 插件官方入榜 |
+| [2026-05-26](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-26.html) | DeepSeek-TUI +5,787⭐ | AI Agent 基础设施生产化 · 终端原生工具崛起 |
 
 </details>
 
@@ -88,7 +88,7 @@ open reports/2026/05/2026-05-28.html
 发现数据有误？链接失效？描述偏差？
 → 提一个[数据纠错 Issue](../../issues/new?template=data-correction.md)——数据准确是这个项目最重要的事。
 
-有视觉风格的想法，或者对项目本身有建议？
+对项目有想法或建议？
 → 来 [Discussions](../../discussions) 聊聊，欢迎任何想法。
 
 ---
