@@ -12,7 +12,7 @@ The cleanest way to read these is through the live site — every file opens dir
 reports/
 └── YYYY/
     └── MM/
-        └── YYYY-MM-DD.html
+        └── DD.html
 ```
 
 Each file is a fully self-contained HTML document. No build step, no dependencies — just open it.
@@ -21,6 +21,6 @@ Each file is a fully self-contained HTML document. No build step, no dependencie
 
 | Date | Top Project | Today's Stars |
 |------|------------|--------------|
-| [2026-05-28](2026/05/2026-05-28.html) | Understand-Anything | +4,465 ⭐ |
-| [2026-05-27](2026/05/2026-05-27.html) | Understand-Anything | +4,697 ⭐ |
-| [2026-05-26](2026/05/2026-05-26.html) | DeepSeek-TUI | +5,787 ⭐ |
+| [2026-05-28](2026/05/28.html) | Understand-Anything | +4,465 ⭐ |
+| [2026-05-27](2026/05/27.html) | Understand-Anything | +4,697 ⭐ |
+| [2026-05-26](2026/05/26.html) | DeepSeek-TUI | +5,787 ⭐ |
