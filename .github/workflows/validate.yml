@@ -1,0 +1,46 @@
+name: Validate Reports
+
+on:
+  push:
+    paths:
+      - 'reports/**'
+  pull_request:
+    paths:
+      - 'reports/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check filename convention (YYYY-MM-DD.html)
+        run: |
+          failed=0
+          while IFS= read -r f; do
+            name=$(basename "$f")
+            if ! echo "$name" | grep -qE '^[0-9]{4}-[0-9]{2}-[0-9]{2}\.html$'; then
+              echo "❌  Bad filename: $f"
+              failed=1
+            fi
+          done < <(find reports -name "*.html")
+          [ $failed -eq 0 ] && echo "✅  All filenames match YYYY-MM-DD.html"
+          exit $failed
+
+      - name: Check directory structure (reports/YYYY/MM/)
+        run: |
+          failed=0
+          while IFS= read -r f; do
+            name=$(basename "$f" .html)
+            expected_year="${name:0:4}"
+            expected_month="${name:5:2}"
+            actual_dir=$(dirname "$f")
+            actual_month=$(basename "$actual_dir")
+            actual_year=$(basename "$(dirname "$actual_dir")")
+            if [ "$actual_year" != "$expected_year" ] || [ "$actual_month" != "$expected_month" ]; then
+              echo "❌  Wrong location: $f  (expected reports/$expected_year/$expected_month/)"
+              failed=1
+            fi
+          done < <(find reports -name "*.html")
+          [ $failed -eq 0 ] && echo "✅  All reports are in the correct directory"
+          exit $failed

@@ -2,57 +2,50 @@
 
 # 📡 GitHub Trending Archive
 
-**Daily snapshots of GitHub's trending repositories — beautifully visualized, permanently archived.**
+**A permanent, beautiful record of what the open source world cared about each day.**
 
+[![Validate Reports](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
+[![Reports](https://img.shields.io/badge/Reports-3-7b2fff.svg)](#-browse)
+[![Last Update](https://img.shields.io/badge/Last%20Update-2026--05--28-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-28.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-00f5d4.svg)](LICENSE)
-[![Reports](https://img.shields.io/badge/Reports-3-7b2fff.svg)](#-browse-reports)
-[![Last Update](https://img.shields.io/badge/Last%20Update-2026--05--28-ff006e.svg)](reports/2026/05/2026-05-28.html)
-[![Data Source](https://img.shields.io/badge/Source-GitHub%20Trending-181717?logo=github)](https://github.com/trending)
+
+[中文版](README_CN.md) · [Live Archive →](https://jigexiansen.github.io/github-trending-archive/)
 
 </div>
 
 ---
 
-Each day, the top 10 trending GitHub repositories are captured and rendered as a **self-contained, visually distinct HTML report** — no build step, no dependencies, no servers. Just open and read.
+Open source moves fast. The tools everyone's talking about today might be forgotten by next month. This archive captures GitHub's daily trending page as standalone HTML reports — one per day, each with a unique visual style, stored here forever.
 
-Every report ships with a unique visual aesthetic (editorial, dashboard, brutalist, minimal…), today-star bar charts, a language distribution breakdown, and a hand-crafted Chinese trend insight summary.
+No databases. No APIs. Just a folder of HTML files that open in any browser, online or offline.
 
 <div align="center">
 
-**→ [Browse All Reports](https://jigexiansen.github.io/github-trending-archive/)** · [Latest · 2026-05-28](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-28.html)**
+**→ [Browse the Archive](https://jigexiansen.github.io/github-trending-archive/)**
 
 </div>
 
 ---
 
-## ✨ What's Inside Each Report
+## ✨ What's in each report
 
-| Feature | Detail |
+Each daily report is a single, self-contained HTML file:
+
+| | |
 |---|---|
-| 🏆 **Top 10 Repos** | Ranked by today's star count, not total stars |
-| ⭐ **Star Bars** | Animated visual comparison of today's momentum |
-| 🗺️ **Language Chart** | Distribution weighted by today's stars |
-| 💡 **Trend Insight** | 2–3 sentence analysis of the day's theme (Chinese) |
-| 🎨 **Unique Visual Style** | New aesthetic each day — no two reports look alike |
-| 📦 **Self-Contained** | Single `.html` file, zero dependencies, works offline |
+| 🏆 **Top 10 repos** | Ranked by today's star count — momentum, not history |
+| ⭐ **Star velocity bars** | Visual comparison of how fast each project is moving |
+| 🗺️ **Language breakdown** | Weighted by today's activity, not repo count |
+| 💡 **Trend insight** | A short written take on what the day's data actually means |
+| 🎨 **Unique visual identity** | Editorial, dashboard, brutalist, minimal… no two reports look the same |
+| 📦 **Zero dependencies** | Open it today, open it in 10 years — it just works |
 
 ---
 
-## 📂 Browse Reports
-
-```
-reports/
-└── 2026/
-    └── 05/
-        ├── 2026-05-26.html
-        ├── 2026-05-27.html
-        └── 2026-05-28.html  ← Latest
-```
-
-### 2026
+## 📂 Browse
 
 <details open>
-<summary><strong>May 2026</strong> · 3 reports</summary>
+<summary><strong>2026 · May</strong> — 3 reports</summary>
 
 | Date | Top Project | Highlights | Visual Style |
 |------|------------|-----------|--------------|
@@ -64,93 +57,44 @@ reports/
 
 ---
 
-## 🗂️ Repository Structure
+## ⚙️ How reports are made
+
+Every day, [Claude Code](https://claude.ai/code) scrapes `github.com/trending`, ranks the top 10 by today's stars, rewrites each description in Chinese, generates the visual report, and commits it here.
+
+The data is real — nothing is fabricated or estimated. If something looks wrong, it was wrong on GitHub too (or it's a bug worth reporting).
 
 ```
-github-trending-archive/
-├── reports/                  # All archived reports
-│   └── YYYY/
-│       └── MM/
-│           └── YYYY-MM-DD.html
-├── README.md
-├── LICENSE
-└── .gitignore
+Fetch → Rank → Describe → Visualize → Style → Archive
 ```
-
-**Naming convention:** `reports/YYYY/MM/YYYY-MM-DD.html`  
-Each file is a fully standalone HTML document — clone the repo and open any file directly in your browser.
 
 ---
 
-## 🚀 Usage
+## 🚀 Run it locally
 
-**Clone and browse locally:**
 ```bash
 git clone https://github.com/jigexiansen/github-trending-archive
 cd github-trending-archive
 
-# Open the latest report
+# Open any report directly
 open reports/2026/05/2026-05-28.html
-
-# Open a specific date
-open reports/2026/05/2026-05-26.html
-
-# Or browse all reports
-ls reports/2026/
 ```
 
-**Browse online (GitHub Pages):**
-Visit **[jigexiansen.github.io/github-trending-archive](https://jigexiansen.github.io/github-trending-archive/)** — every report is directly accessible in your browser, no raw mode needed.
-
----
-
-## ⚙️ How It's Generated
-
-Reports are generated daily using [Claude Code](https://claude.ai/code) with the `/trending-sync` skill:
-
-1. **Fetch** — Scrapes `github.com/trending` for the day's top 10
-2. **Rank** — Sorts by today's star count (not total stars)
-3. **Describe** — Rewrites each project description in idiomatic Chinese
-4. **Visualize** — Generates animated star bars + language distribution chart
-5. **Style** — Applies a unique visual aesthetic per report (never repeated)
-6. **Archive** — Saves locally and pushes to this repository
-
-All data comes directly from GitHub Trending. No data is fabricated or interpolated.
-
----
-
-## 📊 Stats
-
-| Metric | Value |
-|--------|-------|
-| Total reports | 3 |
-| Date range | 2026-05-26 → present |
-| Languages tracked | Python, TypeScript, JavaScript, Shell, Go, Rust, and more |
-| Update frequency | Daily |
+No setup. No install. Just open.
 
 ---
 
 ## 🤝 Contributing
 
-Found a bug in a report? Want to improve the generation skill?
+Spotted a wrong star count? A broken link? A description that misses the mark?
+→ Open a [data correction issue](../../issues/new?template=data-correction.md) — accuracy is the one thing we're strict about.
 
-- **Report issues** via [GitHub Issues](../../issues)
-- **Discuss trends** via [GitHub Discussions](../../discussions)
-
-Data corrections for existing reports are welcome as PRs — include the date and the corrected field.
+Have an idea for a visual style or feature?
+→ Start a [discussion](../../discussions) — all ideas welcome.
 
 ---
 
 ## 📄 License
 
-[MIT](LICENSE) © 2026 jigexiansen
+[MIT](LICENSE) — do whatever you want with this.
 
-Data sourced from [github.com/trending](https://github.com/trending) — GitHub's public trending page.
-
----
-
-<div align="center">
-
-Made with [Claude Code](https://claude.ai/code) · Updated daily · [↑ Back to top](#-github-trending-archive)
-
-</div>
+Data sourced from [github.com/trending](https://github.com/trending) · Generated with [Claude Code](https://claude.ai/code)
