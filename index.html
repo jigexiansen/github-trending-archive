@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Archive</title>
+<meta name="description" content="Daily snapshots of GitHub's trending repositories — beautifully visualized, permanently archived.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #070d1a;
+  --surface:  #0c1528;
+  --card:     #0f1c35;
+  --card-h:   #132240;
+  --border:   #1a2e50;
+  --border-h: #2a4878;
+  --cyan:     #00d4aa;
+  --blue:     #4fa8ff;
+  --violet:   #8b5cf6;
+  --gold:     #f59e0b;
+  --red:      #ef4444;
+  --text:     #c8daf0;
+  --muted:    #5a7a9a;
+  --dim:      #2a4060;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans SC', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* grid bg */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,212,170,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,170,.018) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+/* ── HEADER ── */
+header {
+  padding: 60px 0 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: up .5s ease forwards .05s;
+}
+
+h1 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -.02em;
+  line-height: 1.1;
+  opacity: 0;
+  animation: up .5s ease forwards .15s;
+}
+
+h1 .accent { color: var(--cyan); }
+
+.tagline {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 520px;
+  opacity: 0;
+  animation: up .5s ease forwards .25s;
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: up .5s ease forwards .35s;
+}
+
+.meta-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .05em;
+}
+
+.meta-chip .val {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.meta-chip .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 6px var(--cyan);
+}
+
+.gh-link {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 7px 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: border-color .2s, color .2s;
+  letter-spacing: .05em;
+}
+
+.gh-link:hover { border-color: var(--cyan); color: var(--cyan); }
+
+.gh-link svg { width: 14px; height: 14px; fill: currentColor; }
+
+/* ── YEAR SECTION ── */
+.year-section { padding: 40px 0 0; }
+
+.year-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 6px;
+}
+
+.month-group { margin-bottom: 40px; }
+
+.month-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: .15em;
+  color: var(--muted);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.month-label .count {
+  font-size: 10px;
+  color: var(--dim);
+  font-weight: 300;
+}
+
+/* ── REPORT CARD ── */
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.report-card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .2s, background .2s, transform .2s;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.report-card.in {
+  opacity: 1;
+  transform: none;
+  transition: border-color .2s, background .2s, transform .2s, opacity .4s, translateY .4s;
+}
+
+.report-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan), var(--violet));
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.report-card:hover {
+  border-color: var(--border-h);
+  background: var(--card-h);
+  transform: translateY(-2px);
+}
+
+.report-card:hover::before { opacity: 1; }
+
+.card-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--cyan);
+  letter-spacing: .1em;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-date .arrow {
+  color: var(--dim);
+  font-size: 12px;
+  transition: color .2s, transform .2s;
+}
+
+.report-card:hover .arrow {
+  color: var(--cyan);
+  transform: translateX(3px);
+}
+
+.card-top-repo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-stars {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--gold);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-highlight {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.card-style {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.style-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--violet);
+}
+
+/* ── EMPTY STATE ── */
+.empty {
+  text-align: center;
+  padding: 60px 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--dim);
+  letter-spacing: .08em;
+}
+
+/* ── FOOTER ── */
+footer {
+  margin-top: 60px;
+  padding: 24px 0 40px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-left {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--dim);
+  letter-spacing: .08em;
+  line-height: 1.8;
+}
+
+.footer-left a { color: var(--muted); text-decoration: none; transition: color .15s; }
+.footer-left a:hover { color: var(--cyan); }
+
+.footer-right {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--dim);
+  letter-spacing: .12em;
+  text-align: right;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-tag">// Open Source Intelligence</div>
+    <h1>GitHub Trending<br><span class="accent">Archive</span></h1>
+    <p class="tagline">Daily snapshots of GitHub's trending repositories — beautifully visualized, permanently archived. One unique visual report every day.</p>
+
+    <div class="meta-row">
+      <div class="meta-chip">
+        <span class="dot"></span>
+        <span>Reports&nbsp;</span><span class="val" id="total-count">—</span>
+      </div>
+      <div class="meta-chip">
+        Since&nbsp;<span class="val">2026-05-26</span>
+      </div>
+      <div class="meta-chip">
+        Updated&nbsp;<span class="val">daily</span>
+      </div>
+      <a class="gh-link" href="https://github.com/jigexiansen/github-trending-archive" target="_blank">
+        <svg viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <!-- REPORTS -->
+  <div class="year-section">
+    <div class="year-label">// 2026</div>
+
+    <div class="month-group">
+      <div class="month-label">
+        May 2026
+        <span class="count">3 reports</span>
+      </div>
+
+      <div class="report-grid" id="grid">
+
+        <a class="report-card" href="reports/2026/05/2026-05-28.html">
+          <div class="card-date">
+            2026 · 05 · 28
+            <span class="arrow">→</span>
+          </div>
+          <div class="card-top-repo">Lum1104 / Understand-Anything</div>
+          <div class="card-stars">⭐ +4,465 today</div>
+          <div class="card-highlight">反 AI 套话浪潮 · Skills 生态持续爆发 · 代码知识图谱</div>
+          <div class="card-style"><span class="style-dot"></span>全息终端仪表盘 · Orbitron</div>
+        </a>
+
+        <a class="report-card" href="reports/2026/05/2026-05-27.html">
+          <div class="card-date">
+            2026 · 05 · 27
+            <span class="arrow">→</span>
+          </div>
+          <div class="card-top-repo">Lum1104 / Understand-Anything</div>
+          <div class="card-stars">⭐ +4,697 today</div>
+          <div class="card-highlight">Skills 生态首次爆发 · Anthropic 官方插件入榜</div>
+          <div class="card-style"><span class="style-dot"></span>赛博朋克仪表盘 · Space Grotesk</div>
+        </a>
+
+        <a class="report-card" href="reports/2026/05/2026-05-26.html">
+          <div class="card-date">
+            2026 · 05 · 26
+            <span class="arrow">→</span>
+          </div>
+          <div class="card-top-repo">Hmbown / DeepSeek-TUI</div>
+          <div class="card-stars">⭐ +5,787 today</div>
+          <div class="card-highlight">AI Agent 基础设施生产化 · 终端原生工具崛起</div>
+          <div class="card-style"><span class="style-dot"></span>深色社论风 · DM Serif Display</div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      Data source: <a href="https://github.com/trending" target="_blank">github.com/trending</a><br>
+      Generated daily with <a href="https://claude.ai/code" target="_blank">Claude Code</a>
+    </div>
+    <div class="footer-right">
+      GITHUB TRENDING ARCHIVE<br>
+      © 2026 jigexiansen · MIT
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Count and display total
+  const cards = document.querySelectorAll('.report-card');
+  document.getElementById('total-count').textContent = cards.length;
+
+  // Staggered entrance
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05 });
+
+  cards.forEach((card, i) => {
+    card.style.transitionDelay = `${i * 80}ms`;
+    obs.observe(card);
+  });
+</script>
+
+</body>
+</html>

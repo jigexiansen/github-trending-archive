@@ -19,7 +19,7 @@ Every report ships with a unique visual aesthetic (editorial, dashboard, brutali
 
 <div align="center">
 
-**→ [View Latest Report · 2026-05-28](reports/2026/05/2026-05-28.html)**
+**→ [Browse All Reports](https://jigexiansen.github.io/github-trending-archive/)** · [Latest · 2026-05-28](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-28.html)**
 
 </div>
 
@@ -56,9 +56,9 @@ reports/
 
 | Date | Top Project | Highlights | Visual Style |
 |------|------------|-----------|--------------|
-| [2026-05-28](reports/2026/05/2026-05-28.html) | Understand-Anything +4,465⭐ | 反 AI 套话浪潮 · Skills 生态持续爆发 | 全息终端仪表盘 |
-| [2026-05-27](reports/2026/05/2026-05-27.html) | Understand-Anything +4,697⭐ | Skills 生态首次爆发 · Anthropic 插件官方入榜 | 赛博朋克仪表盘 |
-| [2026-05-26](reports/2026/05/2026-05-26.html) | DeepSeek-TUI +5,787⭐ | AI Agent 基础设施生产化 · 终端原生工具崛起 | 深色社论风 |
+| [2026-05-28](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-28.html) | Understand-Anything +4,465⭐ | 反 AI 套话浪潮 · Skills 生态持续爆发 | 全息终端仪表盘 |
+| [2026-05-27](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-27.html) | Understand-Anything +4,697⭐ | Skills 生态首次爆发 · Anthropic 插件官方入榜 | 赛博朋克仪表盘 |
+| [2026-05-26](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/2026-05-26.html) | DeepSeek-TUI +5,787⭐ | AI Agent 基础设施生产化 · 终端原生工具崛起 | 深色社论风 |
 
 </details>
 
@@ -99,8 +99,8 @@ open reports/2026/05/2026-05-26.html
 ls reports/2026/
 ```
 
-**Browse on GitHub:**  
-Navigate the [`reports/`](reports/) directory tree and click any `.html` file → use the **Raw** button → open in your browser.
+**Browse online (GitHub Pages):**
+Visit **[jigexiansen.github.io/github-trending-archive](https://jigexiansen.github.io/github-trending-archive/)** — every report is directly accessible in your browser, no raw mode needed.
 
 ---
 
