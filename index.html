@@ -355,6 +355,70 @@ footer a:hover { color: var(--accent); }
   .card-action { display: none; }
 }
 
+/* ── AMBIENT BG SHIFT ── */
+body {
+  background: var(--bg);
+  animation: bgDrift 12s ease-in-out infinite alternate;
+}
+@keyframes bgDrift {
+  0%   { background-color: #13110e; }
+  50%  { background-color: #161310; }
+  100% { background-color: #110f0c; }
+}
+
+/* ── ARCHIVE SHIMMER ── */
+.hero-title em {
+  display: inline-block;
+  background: linear-gradient(100deg, #f0a500 0%, #ffe08a 38%, #f0c840 52%, #f0a500 100%);
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3.5s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0%   { background-position: 140% 0; }
+  100% { background-position: -60% 0; }
+}
+
+/* ── EYEBROW CURSOR ── */
+.hero-eyebrow::after {
+  content: '|';
+  margin-left: 3px;
+  color: var(--accent);
+  animation: blink 1.1s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── LIVE DOT ── */
+.live-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 8px;
+  animation: livePulse 2s ease-in-out infinite;
+  vertical-align: middle;
+}
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(240,165,0,.4); }
+  50%       { opacity: .7; transform: scale(.85); box-shadow: 0 0 0 5px rgba(240,165,0,0); }
+}
+
+/* ── CARD BORDER BREATH ── */
+@keyframes borderBreath {
+  0%, 100% { border-left-color: var(--border); }
+  50%       { border-left-color: #3e3828; }
+}
+.report-card:not(:hover) {
+  animation: borderBreath 4s ease-in-out infinite;
+}
+.report-card:not(:hover):nth-child(2) { animation-delay: -1.3s; }
+.report-card:not(:hover):nth-child(3) { animation-delay: -2.6s; }
+
 /* ── GRAIN OVERLAY ── */
 body::after {
   content: '';
@@ -481,7 +545,7 @@ body::after {
 <main>
   <div class="section" id="reports">
     <div class="section-head">
-      <span class="section-label">2026 / May</span>
+      <span class="section-label"><span class="live-dot"></span>2026 / May</span>
       <span class="section-count" id="month-count">—</span>
     </div>
 
@@ -532,6 +596,44 @@ body::after {
 </footer>
 
 <script>
+  /* ── floating particles in hero ── */
+  (function () {
+    const hero = document.querySelector('.hero');
+    const canvas = document.createElement('canvas');
+    canvas.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:0;';
+    hero.style.position = 'relative';
+    hero.style.overflow = 'hidden';
+    hero.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    const pts = Array.from({ length: 38 }, () => ({
+      x: Math.random(), y: Math.random(),
+      r: Math.random() * 1.1 + .3,
+      s: Math.random() * .25 + .06,
+      d: (Math.random() - .5) * .18,
+      o: Math.random() * .35 + .08,
+      f: Math.random() * .008 + .002
+    }));
+    function resize() { canvas.width = hero.offsetWidth; canvas.height = hero.offsetHeight; }
+    resize();
+    new ResizeObserver(resize).observe(hero);
+    (function tick() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      pts.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x * canvas.width, p.y * canvas.height, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(240,165,0,${p.o})`;
+        ctx.fill();
+        p.y -= p.s / canvas.height;
+        p.x += p.d / canvas.width;
+        p.o += (Math.random() - .5) * p.f;
+        p.o = Math.max(.04, Math.min(.45, p.o));
+        if (p.y < -.01) { p.y = 1.01; p.x = Math.random(); }
+        if (p.x < 0) p.x = 1; if (p.x > 1) p.x = 0;
+      });
+      requestAnimationFrame(tick);
+    })();
+  })();
+
   /* ── cursor glow ── */
   const glow = document.createElement('div');
   glow.id = 'cursor-glow';
