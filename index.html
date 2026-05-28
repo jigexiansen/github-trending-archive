@@ -111,8 +111,21 @@ body {
   line-height: .93;
   letter-spacing: -.03em;
   color: var(--text);
-  opacity: 0;
-  animation: fadeUp .6s ease forwards .15s;
+}
+.title-line {
+  display: block;
+  overflow: hidden;
+}
+.title-inner {
+  display: block;
+  transform: translateY(110%);
+  animation: lineReveal .85s cubic-bezier(.16,1,.3,1) forwards;
+}
+.title-line:nth-child(1) .title-inner { animation-delay: .06s; }
+.title-line:nth-child(2) .title-inner { animation-delay: .16s; }
+.title-line:nth-child(3) .title-inner { animation-delay: .26s; }
+@keyframes lineReveal {
+  to { transform: translateY(0); }
 }
 
 .hero-title em {
@@ -244,9 +257,9 @@ main {
   border-bottom: 1px solid var(--border);
   text-decoration: none;
   color: inherit;
-  transition: border-left-color .2s, background .2s, transform .2s;
+  transition: border-left-color .2s, background .2s, opacity .5s ease, transform .7s cubic-bezier(.34,1.56,.64,1);
   opacity: 0;
-  transform: translateX(-8px);
+  transform: translateX(-20px);
 }
 
 .report-card.in {
@@ -258,6 +271,12 @@ main {
   border-left-color: var(--accent);
   background: var(--accent-glow);
   transform: translateX(5px);
+  transition: border-left-color .2s, background .2s, transform .25s cubic-bezier(.16,1,.3,1);
+}
+
+.report-card:active {
+  transform: scale(.98) translateX(2px);
+  transition: transform .1s ease;
 }
 
 .card-date {
@@ -462,26 +481,14 @@ body::after {
   background: radial-gradient(circle, rgba(240,165,0,.045) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
-  transform: translate(-50%,-50%);
-  transition: left .18s ease, top .18s ease;
-  will-change: left, top;
+  top: 0; left: 0;
+  will-change: transform;
 }
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: none; }
-}
-
-/* title: clip-path wipe from bottom */
-.hero-title {
-  animation: none !important;
-  opacity: 1 !important;
-  clip-path: inset(100% 0 0 0);
-  animation: titleReveal .9s cubic-bezier(.16,1,.3,1) forwards .12s !important;
-}
-@keyframes titleReveal {
-  to { clip-path: inset(0% 0 0 0); }
 }
 
 /* rule: grow from 0 */
@@ -516,7 +523,11 @@ body::after {
 <div class="hero">
   <div class="hero-left">
     <div class="hero-eyebrow">Open Source · Daily Record</div>
-    <h1 class="hero-title">GitHub<br>Trending<br><em>Archive</em></h1>
+    <h1 class="hero-title">
+      <span class="title-line"><span class="title-inner">GitHub</span></span>
+      <span class="title-line"><span class="title-inner">Trending</span></span>
+      <span class="title-line"><span class="title-inner"><em>Archive</em></span></span>
+    </h1>
   </div>
   <div class="hero-right">
     <div class="hero-rule"></div>
@@ -634,14 +645,35 @@ body::after {
     })();
   })();
 
-  /* ── cursor glow ── */
+  /* ── cursor glow with RAF lerp ── */
   const glow = document.createElement('div');
   glow.id = 'cursor-glow';
   document.body.appendChild(glow);
-  document.addEventListener('mousemove', e => {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top  = e.clientY + 'px';
-  });
+  let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+  let cx = mx, cy = my;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  (function glowTick() {
+    cx += (mx - cx) * 0.06;
+    cy += (my - cy) * 0.06;
+    glow.style.transform = `translate(${cx - 240}px,${cy - 240}px)`;
+    requestAnimationFrame(glowTick);
+  })();
+
+  /* ── magnetic CTA ── */
+  const cta = document.querySelector('.hero-cta');
+  if (cta) {
+    cta.addEventListener('mousemove', e => {
+      const r = cta.getBoundingClientRect();
+      const dx = e.clientX - (r.left + r.width / 2);
+      const dy = e.clientY - (r.top + r.height / 2);
+      cta.style.transform = `translate(${dx * 0.25}px,${dy * 0.25}px)`;
+    });
+    cta.addEventListener('mouseleave', () => {
+      cta.style.transition = 'transform .5s cubic-bezier(.16,1,.3,1),background .2s,color .2s,border-color .2s';
+      cta.style.transform = '';
+      setTimeout(() => { cta.style.transition = ''; }, 500);
+    });
+  }
 
   /* ── card entrance ── */
   const cards = document.querySelectorAll('.report-card');
