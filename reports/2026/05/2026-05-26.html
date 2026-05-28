@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending · 2026.05.26</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #0b0d0f;
+    --surface:  #111416;
+    --border:   #1e2227;
+    --border2:  #2a2f38;
+    --text:     #e8eaed;
+    --muted:    #6b7280;
+    --accent:   #f0a500;
+    --accent2:  #3b82f6;
+    --accent3:  #10b981;
+    --rust:     #ef4444;
+    --python:   #3b82f6;
+    --ts:       #0ea5e9;
+    --js:       #eab308;
+    --ruby:     #f43f5e;
+    --shell:    #10b981;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── Noise texture overlay ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Header ── */
+  header {
+    position: relative;
+    padding: 72px 0 56px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    top: -120px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, rgba(240,165,0,.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+    opacity: 0;
+    animation: fadeUp .6s ease forwards .1s;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    color: var(--text);
+    opacity: 0;
+    animation: fadeUp .6s ease forwards .2s;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .header-sub {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: .04em;
+    opacity: 0;
+    animation: fadeUp .6s ease forwards .35s;
+  }
+
+  .header-meta {
+    display: inline-flex;
+    gap: 24px;
+    margin-top: 32px;
+    padding: 10px 24px;
+    border: 1px solid var(--border2);
+    border-radius: 2px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: .08em;
+    opacity: 0;
+    animation: fadeUp .6s ease forwards .5s;
+  }
+
+  .header-meta span { color: var(--text); }
+
+  /* ── Main grid ── */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  /* ── Rank banner ── */
+  .rank-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 56px;
+    opacity: 0;
+    animation: fadeUp .5s ease forwards .6s;
+  }
+
+  .rank-header-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border2), transparent);
+  }
+
+  .rank-header-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── Card ── */
+  .card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 0 28px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--border);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: background .2s;
+  }
+
+  .card:hover { background: rgba(255,255,255,.015); }
+
+  .card.visible {
+    animation: fadeUp .5s ease forwards;
+  }
+
+  /* rank number */
+  .rank {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--border2);
+    padding-top: 4px;
+    text-align: right;
+    transition: color .2s;
+    user-select: none;
+  }
+
+  .card:hover .rank { color: var(--accent); }
+
+  /* card body */
+  .card-body { min-width: 0; }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .repo-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: .01em;
+    line-height: 1.4;
+    transition: color .15s;
+  }
+
+  .repo-name:hover { color: var(--accent); }
+
+  .repo-name .org { color: var(--muted); font-weight: 400; }
+  .repo-name .slash { color: var(--border2); margin: 0 1px; }
+
+  .stars-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border: 1px solid var(--border2);
+    border-radius: 2px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .stars-badge svg { width: 12px; height: 12px; fill: var(--accent); }
+
+  .card-desc {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 16px;
+    max-width: 680px;
+  }
+
+  .card-desc strong { color: rgba(232,234,237,.7); font-weight: 400; }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  /* language dot */
+  .lang-pill {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: .04em;
+  }
+
+  .lang-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .lang-dot.python { background: var(--python); }
+  .lang-dot.rust   { background: var(--rust); }
+  .lang-dot.typescript { background: var(--ts); }
+  .lang-dot.javascript { background: var(--js); }
+  .lang-dot.ruby   { background: var(--ruby); }
+  .lang-dot.shell  { background: var(--shell); }
+
+  /* tags */
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    border: 1px solid;
+  }
+
+  .tag.ai      { color: #a78bfa; border-color: rgba(167,139,250,.3); background: rgba(167,139,250,.06); }
+  .tag.tool    { color: #34d399; border-color: rgba(52,211,153,.3); background: rgba(52,211,153,.06); }
+  .tag.infra   { color: #60a5fa; border-color: rgba(96,165,250,.3); background: rgba(96,165,250,.06); }
+  .tag.oss     { color: #fb923c; border-color: rgba(251,146,60,.3); background: rgba(251,146,60,.06); }
+  .tag.ml      { color: #f472b6; border-color: rgba(244,114,182,.3); background: rgba(244,114,182,.06); }
+
+  /* star bar */
+  .star-bar-wrap {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+  }
+
+  .star-bar {
+    width: 80px; height: 2px;
+    background: var(--border2);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .star-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    width: 0;
+    transition: width 1s ease;
+  }
+
+  /* ── Insight section ── */
+  .insight {
+    margin-top: 72px;
+    padding: 40px;
+    border: 1px solid var(--border2);
+    border-left: 3px solid var(--accent);
+    background: rgba(240,165,0,.03);
+    opacity: 0;
+    animation: fadeUp .6s ease forwards 1.2s;
+  }
+
+  .insight-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  .insight p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 720px;
+  }
+
+  .insight p + p { margin-top: 10px; }
+  .insight strong { color: var(--text); font-weight: 400; }
+
+  /* ── Lang distribution ── */
+  .lang-dist {
+    margin-top: 48px;
+    opacity: 0;
+    animation: fadeUp .6s ease forwards 1.4s;
+  }
+
+  .lang-dist-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .lang-dist-bar {
+    display: flex;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    gap: 2px;
+    margin-bottom: 12px;
+  }
+
+  .ldb-seg {
+    border-radius: 3px;
+    transition: flex 1.2s ease;
+  }
+
+  .lang-legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: .04em;
+  }
+
+  .lang-legend-item { display: flex; align-items: center; gap: 6px; }
+  .lang-legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 24px;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: .06em;
+  }
+
+  /* ── Animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-eyebrow">GitHub Trending Report</div>
+  <h1>今日热榜 <em>Top 10</em></h1>
+  <div class="header-sub">开源社区每日动态 · 数据截取于 GitHub Trending</div>
+  <div class="header-meta">
+    <div>日期 <span>2026.05.26</span></div>
+    <div>维度 <span>Daily Stars</span></div>
+    <div>来源 <span>github.com/trending</span></div>
+  </div>
+</header>
+
+<main>
+  <div class="rank-header">
+    <div class="rank-header-line"></div>
+    <div class="rank-header-text">Ranked by Stars Today</div>
+    <div class="rank-header-line" style="background:linear-gradient(90deg,transparent,var(--border2))"></div>
+  </div>
+
+  <!-- CARDS -->
+  <div id="card-list"></div>
+
+  <!-- Insight -->
+  <div class="insight">
+    <div class="insight-label">✦ 趋势洞察</div>
+    <p>今日榜单的核心主题：<strong>AI Agent 基础设施的生产化落地</strong>。前十项目中，超过 70% 直接服务于 AI 编程助手生态（Claude Code、Cursor、Codex、Gemini CLI），关注点已从模型本身转移至<strong>记忆、技能、上下文压缩与推理加速</strong>等外围组件。</p>
+    <p>值得关注的是 <strong>DeepSeek-TUI</strong>（Rust, 5787 ★/日）以今日最高星速领跑，显示终端原生 Agent 工具正在快速获得开发者青睐。与此同时，<strong>PageIndex</strong> 提出无向量化 RAG 方案，挑战当前 RAG 主流范式，具备较高研究价值。</p>
+  </div>
+
+  <!-- Lang Distribution -->
+  <div class="lang-dist">
+    <div class="lang-dist-label">语言分布</div>
+    <div class="lang-dist-bar" id="lang-bar"></div>
+    <div class="lang-legend" id="lang-legend"></div>
+  </div>
+</main>
+
+<footer>
+  数据来源 github.com/trending &nbsp;·&nbsp; 报告生成于 2026-05-26 &nbsp;·&nbsp; Daily Reset UTC 00:00
+</footer>
+
+<script>
+const MAX_STARS = 5787;
+
+const projects = [
+  {
+    rank: 1,
+    org: "Hmbown", repo: "DeepSeek-TUI",
+    url: "https://github.com/Hmbown/DeepSeek-TUI",
+    lang: "Rust", langClass: "rust",
+    starsToday: 5787, starsTotal: "18.2k",
+    desc: "在终端中运行的 DeepSeek 模型编程 Agent，采用 TUI（终端 UI）交互范式，<strong>Rust 实现，轻量高效</strong>，今日新增星数居全榜之首。",
+    tags: [["AI", "ai"], ["Tool", "tool"]]
+  },
+  {
+    rank: 2,
+    org: "anthropics", repo: "financial-services",
+    url: "https://github.com/anthropics/financial-services",
+    lang: "Python", langClass: "python",
+    starsToday: 1367, starsTotal: "10.8k",
+    desc: "Anthropic 官方发布的金融服务 AI 应用示例库，结合 <strong>Claude 模型</strong>构建合规、风控、智能投顾等金融场景解决方案，具备企业级参考价值。",
+    tags: [["AI", "ai"], ["Infra", "infra"]]
+  },
+  {
+    rank: 3,
+    org: "addyosmani", repo: "agent-skills",
+    url: "https://github.com/addyosmani/agent-skills",
+    lang: "Shell", langClass: "shell",
+    starsToday: 3058, starsTotal: "32.6k",
+    desc: "面向 AI 编程 Agent 的<strong>生产级工程技能文件集</strong>，适配 Claude Code、Cursor、Codex 等主流工具。Skills 文件直接置于 `.claude/skills/` 目录，显著提升 Agent 工程能力上限。",
+    tags: [["AI", "ai"], ["Tool", "tool"]]
+  },
+  {
+    rank: 4,
+    org: "VectifyAI", repo: "PageIndex",
+    url: "https://github.com/VectifyAI/PageIndex",
+    lang: "Python", langClass: "python",
+    starsToday: 953, starsTotal: "29.4k",
+    desc: "无向量化文档索引方案，<strong>基于推理的 RAG</strong>，在 SimpleQA 基准上达到 ~95% 准确率（Qwen3.6-27B + RTX 3090）。挑战传统 Embedding+向量库的 RAG 主流范式。",
+    tags: [["ML", "ml"], ["Infra", "infra"]]
+  },
+  {
+    rank: 5,
+    org: "z-lab", repo: "dflash",
+    url: "https://github.com/z-lab/dflash",
+    lang: "Python", langClass: "python",
+    starsToday: 654, starsTotal: "3.4k",
+    desc: "<strong>块扩散（Block Diffusion）推测解码</strong>加速方案，显著降低 LLM 推理延迟。Flash Speculative Decoding 的学术实现，适合对推理速度有极致要求的场景。",
+    tags: [["ML", "ml"]]
+  },
+  {
+    rank: 6,
+    org: "InsForge", repo: "InsForge",
+    url: "https://github.com/InsForge/InsForge",
+    lang: "TypeScript", langClass: "typescript",
+    starsToday: 459, starsTotal: "8.8k",
+    desc: "基于 <strong>PostgreSQL 的一体化 Backend</strong>，内置 Auth、Storage、Compute、Hosting 与 AI Gateway，专为 AI 编程 Agent 设计的全栈基础设施平台。",
+    tags: [["Infra", "infra"], ["OSS", "oss"]]
+  },
+  {
+    rank: 7,
+    org: "aaif-goose", repo: "goose",
+    url: "https://github.com/aaif-goose/goose",
+    lang: "Rust", langClass: "rust",
+    starsToday: 431, starsTotal: "44.4k",
+    desc: "开源可扩展 AI Agent 框架，<strong>超越代码补全</strong>，具备安装、执行、编辑、测试能力，支持接入任意 LLM。Block/Square 出品，工程成熟度高。",
+    tags: [["AI", "ai"], ["OSS", "oss"]]
+  },
+  {
+    rank: 8,
+    org: "docusealco", repo: "docuseal",
+    url: "https://github.com/docusealco/docuseal",
+    lang: "Ruby", langClass: "ruby",
+    starsToday: 899, starsTotal: "15.4k",
+    desc: "<strong>开源 DocuSign 替代方案</strong>，支持创建、填写、签署数字文档，完全自托管，无需第三方文档签署服务依赖，适合企业合规场景。",
+    tags: [["OSS", "oss"]]
+  },
+  {
+    rank: 9,
+    org: "LearningCircuit", repo: "local-deep-research",
+    url: "https://github.com/LearningCircuit/local-deep-research",
+    lang: "Python", langClass: "python",
+    starsToday: 564, starsTotal: "6.1k",
+    desc: "本地化深度研究引擎，支持 Ollama、llama.cpp、Google 等全系 LLM 接入，集成 10+ 搜索引擎（arXiv、PubMed、私有文档），<strong>全程加密，数据不出本地</strong>。",
+    tags: [["AI", "ai"], ["Tool", "tool"]]
+  },
+  {
+    rank: 10,
+    org: "decolua", repo: "9router",
+    url: "https://github.com/decolua/9router",
+    lang: "JavaScript", langClass: "javascript",
+    starsToday: 249, starsTotal: "4.3k",
+    desc: "<strong>免费 AI 编程额度路由器</strong>，将 Claude Code、Codex、Cursor、Cline 等工具的请求路由至 40+ 免费 Provider（Claude/GPT/Gemini），支持自动降级，声称可节省 40% Token。",
+    tags: [["Tool", "tool"], ["OSS", "oss"]]
+  }
+];
+
+// Sort by starsToday for display but keep rank
+function renderCards() {
+  const list = document.getElementById('card-list');
+  projects.forEach((p, i) => {
+    const pct = Math.round((p.starsToday / MAX_STARS) * 100);
+    const delayMs = 700 + i * 90;
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.style.animationDelay = `${delayMs}ms`;
+
+    const tagsHTML = p.tags.map(([label, cls]) =>
+      `<span class="tag ${cls}">${label}</span>`
+    ).join('');
+
+    card.innerHTML = `
+      <div class="rank">${String(p.rank).padStart(2,'0')}</div>
+      <div class="card-body">
+        <div class="card-top">
+          <a class="repo-name" href="${p.url}" target="_blank">
+            <span class="org">${p.org}</span><span class="slash">/</span>${p.repo}
+          </a>
+          <div class="stars-badge">
+            <svg viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
+            +${p.starsToday.toLocaleString()} today
+          </div>
+        </div>
+        <div class="card-desc">${p.desc}</div>
+        <div class="card-footer">
+          <div class="lang-pill">
+            <div class="lang-dot ${p.langClass}"></div>
+            ${p.lang}
+          </div>
+          ${tagsHTML}
+          <div class="star-bar-wrap">
+            <div>${p.starsTotal} ★</div>
+            <div class="star-bar">
+              <div class="star-bar-fill" data-pct="${pct}"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    list.appendChild(card);
+
+    // Intersection observer for staggered reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          // Animate star bar
+          setTimeout(() => {
+            const fill = e.target.querySelector('.star-bar-fill');
+            if (fill) fill.style.width = fill.dataset.pct + '%';
+          }, 200);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    obs.observe(card);
+  });
+}
+
+// Language distribution
+function renderLangDist() {
+  const counts = {};
+  const colors = { Python: '#3b82f6', Rust: '#ef4444', TypeScript: '#0ea5e9', JavaScript: '#eab308', Ruby: '#f43f5e', Shell: '#10b981' };
+  projects.forEach(p => { counts[p.lang] = (counts[p.lang]||0) + 1; });
+
+  const total = Object.values(counts).reduce((a,b)=>a+b,0);
+  const bar = document.getElementById('lang-bar');
+  const legend = document.getElementById('lang-legend');
+
+  Object.entries(counts).forEach(([lang, n]) => {
+    const seg = document.createElement('div');
+    seg.className = 'ldb-seg';
+    seg.style.background = colors[lang] || '#888';
+    seg.style.flex = n;
+    bar.appendChild(seg);
+
+    const li = document.createElement('div');
+    li.className = 'lang-legend-item';
+    li.innerHTML = `<div class="lang-legend-dot" style="background:${colors[lang]||'#888'}"></div>${lang} (${n})`;
+    legend.appendChild(li);
+  });
+}
+
+renderCards();
+renderLangDist();
+</script>
+</body>
+</html>

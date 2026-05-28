@@ -5,7 +5,7 @@
 **Daily snapshots of GitHub's trending repositories — beautifully visualized, permanently archived.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-00f5d4.svg)](LICENSE)
-[![Reports](https://img.shields.io/badge/Reports-1-7b2fff.svg)](#-browse-reports)
+[![Reports](https://img.shields.io/badge/Reports-3-7b2fff.svg)](#-browse-reports)
 [![Last Update](https://img.shields.io/badge/Last%20Update-2026--05--28-ff006e.svg)](reports/2026/05/2026-05-28.html)
 [![Data Source](https://img.shields.io/badge/Source-GitHub%20Trending-181717?logo=github)](https://github.com/trending)
 
@@ -44,17 +44,21 @@ Every report ships with a unique visual aesthetic (editorial, dashboard, brutali
 reports/
 └── 2026/
     └── 05/
-        └── 2026-05-28.html  ← Today
+        ├── 2026-05-26.html
+        ├── 2026-05-27.html
+        └── 2026-05-28.html  ← Latest
 ```
 
 ### 2026
 
 <details open>
-<summary><strong>May 2026</strong></summary>
+<summary><strong>May 2026</strong> · 3 reports</summary>
 
-| Date | Highlights | Style |
-|------|-----------|-------|
-| [2026-05-28](reports/2026/05/2026-05-28.html) | Understand-Anything +4,465⭐ · 反 AI 套话浪潮 | 全息终端仪表盘 |
+| Date | Top Project | Highlights | Visual Style |
+|------|------------|-----------|--------------|
+| [2026-05-28](reports/2026/05/2026-05-28.html) | Understand-Anything +4,465⭐ | 反 AI 套话浪潮 · Skills 生态持续爆发 | 全息终端仪表盘 |
+| [2026-05-27](reports/2026/05/2026-05-27.html) | Understand-Anything +4,697⭐ | Skills 生态首次爆发 · Anthropic 插件官方入榜 | 赛博朋克仪表盘 |
+| [2026-05-26](reports/2026/05/2026-05-26.html) | DeepSeek-TUI +5,787⭐ | AI Agent 基础设施生产化 · 终端原生工具崛起 | 深色社论风 |
 
 </details>
 
@@ -88,6 +92,9 @@ cd github-trending-archive
 # Open the latest report
 open reports/2026/05/2026-05-28.html
 
+# Open a specific date
+open reports/2026/05/2026-05-26.html
+
 # Or browse all reports
 ls reports/2026/
 ```
@@ -116,8 +123,8 @@ All data comes directly from GitHub Trending. No data is fabricated or interpola
 
 | Metric | Value |
 |--------|-------|
-| Total reports | 1 |
-| Date range | 2026-05-28 → present |
+| Total reports | 3 |
+| Date range | 2026-05-26 → present |
 | Languages tracked | Python, TypeScript, JavaScript, Shell, Go, Rust, and more |
 | Update frequency | Daily |
 
