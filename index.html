@@ -355,10 +355,88 @@ footer a:hover { color: var(--accent); }
   .card-action { display: none; }
 }
 
-/* ── ANIMATION ── */
+/* ── GRAIN OVERLAY ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: -50%;
+  width: 200%; height: 200%;
+  pointer-events: none;
+  z-index: 9997;
+  opacity: .028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain .35s steps(2) infinite;
+}
+@keyframes grain {
+  0%  { transform: translate(0,0); }
+  25% { transform: translate(4%,-6%); }
+  50% { transform: translate(-5%,3%); }
+  75% { transform: translate(6%,5%); }
+}
+
+/* ── HERO GLOW ── */
+.hero-left { position: relative; }
+.hero-left::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: -80px;
+  width: 520px; height: 420px;
+  background: radial-gradient(ellipse at 40% 50%, rgba(240,165,0,.07) 0%, transparent 65%);
+  animation: breathe 5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes breathe {
+  0%, 100% { opacity: .6; transform: scale(1); }
+  50%       { opacity: 1; transform: scale(1.08); }
+}
+
+/* ── CURSOR GLOW ── */
+#cursor-glow {
+  position: fixed;
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240,165,0,.045) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%,-50%);
+  transition: left .18s ease, top .18s ease;
+  will-change: left, top;
+}
+
+/* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: none; }
+}
+
+/* title: clip-path wipe from bottom */
+.hero-title {
+  animation: none !important;
+  opacity: 1 !important;
+  clip-path: inset(100% 0 0 0);
+  animation: titleReveal .9s cubic-bezier(.16,1,.3,1) forwards .12s !important;
+}
+@keyframes titleReveal {
+  to { clip-path: inset(0% 0 0 0); }
+}
+
+/* rule: grow from 0 */
+.hero-rule {
+  width: 0 !important;
+  animation: ruleGrow .6s ease forwards .5s;
+}
+@keyframes ruleGrow {
+  to { width: 36px; }
+}
+
+/* card star hover pulse */
+.report-card:hover .card-stars i {
+  animation: starPop .35s ease;
+}
+@keyframes starPop {
+  0%   { transform: scale(1); }
+  45%  { transform: scale(1.5) rotate(15deg); }
+  100% { transform: scale(1); }
 }
 </style>
 </head>
@@ -454,20 +532,53 @@ footer a:hover { color: var(--accent); }
 </footer>
 
 <script>
+  /* ── cursor glow ── */
+  const glow = document.createElement('div');
+  glow.id = 'cursor-glow';
+  document.body.appendChild(glow);
+  document.addEventListener('mousemove', e => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top  = e.clientY + 'px';
+  });
+
+  /* ── card entrance ── */
   const cards = document.querySelectorAll('.report-card');
-  document.getElementById('report-count').textContent = cards.length;
   document.getElementById('month-count').textContent = cards.length + ' reports';
 
-  const obs = new IntersectionObserver(entries => {
+  const cardObs = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
         setTimeout(() => e.target.classList.add('in'), i * 120);
-        obs.unobserve(e.target);
+        cardObs.unobserve(e.target);
       }
     });
   }, { threshold: 0.05 });
+  cards.forEach(c => cardObs.observe(c));
 
-  cards.forEach(c => obs.observe(c));
+  /* ── number counter ── */
+  function countUp(el, target, duration) {
+    const start = performance.now();
+    (function tick(now) {
+      const t = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.round(ease * target);
+      if (t < 1) requestAnimationFrame(tick);
+    })(start);
+  }
+  const countEl = document.getElementById('report-count');
+  const statObs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      countUp(countEl, cards.length, 900);
+      statObs.disconnect();
+    }
+  }, { threshold: 0.5 });
+  statObs.observe(document.querySelector('.stats-bar'));
+
+  /* ── hero parallax ── */
+  const heroTitle = document.querySelector('.hero-title');
+  window.addEventListener('scroll', () => {
+    heroTitle.style.transform = `translateY(${scrollY * 0.12}px)`;
+  }, { passive: true });
 </script>
 
 </body>
