@@ -5,8 +5,8 @@
 **开源世界每天都在变，这里把每一天最值得关注的那一刻留下来。**
 
 [![报告校验](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![报告数量](https://img.shields.io/badge/报告-3份-7b2fff.svg)](#-浏览报告)
-[![最近更新](https://img.shields.io/badge/最近更新-2026--05--28-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/28.html)
+[![报告数量](https://img.shields.io/badge/报告-4份-7b2fff.svg)](#-浏览报告)
+[![最近更新](https://img.shields.io/badge/最近更新-2026--05--29-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/29.html)
 [![许可证: MIT](https://img.shields.io/badge/许可证-MIT-00f5d4.svg)](LICENSE)
 
 [English](README.md) · [在线浏览 →](https://jigexiansen.github.io/github-trending-archive/)
@@ -45,10 +45,11 @@ GitHub Trending 每 24 小时重置一次。那些今天备受瞩目的项目，
 ## 📂 浏览报告
 
 <details open>
-<summary><strong>2026 年 5 月</strong> — 3 份报告</summary>
+<summary><strong>2026 年 5 月</strong> — 4 份报告</summary>
 
 | 日期 | 当日榜首 | 亮点 |
 |------|---------|------|
+| [2026-05-29](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/29.html) | MoneyPrinterTurbo +4,698⭐ | AI 工具链多层爆发 · 反 AI 套话浪潮持续 · 技能框架生态扩张 |
 | [2026-05-28](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/28.html) | Understand-Anything +4,465⭐ | 反 AI 套话浪潮 · Skills 生态持续爆发 |
 | [2026-05-27](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/27.html) | Understand-Anything +4,697⭐ | Skills 生态首次爆发 · Anthropic 插件官方入榜 |
 | [2026-05-26](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/26.html) | DeepSeek-TUI +5,787⭐ | AI Agent 基础设施生产化 · 终端原生工具崛起 |
