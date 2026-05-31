@@ -1,6 +1,7 @@
 name: Validate Reports
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'reports/**'
