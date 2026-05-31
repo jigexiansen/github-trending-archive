@@ -361,11 +361,11 @@ body {
 /* ── i18n ── */
 html[data-lang="en"] .i18n-zh{display:none;}
 html[data-lang="zh"] .i18n-en{display:none;}
-#langToggle{position:fixed;bottom:18px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(18,16,9,.78);border:1px solid var(--gold-d,rgba(255,255,255,.3));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:'JetBrains Mono',monospace;}
-#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:var(--muted,#9e8e60);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
-#langToggle .lt-seg:hover{color:var(--cream,#f5f0e1);}
+#langToggle{position:fixed;bottom:18px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
 html[data-lang="en"] #langToggle [data-lang="en"],
-html[data-lang="zh"] #langToggle [data-lang="zh"]{background:var(--gold,#c9a84c);color:var(--bg,#0c0a07);}
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
 </style>
 </head>
 <body>
@@ -788,7 +788,8 @@ const langObs = new IntersectionObserver((entries) => {
   }
 }, { threshold: 0.2 });
 if (langBars) langObs.observe(langBars);
-
+</script>
+<script>
 /* i18n segmented toggle */
 (function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();
 </script>
