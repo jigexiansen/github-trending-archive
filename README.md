@@ -51,10 +51,10 @@ Each daily report is a single, self-contained HTML file:
 |------|------------|-----------|
 | [2026-05-31](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/31.html) | MoneyPrinterTurbo +2,768⭐ | AI toolchain focuses on video & docs · Python takes 65% of stars · Rust rises in system AI |
 | [2026-05-30](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/30.html) | MoneyPrinterTurbo +3,567⭐ | AI efficiency tools surge · anti-slop wave continues · Python dominates |
-| [2026-05-29](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/29.html) | MoneyPrinterTurbo +4,698⭐ | AI工具链多层爆发 · 反AI套话浪潮持续 · 技能框架生态扩张 |
-| [2026-05-28](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/28.html) | Understand-Anything +4,465⭐ | 反 AI 套话浪潮 · Skills 生态持续爆发 |
-| [2026-05-27](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/27.html) | Understand-Anything +4,697⭐ | Skills 生态首次爆发 · Anthropic 插件官方入榜 |
-| [2026-05-26](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/26.html) | DeepSeek-TUI +5,787⭐ | AI Agent 基础设施生产化 · 终端原生工具崛起 |
+| [2026-05-29](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/29.html) | MoneyPrinterTurbo +4,698⭐ | AI toolchains erupt across layers · anti-slop wave continues · skills framework ecosystem expands |
+| [2026-05-28](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/28.html) | Understand-Anything +4,465⭐ | Anti-slop wave continues · Skills ecosystem keeps surging |
+| [2026-05-27](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/27.html) | Understand-Anything +4,697⭐ | Skills ecosystem's first surge · Anthropic plugins hit the official board |
+| [2026-05-26](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/26.html) | DeepSeek-TUI +5,787⭐ | AI Agent infrastructure goes production · terminal-native tools rise |
 
 </details>
 
