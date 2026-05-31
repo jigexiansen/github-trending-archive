@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GitHub Trending Archive</title>
@@ -509,9 +510,19 @@ body::after {
   45%  { transform: scale(1.5) rotate(15deg); }
   100% { transform: scale(1); }
 }
+
+/* ── i18n ── */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:18px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
 </style>
 </head>
 <body>
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
 
 <nav class="nav">
   <a class="nav-logo" href="#">GitHub Trending Archive</a>
@@ -568,7 +579,7 @@ body::after {
           <span class="card-org">harry0703 /</span>
           <div class="card-repo">MoneyPrinterTurbo</div>
           <div class="card-stars"><i class="fa-solid fa-star"></i> +2,768 today</div>
-          <p class="card-highlight">AI 工具链今日聚焦短视频与文档处理 · Python 独揽 65% 今日星标 · Rust 系统级感知崛起</p>
+          <p class="card-highlight"><span class="i18n-en">AI toolchains focus on video & docs today · Python takes 65% of today’s stars · Rust rises in system-level sensing</span><span class="i18n-zh">AI 工具链今日聚焦短视频与文档处理 · Python 独揽 65% 今日星标 · Rust 系统级感知崛起</span></p>
         </div>
         <div class="card-action">Open <i class="fa-solid fa-arrow-right"></i></div>
       </a>
@@ -579,7 +590,7 @@ body::after {
           <span class="card-org">harry0703 /</span>
           <div class="card-repo">MoneyPrinterTurbo</div>
           <div class="card-stars"><i class="fa-solid fa-star"></i> +3,567 today</div>
-          <p class="card-highlight">AI效率工具双线爆发 · 反AI套话浪潮持续 · Python主导AI生态</p>
+          <p class="card-highlight"><span class="i18n-en">AI efficiency tools surge on two fronts · anti-AI-slop wave continues · Python dominates the AI ecosystem</span><span class="i18n-zh">AI效率工具双线爆发 · 反AI套话浪潮持续 · Python主导AI生态</span></p>
         </div>
         <div class="card-action">Open <i class="fa-solid fa-arrow-right"></i></div>
       </a>
@@ -590,7 +601,7 @@ body::after {
           <span class="card-org">harry0703 /</span>
           <div class="card-repo">MoneyPrinterTurbo</div>
           <div class="card-stars"><i class="fa-solid fa-star"></i> +4,698 today</div>
-          <p class="card-highlight">AI工具链与反套话浪潮双线爆发 · AI短视频生成一键化 · 技能框架生态持续扩张</p>
+          <p class="card-highlight"><span class="i18n-en">AI toolchains and the anti-slop wave erupt together · one-click AI short-video generation · the skills-framework ecosystem keeps expanding</span><span class="i18n-zh">AI工具链与反套话浪潮双线爆发 · AI短视频生成一键化 · 技能框架生态持续扩张</span></p>
         </div>
         <div class="card-action">Open <i class="fa-solid fa-arrow-right"></i></div>
       </a>
@@ -601,7 +612,7 @@ body::after {
           <span class="card-org">Lum1104 /</span>
           <div class="card-repo">Understand-Anything</div>
           <div class="card-stars"><i class="fa-solid fa-star"></i> +4,465 today</div>
-          <p class="card-highlight">反 AI 套话浪潮 · Skills 生态持续爆发 · 将任意代码转化为可交互知识图谱</p>
+          <p class="card-highlight"><span class="i18n-en">Anti-AI-slop wave · Skills ecosystem keeps surging · turn any codebase into an interactive knowledge graph</span><span class="i18n-zh">反 AI 套话浪潮 · Skills 生态持续爆发 · 将任意代码转化为可交互知识图谱</span></p>
         </div>
         <div class="card-action">Open <i class="fa-solid fa-arrow-right"></i></div>
       </a>
@@ -612,7 +623,7 @@ body::after {
           <span class="card-org">Lum1104 /</span>
           <div class="card-repo">Understand-Anything</div>
           <div class="card-stars"><i class="fa-solid fa-star"></i> +4,697 today</div>
-          <p class="card-highlight">Skills 生态首次爆发 · Anthropic 官方插件入榜 · 代码知识图谱工具崛起</p>
+          <p class="card-highlight"><span class="i18n-en">Skills ecosystem’s first surge · Anthropic’s official plugins make the board · code knowledge-graph tools rise</span><span class="i18n-zh">Skills 生态首次爆发 · Anthropic 官方插件入榜 · 代码知识图谱工具崛起</span></p>
         </div>
         <div class="card-action">Open <i class="fa-solid fa-arrow-right"></i></div>
       </a>
@@ -623,7 +634,7 @@ body::after {
           <span class="card-org">Hmbown /</span>
           <div class="card-repo">DeepSeek-TUI</div>
           <div class="card-stars"><i class="fa-solid fa-star"></i> +5,787 today</div>
-          <p class="card-highlight">AI Agent 基础设施生产化 · 终端原生工具崛起 · Rust 实现的极简终端 Agent</p>
+          <p class="card-highlight"><span class="i18n-en">AI-agent infrastructure goes production · terminal-native tools rise · a minimalist terminal agent built in Rust</span><span class="i18n-zh">AI Agent 基础设施生产化 · 终端原生工具崛起 · Rust 实现的极简终端 Agent</span></p>
         </div>
         <div class="card-action">Open <i class="fa-solid fa-arrow-right"></i></div>
       </a>
@@ -748,5 +759,9 @@ body::after {
   }, { passive: true });
 </script>
 
+<script>
+/* i18n segmented toggle */
+(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();
+</script>
 </body>
 </html>
