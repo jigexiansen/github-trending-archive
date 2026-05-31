@@ -45,7 +45,7 @@ GitHub Trending 每 24 小时重置一次。那些今天备受瞩目的项目，
 ## 📂 浏览报告
 
 <details open>
-<summary><strong>2026 年 5 月</strong> — 5 份报告</summary>
+<summary><strong>2026 年 5 月</strong> — 6 份报告</summary>
 
 | 日期 | 当日榜首 | 亮点 |
 |------|---------|------|
@@ -79,7 +79,7 @@ git clone https://github.com/jigexiansen/github-trending-archive
 cd github-trending-archive
 
 # 直接打开任意报告
-open reports/2026/05/2026-05-28.html
+open reports/2026/05/28.html
 ```
 
 不需要安装，不需要配置，直接打开。
