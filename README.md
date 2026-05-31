@@ -62,7 +62,7 @@ Each daily report is a single, self-contained HTML file:
 
 ## ⚙️ How reports are made
 
-Every day, [Claude Code](https://claude.ai/code) scrapes `github.com/trending`, ranks the top 10 by today's stars, rewrites each description in Chinese, generates the visual report, and commits it here.
+Every day, [Claude Code](https://claude.ai/code) scrapes `github.com/trending`, ranks the top 10 by today's stars, writes a bilingual description (English + 中文), generates the visual report, and commits it here.
 
 The data is real — nothing is fabricated or estimated. If something looks wrong, it was wrong on GitHub too (or it's a bug worth reporting).
 
