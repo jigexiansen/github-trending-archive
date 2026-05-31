@@ -45,7 +45,7 @@ Each daily report is a single, self-contained HTML file:
 ## 📂 Browse
 
 <details open>
-<summary><strong>2026 · May</strong> — 5 reports</summary>
+<summary><strong>2026 · May</strong> — 6 reports</summary>
 
 | Date | Top Project | Highlights |
 |------|------------|-----------|
@@ -79,7 +79,7 @@ git clone https://github.com/jigexiansen/github-trending-archive
 cd github-trending-archive
 
 # Open any report directly
-open reports/2026/05/2026-05-28.html
+open reports/2026/05/28.html
 ```
 
 No setup. No install. Just open.
