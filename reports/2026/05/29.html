@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GitHub Trending · 2026-05-29</title>
-<meta name="description" content="2026年5月29日 GitHub Trending 前10项目 · Bauhaus风格日报">
+<meta name="description" content="Top 10 GitHub Trending projects on May 29, 2026 · Bauhaus-style daily report">
 <script src="https://kit.fontawesome.com/371954d95b.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
@@ -66,7 +67,7 @@ body {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 0;
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 48px 40px 40px;
 }
@@ -181,7 +182,7 @@ body {
 
 /* ── MAIN LAYOUT ── */
 .main-wrap {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 48px 40px 80px;
   display: grid;
@@ -512,9 +513,19 @@ body {
   .header-inner { padding: 32px 20px; }
   .site-footer { padding: 18px 20px; }
 }
+
+/* ── i18n ── */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:18px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
 </style>
 </head>
 <body>
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
 
 <!-- ARC-NAV -->
 <style>
@@ -607,7 +618,7 @@ body {
           <span class="star-count">+4,698</span>
           <div class="star-bar-track"><div class="star-bar-fill" data-w="100"></div></div>
         </div>
-        <p class="card-desc">AI大模型驱动的短视频一键生成工具，自动处理脚本、配音、字幕与素材拼接，内容创作全链路自动化</p>
+        <p class="card-desc"><span class="i18n-en">An LLM-driven one-click short-video generator that handles script, voiceover, subtitles and footage stitching — end-to-end automation for content creation.</span><span class="i18n-zh">AI大模型驱动的短视频一键生成工具，自动处理脚本、配音、字幕与素材拼接，内容创作全链路自动化</span></p>
         <div class="card-meta">
           <span class="card-lang"><span class="lang-dot" style="background:#3572A5;"></span>Python</span>
           <span class="card-total"><i class="fa-solid fa-star" style="font-size:9px;opacity:.5;margin-right:3px;"></i>66.2k</span>
@@ -631,7 +642,7 @@ body {
           <span class="star-count">+2,234</span>
           <div class="star-bar-track"><div class="star-bar-fill" data-w="47"></div></div>
         </div>
-        <p class="card-desc">为 AI 编程助手注入「审美基因」的提示词框架，消除模板化输出，让生成内容不再千篇一律</p>
+        <p class="card-desc"><span class="i18n-en">A prompt framework that injects an "aesthetic gene" into AI coding assistants, eliminating templated output so generations stop feeling cookie-cutter.</span><span class="i18n-zh">为 AI 编程助手注入「审美基因」的提示词框架，消除模板化输出，让生成内容不再千篇一律</span></p>
         <div class="card-meta">
           <span class="card-lang"><span class="lang-dot" style="background:#89e051;"></span>Shell</span>
           <span class="card-total"><i class="fa-solid fa-star" style="font-size:9px;opacity:.5;margin-right:3px;"></i>26.3k</span>
@@ -655,7 +666,7 @@ body {
           <span class="star-count">+2,019</span>
           <div class="star-bar-track"><div class="star-bar-fill" data-w="43"></div></div>
         </div>
-        <p class="card-desc">系统化的进阶英语学习路径，覆盖听说读写全方位方法论，专为中文母语者设计的高密度学习指南</p>
+        <p class="card-desc"><span class="i18n-en">A systematic path to advanced English with full listening-speaking-reading-writing methodology — a high-density guide designed for native Chinese speakers.</span><span class="i18n-zh">系统化的进阶英语学习路径，覆盖听说读写全方位方法论，专为中文母语者设计的高密度学习指南</span></p>
         <div class="card-meta">
           <span class="card-lang"><span class="lang-dot" style="background:#555;"></span>N/A</span>
           <span class="card-total"><i class="fa-solid fa-star" style="font-size:9px;opacity:.5;margin-right:3px;"></i>48.4k</span>
@@ -678,7 +689,7 @@ body {
           <span class="star-count">+1,761</span>
           <div class="star-bar-track"><div class="star-bar-fill" data-w="37"></div></div>
         </div>
-        <p class="card-desc">面向所有人的免费域名注册服务，零成本快速建站，大幅降低个人开发者起步门槛</p>
+        <p class="card-desc"><span class="i18n-en">A free domain-registration service open to everyone — zero-cost, fast site setup that dramatically lowers the barrier for indie developers.</span><span class="i18n-zh">面向所有人的免费域名注册服务，零成本快速建站，大幅降低个人开发者起步门槛</span></p>
         <div class="card-meta">
           <span class="card-lang"><span class="lang-dot" style="background:#e34c26;"></span>HTML</span>
           <span class="card-total"><i class="fa-solid fa-star" style="font-size:9px;opacity:.5;margin-right:3px;"></i>170.7k</span>
@@ -702,7 +713,7 @@ body {
           <span class="star-count">+1,730</span>
           <div class="star-bar-track"><div class="star-bar-fill" data-w="37"></div></div>
         </div>
-        <p class="card-desc">可落地的 AI Agent 技能框架与软件开发方法论，通过持久记忆与模块化技能让 Agent 完成复杂工程任务</p>
+        <p class="card-desc"><span class="i18n-en">A practical AI-agent skills framework and software-development methodology — persistent memory and modular skills let agents complete complex engineering tasks.</span><span class="i18n-zh">可落地的 AI Agent 技能框架与软件开发方法论，通过持久记忆与模块化技能让 Agent 完成复杂工程任务</span></p>
         <div class="card-meta">
           <span class="card-lang"><span class="lang-dot" style="background:#89e051;"></span>Shell</span>
           <span class="card-total"><i class="fa-solid fa-star" style="font-size:9px;opacity:.5;margin-right:3px;"></i>211k</span>
@@ -726,7 +737,7 @@ body {
           <span class="star-count">+1,410</span>
           <div class="star-bar-track"><div class="star-bar-fill" data-w="30"></div></div>
         </div>
-        <p class="card-desc">微软开源的 Python 文档转 Markdown 工具，支持 Office、PDF 等多格式批量转换，文档 AI 处理流水线利器</p>
+        <p class="card-desc"><span class="i18n-en">Microsoft's open-source Python document-to-Markdown tool — batch-converts Office, PDF and more; a workhorse for document AI pipelines.</span><span class="i18n-zh">微软开源的 Python 文档转 Markdown 工具，支持 Office、PDF 等多格式批量转换，文档 AI 处理流水线利器</span></p>
         <div class="card-meta">
           <span class="card-lang"><span class="lang-dot" style="background:#3572A5;"></span>Python</span>
           <span class="card-total"><i class="fa-solid fa-star" style="font-size:9px;opacity:.5;margin-right:3px;"></i>127.7k</span>
@@ -749,7 +760,7 @@ body {
           <span class="star-count">+1,385</span>
           <div class="star-bar-track"><div class="star-bar-fill" data-w="29"></div></div>
         </div>
-        <p class="card-desc">面向 Claude Code、Codex 等主流 AI 编程助手的技能库与性能优化体系，集技能、记忆、安全于一体</p>
+        <p class="card-desc"><span class="i18n-en">A skills library and performance-optimization system for mainstream AI coding assistants like Claude Code and Codex — skills, memory and security in one.</span><span class="i18n-zh">面向 Claude Code、Codex 等主流 AI 编程助手的技能库与性能优化体系，集技能、记忆、安全于一体</span></p>
         <div class="card-meta">
           <span class="card-lang"><span class="lang-dot" style="background:#f1e05a;"></span>JavaScript</span>
           <span class="card-total"><i class="fa-solid fa-star" style="font-size:9px;opacity:.5;margin-right:3px;"></i>197.2k</span>
@@ -773,7 +784,7 @@ body {
           <span class="star-count">+1,066</span>
           <div class="star-bar-track"><div class="star-bar-fill" data-w="23"></div></div>
         </div>
-        <p class="card-desc">从零造轮子的编程进阶指南，收录数十个经典技术的手写实现教程，以实战夯实底层原理</p>
+        <p class="card-desc"><span class="i18n-en">A from-scratch "build your own" guide collecting dozens of hands-on tutorials that reimplement classic technologies to cement the fundamentals.</span><span class="i18n-zh">从零造轮子的编程进阶指南，收录数十个经典技术的手写实现教程，以实战夯实底层原理</span></p>
         <div class="card-meta">
           <span class="card-lang"><span class="lang-dot" style="background:#083fa1;"></span>Markdown</span>
           <span class="card-total"><i class="fa-solid fa-star" style="font-size:9px;opacity:.5;margin-right:3px;"></i>506.5k</span>
@@ -796,7 +807,7 @@ body {
           <span class="star-count">+761</span>
           <div class="star-bar-track"><div class="star-bar-fill" data-w="16"></div></div>
         </div>
-        <p class="card-desc">一份专门消除 AI 写作痕迹的提示词技巧集，让 AI 产出的文字更自然、更有个人风格</p>
+        <p class="card-desc"><span class="i18n-en">A set of prompt techniques dedicated to erasing the traces of AI writing, making AI-produced text read more natural and more personal.</span><span class="i18n-zh">一份专门消除 AI 写作痕迹的提示词技巧集，让 AI 产出的文字更自然、更有个人风格</span></p>
         <div class="card-meta">
           <span class="card-lang"><span class="lang-dot" style="background:#555;"></span>N/A</span>
           <span class="card-total"><i class="fa-solid fa-star" style="font-size:9px;opacity:.5;margin-right:3px;"></i>6.4k</span>
@@ -820,7 +831,7 @@ body {
           <span class="star-count">+493</span>
           <div class="star-bar-track"><div class="star-bar-fill" data-w="10"></div></div>
         </div>
-        <p class="card-desc">Salesforce 的开源替代品，以 AI 优先理念重新设计现代 CRM，高度自定义，面向未来工作流</p>
+        <p class="card-desc"><span class="i18n-en">An open-source Salesforce alternative that reimagines the modern CRM with an AI-first philosophy — highly customizable and built for future workflows.</span><span class="i18n-zh">Salesforce 的开源替代品，以 AI 优先理念重新设计现代 CRM，高度自定义，面向未来工作流</span></p>
         <div class="card-meta">
           <span class="card-lang"><span class="lang-dot" style="background:#3178c6;"></span>TypeScript</span>
           <span class="card-total"><i class="fa-solid fa-star" style="font-size:9px;opacity:.5;margin-right:3px;"></i>47.8k</span>
@@ -906,7 +917,7 @@ body {
         趋势洞察
       </div>
       <p class="insight-text">
-        AI 生态今日呈多层次爆发：工具链（MoneyPrinterTurbo、taste-skill）、Agent 技能框架（superpowers、ECC）乃至「反 AI 痕迹」工具（stop-slop）同步涌现，开发者关注重心已从「能用 AI」演进到「用好 AI」。Python 稳居首位，Shell 脚本以轻量优势异军突起，免费域名服务则提示基础设施普惠化与内容创作需求正同步加速。
+        <span class="i18n-en">The AI ecosystem erupts on multiple levels today: toolchains (MoneyPrinterTurbo, taste-skill), agent skill frameworks (superpowers, ECC) and even “anti-AI-trace” tools (stop-slop) emerge in lockstep — developers’ focus has shifted from “being able to use AI” to “using AI well.” Python holds the top spot, Shell scripting breaks out on its lightweight edge, and free domain services signal that infrastructure democratization and content-creation demand are accelerating together.</span><span class="i18n-zh">AI 生态今日呈多层次爆发：工具链（MoneyPrinterTurbo、taste-skill）、Agent 技能框架（superpowers、ECC）乃至「反 AI 痕迹」工具（stop-slop）同步涌现，开发者关注重心已从「能用 AI」演进到「用好 AI」。Python 稳居首位，Shell 脚本以轻量优势异军突起，免费域名服务则提示基础设施普惠化与内容创作需求正同步加速。</span>
       </p>
     </div>
 
@@ -960,5 +971,9 @@ body {
 })();
 </script>
 
+<script>
+/* i18n segmented toggle */
+(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();
+</script>
 </body>
 </html>
