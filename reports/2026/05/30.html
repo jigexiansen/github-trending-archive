@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GitHub Trending · 2026-05-30</title>
-<meta name="description" content="GitHub Trending 每日归档 · 2026年5月30日 · Top 10 开源项目">
+<meta name="description" content="GitHub Trending daily archive · May 30, 2026 · Top 10 open-source projects">
 <script src="https://kit.fontawesome.com/371954d95b.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400&display=swap" rel="stylesheet">
@@ -104,7 +105,7 @@ body::before {
 .deco-bottom-right { bottom: 20px; right: 30px; border-bottom: 2px solid var(--gold); border-right: 2px solid var(--gold); }
 
 .header-inner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
@@ -188,7 +189,7 @@ body::before {
 
 /* ── LAYOUT ── */
 .layout {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 40px 32px;
   display: grid;
@@ -498,9 +499,19 @@ footer {
   transform: rotate(45deg);
   opacity: 0.5;
 }
+
+/* ── i18n ── */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:18px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
 </style>
 </head>
 <body>
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
 
 <!-- ARC NAV -->
 <style>
@@ -583,7 +594,7 @@ footer {
             <span class="repo-sep">&thinsp;/&thinsp;</span>
             <span class="repo-name"><a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener">MoneyPrinterTurbo</a></span>
           </div>
-          <p class="card-desc">调用 AI 大模型全自动生成带配音、字幕的高清短视频，一键批量产出，直接适配抖音等竖屏平台。</p>
+          <p class="card-desc"><span class="i18n-en">Fully automated HD short-video generation with LLMs — voiceover and subtitles included, batch-produced in one click and ready for vertical platforms like Douyin.</span><span class="i18n-zh">调用 AI 大模型全自动生成带配音、字幕的高清短视频，一键批量产出，直接适配抖音等竖屏平台。</span></p>
         </div>
       </div>
       <div class="star-bar-wrap">
@@ -610,7 +621,7 @@ footer {
             <span class="repo-sep">&thinsp;/&thinsp;</span>
             <span class="repo-name"><a href="https://github.com/Leonxlnx/taste-skill" target="_blank" rel="noopener">taste-skill</a></span>
           </div>
-          <p class="card-desc">一份 Prompt 技巧集，专治 AI 输出废话和无聊开场白，帮模型找回克制与品味，告别机器腔套话。</p>
+          <p class="card-desc"><span class="i18n-en">A collection of prompt techniques that cures AI waffle and dull openers, helping models rediscover restraint and taste — goodbye robotic boilerplate.</span><span class="i18n-zh">一份 Prompt 技巧集，专治 AI 输出废话和无聊开场白，帮模型找回克制与品味，告别机器腔套话。</span></p>
         </div>
       </div>
       <div class="star-bar-wrap">
@@ -637,7 +648,7 @@ footer {
             <span class="repo-sep">&thinsp;/&thinsp;</span>
             <span class="repo-name"><a href="https://github.com/microsoft/markitdown" target="_blank" rel="noopener">markitdown</a></span>
           </div>
-          <p class="card-desc">微软出品的全能文档→Markdown 转换库，PDF/Office/图片一网打尽，RAG 流水线预处理必备工具。</p>
+          <p class="card-desc"><span class="i18n-en">Microsoft's all-in-one document-to-Markdown converter — PDF, Office and images all covered — an essential preprocessing tool for RAG pipelines.</span><span class="i18n-zh">微软出品的全能文档→Markdown 转换库，PDF/Office/图片一网打尽，RAG 流水线预处理必备工具。</span></p>
         </div>
       </div>
       <div class="star-bar-wrap">
@@ -664,7 +675,7 @@ footer {
             <span class="repo-sep">&thinsp;/&thinsp;</span>
             <span class="repo-name"><a href="https://github.com/byoungd/English-level-up-tips" target="_blank" rel="noopener">English-level-up-tips</a></span>
           </div>
-          <p class="card-desc">面向中文程序员的英语进阶指南，听说读写全维度覆盖，方法论扎实可落地，持续更新、口碑经久不衰。</p>
+          <p class="card-desc"><span class="i18n-en">An English-improvement guide for Chinese-speaking developers covering listening, speaking, reading and writing — solid, actionable methodology, continuously updated and long beloved.</span><span class="i18n-zh">面向中文程序员的英语进阶指南，听说读写全维度覆盖，方法论扎实可落地，持续更新、口碑经久不衰。</span></p>
         </div>
       </div>
       <div class="star-bar-wrap">
@@ -690,7 +701,7 @@ footer {
             <span class="repo-sep">&thinsp;/&thinsp;</span>
             <span class="repo-name"><a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">ECC</a></span>
           </div>
-          <p class="card-desc">Agent 执行框架性能优化系统，整合 Skills、Memory、Security 多模块，大幅提升 Harness 吞吐量与可维护性。</p>
+          <p class="card-desc"><span class="i18n-en">A performance-optimization system for agent execution frameworks, integrating Skills, Memory and Security modules to greatly boost harness throughput and maintainability.</span><span class="i18n-zh">Agent 执行框架性能优化系统，整合 Skills、Memory、Security 多模块，大幅提升 Harness 吞吐量与可维护性。</span></p>
         </div>
       </div>
       <div class="star-bar-wrap">
@@ -717,7 +728,7 @@ footer {
             <span class="repo-sep">&thinsp;/&thinsp;</span>
             <span class="repo-name"><a href="https://github.com/DigitalPlatDev/FreeDomain" target="_blank" rel="noopener">FreeDomain</a></span>
           </div>
-          <p class="card-desc">DigitalPlat 提供的免费二级域名服务，人人可申请，适合个人项目与开源站点快速获得可信域名。</p>
+          <p class="card-desc"><span class="i18n-en">DigitalPlat's free subdomain service, open to everyone — a quick way for personal projects and open-source sites to get a trustworthy domain.</span><span class="i18n-zh">DigitalPlat 提供的免费二级域名服务，人人可申请，适合个人项目与开源站点快速获得可信域名。</span></p>
         </div>
       </div>
       <div class="star-bar-wrap">
@@ -744,7 +755,7 @@ footer {
             <span class="repo-sep">&thinsp;/&thinsp;</span>
             <span class="repo-name"><a href="https://github.com/run-llama/liteparse" target="_blank" rel="noopener">liteparse</a></span>
           </div>
-          <p class="card-desc">LlamaIndex 团队出品的 Rust 原生文档解析器，速度极快，结构化提取 PDF 等主流格式，RAG 场景利器。</p>
+          <p class="card-desc"><span class="i18n-en">A Rust-native document parser from the LlamaIndex team — blazing fast, with structured extraction from PDF and other common formats; a RAG powerhouse.</span><span class="i18n-zh">LlamaIndex 团队出品的 Rust 原生文档解析器，速度极快，结构化提取 PDF 等主流格式，RAG 场景利器。</span></p>
         </div>
       </div>
       <div class="star-bar-wrap">
@@ -771,7 +782,7 @@ footer {
             <span class="repo-sep">&thinsp;/&thinsp;</span>
             <span class="repo-name"><a href="https://github.com/hardikpandya/stop-slop" target="_blank" rel="noopener">stop-slop</a></span>
           </div>
-          <p class="card-desc">一份去 AI 味的写作技巧文件，专治机器腔与模板腔，让 AI 辅助写作的文章读起来更真实自然。</p>
+          <p class="card-desc"><span class="i18n-en">A writing-style guide for stripping out the "AI smell" — curing robotic, templated phrasing so AI-assisted writing reads natural and genuine.</span><span class="i18n-zh">一份去 AI 味的写作技巧文件，专治机器腔与模板腔，让 AI 辅助写作的文章读起来更真实自然。</span></p>
         </div>
       </div>
       <div class="star-bar-wrap">
@@ -798,7 +809,7 @@ footer {
             <span class="repo-sep">&thinsp;/&thinsp;</span>
             <span class="repo-name"><a href="https://github.com/twentyhq/twenty" target="_blank" rel="noopener">twenty</a></span>
           </div>
-          <p class="card-desc">以 AI 为核心设计的开源 CRM，Salesforce 的现代替代品，架构清晰、可自托管，持续快速迭代中。</p>
+          <p class="card-desc"><span class="i18n-en">An AI-first open-source CRM and a modern Salesforce alternative — clean architecture, self-hostable, and iterating fast.</span><span class="i18n-zh">以 AI 为核心设计的开源 CRM，Salesforce 的现代替代品，架构清晰、可自托管，持续快速迭代中。</span></p>
         </div>
       </div>
       <div class="star-bar-wrap">
@@ -825,7 +836,7 @@ footer {
             <span class="repo-sep">&thinsp;/&thinsp;</span>
             <span class="repo-name"><a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener">claude-code</a></span>
           </div>
-          <p class="card-desc">Anthropic 官方命令行 AI 编程工具，Agent 模式深度集成终端与代码库，可自主完成复杂工程任务。</p>
+          <p class="card-desc"><span class="i18n-en">Anthropic's official command-line AI coding tool — agent mode integrates deeply with terminal and codebase to autonomously complete complex engineering tasks.</span><span class="i18n-zh">Anthropic 官方命令行 AI 编程工具，Agent 模式深度集成终端与代码库，可自主完成复杂工程任务。</span></p>
         </div>
       </div>
       <div class="star-bar-wrap">
@@ -904,10 +915,10 @@ footer {
     </div>
 
     <div class="sidebar-panel">
-      <div class="panel-title">今日洞察</div>
+      <div class="panel-title"><span class="i18n-en">Today's Insight</span><span class="i18n-zh">今日洞察</span></div>
       <div class="panel-sub">Trend Insight · May 30</div>
       <p class="insight-text">
-        本日趋势呈现 <strong>AI 效率工具</strong>与内容生产化的双线并进：AI 视频生成与反 AI 套话工具的同步爆发，折射出开发者对「高效批量产出」与「品质精准输出」的双重诉求。<strong>Python</strong> 以 41.5% 今日加星权重延续对 AI 生态的主导地位，Shell 紧随其后，工具链多样化趋势显著。文档解析、免费域名、开源 CRM 等<strong>基础设施项目</strong>集体上榜，社区对实用型开发工具的热情持续高涨。
+        <span class="i18n-en">Today’s trend runs on two parallel tracks — <strong>AI efficiency tools</strong> and the productization of content: the simultaneous surge of AI video generation and anti-AI-slop tools reflects developers’ twin demands for “efficient batch output” and “precise, quality output.” <strong>Python</strong> keeps its grip on the AI ecosystem with 41.5% of today’s star weight, with Shell close behind, signaling a clearly diversifying toolchain. <strong>Infrastructure projects</strong> like document parsers, free domains and open-source CRMs all made the board, as the community’s appetite for practical dev tools keeps climbing.</span><span class="i18n-zh">本日趋势呈现 <strong>AI 效率工具</strong>与内容生产化的双线并进：AI 视频生成与反 AI 套话工具的同步爆发，折射出开发者对「高效批量产出」与「品质精准输出」的双重诉求。<strong>Python</strong> 以 41.5% 今日加星权重延续对 AI 生态的主导地位，Shell 紧随其后，工具链多样化趋势显著。文档解析、免费域名、开源 CRM 等<strong>基础设施项目</strong>集体上榜，社区对实用型开发工具的热情持续高涨。</span>
       </p>
     </div>
 
@@ -969,6 +980,9 @@ footer {
     requestAnimationFrame(shimmer);
   })();
 })();
+
+/* i18n segmented toggle */
+(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();
 </script>
 </body>
 </html>
