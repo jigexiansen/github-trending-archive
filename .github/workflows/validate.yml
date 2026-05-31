@@ -14,31 +14,30 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check filename convention (YYYY-MM-DD.html)
+      - name: Check filename convention (DD.html)
         run: |
           failed=0
           while IFS= read -r f; do
             name=$(basename "$f")
-            if ! echo "$name" | grep -qE '^[0-9]{4}-[0-9]{2}-[0-9]{2}\.html$'; then
-              echo "❌  Bad filename: $f"
+            if ! echo "$name" | grep -qE '^[0-9]{2}\.html$'; then
+              echo "❌  Bad filename: $f  (expected DD.html, e.g. 28.html)"
               failed=1
             fi
           done < <(find reports -name "*.html")
-          [ $failed -eq 0 ] && echo "✅  All filenames match YYYY-MM-DD.html"
+          [ $failed -eq 0 ] && echo "✅  All filenames match DD.html"
           exit $failed
 
-      - name: Check directory structure (reports/YYYY/MM/)
+      - name: Check directory structure (reports/YYYY/MM/DD.html)
         run: |
           failed=0
           while IFS= read -r f; do
-            name=$(basename "$f" .html)
-            expected_year="${name:0:4}"
-            expected_month="${name:5:2}"
-            actual_dir=$(dirname "$f")
-            actual_month=$(basename "$actual_dir")
-            actual_year=$(basename "$(dirname "$actual_dir")")
-            if [ "$actual_year" != "$expected_year" ] || [ "$actual_month" != "$expected_month" ]; then
-              echo "❌  Wrong location: $f  (expected reports/$expected_year/$expected_month/)"
+            day=$(basename "$f" .html)
+            month=$(basename "$(dirname "$f")")
+            year=$(basename "$(dirname "$(dirname "$f")")")
+            if ! echo "$year"  | grep -qE '^[0-9]{4}$' \
+               || ! echo "$month" | grep -qE '^(0[1-9]|1[0-2])$' \
+               || ! echo "$day"   | grep -qE '^(0[1-9]|[12][0-9]|3[01])$'; then
+              echo "❌  Wrong location: $f  (expected reports/YYYY/MM/DD.html)"
               failed=1
             fi
           done < <(find reports -name "*.html")
