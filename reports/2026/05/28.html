@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GitHub Trending · 2026-05-28</title>
@@ -69,7 +70,7 @@
   }
 
   .container {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
     position: relative;
@@ -635,9 +636,19 @@
     .stats-row { grid-template-columns: repeat(2, 1fr); }
     .sidebar { order: -1; }
   }
+
+/* ── i18n ── */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:18px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
 </style>
 </head>
 <body>
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
 
 <style>
 .arc-nav{position:sticky;top:0;z-index:9999;height:38px;display:flex;align-items:center;padding:0 20px;gap:0;background:rgba(3,6,14,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;}
@@ -713,7 +724,7 @@
           <div class="card-meta">
             <div class="repo-path">Lum1104 /</div>
             <div class="repo-name">Understand-Anything</div>
-            <div class="repo-desc">将任意代码库转化为可交互知识图谱——能探索、能搜索、能问答，让陌生系统一目了然</div>
+            <div class="repo-desc"><span class="i18n-en">Turns any codebase into an interactive knowledge graph — explore, search and ask questions, making unfamiliar systems instantly clear.</span><span class="i18n-zh">将任意代码库转化为可交互知识图谱——能探索、能搜索、能问答，让陌生系统一目了然</span></div>
           </div>
         </div>
         <div class="star-bar-wrap">
@@ -738,7 +749,7 @@
           <div class="card-meta">
             <div class="repo-path">Leonxlnx /</div>
             <div class="repo-name">taste-skill</div>
-            <div class="repo-desc">给 AI 注入审美基因——终结千篇一律的模板化输出，让生成内容真正有品位</div>
+            <div class="repo-desc"><span class="i18n-en">Injects an aesthetic gene into AI — ending cookie-cutter templated output so generated content actually has taste.</span><span class="i18n-zh">给 AI 注入审美基因——终结千篇一律的模板化输出，让生成内容真正有品位</span></div>
           </div>
         </div>
         <div class="star-bar-wrap">
@@ -763,7 +774,7 @@
           <div class="card-meta">
             <div class="repo-path">affaan-m /</div>
             <div class="repo-name">ECC</div>
-            <div class="repo-desc">AI 编程智能体的性能优化框架——集成技能、记忆、安全与研究优先开发，通吃 Claude Code / Codex / Cursor</div>
+            <div class="repo-desc"><span class="i18n-en">A performance-optimization framework for AI coding agents — integrating skills, memory, security and research-first development across Claude Code / Codex / Cursor.</span><span class="i18n-zh">AI 编程智能体的性能优化框架——集成技能、记忆、安全与研究优先开发，通吃 Claude Code / Codex / Cursor</span></div>
           </div>
         </div>
         <div class="star-bar-wrap">
@@ -788,7 +799,7 @@
           <div class="card-meta">
             <div class="repo-path">harry0703 /</div>
             <div class="repo-name">MoneyPrinterTurbo</div>
-            <div class="repo-desc">基于大语言模型的一键短视频生成工具，自动完成脚本、配音、字幕与剪辑全流程</div>
+            <div class="repo-desc"><span class="i18n-en">An LLM-based one-click short-video generator that automates the whole pipeline — script, voiceover, subtitles and editing.</span><span class="i18n-zh">基于大语言模型的一键短视频生成工具，自动完成脚本、配音、字幕与剪辑全流程</span></div>
           </div>
         </div>
         <div class="star-bar-wrap">
@@ -813,7 +824,7 @@
           <div class="card-meta">
             <div class="repo-path">mukul975 /</div>
             <div class="repo-name">Anthropic-Cybersecurity-Skills</div>
-            <div class="repo-desc">754 个结构化网络安全技能库，全面映射 MITRE ATT&amp;CK、NIST CSF 2.0 等五大行业框架</div>
+            <div class="repo-desc"><span class="i18n-en">A structured library of 754 cybersecurity skills, fully mapped to five major industry frameworks including MITRE ATT&amp;CK and NIST CSF 2.0.</span><span class="i18n-zh">754 个结构化网络安全技能库，全面映射 MITRE ATT&amp;CK、NIST CSF 2.0 等五大行业框架</span></div>
           </div>
         </div>
         <div class="star-bar-wrap">
@@ -838,7 +849,7 @@
           <div class="card-meta">
             <div class="repo-path">anthropics /</div>
             <div class="repo-name">knowledge-work-plugins</div>
-            <div class="repo-desc">Anthropic 官方开源插件集，专为知识工作者与 Claude Cowork 深度整合而设计</div>
+            <div class="repo-desc"><span class="i18n-en">Anthropic's official open-source plugin collection, designed for deep integration with knowledge workers and Claude Cowork.</span><span class="i18n-zh">Anthropic 官方开源插件集，专为知识工作者与 Claude Cowork 深度整合而设计</span></div>
           </div>
         </div>
         <div class="star-bar-wrap">
@@ -863,7 +874,7 @@
           <div class="card-meta">
             <div class="repo-path">hardikpandya /</div>
             <div class="repo-name">stop-slop</div>
-            <div class="repo-desc">消除 AI 写作痕迹的技能文件——过滤模板套话，让文字找回真实的人味</div>
+            <div class="repo-desc"><span class="i18n-en">A skill file that erases the traces of AI writing — filtering out templated clichés so text recovers a genuine human voice.</span><span class="i18n-zh">消除 AI 写作痕迹的技能文件——过滤模板套话，让文字找回真实的人味</span></div>
           </div>
         </div>
         <div class="star-bar-wrap">
@@ -888,7 +899,7 @@
           <div class="card-meta">
             <div class="repo-path">twentyhq /</div>
             <div class="repo-name">twenty</div>
-            <div class="repo-desc">原生为 AI 时代而生的 Salesforce 开源替代品——告别昂贵授权，自主掌控企业 CRM</div>
+            <div class="repo-desc"><span class="i18n-en">A Salesforce open-source alternative born for the AI era — say goodbye to expensive licenses and take full control of your enterprise CRM.</span><span class="i18n-zh">原生为 AI 时代而生的 Salesforce 开源替代品——告别昂贵授权，自主掌控企业 CRM</span></div>
           </div>
         </div>
         <div class="star-bar-wrap">
@@ -913,7 +924,7 @@
           <div class="card-meta">
             <div class="repo-path">shiyu-coder /</div>
             <div class="repo-name">Kronos</div>
-            <div class="repo-desc">面向金融市场语言的基础模型——将量化信号与自然语言统一建模，重塑策略研究范式</div>
+            <div class="repo-desc"><span class="i18n-en">A foundation model for the language of financial markets — unifying quantitative signals and natural language to reshape the strategy-research paradigm.</span><span class="i18n-zh">面向金融市场语言的基础模型——将量化信号与自然语言统一建模，重塑策略研究范式</span></div>
           </div>
         </div>
         <div class="star-bar-wrap">
@@ -938,7 +949,7 @@
           <div class="card-meta">
             <div class="repo-path">p-e-w /</div>
             <div class="repo-name">heretic</div>
-            <div class="repo-desc">全自动移除语言模型审查过滤——解锁原始推理能力，还原未经裁剪的完整输出</div>
+            <div class="repo-desc"><span class="i18n-en">Automatically removes language-model content filters — unlocking raw reasoning and restoring uncut, complete output.</span><span class="i18n-zh">全自动移除语言模型审查过滤——解锁原始推理能力，还原未经裁剪的完整输出</span></div>
           </div>
         </div>
         <div class="star-bar-wrap">
@@ -1022,12 +1033,12 @@
       <!-- TREND INSIGHT -->
       <div class="sidebar-card">
         <div class="sidebar-title">// TREND · INSIGHT</div>
-        <div class="insight-text">
+        <div class="insight-text"><span class="i18n-en">Today’s board tells a dual story: <strong>code-understanding infrastructure</strong> and the <strong>anti-AI-slop movement</strong> erupt in tandem.<br><br> <strong>Understand-Anything</strong> crushes the field with 4,465 stars today, confirming developers’ acute need to "read unfamiliar codebases" — knowledge graphs are becoming the new entry point for AI-assisted development.<br><br> The collective rise of taste-skill and stop-slop reflects the community’s shared fatigue with homogenized AI content: <strong>anti-slop skills are becoming new infrastructure</strong>. ECC’s strong showing proves the Claude Code toolchain ecosystem is maturing fast.</span><span class="i18n-zh">
           今日榜单呈现出双重叙事：<strong>代码理解基础设施</strong>与<strong>反 AI 套话运动</strong>同步爆发。<br><br>
           <strong>Understand-Anything</strong> 以 4,465 今日 star 碾压全场，印证开发者对"读懂陌生代码库"的强烈刚需——知识图谱正成为 AI 辅助开发的新入口。<br><br>
-          taste-skill 与 stop-slop 的集体走红则折射出社区对 AI 生成内容同质化的集体厌倦：<strong>反套话技能正在成为新的基础设施</strong>。ECC 的强劲表现证明 Claude Code 生态工具链正快速成熟。
+          taste-skill 与 stop-slop 的集体走红则折射出社区对 AI 生成内容同质化的集体厌倦：<strong>反套话技能正在成为新的基础设施</strong>。ECC 的强劲表现证明 Claude Code 生态工具链正快速成熟。</span>
           <div class="insight-highlight">
-            今日 AI 相关项目占比 90% · 合计 12,896 今日 star
+            <span class="i18n-en">AI-related projects make up 90% of today’s board · 12,896 stars today in total</span><span class="i18n-zh">今日 AI 相关项目占比 90% · 合计 12,896 今日 star</span>
           </div>
         </div>
       </div>
@@ -1098,5 +1109,9 @@
   if (langChart) langObserver.observe(langChart);
 </script>
 
+<script>
+/* i18n segmented toggle */
+(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();
+</script>
 </body>
 </html>
