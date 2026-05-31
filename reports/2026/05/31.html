@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GitHub Trending · 2026-05-31</title>
-<meta name="description" content="2026年5月31日 GitHub 热门项目榜单 — Art Deco Edition">
+<meta name="description" content="GitHub's top trending repositories on May 31, 2026 — Art Deco Edition">
 <script src="https://kit.fontawesome.com/371954d95b.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -356,9 +357,16 @@ body {
 }
 .header-inner { animation: fadeSlide .7s ease both; }
 .stat-chips   { animation: fadeSlide .7s ease .15s both; }
+
+/* ── i18n ── */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:18px;right:18px;z-index:10000;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;padding:6px 13px;border-radius:16px;cursor:pointer;background:rgba(18,16,9,.72);color:var(--cream,#f5f0e1);border:1px solid var(--gold-d,rgba(255,255,255,.3));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:.78;transition:opacity .15s,border-color .15s,color .15s;}
+#langToggle:hover{opacity:1;color:var(--gold-l,#fff);border-color:var(--gold,rgba(255,255,255,.7));}
 </style>
 </head>
 <body>
+<button id="langToggle" type="button" aria-label="Switch language" title="Switch language"><span class="i18n-en">中文</span><span class="i18n-zh">EN</span></button>
 
 <!-- ARC NAV -->
 <style>
@@ -421,7 +429,7 @@ body {
 <!-- MAIN -->
 <div class="main-wrap">
   <main>
-    <div class="section-label">今日热榜</div>
+    <div class="section-label"><span class="i18n-en">Trending Today</span><span class="i18n-zh">今日热榜</span></div>
     <div class="cards" id="cards">
 
       <!-- 1 -->
@@ -432,7 +440,7 @@ body {
             <span class="card-org">harry0703 /</span>
             <a class="card-repo" href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener">MoneyPrinterTurbo</a>
           </div>
-          <p class="card-desc">调用大模型一键生成带字幕、配音的短视频，支持多平台账号批量发布。</p>
+          <p class="card-desc"><span class="i18n-en">One-click short-video generation with LLMs — auto subtitles and voiceover, plus batch publishing across multiple platform accounts.</span><span class="i18n-zh">调用大模型一键生成带字幕、配音的短视频，支持多平台账号批量发布。</span></p>
           <div class="card-stars-wrap">
             <div class="card-stars-row">
               <i class="fa-solid fa-star star-icon"></i>
@@ -457,7 +465,7 @@ body {
             <span class="card-org">microsoft /</span>
             <a class="card-repo" href="https://github.com/microsoft/markitdown" target="_blank" rel="noopener">markitdown</a>
           </div>
-          <p class="card-desc">将 PDF、Word、PPT、图片等多格式文件批量转换为 Markdown，无缝接入 AI 流水线。</p>
+          <p class="card-desc"><span class="i18n-en">Batch-converts PDF, Word, PPT, images and more into Markdown for seamless AI-pipeline ingestion.</span><span class="i18n-zh">将 PDF、Word、PPT、图片等多格式文件批量转换为 Markdown，无缝接入 AI 流水线。</span></p>
           <div class="card-stars-wrap">
             <div class="card-stars-row">
               <i class="fa-solid fa-star star-icon"></i>
@@ -482,7 +490,7 @@ body {
             <span class="card-org">run-llama /</span>
             <a class="card-repo" href="https://github.com/run-llama/liteparse" target="_blank" rel="noopener">liteparse</a>
           </div>
-          <p class="card-desc">Rust 驱动的高速文档解析引擎，专为 RAG 管道与 LLM 前处理场景设计。</p>
+          <p class="card-desc"><span class="i18n-en">A Rust-powered high-speed document parsing engine, purpose-built for RAG pipelines and LLM preprocessing.</span><span class="i18n-zh">Rust 驱动的高速文档解析引擎，专为 RAG 管道与 LLM 前处理场景设计。</span></p>
           <div class="card-stars-wrap">
             <div class="card-stars-row">
               <i class="fa-solid fa-star star-icon"></i>
@@ -507,7 +515,7 @@ body {
             <span class="card-org">affaan-m /</span>
             <a class="card-repo" href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">ECC</a>
           </div>
-          <p class="card-desc">跨平台 AI 编程 Agent 性能调优框架，覆盖 Claude Code、Codex、Cursor 全系列工具链。</p>
+          <p class="card-desc"><span class="i18n-en">A cross-platform performance-tuning framework for AI coding agents, covering the Claude Code, Codex and Cursor toolchains.</span><span class="i18n-zh">跨平台 AI 编程 Agent 性能调优框架，覆盖 Claude Code、Codex、Cursor 全系列工具链。</span></p>
           <div class="card-stars-wrap">
             <div class="card-stars-row">
               <i class="fa-solid fa-star star-icon"></i>
@@ -532,7 +540,7 @@ body {
             <span class="card-org">codecrafters-io /</span>
             <a class="card-repo" href="https://github.com/codecrafters-io/build-your-own-x" target="_blank" rel="noopener">build-your-own-x</a>
           </div>
-          <p class="card-desc">从零复刻 Git、Docker、数据库等经典技术的结构化学习路线，体系化掌握底层工程原理。</p>
+          <p class="card-desc"><span class="i18n-en">Structured learning paths that rebuild Git, Docker, databases and other classics from scratch to master the engineering underneath.</span><span class="i18n-zh">从零复刻 Git、Docker、数据库等经典技术的结构化学习路线，体系化掌握底层工程原理。</span></p>
           <div class="card-stars-wrap">
             <div class="card-stars-row">
               <i class="fa-solid fa-star star-icon"></i>
@@ -557,7 +565,7 @@ body {
             <span class="card-org">OpenBMB /</span>
             <a class="card-repo" href="https://github.com/OpenBMB/VoxCPM" target="_blank" rel="noopener">VoxCPM</a>
           </div>
-          <p class="card-desc">无分词器架构的多语言 TTS 模型，支持零样本声音克隆与跨语种语音生成。</p>
+          <p class="card-desc"><span class="i18n-en">A tokenizer-free multilingual TTS model supporting zero-shot voice cloning and cross-lingual speech generation.</span><span class="i18n-zh">无分词器架构的多语言 TTS 模型，支持零样本声音克隆与跨语种语音生成。</span></p>
           <div class="card-stars-wrap">
             <div class="card-stars-row">
               <i class="fa-solid fa-star star-icon"></i>
@@ -582,7 +590,7 @@ body {
             <span class="card-org">ruvnet /</span>
             <a class="card-repo" href="https://github.com/ruvnet/RuView" target="_blank" rel="noopener">RuView</a>
           </div>
-          <p class="card-desc">将普通 WiFi 信号转化为室内空间感知与人体生命体征实时监测系统，完全无需摄像头。</p>
+          <p class="card-desc"><span class="i18n-en">Turns ordinary WiFi signals into indoor spatial sensing and real-time vital-sign monitoring — no camera required.</span><span class="i18n-zh">将普通 WiFi 信号转化为室内空间感知与人体生命体征实时监测系统，完全无需摄像头。</span></p>
           <div class="card-stars-wrap">
             <div class="card-stars-row">
               <i class="fa-solid fa-star star-icon"></i>
@@ -607,7 +615,7 @@ body {
             <span class="card-org">anthropics /</span>
             <a class="card-repo" href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener">claude-code</a>
           </div>
-          <p class="card-desc">Anthropic 官方终端 AI 编程助手，深度理解代码库上下文，自动执行日常开发任务。</p>
+          <p class="card-desc"><span class="i18n-en">Anthropic's official terminal AI coding assistant — understands codebase context deeply and automates everyday dev tasks.</span><span class="i18n-zh">Anthropic 官方终端 AI 编程助手，深度理解代码库上下文，自动执行日常开发任务。</span></p>
           <div class="card-stars-wrap">
             <div class="card-stars-row">
               <i class="fa-solid fa-star star-icon"></i>
@@ -632,7 +640,7 @@ body {
             <span class="card-org">Crosstalk-Solutions /</span>
             <a class="card-repo" href="https://github.com/Crosstalk-Solutions/project-nomad" target="_blank" rel="noopener">project-nomad</a>
           </div>
-          <p class="card-desc">完全离线的自给自足生存计算机，内置 AI 推理、急救手册、导航等关键工具集。</p>
+          <p class="card-desc"><span class="i18n-en">A fully offline, self-sufficient survival computer with built-in AI inference, first-aid manuals, navigation and more.</span><span class="i18n-zh">完全离线的自给自足生存计算机，内置 AI 推理、急救手册、导航等关键工具集。</span></p>
           <div class="card-stars-wrap">
             <div class="card-stars-row">
               <i class="fa-solid fa-star star-icon"></i>
@@ -657,7 +665,7 @@ body {
             <span class="card-org">anthropics /</span>
             <a class="card-repo" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">skills</a>
           </div>
-          <p class="card-desc">Anthropic 官方 Agent Skills 公开仓库，可直接插件化接入 Claude 工作流与自动化任务。</p>
+          <p class="card-desc"><span class="i18n-en">Anthropic's official Agent Skills repository — plug directly into Claude workflows and automation tasks.</span><span class="i18n-zh">Anthropic 官方 Agent Skills 公开仓库，可直接插件化接入 Claude 工作流与自动化任务。</span></p>
           <div class="card-stars-wrap">
             <div class="card-stars-row">
               <i class="fa-solid fa-star star-icon"></i>
@@ -679,7 +687,7 @@ body {
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <div class="section-label">语言分布</div>
+    <div class="section-label"><span class="i18n-en">Languages</span><span class="i18n-zh">语言分布</span></div>
     <div class="lang-chart-wrap">
       <div class="lang-chart-title">By Today's Stars</div>
       <div class="lang-bars" id="langBars">
@@ -721,10 +729,10 @@ body {
       </div>
     </div>
 
-    <div class="section-label">趋势洞察</div>
+    <div class="section-label"><span class="i18n-en">Trend Insight</span><span class="i18n-zh">趋势洞察</span></div>
     <div class="insight-box">
       <div class="insight-title">Analysis</div>
-      <p class="insight-text">AI 工具链今日持续霸榜，MoneyPrinterTurbo 与 markitdown 分别以 2768 和 2470 颗星蝉联前两位，Python 生态在 AI 内容生产与文档处理场景中的统治力愈发凸显。Rust 凭借 liteparse 与 RuView 合计斩获逾 1580 星，系统级 AI 推理与感知场景正成为 Rust 的新主战场。Anthropic 双项目同步上榜，折射出开源 AI 工程工具链的需求已从模型研究走向全链路配套生态建设。</p>
+      <p class="insight-text"><span class="i18n-en">AI toolchains keep dominating the board today: MoneyPrinterTurbo and markitdown hold the top two spots with 2,768 and 2,470 new stars, underscoring Python's growing grip on AI content production and document processing. Rust pulls in over 1,580 combined stars through liteparse and RuView, making system-level AI inference and sensing its new frontier. Anthropic landing two projects at once reflects open-source AI engineering demand shifting from model research toward full-stack tooling ecosystems.</span><span class="i18n-zh">AI 工具链今日持续霸榜，MoneyPrinterTurbo 与 markitdown 分别以 2768 和 2470 颗星蝉联前两位，Python 生态在 AI 内容生产与文档处理场景中的统治力愈发凸显。Rust 凭借 liteparse 与 RuView 合计斩获逾 1580 星，系统级 AI 推理与感知场景正成为 Rust 的新主战场。Anthropic 双项目同步上榜，折射出开源 AI 工程工具链的需求已从模型研究走向全链路配套生态建设。</span></p>
     </div>
   </aside>
 </div>
@@ -777,6 +785,9 @@ const langObs = new IntersectionObserver((entries) => {
   }
 }, { threshold: 0.2 });
 if (langBars) langObs.observe(langBars);
+
+/* i18n toggle */
+(function(){var b=document.getElementById("langToggle");if(!b)return;b.addEventListener("click",function(){var d=document.documentElement;var cur=d.getAttribute("data-lang")==="zh"?"zh":"en";var nx=cur==="zh"?"en":"zh";d.setAttribute("data-lang",nx);d.lang=(nx==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",nx);}catch(e){}});})();
 </script>
 </body>
 </html>
