@@ -62,7 +62,7 @@ GitHub Trending 每 24 小时重置一次。那些今天备受瞩目的项目，
 
 ## ⚙️ 报告是怎么生成的
 
-每天，[Claude Code](https://claude.ai/code) 会抓取 `github.com/trending`，按今日 Star 数排列前 10，提炼每个项目的中文描述，生成视觉报告并推送到这里。
+每天，[Claude Code](https://claude.ai/code) 会抓取 `github.com/trending`，按今日 Star 数排列前 10，提炼每个项目的中英双语描述，生成视觉报告并推送到这里。
 
 数据来源于 GitHub 真实页面，不估算，不捏造。如果某个数字看起来不对，要么是 GitHub 当时就那样，要么是个值得报告的 bug。
 
