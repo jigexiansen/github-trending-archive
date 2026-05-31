@@ -361,12 +361,15 @@ body {
 /* ── i18n ── */
 html[data-lang="en"] .i18n-zh{display:none;}
 html[data-lang="zh"] .i18n-en{display:none;}
-#langToggle{position:fixed;bottom:18px;right:18px;z-index:10000;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;padding:6px 13px;border-radius:16px;cursor:pointer;background:rgba(18,16,9,.72);color:var(--cream,#f5f0e1);border:1px solid var(--gold-d,rgba(255,255,255,.3));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:.78;transition:opacity .15s,border-color .15s,color .15s;}
-#langToggle:hover{opacity:1;color:var(--gold-l,#fff);border-color:var(--gold,rgba(255,255,255,.7));}
+#langToggle{position:fixed;bottom:18px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(18,16,9,.78);border:1px solid var(--gold-d,rgba(255,255,255,.3));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:'JetBrains Mono',monospace;}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:var(--muted,#9e8e60);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:var(--cream,#f5f0e1);}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:var(--gold,#c9a84c);color:var(--bg,#0c0a07);}
 </style>
 </head>
 <body>
-<button id="langToggle" type="button" aria-label="Switch language" title="Switch language"><span class="i18n-en">中文</span><span class="i18n-zh">EN</span></button>
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
 
 <!-- ARC NAV -->
 <style>
@@ -786,8 +789,8 @@ const langObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 if (langBars) langObs.observe(langBars);
 
-/* i18n toggle */
-(function(){var b=document.getElementById("langToggle");if(!b)return;b.addEventListener("click",function(){var d=document.documentElement;var cur=d.getAttribute("data-lang")==="zh"?"zh":"en";var nx=cur==="zh"?"en":"zh";d.setAttribute("data-lang",nx);d.lang=(nx==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",nx);}catch(e){}});})();
+/* i18n segmented toggle */
+(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();
 </script>
 </body>
 </html>
