@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GitHub Trending · 2026.05.27</title>
@@ -472,9 +473,19 @@ footer span { color: var(--glow); }
   from { opacity:0; transform:translateY(12px); }
   to   { opacity:1; transform:none; }
 }
+
+/* ── i18n ── */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:18px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
 </style>
 </head>
 <body>
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
 
 <style>
 .arc-nav{position:sticky;top:0;z-index:9999;height:38px;display:flex;align-items:center;padding:0 20px;gap:0;background:rgba(3,6,14,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;}
@@ -548,9 +559,9 @@ footer span { color: var(--glow); }
     <div class="side-panel">
       <div class="side-title">Insight · 05.27</div>
       <div class="insight-text">
-        <p>今日主题词：<strong>Skills 生态爆发</strong>。前十中出现多个「skill file」类项目——<strong>stop-slop</strong>、<strong>taste-skill</strong>、<strong>ECC</strong>——均以约束 AI 输出质量为核心，形成围绕 Claude Code / Cursor 的 Prompt 工程生态圈。</p>
-        <p><strong>Understand-Anything</strong>（4697★）以交互知识图谱领跑，将代码与知识库可视化为可探索图，是今日最具创意的工具入口。</p>
-        <p>Anthropic 官方再度入榜，<strong>knowledge-work-plugins</strong> 针对 Cowork 平台，显示官方正加速构建知识工作者生态。</p>
+        <p><span class="i18n-en">Today’s theme: <strong>the Skills ecosystem erupts</strong>. Several “skill file” projects crack the top ten — <strong>stop-slop</strong>, <strong>taste-skill</strong>, <strong>ECC</strong> — all centered on constraining AI output quality, forming a prompt-engineering ecosystem around Claude Code / Cursor.</span><span class="i18n-zh">今日主题词：<strong>Skills 生态爆发</strong>。前十中出现多个「skill file」类项目——<strong>stop-slop</strong>、<strong>taste-skill</strong>、<strong>ECC</strong>——均以约束 AI 输出质量为核心，形成围绕 Claude Code / Cursor 的 Prompt 工程生态圈。</span></p>
+        <p><span class="i18n-en"><strong>Understand-Anything</strong> (4,697★) leads with interactive knowledge graphs, visualizing code and knowledge bases as explorable maps — the most creative tool entry point today.</span><span class="i18n-zh"><strong>Understand-Anything</strong>（4697★）以交互知识图谱领跑，将代码与知识库可视化为可探索图，是今日最具创意的工具入口。</span></p>
+        <p><span class="i18n-en">Anthropic makes the board again: <strong>knowledge-work-plugins</strong> targets the Cowork platform, showing the company is accelerating its knowledge-worker ecosystem.</span><span class="i18n-zh">Anthropic 官方再度入榜，<strong>knowledge-work-plugins</strong> 针对 Cowork 平台，显示官方正加速构建知识工作者生态。</span></p>
       </div>
     </div>
   </aside>
@@ -576,70 +587,70 @@ const data = [
     rank:1, org:'Lum1104', repo:'Understand-Anything',
     url:'https://github.com/Lum1104/Understand-Anything',
     lang:'TypeScript', today:4697, total:'36k',
-    desc:'将任意代码或知识库转化为<strong>可交互式知识图谱</strong>，支持探索、搜索与问答。适配 Claude Code、Cursor、Codex、Copilot、Gemini CLI 全系工具。',
+    desc:'将任意代码或知识库转化为<strong>可交互式知识图谱</strong>，支持探索、搜索与问答。适配 Claude Code、Cursor、Codex、Copilot、Gemini CLI 全系工具。', desc_en:'Turns any codebase or knowledge base into an <strong>interactive knowledge graph</strong> you can explore, search and query. Works across Claude Code, Cursor, Codex, Copilot and Gemini CLI.',
     tags:[['AI','ai'],['Tool','tool']],
   },
   {
     rank:2, org:'affaan-m', repo:'ECC',
     url:'https://github.com/affaan-m/ECC',
     lang:'JavaScript', today:1915, total:'194k',
-    desc:'Agent 性能优化系统，整合<strong>技能、本能、记忆、安全与研究优先</strong>开发范式，面向 Claude Code、Codex、Cursor 等主流 Agent 平台。',
+    desc:'Agent 性能优化系统，整合<strong>技能、本能、记忆、安全与研究优先</strong>开发范式，面向 Claude Code、Codex、Cursor 等主流 Agent 平台。', desc_en:'An agent performance-optimization system integrating <strong>skills, instincts, memory, security and research-first</strong> development paradigms — for Claude Code, Codex, Cursor and other major agent platforms.',
     tags:[['AI','ai'],['Tool','tool']],
   },
   {
     rank:3, org:'rohitg00', repo:'ai-engineering-from-scratch',
     url:'https://github.com/rohitg00/ai-engineering-from-scratch',
     lang:'Python', today:2155, total:'20.8k',
-    desc:'AI 工程从零到一的完整学习资料库：<strong>学习 → 构建 → 发布</strong>。覆盖 LLM、Agent、RAG、推理等核心工程方向，含大量可运行示例。',
+    desc:'AI 工程从零到一的完整学习资料库：<strong>学习 → 构建 → 发布</strong>。覆盖 LLM、Agent、RAG、推理等核心工程方向，含大量可运行示例。', desc_en:'A complete zero-to-one AI-engineering curriculum: <strong>learn → build → ship</strong>. Covers LLMs, agents, RAG and reasoning, with plenty of runnable examples.',
     tags:[['AI','ai']],
   },
   {
     rank:4, org:'anthropics', repo:'knowledge-work-plugins',
     url:'https://github.com/anthropics/knowledge-work-plugins',
     lang:'Python', today:1718, total:'16.7k',
-    desc:'Anthropic 官方开源插件集，专为 <strong>Claude Cowork</strong> 平台的知识工作者设计，覆盖文档处理、信息整合、工作流自动化等场景。',
+    desc:'Anthropic 官方开源插件集，专为 <strong>Claude Cowork</strong> 平台的知识工作者设计，覆盖文档处理、信息整合、工作流自动化等场景。', desc_en:'Anthropic’s official open-source plugin set, built for knowledge workers on the <strong>Claude Cowork</strong> platform — document processing, information synthesis and workflow automation.',
     tags:[['AI','ai'],['Infra','infra']],
   },
   {
     rank:5, org:'mukul975', repo:'Anthropic-Cybersecurity-Skills',
     url:'https://github.com/mukul975/Anthropic-Cybersecurity-Skills',
     lang:'Python', today:880, total:'10.1k',
-    desc:'754 条结构化网络安全技能，映射至 MITRE ATT&CK、NIST CSF 2.0、MITRE ATLAS、D3FEND & NIST AI RMF <strong>五大框架</strong>，26 个安全领域，Apache 2.0。',
+    desc:'754 条结构化网络安全技能，映射至 MITRE ATT&CK、NIST CSF 2.0、MITRE ATLAS、D3FEND & NIST AI RMF <strong>五大框架</strong>，26 个安全领域，Apache 2.0。', desc_en:'754 structured cybersecurity skills mapped to <strong>five major frameworks</strong> — MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND and NIST AI RMF — across 26 security domains, Apache 2.0.',
     tags:[['AI','ai'],['Sec','sec']],
   },
   {
     rank:6, org:'hardikpandya', repo:'stop-slop',
     url:'https://github.com/hardikpandya/stop-slop',
     lang:null, today:539, total:'5k',
-    desc:'一个 Skill 文件，用于<strong>消除 AI 写作痕迹</strong>（AI tells）。让 Agent 输出的散文更像人写的，不像机器生成的套话模板。',
+    desc:'一个 Skill 文件，用于<strong>消除 AI 写作痕迹</strong>（AI tells）。让 Agent 输出的散文更像人写的，不像机器生成的套话模板。', desc_en:'A Skill file for <strong>erasing AI writing tells</strong>, making an agent’s prose read like a human wrote it rather than machine-generated boilerplate.',
     tags:[['Tool','tool']],
   },
   {
     rank:7, org:'Leonxlnx', repo:'taste-skill',
     url:'https://github.com/Leonxlnx/taste-skill',
     lang:'Shell', today:1430, total:'21.9k',
-    desc:'赋予 AI <strong>「品味」</strong>的 Skill 文件——阻止 Agent 生成无聊、通用的烂内容。与 stop-slop 同属今日「反 AI 套话」浪潮的代表项目。',
+    desc:'赋予 AI <strong>「品味」</strong>的 Skill 文件——阻止 Agent 生成无聊、通用的烂内容。与 stop-slop 同属今日「反 AI 套话」浪潮的代表项目。', desc_en:'A Skill file that gives AI <strong>“taste”</strong> — stopping agents from producing boring, generic slop. A flagship of today’s anti-AI-slop wave alongside stop-slop.',
     tags:[['Tool','tool']],
   },
   {
     rank:8, org:'DigitalPlatDev', repo:'FreeDomain',
     url:'https://github.com/DigitalPlatDev/FreeDomain',
     lang:'HTML', today:1219, total:'167k',
-    desc:'DigitalPlat 旗下<strong>免费域名</strong>服务，面向所有人开放。超过 16.7 万 Star，今日因社区推广重新登榜，覆盖场景广泛。',
+    desc:'DigitalPlat 旗下<strong>免费域名</strong>服务，面向所有人开放。超过 16.7 万 Star，今日因社区推广重新登榜，覆盖场景广泛。', desc_en:'DigitalPlat’s <strong>free domain</strong> service, open to everyone. With 167k+ stars, it climbed back onto the board today on community promotion and covers a wide range of use cases.',
     tags:[['OSS','oss']],
   },
   {
     rank:9, org:'thedotmack', repo:'claude-mem',
     url:'https://github.com/thedotmack/claude-mem',
     lang:'TypeScript', today:352, total:'78.7k',
-    desc:'跨会话<strong>持久化上下文</strong>系统，捕获 Agent 每次会话内容，AI 压缩后注入未来会话。兼容 Claude Code、Codex、Gemini、Copilot、OpenCode 等全系工具。',
+    desc:'跨会话<strong>持久化上下文</strong>系统，捕获 Agent 每次会话内容，AI 压缩后注入未来会话。兼容 Claude Code、Codex、Gemini、Copilot、OpenCode 等全系工具。', desc_en:'A cross-session <strong>persistent-context</strong> system that captures each agent session, AI-compresses it, and injects it into future sessions. Works with Claude Code, Codex, Gemini, Copilot and OpenCode.',
     tags:[['AI','ai'],['Infra','infra']],
   },
   {
     rank:10, org:'Axorax', repo:'awesome-free-apps',
     url:'https://github.com/Axorax/awesome-free-apps',
     lang:'JavaScript', today:731, total:'5.3k',
-    desc:'精选 PC 与移动端<strong>最佳免费应用</strong>汇总列表。经典 Awesome List 形态，今日因新内容更新重新进入开发者视野。',
+    desc:'精选 PC 与移动端<strong>最佳免费应用</strong>汇总列表。经典 Awesome List 形态，今日因新内容更新重新进入开发者视野。', desc_en:'A curated list of the <strong>best free apps</strong> for PC and mobile. A classic Awesome List that re-entered developers’ radar today on fresh updates.',
     tags:[['OSS','oss']],
   },
 ];
@@ -669,7 +680,7 @@ function renderCards() {
         </div>
         <div class="stars-today">${p.today.toLocaleString()} today</div>
       </div>
-      <div class="card-desc">${p.desc}</div>
+      <div class="card-desc"><span class="i18n-en">${p.desc_en}</span><span class="i18n-zh">${p.desc}</span></div>
       <div class="card-foot">
         ${langHTML}
         ${tagsHTML}
@@ -749,6 +760,10 @@ function renderLangBars() {
 renderCards();
 renderMovers();
 renderLangBars();
+</script>
+<script>
+/* i18n segmented toggle */
+(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();
 </script>
 </body>
 </html>
