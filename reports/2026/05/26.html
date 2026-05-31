@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GitHub Trending · 2026.05.26</title>
@@ -123,7 +124,7 @@
 
   /* ── Main grid ── */
   main {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 64px 24px 96px;
   }
@@ -403,9 +404,19 @@
     from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0); }
   }
+
+/* ── i18n ── */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:18px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
 </style>
 </head>
 <body>
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
 
 <style>
 .arc-nav{position:sticky;top:0;z-index:9999;height:38px;display:flex;align-items:center;padding:0 20px;gap:0;background:rgba(3,6,14,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;}
@@ -451,14 +462,14 @@
 
   <!-- Insight -->
   <div class="insight">
-    <div class="insight-label">✦ 趋势洞察</div>
-    <p>今日榜单的核心主题：<strong>AI Agent 基础设施的生产化落地</strong>。前十项目中，超过 70% 直接服务于 AI 编程助手生态（Claude Code、Cursor、Codex、Gemini CLI），关注点已从模型本身转移至<strong>记忆、技能、上下文压缩与推理加速</strong>等外围组件。</p>
-    <p>值得关注的是 <strong>DeepSeek-TUI</strong>（Rust, 5787 ★/日）以今日最高星速领跑，显示终端原生 Agent 工具正在快速获得开发者青睐。与此同时，<strong>PageIndex</strong> 提出无向量化 RAG 方案，挑战当前 RAG 主流范式，具备较高研究价值。</p>
+    <div class="insight-label">✦ <span class="i18n-en">Trend Insight</span><span class="i18n-zh">趋势洞察</span></div>
+    <p><span class="i18n-en">Today’s core theme: <strong>the productization of AI-agent infrastructure</strong>. Over 70% of the top ten serve the AI coding-assistant ecosystem directly (Claude Code, Cursor, Codex, Gemini CLI), with focus shifting away from models themselves toward peripheral components like <strong>memory, skills, context compression and inference acceleration</strong>.</span><span class="i18n-zh">今日榜单的核心主题：<strong>AI Agent 基础设施的生产化落地</strong>。前十项目中，超过 70% 直接服务于 AI 编程助手生态（Claude Code、Cursor、Codex、Gemini CLI），关注点已从模型本身转移至<strong>记忆、技能、上下文压缩与推理加速</strong>等外围组件。</span></p>
+    <p><span class="i18n-en">Notably, <strong>DeepSeek-TUI</strong> (Rust, 5,787 ★/day) leads with the day’s highest star velocity, showing terminal-native agent tools are quickly winning developer favor. Meanwhile, <strong>PageIndex</strong> proposes a vector-free RAG approach that challenges today’s mainstream RAG paradigm and carries notable research value.</span><span class="i18n-zh">值得关注的是 <strong>DeepSeek-TUI</strong>（Rust, 5787 ★/日）以今日最高星速领跑，显示终端原生 Agent 工具正在快速获得开发者青睐。与此同时，<strong>PageIndex</strong> 提出无向量化 RAG 方案，挑战当前 RAG 主流范式，具备较高研究价值。</span></p>
   </div>
 
   <!-- Lang Distribution -->
   <div class="lang-dist">
-    <div class="lang-dist-label">语言分布</div>
+    <div class="lang-dist-label"><span class="i18n-en">Languages</span><span class="i18n-zh">语言分布</span></div>
     <div class="lang-dist-bar" id="lang-bar"></div>
     <div class="lang-legend" id="lang-legend"></div>
   </div>
@@ -478,7 +489,7 @@ const projects = [
     url: "https://github.com/Hmbown/DeepSeek-TUI",
     lang: "Rust", langClass: "rust",
     starsToday: 5787, starsTotal: "18.2k",
-    desc: "在终端中运行的 DeepSeek 模型编程 Agent，采用 TUI（终端 UI）交互范式，<strong>Rust 实现，轻量高效</strong>，今日新增星数居全榜之首。",
+    desc: "在终端中运行的 DeepSeek 模型编程 Agent，采用 TUI（终端 UI）交互范式，<strong>Rust 实现，轻量高效</strong>，今日新增星数居全榜之首。", desc_en: "A DeepSeek-powered coding agent that runs in the terminal with a TUI interaction model — <strong>built in Rust, lightweight and efficient</strong> — and today’s number-one gainer in new stars.",
     tags: [["AI", "ai"], ["Tool", "tool"]]
   },
   {
@@ -487,7 +498,7 @@ const projects = [
     url: "https://github.com/anthropics/financial-services",
     lang: "Python", langClass: "python",
     starsToday: 1367, starsTotal: "10.8k",
-    desc: "Anthropic 官方发布的金融服务 AI 应用示例库，结合 <strong>Claude 模型</strong>构建合规、风控、智能投顾等金融场景解决方案，具备企业级参考价值。",
+    desc: "Anthropic 官方发布的金融服务 AI 应用示例库，结合 <strong>Claude 模型</strong>构建合规、风控、智能投顾等金融场景解决方案，具备企业级参考价值。", desc_en: "Anthropic’s official sample library of financial-services AI apps, using <strong>Claude models</strong> to build compliance, risk-control and robo-advisory solutions — with enterprise-grade reference value.",
     tags: [["AI", "ai"], ["Infra", "infra"]]
   },
   {
@@ -496,7 +507,7 @@ const projects = [
     url: "https://github.com/addyosmani/agent-skills",
     lang: "Shell", langClass: "shell",
     starsToday: 3058, starsTotal: "32.6k",
-    desc: "面向 AI 编程 Agent 的<strong>生产级工程技能文件集</strong>，适配 Claude Code、Cursor、Codex 等主流工具。Skills 文件直接置于 `.claude/skills/` 目录，显著提升 Agent 工程能力上限。",
+    desc: "面向 AI 编程 Agent 的<strong>生产级工程技能文件集</strong>，适配 Claude Code、Cursor、Codex 等主流工具。Skills 文件直接置于 `.claude/skills/` 目录，显著提升 Agent 工程能力上限。", desc_en: "A <strong>production-grade engineering skills collection</strong> for AI coding agents, compatible with Claude Code, Cursor, Codex and more. Drop the Skills files into `.claude/skills/` to markedly raise an agent’s engineering ceiling.",
     tags: [["AI", "ai"], ["Tool", "tool"]]
   },
   {
@@ -505,7 +516,7 @@ const projects = [
     url: "https://github.com/VectifyAI/PageIndex",
     lang: "Python", langClass: "python",
     starsToday: 953, starsTotal: "29.4k",
-    desc: "无向量化文档索引方案，<strong>基于推理的 RAG</strong>，在 SimpleQA 基准上达到 ~95% 准确率（Qwen3.6-27B + RTX 3090）。挑战传统 Embedding+向量库的 RAG 主流范式。",
+    desc: "无向量化文档索引方案，<strong>基于推理的 RAG</strong>，在 SimpleQA 基准上达到 ~95% 准确率（Qwen3.6-27B + RTX 3090）。挑战传统 Embedding+向量库的 RAG 主流范式。", desc_en: "A vector-free document indexing approach — <strong>reasoning-based RAG</strong> — reaching ~95% accuracy on SimpleQA (Qwen3.6-27B + RTX 3090), challenging the mainstream embedding-plus-vector-store RAG paradigm.",
     tags: [["ML", "ml"], ["Infra", "infra"]]
   },
   {
@@ -514,7 +525,7 @@ const projects = [
     url: "https://github.com/z-lab/dflash",
     lang: "Python", langClass: "python",
     starsToday: 654, starsTotal: "3.4k",
-    desc: "<strong>块扩散（Block Diffusion）推测解码</strong>加速方案，显著降低 LLM 推理延迟。Flash Speculative Decoding 的学术实现，适合对推理速度有极致要求的场景。",
+    desc: "<strong>块扩散（Block Diffusion）推测解码</strong>加速方案，显著降低 LLM 推理延迟。Flash Speculative Decoding 的学术实现，适合对推理速度有极致要求的场景。", desc_en: "A <strong>Block Diffusion speculative-decoding</strong> acceleration scheme that markedly cuts LLM inference latency. An academic implementation of Flash Speculative Decoding, ideal where inference speed is critical.",
     tags: [["ML", "ml"]]
   },
   {
@@ -523,7 +534,7 @@ const projects = [
     url: "https://github.com/InsForge/InsForge",
     lang: "TypeScript", langClass: "typescript",
     starsToday: 459, starsTotal: "8.8k",
-    desc: "基于 <strong>PostgreSQL 的一体化 Backend</strong>，内置 Auth、Storage、Compute、Hosting 与 AI Gateway，专为 AI 编程 Agent 设计的全栈基础设施平台。",
+    desc: "基于 <strong>PostgreSQL 的一体化 Backend</strong>，内置 Auth、Storage、Compute、Hosting 与 AI Gateway，专为 AI 编程 Agent 设计的全栈基础设施平台。", desc_en: "An all-in-one <strong>PostgreSQL-based backend</strong> with built-in Auth, Storage, Compute, Hosting and an AI Gateway — a full-stack infrastructure platform designed for AI coding agents.",
     tags: [["Infra", "infra"], ["OSS", "oss"]]
   },
   {
@@ -532,7 +543,7 @@ const projects = [
     url: "https://github.com/aaif-goose/goose",
     lang: "Rust", langClass: "rust",
     starsToday: 431, starsTotal: "44.4k",
-    desc: "开源可扩展 AI Agent 框架，<strong>超越代码补全</strong>，具备安装、执行、编辑、测试能力，支持接入任意 LLM。Block/Square 出品，工程成熟度高。",
+    desc: "开源可扩展 AI Agent 框架，<strong>超越代码补全</strong>，具备安装、执行、编辑、测试能力，支持接入任意 LLM。Block/Square 出品，工程成熟度高。", desc_en: "An open-source, extensible AI agent framework that goes <strong>beyond code completion</strong> — able to install, execute, edit and test, and pluggable into any LLM. Built by Block/Square with high engineering maturity.",
     tags: [["AI", "ai"], ["OSS", "oss"]]
   },
   {
@@ -541,7 +552,7 @@ const projects = [
     url: "https://github.com/docusealco/docuseal",
     lang: "Ruby", langClass: "ruby",
     starsToday: 899, starsTotal: "15.4k",
-    desc: "<strong>开源 DocuSign 替代方案</strong>，支持创建、填写、签署数字文档，完全自托管，无需第三方文档签署服务依赖，适合企业合规场景。",
+    desc: "<strong>开源 DocuSign 替代方案</strong>，支持创建、填写、签署数字文档，完全自托管，无需第三方文档签署服务依赖，适合企业合规场景。", desc_en: "An <strong>open-source DocuSign alternative</strong> for creating, filling and signing digital documents — fully self-hostable with no third-party signing dependency, fit for enterprise compliance.",
     tags: [["OSS", "oss"]]
   },
   {
@@ -550,7 +561,7 @@ const projects = [
     url: "https://github.com/LearningCircuit/local-deep-research",
     lang: "Python", langClass: "python",
     starsToday: 564, starsTotal: "6.1k",
-    desc: "本地化深度研究引擎，支持 Ollama、llama.cpp、Google 等全系 LLM 接入，集成 10+ 搜索引擎（arXiv、PubMed、私有文档），<strong>全程加密，数据不出本地</strong>。",
+    desc: "本地化深度研究引擎，支持 Ollama、llama.cpp、Google 等全系 LLM 接入，集成 10+ 搜索引擎（arXiv、PubMed、私有文档），<strong>全程加密，数据不出本地</strong>。", desc_en: "A local deep-research engine supporting Ollama, llama.cpp, Google and other LLMs, integrating 10+ search engines (arXiv, PubMed, private docs) — <strong>end-to-end encrypted, data never leaves your machine</strong>.",
     tags: [["AI", "ai"], ["Tool", "tool"]]
   },
   {
@@ -559,7 +570,7 @@ const projects = [
     url: "https://github.com/decolua/9router",
     lang: "JavaScript", langClass: "javascript",
     starsToday: 249, starsTotal: "4.3k",
-    desc: "<strong>免费 AI 编程额度路由器</strong>，将 Claude Code、Codex、Cursor、Cline 等工具的请求路由至 40+ 免费 Provider（Claude/GPT/Gemini），支持自动降级，声称可节省 40% Token。",
+    desc: "<strong>免费 AI 编程额度路由器</strong>，将 Claude Code、Codex、Cursor、Cline 等工具的请求路由至 40+ 免费 Provider（Claude/GPT/Gemini），支持自动降级，声称可节省 40% Token。", desc_en: "A <strong>free AI-coding quota router</strong> that routes requests from Claude Code, Codex, Cursor, Cline and more to 40+ free providers (Claude/GPT/Gemini), with automatic fallback and a claimed 40% token savings.",
     tags: [["Tool", "tool"], ["OSS", "oss"]]
   }
 ];
@@ -591,7 +602,7 @@ function renderCards() {
             +${p.starsToday.toLocaleString()} today
           </div>
         </div>
-        <div class="card-desc">${p.desc}</div>
+        <div class="card-desc"><span class="i18n-en">${p.desc_en}</span><span class="i18n-zh">${p.desc}</span></div>
         <div class="card-footer">
           <div class="lang-pill">
             <div class="lang-dot ${p.langClass}"></div>
@@ -655,6 +666,10 @@ function renderLangDist() {
 
 renderCards();
 renderLangDist();
+</script>
+<script>
+/* i18n segmented toggle */
+(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();
 </script>
 </body>
 </html>
