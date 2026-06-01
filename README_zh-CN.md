@@ -5,8 +5,8 @@
 **开源世界每天都在变，这里把每一天最值得关注的那一刻留下来。**
 
 [![报告校验](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![报告数量](https://img.shields.io/badge/报告-6份-7b2fff.svg)](#-浏览报告)
-[![最近更新](https://img.shields.io/badge/最近更新-2026--05--31-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/31.html)
+[![报告数量](https://img.shields.io/badge/报告-7份-7b2fff.svg)](#-浏览报告)
+[![最近更新](https://img.shields.io/badge/最近更新-2026--06--01-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/01.html)
 [![许可证: MIT](https://img.shields.io/badge/许可证-MIT-00f5d4.svg)](LICENSE)
 
 [English](README.md) · [在线浏览 →](https://jigexiansen.github.io/github-trending-archive/)
@@ -43,6 +43,15 @@ GitHub Trending 每 24 小时重置一次。那些今天备受瞩目的项目，
 ---
 
 ## 📂 浏览报告
+
+<details open>
+<summary><strong>2026 年 6 月</strong> — 1 份报告</summary>
+
+| 日期 | 当日榜首 | 亮点 |
+|------|---------|------|
+| [2026-06-01](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/01.html) | markitdown +2,798⭐ | Python 占据今日 73% 星标 · 文档转换与 AI 工具链主导榜单 · 生产级 AI 基础设施迁移加速 |
+
+</details>
 
 <details open>
 <summary><strong>2026 年 5 月</strong> — 6 份报告</summary>

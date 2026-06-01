@@ -565,13 +565,34 @@ html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.9
 </div>
 
 <main>
-  <div class="section" id="reports">
+  <div class="section" id="reports-2026-06">
     <div class="section-head">
-      <span class="section-label"><span class="live-dot"></span>2026 / May</span>
-      <span class="section-count" id="month-count">—</span>
+      <span class="section-label"><span class="live-dot"></span>2026 / June</span>
+      <span class="section-count" id="month-count-2026-06">1 report</span>
+    </div>
+    <div class="card-list" id="grid">
+
+      <a class="report-card" href="reports/2026/06/01.html">
+        <div class="card-date">2026<br>06 · 01</div>
+        <div class="card-body">
+          <span class="card-org">microsoft /</span>
+          <div class="card-repo">markitdown</div>
+          <div class="card-stars"><i class="fa-solid fa-star"></i> +2,798 today</div>
+          <p class="card-highlight"><span class="i18n-en">Python commands 73% of today's stars · document converters and AI toolchains dominate · the shift to production AI infrastructure accelerates</span><span class="i18n-zh">Python 占据今日 73% 星标 · 文档转换与 AI 工具链主导 · 生产级 AI 基础设施迁移加速</span></p>
+        </div>
+        <div class="card-action">Open <i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="section" id="reports-2026-05">
+    <div class="section-head">
+      <span class="section-label">2026 / May</span>
+      <span class="section-count" id="month-count-2026-05">—</span>
     </div>
 
-    <div class="card-list" id="grid">
+    <div class="card-list">
 
       <a class="report-card" href="reports/2026/05/31.html">
         <div class="card-date">2026<br>05 · 31</div>
@@ -721,7 +742,11 @@ html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.9
 
   /* ── card entrance ── */
   const cards = document.querySelectorAll('.report-card');
-  document.getElementById('month-count').textContent = cards.length + ' reports';
+  document.querySelectorAll('.section').forEach(function(sec) {
+    var secCards = sec.querySelectorAll('.report-card');
+    var mc = sec.querySelector('.section-count[id^="month-count"]');
+    if (mc) mc.textContent = secCards.length + (secCards.length === 1 ? ' report' : ' reports');
+  });
 
   const cardObs = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {

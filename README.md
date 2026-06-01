@@ -5,8 +5,8 @@
 **A permanent, beautiful record of what the open source world cared about each day.**
 
 [![Validate Reports](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![Reports](https://img.shields.io/badge/Reports-6-7b2fff.svg)](#-browse)
-[![Last Update](https://img.shields.io/badge/Last%20Update-2026--05--31-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/05/31.html)
+[![Reports](https://img.shields.io/badge/Reports-7-7b2fff.svg)](#-browse)
+[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--01-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/01.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-00f5d4.svg)](LICENSE)
 
 [简体中文](README_zh-CN.md) · [Live Archive →](https://jigexiansen.github.io/github-trending-archive/)
@@ -43,6 +43,15 @@ Each daily report is a single, self-contained HTML file:
 ---
 
 ## 📂 Browse
+
+<details open>
+<summary><strong>2026 · June</strong> — 1 report</summary>
+
+| Date | Top Project | Highlights |
+|------|------------|-----------|
+| [2026-06-01](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/01.html) | markitdown +2,798⭐ | Python commands 73% of today's stars · document converters and AI toolchains dominate · shift to production AI infrastructure accelerates |
+
+</details>
 
 <details open>
 <summary><strong>2026 · May</strong> — 6 reports</summary>
