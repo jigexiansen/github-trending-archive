@@ -21,6 +21,7 @@ Each file is a fully self-contained HTML document. No build step, no dependencie
 
 | Date | Top Project | Today's Stars |
 |------|------------|--------------|
+| [2026-06-03](2026/06/03.html) | markitdown | +3,618 ⭐ |
 | [2026-06-02](2026/06/02.html) | MoneyPrinterTurbo | +3,375 ⭐ |
 | [2026-06-01](2026/06/01.html) | markitdown | +2,798 ⭐ |
 | [2026-05-31](2026/05/31.html) | MoneyPrinterTurbo | +2,768 ⭐ |

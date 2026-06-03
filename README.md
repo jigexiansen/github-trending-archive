@@ -5,8 +5,8 @@
 **A permanent, beautiful record of what the open source world cared about each day.**
 
 [![Validate Reports](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![Reports](https://img.shields.io/badge/Reports-8-7b2fff.svg)](#-browse)
-[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--02-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/02.html)
+[![Reports](https://img.shields.io/badge/Reports-9-7b2fff.svg)](#-browse)
+[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--03-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/03.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-00f5d4.svg)](LICENSE)
 
 [简体中文](README_zh-CN.md) · [Live Archive →](https://jigexiansen.github.io/github-trending-archive/)
@@ -45,10 +45,11 @@ Each daily report is a single, self-contained HTML file:
 ## 📂 Browse
 
 <details open>
-<summary><strong>2026 · June</strong> — 2 reports</summary>
+<summary><strong>2026 · June</strong> — 3 reports</summary>
 
 | Date | Top Project | Highlights |
 |------|------------|-----------|
+| [2026-06-03](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/03.html) | markitdown +3,618⭐ | LLM production tooling dominates · token compression and memory APIs surge · Python claims 75% of today's stars |
 | [2026-06-02](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/02.html) | MoneyPrinterTurbo +3,375⭐ | Python holds 72% of today's stars · AI video generation and document tooling surge together · learn-by-doing classic earns its spike |
 | [2026-06-01](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/01.html) | markitdown +2,798⭐ | Python commands 73% of today's stars · document converters and AI toolchains dominate · shift to production AI infrastructure accelerates |
 
