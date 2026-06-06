@@ -5,8 +5,8 @@
 **A permanent, beautiful record of what the open source world cared about each day.**
 
 [![Validate Reports](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![Reports](https://img.shields.io/badge/Reports-11-7b2fff.svg)](#-browse)
-[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--05-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/05.html)
+[![Reports](https://img.shields.io/badge/Reports-12-7b2fff.svg)](#-browse)
+[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--06-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/06.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-00f5d4.svg)](LICENSE)
 
 [简体中文](README_zh-CN.md) · [Live Archive →](https://jigexiansen.github.io/github-trending-archive/)
@@ -45,10 +45,11 @@ Each daily report is a single, self-contained HTML file:
 ## 📂 Browse
 
 <details open>
-<summary><strong>2026 · June</strong> — 5 reports</summary>
+<summary><strong>2026 · June</strong> — 6 reports</summary>
 
 | Date | Top Project | Highlights |
 |------|------------|-----------|
+| [2026-06-06](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/06.html) | headroom +2,473⭐ | Agent infrastructure dominates nine of ten slots — token compression, skill frameworks, and memory systems signal a decisive shift to production-grade AI engineering |
 | [2026-06-05](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/05.html) | headroom +3,142⭐ | Token compression leads the day — headroom's 60–95% savings claim and agent frameworks capture half of all stars, while security tools make a rare double appearance |
 | [2026-06-04](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/04.html) | headroom +3,530⭐ | Nine of ten trending repos target AI infrastructure — context compression and agent frameworks dominate the leaderboard |
 | [2026-06-03](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/03.html) | markitdown +3,618⭐ | LLM production tooling dominates · token compression and memory APIs surge · Python claims 75% of today's stars |

@@ -5,8 +5,8 @@
 **开源世界每天都在变，这里把每一天最值得关注的那一刻留下来。**
 
 [![报告校验](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![报告数量](https://img.shields.io/badge/报告-11份-7b2fff.svg)](#-浏览报告)
-[![最近更新](https://img.shields.io/badge/最近更新-2026--06--05-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/05.html)
+[![报告数量](https://img.shields.io/badge/报告-12份-7b2fff.svg)](#-浏览报告)
+[![最近更新](https://img.shields.io/badge/最近更新-2026--06--06-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/06.html)
 [![许可证: MIT](https://img.shields.io/badge/许可证-MIT-00f5d4.svg)](LICENSE)
 
 [English](README.md) · [在线浏览 →](https://jigexiansen.github.io/github-trending-archive/)
@@ -45,10 +45,11 @@ GitHub Trending 每 24 小时重置一次。那些今天备受瞩目的项目，
 ## 📂 浏览报告
 
 <details open>
-<summary><strong>2026 年 6 月</strong> — 5 份报告</summary>
+<summary><strong>2026 年 6 月</strong> — 6 份报告</summary>
 
 | 日期 | 当日榜首 | 亮点 |
 |------|---------|------|
+| [2026-06-06](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/06.html) | headroom +2,473⭐ | 九席锁定 agent 基础设施——Token 压缩、技能框架与记忆系统集中爆发，AI 工程化落地全面加速 |
 | [2026-06-05](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/05.html) | headroom +3,142⭐ | Token 压缩今日领跑，headroom 与 Agent 框架合揽半数星标；trivy、flowsint 罕见双双入榜，安全工具升温 |
 | [2026-06-04](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/04.html) | headroom +3,530⭐ | 十席中九席锁定 AI 基础设施，上下文压缩与 Agent 框架双引擎主导今日热榜 |
 | [2026-06-03](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/03.html) | markitdown +3,618⭐ | 大模型工程化基础设施强势占榜 · Token 压缩与记忆 API 同步爆发 · Python 独揽今日 75% 热度 |

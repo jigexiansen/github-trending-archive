@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending — June 6, 2026</title>
+<meta name="description" content="Top 10 GitHub Trending repositories on June 6, 2026. AI agent infrastructure dominates: token compression, skill frameworks, and open notebook systems.">
+<script src="https://kit.fontawesome.com/371954d95b.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── Memphis Design Variables ── */
+:root {
+  --bg:       #FEFDF5;
+  --surface:  #FFFFFF;
+  --dark:     #111111;
+  --dark2:    #222222;
+  --muted:    #666666;
+  --faint:    #AAAAAA;
+  --border:   #E5E0D0;
+
+  --pink:     #FF2878;
+  --blue:     #0066FF;
+  --lime:     #B8F000;
+  --orange:   #FF6B00;
+  --purple:   #9B59FF;
+  --cyan:     #00D4FF;
+  --yellow:   #FFD600;
+
+  --font-disp: 'Unbounded', 'Noto Sans SC', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-body: 'Noto Sans SC', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--dark);
+  font-family: var(--font-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  /* Memphis dot grid background */
+  background-image: radial-gradient(circle, rgba(0,0,0,.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ── i18n ── */
+html[data-lang="en"] .i18n-zh { display: none; }
+html[data-lang="zh"] .i18n-en { display: none; }
+
+/* ── Language Toggle ── */
+#langToggle {
+  position: fixed; bottom: 64px; right: 18px; z-index: 10000;
+  display: flex; gap: 2px; padding: 3px; border-radius: 16px;
+  background: rgba(0,0,0,.5); border: 1px solid rgba(255,255,255,.2);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  font-family: var(--font-mono); box-shadow: 0 2px 12px rgba(0,0,0,.25);
+}
+#langToggle .lt-seg {
+  appearance: none; -webkit-appearance: none; border: 0;
+  background: transparent; cursor: pointer; font: inherit; font-size: 11px;
+  letter-spacing: .05em; color: rgba(255,255,255,.6);
+  padding: 4px 12px; border-radius: 13px; transition: color .15s, background .15s;
+}
+#langToggle .lt-seg:hover { color: #fff; }
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"] {
+  background: rgba(255,255,255,.92); color: #111;
+}
+
+/* ── Arc Nav ── */
+.arc-nav {
+  position: sticky; top: 0; z-index: 9999; height: 38px;
+  display: flex; align-items: center; padding: 0 20px;
+  background: rgba(17,17,17,.95); backdrop-filter: blur(10px);
+  border-bottom: 3px solid var(--pink);
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em;
+}
+.arc-nav-home {
+  color: rgba(255,255,255,.5); text-decoration: none;
+  transition: color .15s; white-space: nowrap;
+}
+.arc-nav-home:hover { color: var(--lime); }
+.arc-nav-sep { color: rgba(255,255,255,.18); margin: 0 10px; }
+.arc-nav-month { color: rgba(255,255,255,.3); white-space: nowrap; }
+.arc-nav-dates { margin-left: auto; display: flex; gap: 4px; flex-wrap: wrap; }
+.arc-nav-d {
+  width: 26px; height: 22px; display: flex; align-items: center;
+  justify-content: center; border-radius: 3px; font-size: 10px;
+  text-decoration: none; color: rgba(255,255,255,.35);
+  border: 1px solid rgba(255,255,255,.1); transition: all .15s;
+}
+.arc-nav-d:hover { color: rgba(255,255,255,.85); border-color: rgba(255,255,255,.25); }
+.arc-nav-d.cur {
+  color: #111; background: var(--lime); border-color: var(--lime); pointer-events: none;
+}
+
+/* ── Header ── */
+.header-wrap {
+  max-width: 1200px; margin: 0 auto; padding: 48px 32px 36px;
+  position: relative;
+}
+
+/* Memphis decorative shapes */
+.header-wrap::before {
+  content: '';
+  position: absolute; top: 24px; right: 32px;
+  width: 120px; height: 120px;
+  background:
+    radial-gradient(circle at 20% 20%, var(--pink) 8px, transparent 8px),
+    radial-gradient(circle at 60% 20%, var(--blue) 6px, transparent 6px),
+    radial-gradient(circle at 90% 50%, var(--lime) 10px, transparent 10px),
+    radial-gradient(circle at 30% 80%, var(--orange) 7px, transparent 7px),
+    radial-gradient(circle at 75% 75%, var(--purple) 5px, transparent 5px),
+    radial-gradient(circle at 50% 50%, var(--cyan) 4px, transparent 4px);
+  pointer-events: none;
+  opacity: 0.9;
+}
+.header-wrap::after {
+  content: '';
+  position: absolute; top: 32px; right: 170px;
+  width: 0; height: 0;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 38px solid var(--yellow);
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.header-label {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--pink); margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+}
+.header-label::before {
+  content: ''; display: inline-block;
+  width: 24px; height: 3px; background: var(--pink);
+}
+
+.header-title {
+  font-family: var(--font-disp);
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 900; line-height: 1.0;
+  letter-spacing: -.03em; color: var(--dark);
+  margin-bottom: 8px;
+}
+.header-title .accent-pink { color: var(--pink); }
+.header-title .accent-blue { color: var(--blue); }
+
+.header-date {
+  font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: .12em; color: var(--muted);
+  margin-bottom: 32px;
+}
+
+/* Memphis rule — zigzag */
+.memphis-rule {
+  height: 12px; margin: 0 0 32px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--pink) 0, var(--pink) 20px,
+    var(--blue) 20px, var(--blue) 40px,
+    var(--lime) 40px, var(--lime) 60px,
+    var(--orange) 60px, var(--orange) 80px,
+    var(--purple) 80px, var(--purple) 100px
+  );
+  clip-path: polygon(
+    0 0, 10px 100%, 20px 0, 30px 100%, 40px 0, 50px 100%, 60px 0, 70px 100%,
+    80px 0, 90px 100%, 100px 0, 110px 100%, 120px 0, 130px 100%, 140px 0, 150px 100%,
+    160px 0, 170px 100%, 180px 0, 190px 100%, 200px 0, 210px 100%, 220px 0, 230px 100%,
+    240px 0, 250px 100%, 260px 0, 270px 100%, 280px 0, 290px 100%, 300px 0, 310px 100%,
+    320px 0, 330px 100%, 340px 0, 350px 100%, 360px 0, 370px 100%, 380px 0, 390px 100%,
+    400px 0, 410px 100%, 420px 0, 430px 100%, 440px 0, 450px 100%, 460px 0, 470px 100%,
+    480px 0, 490px 100%, 500px 0, 510px 100%, 520px 0, 530px 100%, 540px 0, 550px 100%,
+    560px 0, 570px 100%, 580px 0, 590px 100%, 600px 0, 610px 100%, 620px 0, 630px 100%,
+    640px 0, 650px 100%, 660px 0, 670px 100%, 680px 0, 690px 100%, 700px 0, 710px 100%,
+    720px 0, 730px 100%, 740px 0, 750px 100%, 760px 0, 770px 100%, 780px 0, 790px 100%,
+    800px 0, 810px 100%, 820px 0, 830px 100%, 840px 0, 850px 100%, 860px 0, 870px 100%,
+    880px 0, 890px 100%, 900px 0, 910px 100%, 920px 0, 930px 100%, 940px 0, 950px 100%,
+    960px 0, 970px 100%, 980px 0, 990px 100%, 1000px 0, 1000px 100%, 0 100%
+  );
+}
+
+/* ── Stat Chips ── */
+.stat-chips {
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.stat-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px; font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: .08em; font-weight: 700;
+  border: 2px solid; border-radius: 2px;
+}
+.stat-chip:nth-child(1) { color: var(--pink); border-color: var(--pink); background: rgba(255,40,120,.06); }
+.stat-chip:nth-child(2) { color: var(--blue); border-color: var(--blue); background: rgba(0,102,255,.06); }
+.stat-chip:nth-child(3) { color: var(--orange); border-color: var(--orange); background: rgba(255,107,0,.06); }
+.stat-chip:nth-child(4) { color: var(--purple); border-color: var(--purple); background: rgba(155,89,255,.06); }
+
+/* ── Main Layout ── */
+.main-wrap {
+  max-width: 1200px; margin: 0 auto; padding: 0 32px 64px;
+  display: grid; grid-template-columns: 1fr 320px; gap: 40px;
+}
+@media (max-width: 960px) {
+  .main-wrap { grid-template-columns: 1fr; }
+}
+
+/* ── Section Label ── */
+.section-label {
+  font-family: var(--font-disp); font-size: 10px; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--muted);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
+  padding-top: 8px;
+}
+.section-label::after {
+  content: ''; flex: 1; height: 2px;
+  background: repeating-linear-gradient(90deg, var(--dark) 0, var(--dark) 4px, transparent 4px, transparent 8px);
+}
+
+/* ── Project Cards ── */
+.cards { display: flex; flex-direction: column; gap: 0; }
+
+.card {
+  background: var(--surface);
+  border: 2px solid var(--dark);
+  border-top: none;
+  padding: 20px 22px;
+  cursor: default;
+  opacity: 0; transform: translateY(24px);
+  transition: box-shadow .2s, transform .15s;
+  position: relative;
+}
+.card:first-child { border-top: 2px solid var(--dark); }
+
+/* Each card gets a colored left accent bar cycling through Memphis palette */
+.card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 5px;
+}
+.card:nth-child(1)::before  { background: var(--pink); }
+.card:nth-child(2)::before  { background: var(--blue); }
+.card:nth-child(3)::before  { background: var(--orange); }
+.card:nth-child(4)::before  { background: var(--purple); }
+.card:nth-child(5)::before  { background: var(--cyan); }
+.card:nth-child(6)::before  { background: var(--lime); }
+.card:nth-child(7)::before  { background: var(--yellow); }
+.card:nth-child(8)::before  { background: var(--pink); }
+.card:nth-child(9)::before  { background: var(--blue); }
+.card:nth-child(10)::before { background: var(--orange); }
+
+.card.in {
+  opacity: 1; transform: translateY(0);
+}
+.card:hover {
+  box-shadow: 6px 6px 0 var(--dark); transform: translate(-2px, -2px);
+  z-index: 2;
+}
+
+.card-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 12px; margin-bottom: 12px;
+}
+.card-left { flex: 1; min-width: 0; }
+
+.card-rank {
+  font-family: var(--font-disp); font-size: 9px; font-weight: 900;
+  letter-spacing: .2em; color: var(--faint); margin-bottom: 4px;
+}
+.card-name {
+  font-family: var(--font-disp); font-size: 15px; font-weight: 700;
+  line-height: 1.2;
+}
+.card-name a {
+  color: var(--dark); text-decoration: none; transition: color .15s;
+}
+.card-name a:hover { color: var(--pink); }
+.card-name .org { color: var(--muted); font-weight: 400; font-size: 13px; }
+
+.card-meta {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 6px;
+}
+
+.lang-dot {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--font-mono); font-size: 10px; color: var(--muted);
+}
+.lang-dot::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--pink); display: inline-block;
+}
+.lang-dot[data-lang="Python"]::before     { background: #3572A5; }
+.lang-dot[data-lang="TypeScript"]::before { background: #3178c6; }
+.lang-dot[data-lang="JavaScript"]::before { background: #F1E05A; }
+.lang-dot[data-lang="Jupyter Notebook"]::before { background: #DA5B0B; }
+.lang-dot[data-lang="C#"]::before         { background: #178600; }
+.lang-dot[data-lang="Go"]::before         { background: #00ADD8; }
+
+.tag {
+  font-family: var(--font-mono); font-size: 9px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 1px;
+  color: var(--surface); display: inline-block;
+}
+.tag-ai     { background: var(--pink); }
+.tag-ml     { background: var(--blue); }
+.tag-tool   { background: var(--orange); }
+.tag-infra  { background: var(--purple); }
+.tag-sec    { background: #DC2626; }
+.tag-oss    { background: #16A34A; }
+
+/* Stars today badge */
+.card-stars-badge {
+  display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0;
+}
+.stars-count {
+  font-family: var(--font-disp); font-size: 20px; font-weight: 900;
+  line-height: 1; color: var(--dark);
+}
+.stars-label {
+  font-family: var(--font-mono); font-size: 9px; color: var(--muted);
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.stars-total {
+  font-family: var(--font-mono); font-size: 10px; color: var(--faint);
+}
+
+/* Star bar */
+.star-bar-wrap { margin: 10px 0; }
+.star-bar-track {
+  height: 4px; background: var(--border); border-radius: 0; overflow: hidden;
+}
+.star-bar-fill {
+  height: 100%; width: 0; transition: width 1s cubic-bezier(.16,1,.3,1);
+}
+.card:nth-child(1) .star-bar-fill  { background: var(--pink); }
+.card:nth-child(2) .star-bar-fill  { background: var(--blue); }
+.card:nth-child(3) .star-bar-fill  { background: var(--orange); }
+.card:nth-child(4) .star-bar-fill  { background: var(--purple); }
+.card:nth-child(5) .star-bar-fill  { background: var(--cyan); }
+.card:nth-child(6) .star-bar-fill  { background: #8adb00; }
+.card:nth-child(7) .star-bar-fill  { background: var(--yellow); }
+.card:nth-child(8) .star-bar-fill  { background: var(--pink); }
+.card:nth-child(9) .star-bar-fill  { background: var(--blue); }
+.card:nth-child(10) .star-bar-fill { background: var(--orange); }
+
+/* Card description */
+.card-desc {
+  font-size: 13.5px; line-height: 1.65; color: #333;
+  padding: 2px 0 4px 5px;
+  border-left: 3px solid var(--border);
+}
+.card-desc strong { font-weight: 700; }
+
+/* ── Sidebar ── */
+.sidebar { padding-top: 56px; }
+
+.sidebar-block {
+  background: var(--surface);
+  border: 2px solid var(--dark);
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.sidebar-block::after {
+  content: '';
+  position: absolute; bottom: -5px; right: -5px;
+  width: 100%; height: 100%;
+  background: var(--dark);
+  z-index: -1;
+}
+
+.sidebar-title {
+  font-family: var(--font-disp); font-size: 10px; font-weight: 900;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--dark);
+  margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+}
+.sidebar-title::before {
+  content: ''; width: 14px; height: 14px; background: var(--pink);
+  display: inline-block;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+/* Language bars */
+.lang-bar-item { margin-bottom: 10px; }
+.lang-bar-label {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--font-mono); font-size: 10px; color: var(--dark2);
+  margin-bottom: 4px;
+}
+.lang-bar-pct { font-weight: 700; }
+.lang-bar-track {
+  height: 8px; background: var(--border); position: relative; overflow: hidden;
+}
+.lang-bar-fill {
+  height: 100%; width: 0; transition: width 1.2s cubic-bezier(.16,1,.3,1);
+  position: relative;
+}
+/* Memphis diagonal stripe pattern on language bars */
+.lang-bar-fill::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    45deg, rgba(255,255,255,.2) 0, rgba(255,255,255,.2) 4px,
+    transparent 4px, transparent 8px
+  );
+}
+.lbf-py   { background: #3572A5; }
+.lbf-ts   { background: #3178c6; }
+.lbf-js   { background: #F1E05A; }
+.lbf-jup  { background: #DA5B0B; }
+.lbf-cs   { background: #178600; }
+
+/* Trend insight */
+.trend-insight {
+  font-size: 13px; line-height: 1.7; color: var(--dark2);
+}
+.trend-insight strong { color: var(--pink); }
+
+/* Memphis decoration block in sidebar */
+.memphis-deco {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;
+}
+.m-shape {
+  width: 20px; height: 20px; flex-shrink: 0;
+}
+.m-circle { border-radius: 50%; }
+.m-sq { }
+.m-tri { clip-path: polygon(50% 0%, 100% 100%, 0% 100%); }
+
+/* ── Footer ── */
+footer {
+  border-top: 3px solid var(--dark);
+  background: var(--dark);
+  color: rgba(255,255,255,.5);
+  padding: 28px 0;
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  flex-wrap: wrap;
+}
+.footer-brand {
+  font-family: var(--font-disp); font-size: 12px; font-weight: 700;
+  letter-spacing: .1em; color: var(--lime);
+}
+.footer-info {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em;
+}
+.footer-info a { color: var(--cyan); text-decoration: none; }
+.footer-info a:hover { text-decoration: underline; }
+
+/* ── Memphis corner decorations ── */
+.corner-shape {
+  position: fixed; pointer-events: none; z-index: 0;
+}
+.corner-tl {
+  top: 60px; left: 0; width: 80px; height: 80px;
+  background: var(--lime);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  opacity: 0.6;
+}
+.corner-br {
+  bottom: 80px; right: 0; width: 60px; height: 60px;
+  background: var(--pink);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  opacity: 0.5;
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .header-wrap { padding: 32px 16px 24px; }
+  .main-wrap { padding: 0 16px 48px; }
+  .stat-chips { gap: 8px; }
+  .stat-chip { font-size: 10px; padding: 6px 12px; }
+  .header-title { font-size: clamp(24px, 7vw, 40px); }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .header-wrap::before, .header-wrap::after { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div id="langToggle" role="group" aria-label="Language">
+  <button type="button" class="lt-seg" data-lang="en">EN</button>
+  <button type="button" class="lt-seg" data-lang="zh">中文</button>
+</div>
+
+<!-- Memphis corner shapes -->
+<div class="corner-shape corner-tl"></div>
+<div class="corner-shape corner-br"></div>
+
+<!-- Arc Nav -->
+<style>
+.arc-nav{position:sticky;top:0;z-index:9999;height:38px;display:flex;align-items:center;padding:0 20px;background:rgba(17,17,17,.95);backdrop-filter:blur(10px);border-bottom:3px solid var(--pink);font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.06em;}
+.arc-nav-home{color:rgba(255,255,255,.4);text-decoration:none;transition:color .15s;white-space:nowrap;}
+.arc-nav-home:hover{color:#B8F000;}
+.arc-nav-sep{color:rgba(255,255,255,.12);margin:0 10px;}
+.arc-nav-month{color:rgba(255,255,255,.28);white-space:nowrap;}
+.arc-nav-dates{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+.arc-nav-d{width:26px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:3px;font-size:10px;text-decoration:none;color:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.07);transition:all .15s;}
+.arc-nav-d:hover{color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.2);}
+.arc-nav-d.cur{color:#111;background:#B8F000;border-color:#B8F000;pointer-events:none;}
+</style>
+<nav class="arc-nav">
+  <a class="arc-nav-home" href="../../../index.html">← Archive</a>
+  <span class="arc-nav-sep">/</span>
+  <span class="arc-nav-month">June 2026</span>
+  <div class="arc-nav-dates">
+    <a class="arc-nav-d cur" href="./06.html">06</a>
+    <a class="arc-nav-d" href="./05.html">05</a>
+    <a class="arc-nav-d" href="./04.html">04</a>
+    <a class="arc-nav-d" href="./03.html">03</a>
+    <a class="arc-nav-d" href="./02.html">02</a>
+    <a class="arc-nav-d" href="./01.html">01</a>
+  </div>
+</nav>
+
+<!-- Header -->
+<div class="header-wrap">
+  <div class="header-label">GitHub Trending · Daily Report</div>
+  <h1 class="header-title">
+    <span class="accent-pink">JUNE</span> <span class="accent-blue">06</span>
+    <br>2026
+  </h1>
+  <div class="header-date">
+    <span class="i18n-en">Saturday, June 6, 2026 · Memphis Edition</span>
+    <span class="i18n-zh">2026年6月6日（星期六）· 孟菲斯版</span>
+  </div>
+  <div class="memphis-rule"></div>
+  <div class="stat-chips">
+    <div class="stat-chip">
+      <i class="fa-solid fa-layer-group"></i>
+      <span class="i18n-en">10 Projects</span><span class="i18n-zh">10 项目</span>
+    </div>
+    <div class="stat-chip">
+      <i class="fa-solid fa-star"></i>
+      <span>+9,800 <span class="i18n-en">stars today</span><span class="i18n-zh">今日星标</span></span>
+    </div>
+    <div class="stat-chip">
+      <i class="fa-solid fa-code"></i>
+      <span>5 <span class="i18n-en">languages</span><span class="i18n-zh">编程语言</span></span>
+    </div>
+    <div class="stat-chip">
+      <i class="fa-solid fa-robot"></i>
+      <span>9 <span class="i18n-en">AI projects</span><span class="i18n-zh">AI 项目</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- Main Content -->
+<main>
+<div class="main-wrap">
+
+  <!-- Cards Column -->
+  <div>
+    <div class="section-label">
+      <span class="i18n-en">Trending Today</span>
+      <span class="i18n-zh">今日趋势</span>
+    </div>
+    <div class="cards" id="cards">
+
+      <!-- #1 chopratejas/headroom -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-left">
+            <div class="card-rank"># 01</div>
+            <div class="card-name">
+              <a href="https://github.com/chopratejas/headroom" target="_blank" rel="noopener">
+                <span class="org">chopratejas /</span> headroom
+              </a>
+            </div>
+            <div class="card-meta">
+              <span class="lang-dot" data-lang="Python">Python</span>
+              <span class="tag tag-ai">AI</span>
+              <span class="tag tag-tool">Tool</span>
+            </div>
+          </div>
+          <div class="card-stars-badge">
+            <div class="stars-count">+2,473</div>
+            <div class="stars-label">
+              <i class="fa-solid fa-star"></i>
+              <span class="i18n-en"> today</span><span class="i18n-zh"> 今日</span>
+            </div>
+            <div class="stars-total">14.5k total</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="100"></div></div>
+        </div>
+        <div class="card-desc">
+          <span class="i18n-en">A smart compression layer for LLM pipelines—strip redundancy from tool outputs, logs, and RAG chunks to cut token usage by <strong>60–95%</strong> with zero accuracy loss. Ships as a library, proxy, or MCP server.</span>
+          <span class="i18n-zh">LLM 管道的智能压缩层，清除工具输出、日志与 RAG 片段中的冗余，<strong>削减 60–95% Token</strong>，答案质量零损失——支持库、代理和 MCP 三种接入方式。</span>
+        </div>
+      </div>
+
+      <!-- #2 NousResearch/hermes-agent -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-left">
+            <div class="card-rank"># 02</div>
+            <div class="card-name">
+              <a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">
+                <span class="org">NousResearch /</span> hermes-agent
+              </a>
+            </div>
+            <div class="card-meta">
+              <span class="lang-dot" data-lang="Python">Python</span>
+              <span class="tag tag-ai">AI</span>
+              <span class="tag tag-ml">ML</span>
+            </div>
+          </div>
+          <div class="card-stars-badge">
+            <div class="stars-count">+1,845</div>
+            <div class="stars-label"><i class="fa-solid fa-star"></i> <span class="i18n-en">today</span><span class="i18n-zh">今日</span></div>
+            <div class="stars-total">183.1k total</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="75"></div></div>
+        </div>
+        <div class="card-desc">
+          <span class="i18n-en">NousResearch's self-evolving agent framework—<strong>persona memory, skill trees, and multi-tool orchestration</strong> that compounds in capability the more you run it.</span>
+          <span class="i18n-zh">NousResearch 出品的自进化 agent 框架，<strong>人格记忆、技能树与多工具编排</strong>一体化设计，越运行越聪明，持续自我强化。</span>
+        </div>
+      </div>
+
+      <!-- #3 affaan-m/ECC -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-left">
+            <div class="card-rank"># 03</div>
+            <div class="card-name">
+              <a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">
+                <span class="org">affaan-m /</span> ECC
+              </a>
+            </div>
+            <div class="card-meta">
+              <span class="lang-dot" data-lang="JavaScript">JavaScript</span>
+              <span class="tag tag-ai">AI</span>
+              <span class="tag tag-tool">Tool</span>
+            </div>
+          </div>
+          <div class="card-stars-badge">
+            <div class="stars-count">+1,361</div>
+            <div class="stars-label"><i class="fa-solid fa-star"></i> <span class="i18n-en">today</span><span class="i18n-zh">今日</span></div>
+            <div class="stars-total">208.3k total</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="55"></div></div>
+        </div>
+        <div class="card-desc">
+          <span class="i18n-en">A battle-hardened agent harness for Claude Code, Codex, and Cursor—<strong>skills, instincts, and memory</strong> baked in, with a security-first and research-first philosophy baked throughout.</span>
+          <span class="i18n-zh">面向 Claude Code、Codex、Cursor 等的强化 agent 底座，<strong>内置技能、本能与记忆</strong>，以安全与研究优先为核心哲学，贯穿整个开发流程。</span>
+        </div>
+      </div>
+
+      <!-- #4 lfnovo/open-notebook -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-left">
+            <div class="card-rank"># 04</div>
+            <div class="card-name">
+              <a href="https://github.com/lfnovo/open-notebook" target="_blank" rel="noopener">
+                <span class="org">lfnovo /</span> open-notebook
+              </a>
+            </div>
+            <div class="card-meta">
+              <span class="lang-dot" data-lang="TypeScript">TypeScript</span>
+              <span class="tag tag-ai">AI</span>
+              <span class="tag tag-tool">Tool</span>
+            </div>
+          </div>
+          <div class="card-stars-badge">
+            <div class="stars-count">+1,152</div>
+            <div class="stars-label"><i class="fa-solid fa-star"></i> <span class="i18n-en">today</span><span class="i18n-zh">今日</span></div>
+            <div class="stars-total">26.0k total</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="47"></div></div>
+        </div>
+        <div class="card-desc">
+          <span class="i18n-en">An open-source NotebookLM rival with local model support—ingest multi-source docs and get <strong>podcast-style audio summaries</strong> without surrendering your data to Google.</span>
+          <span class="i18n-zh">开源版 NotebookLM，支持本地模型接入，多源文档摄取后可生成<strong>播客风格音频摘要</strong>，数据完全自主可控，无需向 Google 让渡隐私。</span>
+        </div>
+      </div>
+
+      <!-- #5 PaddlePaddle/PaddleOCR -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-left">
+            <div class="card-rank"># 05</div>
+            <div class="card-name">
+              <a href="https://github.com/PaddlePaddle/PaddleOCR" target="_blank" rel="noopener">
+                <span class="org">PaddlePaddle /</span> PaddleOCR
+              </a>
+            </div>
+            <div class="card-meta">
+              <span class="lang-dot" data-lang="Python">Python</span>
+              <span class="tag tag-ai">AI</span>
+              <span class="tag tag-ml">ML</span>
+            </div>
+          </div>
+          <div class="card-stars-badge">
+            <div class="stars-count">+747</div>
+            <div class="stars-label"><i class="fa-solid fa-star"></i> <span class="i18n-en">today</span><span class="i18n-zh">今日</span></div>
+            <div class="stars-total">80.5k total</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="30"></div></div>
+        </div>
+        <div class="card-desc">
+          <span class="i18n-en">Baidu's production-grade OCR engine reframed as an AI document pipeline—converts any PDF or image into <strong>structured, queryable data</strong> across 100+ languages.</span>
+          <span class="i18n-zh">百度飞桨 OCR 引擎以 AI 文档管道姿态回归，将任意 PDF 或图片转化为<strong>结构化可查数据</strong>，覆盖逾百种语言，大模型接入利器。</span>
+        </div>
+      </div>
+
+      <!-- #6 mvanhorn/last30days-skill -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-left">
+            <div class="card-rank"># 06</div>
+            <div class="card-name">
+              <a href="https://github.com/mvanhorn/last30days-skill" target="_blank" rel="noopener">
+                <span class="org">mvanhorn /</span> last30days-skill
+              </a>
+            </div>
+            <div class="card-meta">
+              <span class="lang-dot" data-lang="Python">Python</span>
+              <span class="tag tag-ai">AI</span>
+              <span class="tag tag-tool">Tool</span>
+            </div>
+          </div>
+          <div class="card-stars-badge">
+            <div class="stars-count">+731</div>
+            <div class="stars-label"><i class="fa-solid fa-star"></i> <span class="i18n-en">today</span><span class="i18n-zh">今日</span></div>
+            <div class="stars-total">28.2k total</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="30"></div></div>
+        </div>
+        <div class="card-desc">
+          <span class="i18n-en">A plug-and-play agent skill that fans out across Reddit, X, YouTube, HN, and Polymarket to <strong>synthesize a 30-day landscape report</strong> on any topic you query.</span>
+          <span class="i18n-zh">即插即用的 agent 技能，跨 Reddit、X、YouTube、HN、Polymarket 多平台并发采集，<strong>一键合成任意主题 30 天综合洞察报告</strong>，无需人工汇总。</span>
+        </div>
+      </div>
+
+      <!-- #7 NVIDIA/cosmos -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-left">
+            <div class="card-rank"># 07</div>
+            <div class="card-name">
+              <a href="https://github.com/NVIDIA/cosmos" target="_blank" rel="noopener">
+                <span class="org">NVIDIA /</span> cosmos
+              </a>
+            </div>
+            <div class="card-meta">
+              <span class="lang-dot" data-lang="Jupyter Notebook">Jupyter Notebook</span>
+              <span class="tag tag-ai">AI</span>
+              <span class="tag tag-infra">Infra</span>
+            </div>
+          </div>
+          <div class="card-stars-badge">
+            <div class="stars-count">+479</div>
+            <div class="stars-label"><i class="fa-solid fa-star"></i> <span class="i18n-en">today</span><span class="i18n-zh">今日</span></div>
+            <div class="stars-total">9.4k total</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="19"></div></div>
+        </div>
+        <div class="card-desc">
+          <span class="i18n-en">NVIDIA's open platform for Physical AI—pretrained world models, simulation datasets, and deployment tooling built for <strong>robotics and autonomous vehicles</strong>.</span>
+          <span class="i18n-zh">NVIDIA 物理 AI 开放平台，提供预训练世界模型、仿真数据集与部署工具，专为<strong>机器人与自动驾驶</strong>研发加速落地而构建。</span>
+        </div>
+      </div>
+
+      <!-- #8 CopilotKit/CopilotKit -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-left">
+            <div class="card-rank"># 08</div>
+            <div class="card-name">
+              <a href="https://github.com/CopilotKit/CopilotKit" target="_blank" rel="noopener">
+                <span class="org">CopilotKit /</span> CopilotKit
+              </a>
+            </div>
+            <div class="card-meta">
+              <span class="lang-dot" data-lang="TypeScript">TypeScript</span>
+              <span class="tag tag-ai">AI</span>
+              <span class="tag tag-tool">Tool</span>
+            </div>
+          </div>
+          <div class="card-stars-badge">
+            <div class="stars-count">+366</div>
+            <div class="stars-label"><i class="fa-solid fa-star"></i> <span class="i18n-en">today</span><span class="i18n-zh">今日</span></div>
+            <div class="stars-total">32.7k total</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="15"></div></div>
+        </div>
+        <div class="card-desc">
+          <span class="i18n-en">A React + Angular component library from the AG-UI Protocol team for embedding <strong>AI copilots and generative UIs</strong> into any web application.</span>
+          <span class="i18n-zh">AG-UI 协议制定方出品的 React + Angular 组件库，帮助开发者在任意 Web 应用中无缝嵌入<strong>AI copilot 与生成式界面</strong>。</span>
+        </div>
+      </div>
+
+      <!-- #9 openclaw/openclaw-windows-node -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-left">
+            <div class="card-rank"># 09</div>
+            <div class="card-name">
+              <a href="https://github.com/openclaw/openclaw-windows-node" target="_blank" rel="noopener">
+                <span class="org">openclaw /</span> openclaw-windows-node
+              </a>
+            </div>
+            <div class="card-meta">
+              <span class="lang-dot" data-lang="C#">C#</span>
+              <span class="tag tag-tool">Tool</span>
+              <span class="tag tag-infra">Infra</span>
+            </div>
+          </div>
+          <div class="card-stars-badge">
+            <div class="stars-count">+326</div>
+            <div class="stars-label"><i class="fa-solid fa-star"></i> <span class="i18n-en">today</span><span class="i18n-zh">今日</span></div>
+            <div class="stars-total">1.6k total</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="13"></div></div>
+        </div>
+        <div class="card-desc">
+          <span class="i18n-en">A Windows-native companion suite for OpenClaw—system-tray daemon, shared libraries, and a <strong>PowerToys Command Palette extension</strong> for keyboard-driven power users.</span>
+          <span class="i18n-zh">OpenClaw 的 Windows 原生配套套件，含系统托盘守护进程、共享库与<strong>PowerToys 命令面板扩展</strong>，键盘流用户的效率利器。</span>
+        </div>
+      </div>
+
+      <!-- #10 666ghj/MiroFish -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-left">
+            <div class="card-rank"># 10</div>
+            <div class="card-name">
+              <a href="https://github.com/666ghj/MiroFish" target="_blank" rel="noopener">
+                <span class="org">666ghj /</span> MiroFish
+              </a>
+            </div>
+            <div class="card-meta">
+              <span class="lang-dot" data-lang="Python">Python</span>
+              <span class="tag tag-ai">AI</span>
+              <span class="tag tag-ml">ML</span>
+            </div>
+          </div>
+          <div class="card-stars-badge">
+            <div class="stars-count">+320</div>
+            <div class="stars-label"><i class="fa-solid fa-star"></i> <span class="i18n-en">today</span><span class="i18n-zh">今日</span></div>
+            <div class="stars-total">64.7k total</div>
+          </div>
+        </div>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="13"></div></div>
+        </div>
+        <div class="card-desc">
+          <span class="i18n-en">A lightweight Python engine that models <strong>swarm intelligence as a universal forecasting primitive</strong>—elegant group dynamics translated into predictive computation.</span>
+          <span class="i18n-zh">轻量 Python 引擎，以<strong>群体智能为通用预测基元</strong>，将优雅的集体涌现行为转化为可计算的预测力量，简洁而通用。</span>
+        </div>
+      </div>
+
+    </div><!-- /cards -->
+  </div><!-- /cards column -->
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <!-- Language chart -->
+    <div class="sidebar-block">
+      <div class="sidebar-title">
+        <span class="i18n-en">By Language</span>
+        <span class="i18n-zh">语言分布</span>
+      </div>
+      <div class="lang-bar-item">
+        <div class="lang-bar-label">
+          <span>Python</span>
+          <span class="lang-bar-pct">62.4%</span>
+        </div>
+        <div class="lang-bar-track"><div class="lang-bar-fill lbf-py" data-pct="62.4"></div></div>
+      </div>
+      <div class="lang-bar-item">
+        <div class="lang-bar-label">
+          <span>TypeScript</span>
+          <span class="lang-bar-pct">15.5%</span>
+        </div>
+        <div class="lang-bar-track"><div class="lang-bar-fill lbf-ts" data-pct="15.5"></div></div>
+      </div>
+      <div class="lang-bar-item">
+        <div class="lang-bar-label">
+          <span>JavaScript</span>
+          <span class="lang-bar-pct">13.9%</span>
+        </div>
+        <div class="lang-bar-track"><div class="lang-bar-fill lbf-js" data-pct="13.9"></div></div>
+      </div>
+      <div class="lang-bar-item">
+        <div class="lang-bar-label">
+          <span>Jupyter Notebook</span>
+          <span class="lang-bar-pct">4.9%</span>
+        </div>
+        <div class="lang-bar-track"><div class="lang-bar-fill lbf-jup" data-pct="4.9"></div></div>
+      </div>
+      <div class="lang-bar-item">
+        <div class="lang-bar-label">
+          <span>C#</span>
+          <span class="lang-bar-pct">3.3%</span>
+        </div>
+        <div class="lang-bar-track"><div class="lang-bar-fill lbf-cs" data-pct="3.3"></div></div>
+      </div>
+      <!-- Memphis deco shapes -->
+      <div class="memphis-deco">
+        <div class="m-shape m-circle" style="background:var(--pink)"></div>
+        <div class="m-shape m-sq" style="background:var(--blue)"></div>
+        <div class="m-shape m-tri" style="background:var(--lime)"></div>
+        <div class="m-shape m-circle" style="background:var(--orange)"></div>
+        <div class="m-shape m-sq" style="background:var(--purple)"></div>
+        <div class="m-shape m-tri" style="background:var(--yellow)"></div>
+      </div>
+    </div>
+
+    <!-- Trend insight -->
+    <div class="sidebar-block">
+      <div class="sidebar-title">
+        <span class="i18n-en">Trend Insight</span>
+        <span class="i18n-zh">趋势洞察</span>
+      </div>
+      <p class="trend-insight">
+        <span class="i18n-en">All nine AI projects today center on agent infrastructure—token compression, skill orchestration, memory systems, and frontend tooling—signaling that the ecosystem's 2026 focus has decisively shifted from training to <strong>production-grade agent engineering</strong>. Python's 62% language dominance and the absence of any foundational model projects underline the shift from research to deployment.</span>
+        <span class="i18n-zh">今日九个 AI 项目无一例外地聚焦 agent 基础设施——Token 压缩、技能编排、记忆系统、前端组件——标志着 2026 年 AI 生态的重心已从训练转向<strong>工程化 agent 落地</strong>。Python 以 62% 的语言占比领跑，榜单上基础模型项目的缺席，进一步印证了从研究到部署的范式迁移。</span>
+      </p>
+    </div>
+
+    <!-- Data source -->
+    <div class="sidebar-block">
+      <div class="sidebar-title">
+        <span class="i18n-en">Data Source</span>
+        <span class="i18n-zh">数据来源</span>
+      </div>
+      <p style="font-family:var(--font-mono);font-size:10px;color:var(--muted);line-height:1.7">
+        <span class="i18n-en">github.com/trending · June 6, 2026<br>Ranked by stars gained today.<br>Top 10 of daily trending list.</span>
+        <span class="i18n-zh">github.com/trending · 2026年6月6日<br>按今日新增星标数排序<br>取当日趋势榜前 10 名</span>
+      </p>
+    </div>
+
+  </aside>
+</div><!-- /main-wrap -->
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">GitHub Trending Archive</div>
+    <div class="footer-info">
+      <span class="i18n-en">Data: <a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · June 6, 2026</span>
+      <span class="i18n-zh">数据来源：<a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · 2026年6月6日</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// IntersectionObserver card animations
+(function(){
+  var cards = document.querySelectorAll('.card');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var el = e.target;
+        var idx = Array.from(cards).indexOf(el);
+        setTimeout(function(){
+          el.classList.add('in');
+          // Animate star bar
+          var fill = el.querySelector('.star-bar-fill');
+          if(fill){ fill.style.width = fill.getAttribute('data-pct') + '%'; }
+        }, idx * 80);
+        io.unobserve(el);
+      }
+    });
+  }, { threshold: 0.08 });
+  cards.forEach(function(c){ io.observe(c); });
+
+  // Animate sidebar language bars
+  var lbars = document.querySelectorAll('.lang-bar-fill');
+  var lbio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var el = e.target;
+        setTimeout(function(){
+          el.style.width = el.getAttribute('data-pct') + '%';
+        }, 200);
+        lbio.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  lbars.forEach(function(b){ lbio.observe(b); });
+})();
+</script>
+
+<script>(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();</script>
+</body>
+</html>
