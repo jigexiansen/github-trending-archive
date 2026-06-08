@@ -5,8 +5,8 @@
 **开源世界每天都在变，这里把每一天最值得关注的那一刻留下来。**
 
 [![报告校验](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![报告数量](https://img.shields.io/badge/报告-13份-7b2fff.svg)](#-浏览报告)
-[![最近更新](https://img.shields.io/badge/最近更新-2026--06--07-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/07.html)
+[![报告数量](https://img.shields.io/badge/报告-14份-7b2fff.svg)](#-浏览报告)
+[![最近更新](https://img.shields.io/badge/最近更新-2026--06--08-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/08.html)
 [![许可证: MIT](https://img.shields.io/badge/许可证-MIT-00f5d4.svg)](LICENSE)
 
 [English](README.md) · [在线浏览 →](https://jigexiansen.github.io/github-trending-archive/)
@@ -45,10 +45,11 @@ GitHub Trending 每 24 小时重置一次。那些今天备受瞩目的项目，
 ## 📂 浏览报告
 
 <details open>
-<summary><strong>2026 年 6 月</strong> — 6 份报告</summary>
+<summary><strong>2026 年 6 月</strong> — 8 份报告</summary>
 
 | 日期 | 当日榜首 | 亮点 |
 |------|---------|------|
+| [2026-06-08](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/08.html) | turbovec +1,554⭐ | AI Agent 工具链包揽前四席，向量检索、研究技能与审美过滤器集中爆发，标志开发者重心从训练模型全面转向编排使用 |
 | [2026-06-07](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/07.html) | open-notebook +794⭐ | AI Agent 工具链独占十席，记忆系统、跨平台搜索、前端框架集体爆发，LLM 生态从实验期全面迈入生产落地 |
 | [2026-06-06](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/06.html) | headroom +2,473⭐ | 九席锁定 agent 基础设施——Token 压缩、技能框架与记忆系统集中爆发，AI 工程化落地全面加速 |
 | [2026-06-05](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/05.html) | headroom +3,142⭐ | Token 压缩今日领跑，headroom 与 Agent 框架合揽半数星标；trivy、flowsint 罕见双双入榜，安全工具升温 |
