@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GitHub Trending · June 9, 2026 — Terracotta Modern</title>
+<meta name="description" content="GitHub Trending report for June 9, 2026. Top repos: mvanhorn/last30days-skill (+3,558 stars), RyanCodrai/turbovec, roboflow/supervision and more.">
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
+<script src="https://kit.fontawesome.com/371954d95b.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── TERRACOTTA MODERN — MID-CENTURY EDITORIAL ── */
+:root {
+  --bg:         #f4efe5;
+  --paper:      #fefcf8;
+  --surface:    #ffffff;
+  --terra:      #c45c3a;
+  --terra-lt:   #de7a5f;
+  --terra-dim:  rgba(196,92,58,.12);
+  --sage:       #5d8a6e;
+  --sage-dim:   rgba(93,138,110,.12);
+  --charcoal:   #231f1c;
+  --mud:        #6b5b4e;
+  --sand:       #c9ae92;
+  --gold:       #a87028;
+  --gold-dim:   rgba(168,112,40,.15);
+  --cream-border: #ddd0be;
+  --text:       #231f1c;
+  --muted:      #7e7066;
+  --dim:        #b0a498;
+  --font-disp:  'Gloock', 'Noto Sans SC', serif;
+  --font-body:  'Plus Jakarta Sans', 'Noto Sans SC', sans-serif;
+  --font-mono:  'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+/* Warm paper grain texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+/* ── Lang Toggle ── */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:64px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
+
+/* ── Arc Nav ── */
+.arc-nav{position:sticky;top:0;z-index:9999;height:38px;display:flex;align-items:center;padding:0 20px;background:rgba(35,31,28,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(196,92,58,.25);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;}
+.arc-nav-home{color:rgba(255,255,255,.45);text-decoration:none;transition:color .15s;white-space:nowrap;}
+.arc-nav-home:hover{color:rgba(255,255,255,.85);}
+.arc-nav-sep{color:rgba(255,255,255,.15);margin:0 10px;}
+.arc-nav-month{color:rgba(255,255,255,.3);white-space:nowrap;}
+.arc-nav-dates{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+.arc-nav-d{width:26px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:3px;font-size:10px;text-decoration:none;color:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.07);transition:all .15s;}
+.arc-nav-d:hover{color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.2);}
+.arc-nav-d.cur{color:#f5c4b4;background:rgba(196,92,58,.25);border-color:rgba(196,92,58,.5);pointer-events:none;}
+
+/* ── Page Layout ── */
+.page-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ── */
+.page-header {
+  padding: 56px 0 40px;
+  border-bottom: 2px solid var(--charcoal);
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.header-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.header-kicker-line {
+  flex: 0 0 40px;
+  height: 2px;
+  background: var(--terra);
+}
+.header-kicker-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--terra);
+}
+.header-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: flex-start;
+}
+.page-title {
+  font-family: var(--font-disp);
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--charcoal);
+  letter-spacing: -.02em;
+}
+.page-title .accent {
+  color: var(--terra);
+}
+.header-date-block {
+  text-align: right;
+  padding-top: 8px;
+}
+.header-date-num {
+  font-family: var(--font-disp);
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--terra);
+  opacity: .18;
+  letter-spacing: -.04em;
+}
+.header-date-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.stat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+.stat-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--surface);
+  border: 1px solid var(--cream-border);
+  border-radius: 4px;
+  font-size: 13px;
+}
+.stat-chip i {
+  color: var(--terra);
+  font-size: 12px;
+}
+.stat-chip strong {
+  font-weight: 600;
+  color: var(--charcoal);
+}
+.stat-chip span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ── Main Content ── */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 40px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Project Cards ── */
+.cards-section {}
+.section-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--cream-border);
+  margin-bottom: 0;
+}
+
+.proj-card {
+  background: var(--surface);
+  border: 1px solid var(--cream-border);
+  border-radius: 6px;
+  padding: 22px 24px;
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 0 20px;
+  transition: transform .2s, box-shadow .2s;
+  opacity: 0;
+  transform: translateY(16px);
+  position: relative;
+  overflow: hidden;
+}
+.proj-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--terra);
+  opacity: 0;
+  transition: opacity .2s;
+}
+.proj-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(35,31,28,.08);
+}
+.proj-card:hover::before {
+  opacity: 1;
+}
+.proj-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.proj-rank {
+  font-family: var(--font-disp);
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--cream-border);
+  line-height: 1;
+  padding-top: 4px;
+  letter-spacing: -.02em;
+}
+
+.proj-body {}
+.proj-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.proj-org {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .04em;
+}
+.proj-slash {
+  color: var(--dim);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+.proj-name {
+  font-family: var(--font-disp);
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--charcoal);
+  letter-spacing: -.01em;
+  text-decoration: none;
+  transition: color .15s;
+}
+.proj-name:hover {
+  color: var(--terra);
+}
+.proj-desc {
+  font-size: 13.5px;
+  color: var(--mud);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.proj-desc strong {
+  color: var(--terra);
+  font-weight: 600;
+}
+.proj-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.proj-star-bar-wrap {
+  flex: 1;
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.proj-star-bar-bg {
+  flex: 1;
+  height: 3px;
+  background: var(--bg);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.proj-star-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--terra), var(--terra-lt));
+  border-radius: 2px;
+  width: 0;
+  transition: width 1s cubic-bezier(.25,.46,.45,.94);
+}
+.proj-today-stars {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--terra);
+  white-space: nowrap;
+}
+.proj-today-stars i {
+  font-size: 10px;
+  margin-right: 3px;
+}
+.proj-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lang-dot-wrap {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.lang-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.proj-tags {
+  display: flex;
+  gap: 5px;
+}
+.proj-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .05em;
+  padding: 2px 8px;
+  border-radius: 2px;
+  background: var(--terra-dim);
+  color: var(--terra);
+  font-weight: 500;
+}
+.proj-tag.tag-infra { background: var(--sage-dim); color: var(--sage); }
+.proj-tag.tag-oss { background: var(--gold-dim); color: var(--gold); }
+.proj-total-stars {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--dim);
+  margin-left: auto;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  position: sticky;
+  top: 60px;
+}
+.sidebar-card {
+  background: var(--surface);
+  border: 1px solid var(--cream-border);
+  border-radius: 6px;
+  padding: 22px;
+  margin-bottom: 16px;
+}
+.sidebar-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--cream-border);
+}
+
+/* Language chart */
+.lang-chart {}
+.lang-row {
+  margin-bottom: 12px;
+}
+.lang-row-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.lang-name {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--charcoal);
+}
+.lang-pct {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+.lang-bar-bg {
+  height: 5px;
+  background: var(--bg);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.lang-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  width: 0;
+  transition: width 1.2s cubic-bezier(.25,.46,.45,.94) .3s;
+}
+
+/* Trend insight */
+.insight-text {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--mud);
+}
+.insight-text strong {
+  color: var(--terra);
+  font-weight: 600;
+}
+
+/* Decorative rule */
+.h-rule {
+  border: none;
+  border-top: 1px solid var(--cream-border);
+  margin: 0 0 16px;
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 2px solid var(--charcoal);
+  background: var(--charcoal);
+  color: rgba(255,255,255,.45);
+  font-size: 12px;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.footer-inner a {
+  color: rgba(255,255,255,.6);
+  text-decoration: none;
+}
+.footer-inner a:hover { color: #fff; }
+
+/* Language dot colors */
+.ld-python  { background: #3572A5; }
+.ld-ts      { background: #3178c6; }
+.ld-js      { background: #f1e05a; }
+.ld-roff    { background: #ecdebe; border: 1px solid #b0a080; }
+
+/* Lang bar colors */
+.lb-python  { background: #3572A5; }
+.lb-ts      { background: #3178c6; }
+.lb-js      { background: #f1e05a; }
+.lb-roff    { background: #ecdebe; border: 1px solid #b0a080; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+  }
+  .header-grid {
+    grid-template-columns: 1fr;
+  }
+  .header-date-block {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .proj-card {
+    grid-template-columns: 1fr;
+  }
+  .proj-rank {
+    font-size: 24px;
+    padding-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
+
+<!-- Arc Nav -->
+<style>
+.arc-nav{position:sticky;top:0;z-index:9999;height:38px;display:flex;align-items:center;padding:0 20px;background:rgba(35,31,28,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(196,92,58,.25);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;}
+.arc-nav-home{color:rgba(255,255,255,.45);text-decoration:none;transition:color .15s;white-space:nowrap;}
+.arc-nav-home:hover{color:rgba(255,255,255,.85);}
+.arc-nav-sep{color:rgba(255,255,255,.15);margin:0 10px;}
+.arc-nav-month{color:rgba(255,255,255,.3);white-space:nowrap;}
+.arc-nav-dates{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+.arc-nav-d{width:26px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:3px;font-size:10px;text-decoration:none;color:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.07);transition:all .15s;}
+.arc-nav-d:hover{color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.2);}
+.arc-nav-d.cur{color:#f5c4b4;background:rgba(196,92,58,.25);border-color:rgba(196,92,58,.5);pointer-events:none;}
+</style>
+<nav class="arc-nav">
+  <a class="arc-nav-home" href="../../../index.html">← Archive</a>
+  <span class="arc-nav-sep">/</span>
+  <span class="arc-nav-month">June 2026</span>
+  <div class="arc-nav-dates">
+    <a class="arc-nav-d cur" href="./09.html">09</a>
+    <a class="arc-nav-d" href="./08.html">08</a>
+    <a class="arc-nav-d" href="./07.html">07</a>
+    <a class="arc-nav-d" href="./06.html">06</a>
+    <a class="arc-nav-d" href="./05.html">05</a>
+    <a class="arc-nav-d" href="./04.html">04</a>
+    <a class="arc-nav-d" href="./03.html">03</a>
+    <a class="arc-nav-d" href="./02.html">02</a>
+    <a class="arc-nav-d" href="./01.html">01</a>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="page-header">
+  <div class="header-inner">
+    <div class="header-kicker">
+      <div class="header-kicker-line"></div>
+      <span class="header-kicker-text">
+        <span class="i18n-en">GitHub Trending · Daily Report</span>
+        <span class="i18n-zh">GitHub 趋势 · 每日报告</span>
+      </span>
+    </div>
+    <div class="header-grid">
+      <div>
+        <h1 class="page-title">
+          <span class="i18n-en">Top Repos<br><span class="accent">June 9</span></span>
+          <span class="i18n-zh">热门仓库<br><span class="accent">6月9日</span></span>
+        </h1>
+      </div>
+      <div class="header-date-block">
+        <div class="header-date-num">09</div>
+        <div class="header-date-label">2026 · June</div>
+      </div>
+    </div>
+    <div class="stat-chips">
+      <div class="stat-chip">
+        <i class="fa-solid fa-layer-group"></i>
+        <strong>10</strong>
+        <span><span class="i18n-en">Projects</span><span class="i18n-zh">项目</span></span>
+      </div>
+      <div class="stat-chip">
+        <i class="fa-solid fa-star"></i>
+        <strong>9,956</strong>
+        <span><span class="i18n-en">Stars today</span><span class="i18n-zh">今日 Star</span></span>
+      </div>
+      <div class="stat-chip">
+        <i class="fa-solid fa-code"></i>
+        <strong>4</strong>
+        <span><span class="i18n-en">Languages</span><span class="i18n-zh">语言</span></span>
+      </div>
+      <div class="stat-chip">
+        <i class="fa-solid fa-robot"></i>
+        <strong>8</strong>
+        <span><span class="i18n-en">AI projects</span><span class="i18n-zh">AI 项目</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main -->
+<main>
+  <!-- Cards -->
+  <section class="cards-section">
+    <div class="section-title">
+      <span class="i18n-en">Trending Repositories</span>
+      <span class="i18n-zh">热门仓库</span>
+    </div>
+
+    <!-- Card 1 -->
+    <article class="proj-card" data-idx="0">
+      <div class="proj-rank">01</div>
+      <div class="proj-body">
+        <div class="proj-header">
+          <span class="proj-org">mvanhorn</span>
+          <span class="proj-slash">/</span>
+          <a class="proj-name" href="https://github.com/mvanhorn/last30days-skill" target="_blank" rel="noopener">last30days-skill</a>
+        </div>
+        <p class="proj-desc">
+          <span class="i18n-en">An agent skill that mines Reddit, X, YouTube, HN, Polymarket, and the open web to synthesize a <strong>30-day topic brief</strong> on any subject.</span>
+          <span class="i18n-zh">跨 Reddit、X、YouTube、HN 和 Polymarket 多平台检索，自动合成任意话题<strong>近 30 天动态摘要</strong>的 AI 技能包。</span>
+        </p>
+        <div class="proj-footer">
+          <div class="proj-star-bar-wrap">
+            <div class="proj-star-bar-bg"><div class="proj-star-bar-fill" data-pct="100"></div></div>
+            <span class="proj-today-stars"><i class="fa-solid fa-star"></i>+3,558</span>
+          </div>
+          <div class="proj-meta">
+            <span class="lang-dot-wrap"><span class="lang-dot ld-python"></span>Python</span>
+            <div class="proj-tags">
+              <span class="proj-tag">AI</span>
+              <span class="proj-tag">Tool</span>
+            </div>
+            <span class="proj-total-stars">34.5k ★</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="proj-card" data-idx="1">
+      <div class="proj-rank">02</div>
+      <div class="proj-body">
+        <div class="proj-header">
+          <span class="proj-org">RyanCodrai</span>
+          <span class="proj-slash">/</span>
+          <a class="proj-name" href="https://github.com/RyanCodrai/turbovec" target="_blank" rel="noopener">turbovec</a>
+        </div>
+        <p class="proj-desc">
+          <span class="i18n-en">A high-throughput <strong>vector index</strong> built on TurboQuant's quantization core, implemented in Rust and exposed via Python bindings.</span>
+          <span class="i18n-zh">基于 TurboQuant 量化内核，用 Rust 构建、Python 封装的<strong>高性能向量索引</strong>库。</span>
+        </p>
+        <div class="proj-footer">
+          <div class="proj-star-bar-wrap">
+            <div class="proj-star-bar-bg"><div class="proj-star-bar-fill" data-pct="49"></div></div>
+            <span class="proj-today-stars"><i class="fa-solid fa-star"></i>+1,729</span>
+          </div>
+          <div class="proj-meta">
+            <span class="lang-dot-wrap"><span class="lang-dot ld-python"></span>Python</span>
+            <div class="proj-tags">
+              <span class="proj-tag">AI</span>
+              <span class="proj-tag tag-infra">Infra</span>
+            </div>
+            <span class="proj-total-stars">8.8k ★</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="proj-card" data-idx="2">
+      <div class="proj-rank">03</div>
+      <div class="proj-body">
+        <div class="proj-header">
+          <span class="proj-org">roboflow</span>
+          <span class="proj-slash">/</span>
+          <a class="proj-name" href="https://github.com/roboflow/supervision" target="_blank" rel="noopener">supervision</a>
+        </div>
+        <p class="proj-desc">
+          <span class="i18n-en">Reusable computer vision utilities covering detection, tracking, and annotation — <strong>the engineering bridge</strong> between model output and production applications.</span>
+          <span class="i18n-zh">封装检测、追踪与标注等常用能力的<strong>计算机视觉工具集</strong>，填补模型输出与工程落地之间的空白。</span>
+        </p>
+        <div class="proj-footer">
+          <div class="proj-star-bar-wrap">
+            <div class="proj-star-bar-bg"><div class="proj-star-bar-fill" data-pct="36"></div></div>
+            <span class="proj-today-stars"><i class="fa-solid fa-star"></i>+1,288</span>
+          </div>
+          <div class="proj-meta">
+            <span class="lang-dot-wrap"><span class="lang-dot ld-python"></span>Python</span>
+            <div class="proj-tags">
+              <span class="proj-tag">AI</span>
+              <span class="proj-tag">Tool</span>
+            </div>
+            <span class="proj-total-stars">42.3k ★</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="proj-card" data-idx="3">
+      <div class="proj-rank">04</div>
+      <div class="proj-body">
+        <div class="proj-header">
+          <span class="proj-org">Panniantong</span>
+          <span class="proj-slash">/</span>
+          <a class="proj-name" href="https://github.com/Panniantong/Agent-Reach" target="_blank" rel="noopener">Agent-Reach</a>
+        </div>
+        <p class="proj-desc">
+          <span class="i18n-en">Grants AI agents <strong>live read/search access</strong> to Twitter, Reddit, YouTube, GitHub, and more via a unified CLI — no API fees required.</span>
+          <span class="i18n-zh">让 AI 智能体无需付费 API 即可对 Twitter、Reddit、YouTube 和 GitHub 实现<strong>实时搜索与读取</strong>的统一工具层。</span>
+        </p>
+        <div class="proj-footer">
+          <div class="proj-star-bar-wrap">
+            <div class="proj-star-bar-bg"><div class="proj-star-bar-fill" data-pct="19"></div></div>
+            <span class="proj-today-stars"><i class="fa-solid fa-star"></i>+679</span>
+          </div>
+          <div class="proj-meta">
+            <span class="lang-dot-wrap"><span class="lang-dot ld-python"></span>Python</span>
+            <div class="proj-tags">
+              <span class="proj-tag">AI</span>
+              <span class="proj-tag">Tool</span>
+            </div>
+            <span class="proj-total-stars">24.1k ★</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 5 -->
+    <article class="proj-card" data-idx="4">
+      <div class="proj-rank">05</div>
+      <div class="proj-body">
+        <div class="proj-header">
+          <span class="proj-org">refactoringhq</span>
+          <span class="proj-slash">/</span>
+          <a class="proj-name" href="https://github.com/refactoringhq/tolaria" target="_blank" rel="noopener">tolaria</a>
+        </div>
+        <p class="proj-desc">
+          <span class="i18n-en">A desktop app for <strong>managing local Markdown knowledge bases</strong> with focus on bidirectional linking, offline-first editing, and distraction-free navigation.</span>
+          <span class="i18n-zh">专为<strong>本地 Markdown 知识库管理</strong>设计的桌面应用，强调双向链接、离线优先与无干扰写作体验。</span>
+        </p>
+        <div class="proj-footer">
+          <div class="proj-star-bar-wrap">
+            <div class="proj-star-bar-bg"><div class="proj-star-bar-fill" data-pct="18"></div></div>
+            <span class="proj-today-stars"><i class="fa-solid fa-star"></i>+651</span>
+          </div>
+          <div class="proj-meta">
+            <span class="lang-dot-wrap"><span class="lang-dot ld-ts"></span>TypeScript</span>
+            <div class="proj-tags">
+              <span class="proj-tag">Tool</span>
+            </div>
+            <span class="proj-total-stars">13.6k ★</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 6 -->
+    <article class="proj-card" data-idx="5">
+      <div class="proj-rank">06</div>
+      <div class="proj-body">
+        <div class="proj-header">
+          <span class="proj-org">TapXWorld</span>
+          <span class="proj-slash">/</span>
+          <a class="proj-name" href="https://github.com/TapXWorld/ChinaTextbook" target="_blank" rel="noopener">ChinaTextbook</a>
+        </div>
+        <p class="proj-desc">
+          <span class="i18n-en">A comprehensive open archive of <strong>Chinese K–12 and university textbooks</strong> in PDF, covering every major subject and grade level.</span>
+          <span class="i18n-zh">收录国内小学、初中、高中及大学各科 PDF 版本，覆盖全学段全科目的<strong>开源教材资源库</strong>。</span>
+        </p>
+        <div class="proj-footer">
+          <div class="proj-star-bar-wrap">
+            <div class="proj-star-bar-bg"><div class="proj-star-bar-fill" data-pct="17"></div></div>
+            <span class="proj-today-stars"><i class="fa-solid fa-star"></i>+592</span>
+          </div>
+          <div class="proj-meta">
+            <span class="lang-dot-wrap"><span class="lang-dot ld-roff"></span>Roff</span>
+            <div class="proj-tags">
+              <span class="proj-tag tag-oss">OSS</span>
+            </div>
+            <span class="proj-total-stars">73.0k ★</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 7 -->
+    <article class="proj-card" data-idx="6">
+      <div class="proj-rank">07</div>
+      <div class="proj-body">
+        <div class="proj-header">
+          <span class="proj-org">google</span>
+          <span class="proj-slash">/</span>
+          <a class="proj-name" href="https://github.com/google/skills" target="_blank" rel="noopener">skills</a>
+        </div>
+        <p class="proj-desc">
+          <span class="i18n-en">Official plug-in agent skills for Google products, giving AI agents <strong>first-party access to Google services</strong> with minimal boilerplate.</span>
+          <span class="i18n-zh">Google 官方出品的智能体技能插件，帮助 AI 智能体以最少配置<strong>直接调用各类 Google 服务</strong>。</span>
+        </p>
+        <div class="proj-footer">
+          <div class="proj-star-bar-wrap">
+            <div class="proj-star-bar-bg"><div class="proj-star-bar-fill" data-pct="13"></div></div>
+            <span class="proj-today-stars"><i class="fa-solid fa-star"></i>+461</span>
+          </div>
+          <div class="proj-meta">
+            <span class="lang-dot-wrap"><span class="lang-dot ld-python"></span>Python</span>
+            <div class="proj-tags">
+              <span class="proj-tag">AI</span>
+              <span class="proj-tag">Tool</span>
+            </div>
+            <span class="proj-total-stars">12.4k ★</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 8 -->
+    <article class="proj-card" data-idx="7">
+      <div class="proj-rank">08</div>
+      <div class="proj-body">
+        <div class="proj-header">
+          <span class="proj-org">CopilotKit</span>
+          <span class="proj-slash">/</span>
+          <a class="proj-name" href="https://github.com/CopilotKit/CopilotKit" target="_blank" rel="noopener">CopilotKit</a>
+        </div>
+        <p class="proj-desc">
+          <span class="i18n-en">A full-stack <strong>agent UI framework</strong> for React, Angular, and mobile that embeds AI co-pilots into products via the AG-UI protocol.</span>
+          <span class="i18n-zh">基于 AG-UI 协议、面向 React/Angular 和移动端的<strong>全栈 AI 副驾驶 UI 框架</strong>，将智能体能力直接嵌入产品界面。</span>
+        </p>
+        <div class="proj-footer">
+          <div class="proj-star-bar-wrap">
+            <div class="proj-star-bar-bg"><div class="proj-star-bar-fill" data-pct="11"></div></div>
+            <span class="proj-today-stars"><i class="fa-solid fa-star"></i>+378</span>
+          </div>
+          <div class="proj-meta">
+            <span class="lang-dot-wrap"><span class="lang-dot ld-ts"></span>TypeScript</span>
+            <div class="proj-tags">
+              <span class="proj-tag">AI</span>
+              <span class="proj-tag">Tool</span>
+            </div>
+            <span class="proj-total-stars">34.1k ★</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 9 -->
+    <article class="proj-card" data-idx="8">
+      <div class="proj-rank">09</div>
+      <div class="proj-body">
+        <div class="proj-header">
+          <span class="proj-org">luongnv89</span>
+          <span class="proj-slash">/</span>
+          <a class="proj-name" href="https://github.com/luongnv89/claude-howto" target="_blank" rel="noopener">claude-howto</a>
+        </div>
+        <p class="proj-desc">
+          <span class="i18n-en">A visual, example-driven reference covering <strong>Claude Code from first steps to advanced agent patterns</strong>, with ready-to-copy snippets.</span>
+          <span class="i18n-zh">图解 + 示例驱动的 Claude Code 完整指南，从<strong>入门概念到高阶智能体模式</strong>均配有可直接复用的代码片段。</span>
+        </p>
+        <div class="proj-footer">
+          <div class="proj-star-bar-wrap">
+            <div class="proj-star-bar-bg"><div class="proj-star-bar-fill" data-pct="9"></div></div>
+            <span class="proj-today-stars"><i class="fa-solid fa-star"></i>+312</span>
+          </div>
+          <div class="proj-meta">
+            <span class="lang-dot-wrap"><span class="lang-dot ld-python"></span>Python</span>
+            <div class="proj-tags">
+              <span class="proj-tag">AI</span>
+              <span class="proj-tag">Tool</span>
+            </div>
+            <span class="proj-total-stars">35.8k ★</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 10 -->
+    <article class="proj-card" data-idx="9">
+      <div class="proj-rank">10</div>
+      <div class="proj-body">
+        <div class="proj-header">
+          <span class="proj-org">santifer</span>
+          <span class="proj-slash">/</span>
+          <a class="proj-name" href="https://github.com/santifer/career-ops" target="_blank" rel="noopener">career-ops</a>
+        </div>
+        <p class="proj-desc">
+          <span class="i18n-en">An AI-powered job search automation platform built on Claude Code, featuring <strong>14 skill modes</strong>, a Go dashboard, PDF generation, and batch processing.</span>
+          <span class="i18n-zh">构建于 Claude Code 之上的 AI 求职自动化平台，集成<strong>14 种专项技能模式</strong>、Go 仪表盘、PDF 生成与批量投递能力。</span>
+        </p>
+        <div class="proj-footer">
+          <div class="proj-star-bar-wrap">
+            <div class="proj-star-bar-bg"><div class="proj-star-bar-fill" data-pct="9"></div></div>
+            <span class="proj-today-stars"><i class="fa-solid fa-star"></i>+308</span>
+          </div>
+          <div class="proj-meta">
+            <span class="lang-dot-wrap"><span class="lang-dot ld-js"></span>JavaScript</span>
+            <div class="proj-tags">
+              <span class="proj-tag">AI</span>
+              <span class="proj-tag">Tool</span>
+            </div>
+            <span class="proj-total-stars">50.5k ★</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <span class="i18n-en">Stars by Language</span>
+        <span class="i18n-zh">各语言今日 Star</span>
+      </div>
+      <div class="lang-chart">
+        <div class="lang-row">
+          <div class="lang-row-head">
+            <span class="lang-name"><span class="lang-dot ld-python"></span>Python</span>
+            <span class="lang-pct">80.6%</span>
+          </div>
+          <div class="lang-bar-bg"><div class="lang-bar-fill lb-python" data-w="80.6"></div></div>
+        </div>
+        <div class="lang-row">
+          <div class="lang-row-head">
+            <span class="lang-name"><span class="lang-dot ld-ts"></span>TypeScript</span>
+            <span class="lang-pct">10.3%</span>
+          </div>
+          <div class="lang-bar-bg"><div class="lang-bar-fill lb-ts" data-w="10.3"></div></div>
+        </div>
+        <div class="lang-row">
+          <div class="lang-row-head">
+            <span class="lang-name"><span class="lang-dot ld-roff"></span>Roff</span>
+            <span class="lang-pct">5.9%</span>
+          </div>
+          <div class="lang-bar-bg"><div class="lang-bar-fill lb-roff" data-w="5.9"></div></div>
+        </div>
+        <div class="lang-row">
+          <div class="lang-row-head">
+            <span class="lang-name"><span class="lang-dot ld-js"></span>JavaScript</span>
+            <span class="lang-pct">3.1%</span>
+          </div>
+          <div class="lang-bar-bg"><div class="lang-bar-fill lb-js" data-w="3.1"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <span class="i18n-en">Trend Insight</span>
+        <span class="i18n-zh">趋势洞察</span>
+      </div>
+      <p class="insight-text">
+        <span class="i18n-en">Today's chart is a near-total <strong>agent-ecosystem sweep</strong> — eight of ten repos build, extend, or document AI agents. The standout, <em>last30days-skill</em>, is a research agent primitive that stitches six platforms into a grounded 30-day brief, signalling a broader shift from monolithic AI apps toward <strong>composable, task-specific agent skills</strong>.</span>
+        <span class="i18n-zh">今日榜单几乎被智能体生态全面占据——前十中有八个项目围绕 AI 智能体的构建、扩展或教学展开。领跑的 <em>last30days-skill</em> 将六大平台信息聚合为一份有据可查的 30 天摘要，折射出 AI 开发的重心正在从单体应用向<strong>可组合、任务专一的智能体技能</strong>迁移。</span>
+      </p>
+    </div>
+  </aside>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <span>
+      <span class="i18n-en">Data sourced from <a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a></span>
+      <span class="i18n-zh">数据来源：<a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a></span>
+    </span>
+    <span>June 9, 2026</span>
+  </div>
+</footer>
+
+<script>(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();</script>
+
+<script>
+(function () {
+  // Staggered card animations via IntersectionObserver
+  var cards = document.querySelectorAll('.proj-card');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        var delay = parseInt(el.getAttribute('data-idx') || '0', 10) * 80;
+        setTimeout(function () {
+          el.classList.add('visible');
+          // Animate star bar
+          var bar = el.querySelector('.proj-star-bar-fill');
+          if (bar) { bar.style.width = (bar.getAttribute('data-pct') || '0') + '%'; }
+        }, delay);
+        io.unobserve(el);
+      }
+    });
+  }, { threshold: 0.1 });
+  cards.forEach(function (c) { io.observe(c); });
+
+  // Language bars
+  var langBars = document.querySelectorAll('.lang-bar-fill');
+  var langIo = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        el.style.width = (el.getAttribute('data-w') || '0') + '%';
+        langIo.unobserve(el);
+      }
+    });
+  }, { threshold: 0.1 });
+  langBars.forEach(function (b) { langIo.observe(b); });
+})();
+</script>
+</body>
+</html>

@@ -21,6 +21,7 @@ Each file is a fully self-contained HTML document. No build step, no dependencie
 
 | Date | Top Project | Today's Stars |
 |------|------------|--------------|
+| [2026-06-09](2026/06/09.html) | last30days-skill | +3,558 ⭐ |
 | [2026-06-08](2026/06/08.html) | turbovec | +1,554 ⭐ |
 | [2026-06-07](2026/06/07.html) | open-notebook | +794 ⭐ |
 | [2026-06-06](2026/06/06.html) | headroom | +2,473 ⭐ |
