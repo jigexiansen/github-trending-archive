@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Trending · June 10, 2026 — Swiss Grid</title>
+<meta name="description" content="Top 10 GitHub trending repositories for June 10, 2026. Led by mvanhorn/last30days-skill with 3,191 stars today.">
+<script src="https://kit.fontawesome.com/371954d95b.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── SWISS GRID — International Typographic Style ── */
+:root {
+  --bg:        #F7F4EF;
+  --paper:     #FFFFFF;
+  --ink:       #0F0F0F;
+  --ink2:      #1A1A1A;
+  --red:       #D4181A;
+  --red-dim:   rgba(212,24,26,.08);
+  --gray:      #5E5A57;
+  --grid:      #D5D0C9;
+  --grid-lt:   #EAE6DF;
+  --font-disp: 'Oswald', 'Noto Sans SC', sans-serif;
+  --font-body: 'Source Sans 3', 'Noto Sans SC', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+/* ── Lang Toggle ── */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:64px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
+
+/* ── Arc Nav ── */
+.arc-nav{position:sticky;top:0;z-index:9999;height:38px;display:flex;align-items:center;padding:0 20px;background:rgba(3,6,14,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;}
+.arc-nav-home{color:rgba(255,255,255,.4);text-decoration:none;transition:color .15s;white-space:nowrap;}
+.arc-nav-home:hover{color:rgba(255,255,255,.85);}
+.arc-nav-sep{color:rgba(255,255,255,.12);margin:0 10px;}
+.arc-nav-month{color:rgba(255,255,255,.28);white-space:nowrap;}
+.arc-nav-dates{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+.arc-nav-d{width:26px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:3px;font-size:10px;text-decoration:none;color:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.07);transition:all .15s;}
+.arc-nav-d:hover{color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.2);}
+.arc-nav-d.cur{color:#fff;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);pointer-events:none;}
+
+/* ── Header ── */
+.site-header {
+  background: var(--ink2);
+  border-bottom: 4px solid var(--red);
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 32px 32px;
+}
+.header-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.header-badge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--red);
+  border: 1px solid rgba(212,24,26,.5);
+  padding: 3px 8px;
+  line-height: 1.8;
+}
+.header-issue {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  color: rgba(255,255,255,.25);
+}
+.header-rule {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,.08);
+  margin-bottom: 16px;
+}
+.header-title {
+  font-family: var(--font-disp);
+  font-size: clamp(52px, 9vw, 108px);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: .95;
+  margin-bottom: 16px;
+}
+.header-title em { color: var(--red); font-style: normal; }
+.header-subtitle {
+  font-family: var(--font-disp);
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 32px;
+}
+.header-stats {
+  display: flex;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,.1);
+  width: fit-content;
+}
+.stat-chip {
+  padding: 12px 28px;
+  border-right: 1px solid rgba(255,255,255,.1);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat-chip:last-child { border-right: none; }
+.stat-n {
+  font-family: var(--font-disp);
+  font-size: 30px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1;
+}
+.stat-n.accent { color: var(--red); }
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+}
+
+/* ── Main Layout ── */
+.main-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px 80px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 0 48px;
+  align-items: start;
+}
+
+/* ── Rankings section header ── */
+.rankings-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 36px 0 0;
+  margin-bottom: 0;
+}
+.rankings-label {
+  font-family: var(--font-disp);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--red);
+  white-space: nowrap;
+}
+.rankings-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--grid);
+}
+.rankings-date {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--gray);
+  letter-spacing: .06em;
+}
+
+/* ── Project Card ── */
+.card {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--grid);
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+.card.visible { opacity: 1; transform: none; }
+.card:first-of-type { border-top: 2px solid var(--ink2); }
+
+.card-rank {
+  font-family: var(--font-disp);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--red);
+  line-height: 1;
+  padding-top: 2px;
+  text-align: right;
+}
+.card-rank.muted { color: var(--grid); }
+
+.card-main { min-width: 0; }
+
+.card-header {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.card-org {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gray);
+  letter-spacing: .04em;
+}
+.card-repo {
+  font-family: var(--font-disp);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -.01em;
+  transition: color .15s;
+  line-height: 1.1;
+}
+.card-repo:hover { color: var(--red); }
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.lang-chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--gray);
+}
+.lang-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.card-tags { display: flex; gap: 5px; }
+.tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border: 1px solid var(--grid);
+  color: var(--gray);
+  line-height: 1.6;
+}
+.tag.ai {
+  color: var(--red);
+  border-color: rgba(212,24,26,.35);
+  background: var(--red-dim);
+}
+.tag.infra {
+  color: #0059A8;
+  border-color: rgba(0,89,168,.3);
+  background: rgba(0,89,168,.05);
+}
+.tag.oss {
+  color: #1F7A3B;
+  border-color: rgba(31,122,59,.3);
+  background: rgba(31,122,59,.05);
+}
+
+.card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--gray);
+  margin-bottom: 12px;
+}
+.card-desc strong { color: var(--ink); font-weight: 600; }
+
+.card-bottom {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.today-stars {
+  font-family: var(--font-disp);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--red);
+  white-space: nowrap;
+  min-width: 100px;
+}
+.bar-track {
+  flex: 1;
+  height: 3px;
+  background: var(--grid-lt);
+  max-width: 280px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  background: var(--red);
+  width: 0;
+  transition: width .9s cubic-bezier(.4,0,.2,1) .15s;
+}
+.total-stars {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--gray);
+  white-space: nowrap;
+}
+
+/* ── Sidebar ── */
+.sidebar { padding-top: 36px; }
+
+.sidebar-block {
+  border-top: 2px solid var(--ink2);
+  padding-top: 20px;
+  margin-bottom: 32px;
+}
+.sidebar-heading {
+  font-family: var(--font-disp);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+
+/* Language bars */
+.lang-chart { display: flex; flex-direction: column; gap: 11px; }
+.lang-row { display: flex; flex-direction: column; gap: 5px; }
+.lang-row-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.lang-name { font-family: var(--font-mono); font-size: 11px; color: var(--ink); }
+.lang-pct { font-family: var(--font-mono); font-size: 10px; color: var(--gray); }
+.lang-bar-track { height: 3px; background: var(--grid-lt); }
+.lang-bar-fill { height: 100%; width: 0; transition: width 1s cubic-bezier(.4,0,.2,1) .5s; }
+
+/* Insight */
+.insight-body {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--gray);
+}
+.insight-body strong { color: var(--ink); }
+
+/* Grid stat panel */
+.stat-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--grid);
+  border: 1px solid var(--grid);
+}
+.stat-cell {
+  background: var(--bg);
+  padding: 14px 12px;
+  text-align: center;
+}
+.stat-cell-n {
+  font-family: var(--font-disp);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-cell-n.red { color: var(--red); }
+.stat-cell-l {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+/* ── Footer ── */
+.site-footer {
+  background: var(--ink2);
+  border-top: 3px solid var(--red);
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-src {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .06em;
+  color: rgba(255,255,255,.28);
+}
+.footer-src a { color: rgba(255,255,255,.45); text-decoration: none; }
+.footer-src a:hover { color: rgba(255,255,255,.75); }
+.footer-sig {
+  font-family: var(--font-disp);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.13);
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .main-wrap { grid-template-columns: 1fr; padding: 0 20px 56px; gap: 0; }
+  .sidebar { padding-top: 0; }
+  .sidebar-block:first-child { border-top: 1px solid var(--grid); }
+  .header-inner { padding: 28px 20px 24px; }
+  .header-stats { flex-wrap: wrap; }
+}
+@media (max-width: 560px) {
+  .card { grid-template-columns: 42px 1fr; gap: 0 12px; }
+  .card-rank { font-size: 30px; }
+  .card-repo { font-size: 18px; }
+  .stat-chip { padding: 10px 16px; }
+}
+</style>
+</head>
+<body>
+
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
+
+<nav class="arc-nav">
+  <a class="arc-nav-home" href="../../../index.html">← Archive</a>
+  <span class="arc-nav-sep">/</span>
+  <span class="arc-nav-month">June 2026</span>
+  <div class="arc-nav-dates">
+    <a class="arc-nav-d cur" href="./10.html">10</a>
+    <a class="arc-nav-d" href="./09.html">09</a>
+    <a class="arc-nav-d" href="./08.html">08</a>
+    <a class="arc-nav-d" href="./07.html">07</a>
+    <a class="arc-nav-d" href="./06.html">06</a>
+    <a class="arc-nav-d" href="./05.html">05</a>
+    <a class="arc-nav-d" href="./04.html">04</a>
+    <a class="arc-nav-d" href="./03.html">03</a>
+    <a class="arc-nav-d" href="./02.html">02</a>
+    <a class="arc-nav-d" href="./01.html">01</a>
+  </div>
+</nav>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-eyebrow">
+      <span class="header-badge">Daily Report</span>
+      <span class="header-issue">No. 46 · June 10, 2026</span>
+    </div>
+    <div class="header-rule"></div>
+    <div class="header-title">GitHub<br><em>Trending</em></div>
+    <div class="header-subtitle">
+      <span class="i18n-en">Top Repositories · June 10, 2026</span>
+      <span class="i18n-zh">每日热门仓库 · 2026年6月10日</span>
+    </div>
+    <div class="header-stats">
+      <div class="stat-chip">
+        <span class="stat-n accent">10</span>
+        <span class="stat-label"><span class="i18n-en">Projects</span><span class="i18n-zh">项目</span></span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-n">10,513</span>
+        <span class="stat-label"><span class="i18n-en">Stars Today</span><span class="i18n-zh">今日星标</span></span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-n">5</span>
+        <span class="stat-label"><span class="i18n-en">Languages</span><span class="i18n-zh">语言数</span></span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-n accent">8</span>
+        <span class="stat-label"><span class="i18n-en">AI Projects</span><span class="i18n-zh">AI 项目</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="main-wrap">
+
+  <!-- ── Rankings ── -->
+  <section>
+    <div class="rankings-head">
+      <span class="rankings-label"><span class="i18n-en">Rankings</span><span class="i18n-zh">排名</span></span>
+      <span class="rankings-rule"></span>
+      <span class="rankings-date">2026-06-10</span>
+    </div>
+
+    <!-- #1 mvanhorn/last30days-skill -->
+    <div class="card">
+      <div class="card-rank">1</div>
+      <div class="card-main">
+        <div class="card-header">
+          <span class="card-org">mvanhorn /</span>
+          <a class="card-repo" href="https://github.com/mvanhorn/last30days-skill" target="_blank" rel="noopener">last30days-skill</a>
+        </div>
+        <div class="card-meta">
+          <div class="lang-chip"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+          <div class="card-tags"><span class="tag ai">AI/ML</span><span class="tag ai">Tool</span></div>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A Claude Code skill that deploys an AI research agent across Reddit, X, YouTube, HN, Polymarket, and the open web — synthesizing 30 days of signal into one <strong>coherent briefing</strong>.</span>
+          <span class="i18n-zh">Claude Code 技能扩展，一键调动 AI 跨 Reddit、X、YouTube、HN、Polymarket 和全网检索近30天内容，输出结构化的<strong>综合研究报告</strong>。</span>
+        </p>
+        <div class="card-bottom">
+          <span class="today-stars">▲ 3,191 today</span>
+          <div class="bar-track"><div class="bar-fill" data-pct="100"></div></div>
+          <span class="total-stars">37.3k ★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #2 RyanCodrai/turbovec -->
+    <div class="card">
+      <div class="card-rank">2</div>
+      <div class="card-main">
+        <div class="card-header">
+          <span class="card-org">RyanCodrai /</span>
+          <a class="card-repo" href="https://github.com/RyanCodrai/turbovec" target="_blank" rel="noopener">turbovec</a>
+        </div>
+        <div class="card-meta">
+          <div class="lang-chip"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+          <div class="card-tags"><span class="tag ai">AI/ML</span><span class="tag infra">Infra</span></div>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A high-performance vector index powered by TurboQuant — Rust-speed search with <strong>Python-friendly ergonomics</strong>.</span>
+          <span class="i18n-zh">基于 TurboQuant 的<strong>超高速向量索引</strong>，Rust 底层保障极致性能，Python 绑定开箱即用。</span>
+        </p>
+        <div class="card-bottom">
+          <span class="today-stars">▲ 1,801 today</span>
+          <div class="bar-track"><div class="bar-fill" data-pct="56"></div></div>
+          <span class="total-stars">10.2k ★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #3 santifer/career-ops -->
+    <div class="card">
+      <div class="card-rank">3</div>
+      <div class="card-main">
+        <div class="card-header">
+          <span class="card-org">santifer /</span>
+          <a class="card-repo" href="https://github.com/santifer/career-ops" target="_blank" rel="noopener">career-ops</a>
+        </div>
+        <div class="card-meta">
+          <div class="lang-chip"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</div>
+          <div class="card-tags"><span class="tag ai">AI/ML</span><span class="tag ai">Tool</span></div>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A job-search system built on Claude Code with 14 specialized skill modes, a Go dashboard, PDF generation, and batch processing — turn your job hunt into a <strong>structured ops pipeline</strong>.</span>
+          <span class="i18n-zh">基于 Claude Code 的<strong>求职作战系统</strong>，14 种专属技能模式、Go 仪表盘、PDF 生成与批量处理，让求职变成可量化的运营流程。</span>
+        </p>
+        <div class="card-bottom">
+          <span class="today-stars">▲ 1,110 today</span>
+          <div class="bar-track"><div class="bar-fill" data-pct="35"></div></div>
+          <span class="total-stars">51.6k ★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #4 refactoringhq/tolaria -->
+    <div class="card">
+      <div class="card-rank muted">4</div>
+      <div class="card-main">
+        <div class="card-header">
+          <span class="card-org">refactoringhq /</span>
+          <a class="card-repo" href="https://github.com/refactoringhq/tolaria" target="_blank" rel="noopener">tolaria</a>
+        </div>
+        <div class="card-meta">
+          <div class="lang-chip"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</div>
+          <div class="card-tags"><span class="tag">Tool</span></div>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A desktop app that turns local Markdown files into a <strong>full-featured knowledge base</strong> — search, link, and navigate your notes without any cloud dependency.</span>
+          <span class="i18n-zh">桌面端 Markdown <strong>知识库管理器</strong>，本地存储、全局检索、双向链接，完全脱离云端依赖。</span>
+        </p>
+        <div class="card-bottom">
+          <span class="today-stars">▲ 829 today</span>
+          <div class="bar-track"><div class="bar-fill" data-pct="26"></div></div>
+          <span class="total-stars">14.3k ★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #5 phuryn/pm-skills -->
+    <div class="card">
+      <div class="card-rank muted">5</div>
+      <div class="card-main">
+        <div class="card-header">
+          <span class="card-org">phuryn /</span>
+          <a class="card-repo" href="https://github.com/phuryn/pm-skills" target="_blank" rel="noopener">pm-skills</a>
+        </div>
+        <div class="card-meta">
+          <div class="lang-chip"><span class="lang-dot" style="background:#aaaaaa"></span>—</div>
+          <div class="card-tags"><span class="tag ai">AI/ML</span><span class="tag ai">Tool</span></div>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A marketplace of 100+ agentic PM skills and plugins covering discovery, strategy, execution, and launch — designed for <strong>product managers working with AI agents</strong>.</span>
+          <span class="i18n-zh">面向 AI 协作时代的产品经理<strong>技能市集</strong>，100+ 智能体插件与指令，覆盖产品发现、战略规划到上线全流程。</span>
+        </p>
+        <div class="card-bottom">
+          <span class="today-stars">▲ 806 today</span>
+          <div class="bar-track"><div class="bar-fill" data-pct="25"></div></div>
+          <span class="total-stars">13.4k ★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #6 roboflow/supervision -->
+    <div class="card">
+      <div class="card-rank muted">6</div>
+      <div class="card-main">
+        <div class="card-header">
+          <span class="card-org">roboflow /</span>
+          <a class="card-repo" href="https://github.com/roboflow/supervision" target="_blank" rel="noopener">supervision</a>
+        </div>
+        <div class="card-meta">
+          <div class="lang-chip"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+          <div class="card-tags"><span class="tag ai">AI/ML</span><span class="tag">Tool</span></div>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Reusable building blocks for computer vision pipelines — annotation, tracking, visualization, and inference utilities <strong>all under one roof</strong>.</span>
+          <span class="i18n-zh">计算机视觉<strong>通用工具库</strong>，从标注、追踪到可视化，覆盖 CV 流水线的核心模块，开箱即用。</span>
+        </p>
+        <div class="card-bottom">
+          <span class="today-stars">▲ 733 today</span>
+          <div class="bar-track"><div class="bar-fill" data-pct="23"></div></div>
+          <span class="total-stars">43.0k ★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #7 Andyyyy64/whichllm -->
+    <div class="card">
+      <div class="card-rank muted">7</div>
+      <div class="card-main">
+        <div class="card-header">
+          <span class="card-org">Andyyyy64 /</span>
+          <a class="card-repo" href="https://github.com/Andyyyy64/whichllm" target="_blank" rel="noopener">whichllm</a>
+        </div>
+        <div class="card-meta">
+          <div class="lang-chip"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+          <div class="card-tags"><span class="tag ai">AI/ML</span><span class="tag">Tool</span></div>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Benchmarks local LLMs on your actual hardware in real-time — filtered to what runs, ranked by <strong>recency-weighted performance scores</strong>.</span>
+          <span class="i18n-zh">实机跑分，找到最适合你硬件的本地大模型。<strong>实时过滤</strong>可运行模型，按近期真实性能排序，不玩虚假榜单。</span>
+        </p>
+        <div class="card-bottom">
+          <span class="today-stars">▲ 633 today</span>
+          <div class="bar-track"><div class="bar-fill" data-pct="20"></div></div>
+          <span class="total-stars">4.1k ★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #8 TapXWorld/ChinaTextbook -->
+    <div class="card">
+      <div class="card-rank muted">8</div>
+      <div class="card-main">
+        <div class="card-header">
+          <span class="card-org">TapXWorld /</span>
+          <a class="card-repo" href="https://github.com/TapXWorld/ChinaTextbook" target="_blank" rel="noopener">ChinaTextbook</a>
+        </div>
+        <div class="card-meta">
+          <div class="lang-chip"><span class="lang-dot" style="background:#aaaaaa"></span>Roff</div>
+          <div class="card-tags"><span class="tag oss">OSS</span></div>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A comprehensive archive of Chinese textbooks — from primary school through university — <strong>freely accessible as PDF</strong>.</span>
+          <span class="i18n-zh">覆盖小学至大学的全套<strong>中国教材 PDF</strong>，完整收录，免费开放。</span>
+        </p>
+        <div class="card-bottom">
+          <span class="today-stars">▲ 519 today</span>
+          <div class="bar-track"><div class="bar-fill" data-pct="16"></div></div>
+          <span class="total-stars">73.5k ★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #9 aaif-goose/goose -->
+    <div class="card">
+      <div class="card-rank muted">9</div>
+      <div class="card-main">
+        <div class="card-header">
+          <span class="card-org">aaif-goose /</span>
+          <a class="card-repo" href="https://github.com/aaif-goose/goose" target="_blank" rel="noopener">goose</a>
+        </div>
+        <div class="card-meta">
+          <div class="lang-chip"><span class="lang-dot" style="background:#dea584"></span>Rust</div>
+          <div class="card-tags"><span class="tag ai">AI/ML</span><span class="tag">Tool</span></div>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">An open-source AI agent that doesn't just suggest code — it installs, executes, edits, and tests with <strong>any LLM you choose</strong>.</span>
+          <span class="i18n-zh"><strong>不只是建议代码</strong>——Goose 直接执行：安装依赖、跑测试、改文件，支持任意 LLM，开源可扩展。</span>
+        </p>
+        <div class="card-bottom">
+          <span class="today-stars">▲ 489 today</span>
+          <div class="bar-track"><div class="bar-fill" data-pct="15"></div></div>
+          <span class="total-stars">48.5k ★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #10 yikart/AiToEarn -->
+    <div class="card">
+      <div class="card-rank muted">10</div>
+      <div class="card-main">
+        <div class="card-header">
+          <span class="card-org">yikart /</span>
+          <a class="card-repo" href="https://github.com/yikart/AiToEarn" target="_blank" rel="noopener">AiToEarn</a>
+        </div>
+        <div class="card-meta">
+          <div class="lang-chip"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</div>
+          <div class="card-tags"><span class="tag ai">AI/ML</span><span class="tag">Tool</span></div>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A toolkit for turning AI capabilities into income — frameworks and workflows for <strong>monetizing AI-powered products and services</strong>.</span>
+          <span class="i18n-zh">将 AI 能力变现的<strong>工具与方法论集合</strong>，提供完整的 AI 产品商业化框架和工作流。</span>
+        </p>
+        <div class="card-bottom">
+          <span class="today-stars">▲ 402 today</span>
+          <div class="bar-track"><div class="bar-fill" data-pct="13"></div></div>
+          <span class="total-stars">19.9k ★</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+
+    <div class="sidebar-block">
+      <div class="sidebar-heading"><span class="i18n-en">Languages</span><span class="i18n-zh">语言分布</span></div>
+      <div class="lang-chart">
+        <div class="lang-row">
+          <div class="lang-row-head">
+            <span class="lang-name">Python</span>
+            <span class="lang-pct">60.5%</span>
+          </div>
+          <div class="lang-bar-track"><div class="lang-bar-fill" data-pct="60.5" style="background:#3572A5"></div></div>
+        </div>
+        <div class="lang-row">
+          <div class="lang-row-head">
+            <span class="lang-name">Other / None</span>
+            <span class="lang-pct">12.6%</span>
+          </div>
+          <div class="lang-bar-track"><div class="lang-bar-fill" data-pct="12.6" style="background:#aaaaaa"></div></div>
+        </div>
+        <div class="lang-row">
+          <div class="lang-row-head">
+            <span class="lang-name">TypeScript</span>
+            <span class="lang-pct">11.7%</span>
+          </div>
+          <div class="lang-bar-track"><div class="lang-bar-fill" data-pct="11.7" style="background:#3178c6"></div></div>
+        </div>
+        <div class="lang-row">
+          <div class="lang-row-head">
+            <span class="lang-name">JavaScript</span>
+            <span class="lang-pct">10.6%</span>
+          </div>
+          <div class="lang-bar-track"><div class="lang-bar-fill" data-pct="10.6" style="background:#f1e05a"></div></div>
+        </div>
+        <div class="lang-row">
+          <div class="lang-row-head">
+            <span class="lang-name">Rust</span>
+            <span class="lang-pct">4.7%</span>
+          </div>
+          <div class="lang-bar-track"><div class="lang-bar-fill" data-pct="4.7" style="background:#dea584"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-heading"><span class="i18n-en">Trend Insight</span><span class="i18n-zh">趋势洞察</span></div>
+      <p class="insight-body">
+        <span class="i18n-en"><strong>Claude Code skills are the defining story</strong> today — three of the top five repos are skills or full systems built on Claude Code, signaling a new productivity layer forming around LLM-native IDEs. The simultaneous surge in vector infrastructure (turbovec) and LLM hardware benchmarking (whichllm) shows developers aren't just using AI — they're rapidly building the plumbing around it.</span>
+        <span class="i18n-zh"><strong>Claude Code 技能扩展</strong>是今日最强叙事——前五名中三席为围绕 Claude Code 构建的技能或完整系统，LLM 原生 IDE 上的新生产力层正在成形。与此同时，向量索引（turbovec）和本地模型硬件基准工具（whichllm）同步走热，表明开发者不只在用 AI，更在加速搭建 AI 基础设施层。</span>
+      </p>
+    </div>
+
+    <div class="stat-panel">
+      <div class="stat-cell">
+        <div class="stat-cell-n red">8/10</div>
+        <div class="stat-cell-l"><span class="i18n-en">AI Projects</span><span class="i18n-zh">AI 项目</span></div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-n">60.5%</div>
+        <div class="stat-cell-l"><span class="i18n-en">Python Share</span><span class="i18n-zh">Python 占比</span></div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-n red">3,191</div>
+        <div class="stat-cell-l"><span class="i18n-en">Peak Stars</span><span class="i18n-zh">单日最高</span></div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-n">10.5k</div>
+        <div class="stat-cell-l"><span class="i18n-en">Total Stars</span><span class="i18n-zh">总星标</span></div>
+      </div>
+    </div>
+
+  </aside>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="footer-src">
+      <span class="i18n-en">Data: <a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · Fetched 2026-06-10</span>
+      <span class="i18n-zh">数据来源：<a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · 抓取于 2026-06-10</span>
+    </span>
+    <span class="footer-sig">Swiss Grid · 2026</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var cardObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        var card = e.target;
+        var idx = Array.from(card.parentElement.querySelectorAll('.card')).indexOf(card);
+        setTimeout(function () {
+          card.classList.add('visible');
+          card.querySelectorAll('.bar-fill').forEach(function (b) {
+            b.style.width = b.dataset.pct + '%';
+          });
+        }, idx * 55);
+        cardObs.unobserve(card);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.card').forEach(function (c) { cardObs.observe(c); });
+
+  var langObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.lang-bar-fill').forEach(function (b) {
+          b.style.width = b.dataset.pct + '%';
+        });
+        langObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  var lc = document.querySelector('.lang-chart');
+  if (lc) langObs.observe(lc);
+})();
+</script>
+
+<script>(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();</script>
+</body>
+</html>
