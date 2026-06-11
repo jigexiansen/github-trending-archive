@@ -5,8 +5,8 @@
 **开源世界每天都在变，这里把每一天最值得关注的那一刻留下来。**
 
 [![报告校验](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![报告数量](https://img.shields.io/badge/报告-16份-7b2fff.svg)](#-浏览报告)
-[![最近更新](https://img.shields.io/badge/最近更新-2026--06--10-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/10.html)
+[![报告数量](https://img.shields.io/badge/报告-17份-7b2fff.svg)](#-浏览报告)
+[![最近更新](https://img.shields.io/badge/最近更新-2026--06--11-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/11.html)
 [![许可证: MIT](https://img.shields.io/badge/许可证-MIT-00f5d4.svg)](LICENSE)
 
 [English](README.md) · [在线浏览 →](https://jigexiansen.github.io/github-trending-archive/)
@@ -45,10 +45,11 @@ GitHub Trending 每 24 小时重置一次。那些今天备受瞩目的项目，
 ## 📂 浏览报告
 
 <details open>
-<summary><strong>2026 年 6 月</strong> — 10 份报告</summary>
+<summary><strong>2026 年 6 月</strong> — 11 份报告</summary>
 
 | 日期 | 当日榜首 | 亮点 |
 |------|---------|------|
+| [2026-06-11](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/11.html) | last30days-skill +2,535⭐ | 智能体技能包与 Agent 框架霸占八席，可复用技能原语正取代 LLM 封装工具成为 AI 工程的主流单元 |
 | [2026-06-10](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/10.html) | last30days-skill +3,191⭐ | Claude Code 技能扩展占据前五中三席，LLM 原生 IDE 生产力层正在快速成形，向量索引与本地模型基准工具同步走热 |
 | [2026-06-09](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/09.html) | last30days-skill +3,558⭐ | 智能体技能包横扫榜单，跨六大平台合成 30 天摘要的研究技能以 3558 星领跑，标志着 AI 开发重心转向可组合的任务专一智能体原语 |
 | [2026-06-08](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/08.html) | turbovec +1,554⭐ | AI Agent 工具链包揽前四席，向量检索、研究技能与审美过滤器集中爆发，标志开发者重心从训练模型全面转向编排使用 |
