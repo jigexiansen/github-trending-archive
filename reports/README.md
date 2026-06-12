@@ -21,6 +21,7 @@ Each file is a fully self-contained HTML document. No build step, no dependencie
 
 | Date | Top Project | Today's Stars |
 |------|------------|--------------|
+| [2026-06-12](2026/06/12.html) | agent-skills | +3,278 ⭐ |
 | [2026-06-11](2026/06/11.html) | last30days-skill | +2,535 ⭐ |
 | [2026-06-10](2026/06/10.html) | last30days-skill | +3,191 ⭐ |
 | [2026-06-09](2026/06/09.html) | last30days-skill | +3,558 ⭐ |

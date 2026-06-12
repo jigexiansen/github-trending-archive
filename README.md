@@ -5,8 +5,8 @@
 **A permanent, beautiful record of what the open source world cared about each day.**
 
 [![Validate Reports](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![Reports](https://img.shields.io/badge/Reports-17-7b2fff.svg)](#-browse)
-[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--11-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/11.html)
+[![Reports](https://img.shields.io/badge/Reports-18-7b2fff.svg)](#-browse)
+[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--12-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/12.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-00f5d4.svg)](LICENSE)
 
 [简体中文](README_zh-CN.md) · [Live Archive →](https://jigexiansen.github.io/github-trending-archive/)
@@ -45,10 +45,11 @@ Each daily report is a single, self-contained HTML file:
 ## 📂 Browse
 
 <details open>
-<summary><strong>2026 · June</strong> — 11 reports</summary>
+<summary><strong>2026 · June</strong> — 12 reports</summary>
 
 | Date | Top Project | Highlights |
 |------|------------|-----------|
+| [2026-06-12](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/12.html) | agent-skills +3,278⭐ | Agent skill libraries claim six of ten spots and Shell dethrones Python — the community converges on composable, CLI-first skill primitives for AI agents |
 | [2026-06-11](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/11.html) | last30days-skill +2,535⭐ | Agent skills claim 8 of 10 spots — composable skill primitives are displacing raw LLM wrappers as the dominant unit of AI-native engineering |
 | [2026-06-10](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/10.html) | last30days-skill +3,191⭐ | Claude Code skills claim three of the top five spots — a new productivity layer is forming fast around LLM-native IDEs |
 | [2026-06-09](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/09.html) | last30days-skill +3,558⭐ | Agent skills dominate with 8 of 10 repos — a research skill synthesizing 30-day briefings across six platforms signals the shift to composable agentic primitives |

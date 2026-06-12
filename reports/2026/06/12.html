@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending — June 12, 2026</title>
+<meta name="description" content="GitHub Trending daily report for June 12, 2026. Top repos: addyosmani/agent-skills (+3,278 stars), apple/container (+2,430), and 8 more.">
+<script src="https://kit.fontawesome.com/371954d95b.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── AMBER TERMINAL — Retro CRT Phosphor Aesthetic ── */
+:root {
+  --bg:        #080500;
+  --bg2:       #0f0900;
+  --surface:   #130c00;
+  --surface2:  #1a1000;
+  --border:    #3a2800;
+  --border-hi: #7a5210;
+  --amber:     #ffaa00;
+  --amber-hi:  #ffcc33;
+  --amber-lo:  rgba(255,170,0,.45);
+  --amber-glow:rgba(255,170,0,.12);
+  --text:      #ffc940;
+  --muted:     #c4882a;
+  --dim:       #7a5c22;
+  --dim2:      #4a3a14;
+  --scanline:  rgba(0,0,0,.22);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* CRT scanlines */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9990;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    var(--scanline) 3px,
+    var(--scanline) 4px
+  );
+  opacity: .35;
+}
+
+/* Phosphor vignette */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9991;
+  background: radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(0,0,0,.6) 100%);
+}
+
+/* ── i18n ── */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:64px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
+
+/* ── Arc Nav ── */
+.arc-nav{position:sticky;top:0;z-index:9999;height:38px;display:flex;align-items:center;padding:0 20px;background:rgba(8,5,0,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-hi);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;}
+.arc-nav-home{color:var(--dim);text-decoration:none;transition:color .15s;white-space:nowrap;}
+.arc-nav-home:hover{color:var(--amber);}
+.arc-nav-sep{color:var(--dim2);margin:0 10px;}
+.arc-nav-month{color:var(--dim);white-space:nowrap;}
+.arc-nav-dates{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+.arc-nav-d{width:26px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:3px;font-size:10px;text-decoration:none;color:var(--dim);border:1px solid var(--border);transition:all .15s;}
+.arc-nav-d:hover{color:var(--amber);border-color:var(--border-hi);}
+.arc-nav-d.cur{color:var(--amber-hi);background:rgba(255,170,0,.1);border-color:var(--amber-lo);pointer-events:none;text-shadow:0 0 8px rgba(255,170,0,.5);}
+
+/* ── Main Layout ── */
+.page-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ── Header ── */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  background: var(--bg2);
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 0 28px;
+}
+
+.header-eyebrow {
+  font-size: 11px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header-eyebrow::before {
+  content: '>';
+  color: var(--amber);
+  animation: blink 1.1s step-end infinite;
+}
+@keyframes blink {
+  0%,100%{opacity:1;}50%{opacity:0;}
+}
+
+.header-title {
+  font-family: 'VT323', monospace;
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 400;
+  line-height: .9;
+  letter-spacing: .02em;
+  color: var(--amber-hi);
+  text-shadow: 0 0 40px rgba(255,170,0,.35), 0 0 80px rgba(255,170,0,.15);
+  margin-bottom: 20px;
+}
+.header-title .title-date {
+  color: var(--amber);
+  opacity: .75;
+  font-size: .65em;
+  display: block;
+  margin-top: 6px;
+}
+
+.header-desc {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: .06em;
+  line-height: 1.7;
+  max-width: 640px;
+  margin-bottom: 24px;
+}
+
+/* ── Stat Chips ── */
+.stat-chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: 1px solid var(--border-hi);
+  background: var(--surface);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.chip i { font-size: 9px; opacity: .8; }
+.chip-val {
+  font-family: 'VT323', monospace;
+  font-size: 15px;
+  letter-spacing: .08em;
+  line-height: 1;
+  color: var(--amber-hi);
+}
+
+/* ── Main wrap ── */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 32px 80px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ── Section heading ── */
+.section-label {
+  font-size: 10px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding: 12px 0 10px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-label::before { content: '//'; color: var(--amber-lo); }
+
+/* ── Project Cards ── */
+.cards { display: flex; flex-direction: column; }
+
+.card {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 0 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  opacity: 0;
+  transform: translateX(-16px);
+  transition: opacity .5s ease, transform .6s cubic-bezier(.34,1.2,.64,1);
+}
+.card.in {
+  opacity: 1;
+  transform: none;
+}
+
+.card-rank {
+  font-family: 'VT323', monospace;
+  font-size: 28px;
+  color: var(--dim);
+  text-align: right;
+  padding-top: 2px;
+  line-height: 1;
+}
+.card-rank::before { content: '#'; font-size: 18px; }
+
+.card-main {}
+
+.card-titlerow {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.card-org {
+  font-size: 10px;
+  color: var(--dim);
+  letter-spacing: .08em;
+}
+
+.card-name {
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  color: var(--amber-hi);
+  text-decoration: none;
+  letter-spacing: .04em;
+  text-shadow: 0 0 14px rgba(255,170,0,.3);
+  transition: color .15s, text-shadow .15s;
+  line-height: 1;
+}
+.card-name:hover {
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255,200,80,.6);
+}
+
+.card-tags {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.tag {
+  font-size: 9px;
+  padding: 2px 7px;
+  border: 1px solid var(--border-hi);
+  color: var(--dim);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.tag.ai { border-color: rgba(255,170,0,.4); color: var(--amber); background: rgba(255,170,0,.06); }
+.tag.sec { border-color: rgba(255,80,80,.4); color: #ff8060; background: rgba(255,80,80,.06); }
+
+.card-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 10px;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+}
+.card-desc strong { color: var(--amber); font-weight: 600; }
+
+.card-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-bar-track {
+  flex: 1;
+  height: 3px;
+  background: var(--border);
+  overflow: hidden;
+}
+.card-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--amber-lo) 0%, var(--amber) 100%);
+  box-shadow: 0 0 6px rgba(255,170,0,.4);
+  width: 0;
+  transition: width 1s cubic-bezier(.16,1,.3,1);
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 10px;
+  color: var(--dim);
+  letter-spacing: .06em;
+  white-space: nowrap;
+}
+.card-stars-today {
+  color: var(--amber);
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.lang-dot {
+  display: inline-block;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+.lang-Shell  { background: #89e051; }
+.lang-Swift  { background: #f05138; }
+.lang-Python { background: #3572A5; }
+.lang-TypeScript { background: #3178c6; }
+.lang-Go     { background: #00ADD8; }
+.lang-None   { background: #888; }
+
+/* ── Sidebar ── */
+.sidebar {}
+
+.sidebar-block {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  margin-bottom: 20px;
+}
+.sidebar-title {
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.sidebar-title::before { content: '>'; color: var(--amber-lo); }
+
+.lang-chart { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.lc-row { display: flex; align-items: center; gap: 8px; font-size: 10px; }
+.lc-name { min-width: 80px; color: var(--muted); letter-spacing: .06em; }
+.lc-track { flex: 1; height: 3px; background: var(--border); overflow: hidden; }
+.lc-fill { height: 100%; width: 0; transition: width 1.2s cubic-bezier(.16,1,.3,1); }
+.lc-pct { min-width: 36px; text-align: right; color: var(--dim); }
+
+.insight-body {
+  padding: 14px;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+}
+.insight-body strong { color: var(--amber); }
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 10px;
+  letter-spacing: .08em;
+  color: var(--dim);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-wrap {
+  border-top: 1px solid var(--border);
+}
+footer a { color: var(--dim); text-decoration: none; transition: color .15s; }
+footer a:hover { color: var(--amber); }
+
+/* ── Phosphor glow pulse on header ── */
+@keyframes glow-pulse {
+  0%,100% { text-shadow: 0 0 40px rgba(255,170,0,.35), 0 0 80px rgba(255,170,0,.15); }
+  50%      { text-shadow: 0 0 50px rgba(255,170,0,.5),  0 0 100px rgba(255,170,0,.25); }
+}
+.header-title { animation: glow-pulse 3s ease-in-out infinite; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  main { grid-template-columns: 1fr; }
+  .sidebar { order: -1; }
+}
+@media (max-width: 600px) {
+  .site-header, main { padding-left: 16px; padding-right: 16px; }
+  .header-inner { padding-left: 0; padding-right: 0; }
+  .stat-chips { gap: 7px; }
+  footer { padding: 16px; }
+}
+</style>
+</head>
+<body>
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
+
+<nav class="arc-nav">
+  <a class="arc-nav-home" href="../../../index.html">&larr; Archive</a>
+  <span class="arc-nav-sep">/</span>
+  <span class="arc-nav-month">June 2026</span>
+  <div class="arc-nav-dates">
+    <a class="arc-nav-d cur" href="./12.html">12</a>
+    <a class="arc-nav-d" href="./11.html">11</a>
+    <a class="arc-nav-d" href="./10.html">10</a>
+    <a class="arc-nav-d" href="./09.html">09</a>
+    <a class="arc-nav-d" href="./08.html">08</a>
+    <a class="arc-nav-d" href="./07.html">07</a>
+    <a class="arc-nav-d" href="./06.html">06</a>
+    <a class="arc-nav-d" href="./05.html">05</a>
+    <a class="arc-nav-d" href="./04.html">04</a>
+    <a class="arc-nav-d" href="./03.html">03</a>
+    <a class="arc-nav-d" href="./02.html">02</a>
+    <a class="arc-nav-d" href="./01.html">01</a>
+  </div>
+</nav>
+
+<div class="site-header">
+  <div class="header-inner">
+    <div class="header-eyebrow">
+      <span class="i18n-en">GitHub Trending &mdash; Daily Report</span>
+      <span class="i18n-zh">GitHub Trending &mdash; 每日报告</span>
+    </div>
+    <h1 class="header-title">
+      TRENDING<br>
+      <span class="title-date">2026 &middot; JUNE 12</span>
+    </h1>
+    <p class="header-desc">
+      <span class="i18n-en">Top 10 repositories on GitHub trending today &mdash; sorted by stars earned in the last 24 hours.</span>
+      <span class="i18n-zh">今日 GitHub Trending 前 10 个项目，按过去 24 小时新增 Star 数排列。</span>
+    </p>
+    <div class="stat-chips">
+      <div class="chip"><i class="fa-solid fa-layer-group"></i> <span class="i18n-en">Projects</span><span class="i18n-zh">项目</span> &nbsp;<span class="chip-val">10</span></div>
+      <div class="chip"><i class="fa-solid fa-star"></i> <span class="i18n-en">Stars Today</span><span class="i18n-zh">今日星标</span> &nbsp;<span class="chip-val">13,173</span></div>
+      <div class="chip"><i class="fa-solid fa-code"></i> <span class="i18n-en">Languages</span><span class="i18n-zh">语言</span> &nbsp;<span class="chip-val">5</span></div>
+      <div class="chip"><i class="fa-solid fa-robot"></i> <span class="i18n-en">AI Projects</span><span class="i18n-zh">AI 项目</span> &nbsp;<span class="chip-val">6</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <!-- ── Project List ── -->
+  <section>
+    <div class="section-label">
+      <span class="i18n-en">Top Repositories</span>
+      <span class="i18n-zh">热门仓库</span>
+    </div>
+    <div class="cards">
+
+      <!-- #1 -->
+      <div class="card" data-bar="100" data-delay="0">
+        <div class="card-rank">1</div>
+        <div class="card-main">
+          <div class="card-titlerow">
+            <span class="card-org">addyosmani /</span>
+            <a class="card-name" href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">agent-skills</a>
+          </div>
+          <div class="card-tags">
+            <span class="tag ai">AI</span>
+            <span class="tag">Tool</span>
+          </div>
+          <p class="card-desc">
+            <span class="i18n-en">A curated library of <strong>production-ready engineering skills</strong> for AI coding agents &mdash; prompts, slash commands, and workflows covering frontend, testing, and infra.</span>
+            <span class="i18n-zh">为 AI 编程智能体精选的<strong>生产级工程技能库</strong>，覆盖前端开发、测试与基础设施的完整提示词和工作流集合。</span>
+          </p>
+          <div class="card-bar-row">
+            <div class="card-meta">
+              <span class="card-stars-today"><i class="fa-solid fa-star"></i> +3,278</span>
+              <span><span class="lang-dot lang-Shell"></span>Shell</span>
+              <span>54.7k &#9733;</span>
+            </div>
+            <div class="card-bar-track"><div class="card-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- #2 -->
+      <div class="card" data-bar="74" data-delay="80">
+        <div class="card-rank">2</div>
+        <div class="card-main">
+          <div class="card-titlerow">
+            <span class="card-org">apple /</span>
+            <a class="card-name" href="https://github.com/apple/container" target="_blank" rel="noopener">container</a>
+          </div>
+          <div class="card-tags">
+            <span class="tag">Infra</span>
+            <span class="tag">Tool</span>
+          </div>
+          <p class="card-desc">
+            <span class="i18n-en">Apple&rsquo;s official CLI for running <strong>Linux containers on macOS</strong> using lightweight virtualization &mdash; no Docker daemon, native Swift performance.</span>
+            <span class="i18n-zh">苹果官方推出的 macOS 容器工具，借助<strong>轻量级虚拟化</strong>直接运行 Linux 容器，无需 Docker 守护进程。</span>
+          </p>
+          <div class="card-bar-row">
+            <div class="card-meta">
+              <span class="card-stars-today"><i class="fa-solid fa-star"></i> +2,430</span>
+              <span><span class="lang-dot lang-Swift"></span>Swift</span>
+              <span>32.3k &#9733;</span>
+            </div>
+            <div class="card-bar-track"><div class="card-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- #3 -->
+      <div class="card" data-bar="60" data-delay="160">
+        <div class="card-rank">3</div>
+        <div class="card-main">
+          <div class="card-titlerow">
+            <span class="card-org">phuryn /</span>
+            <a class="card-name" href="https://github.com/phuryn/pm-skills" target="_blank" rel="noopener">pm-skills</a>
+          </div>
+          <div class="card-tags">
+            <span class="tag ai">AI</span>
+            <span class="tag">Tool</span>
+          </div>
+          <p class="card-desc">
+            <span class="i18n-en">An open marketplace of <strong>100+ agentic skills</strong> for product managers &mdash; slash commands, plugins, and decision frameworks ready for any AI coding agent.</span>
+            <span class="i18n-zh">面向产品经理的开放技能市场，汇聚 <strong>100+ 智能体命令与插件</strong>，可无缝集成到主流 AI 编程工具中。</span>
+          </p>
+          <div class="card-bar-row">
+            <div class="card-meta">
+              <span class="card-stars-today"><i class="fa-solid fa-star"></i> +1,978</span>
+              <span><span class="lang-dot lang-None"></span>—</span>
+              <span>16.2k &#9733;</span>
+            </div>
+            <div class="card-bar-track"><div class="card-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- #4 -->
+      <div class="card" data-bar="49" data-delay="240">
+        <div class="card-rank">4</div>
+        <div class="card-main">
+          <div class="card-titlerow">
+            <span class="card-org">msitarzewski /</span>
+            <a class="card-name" href="https://github.com/msitarzewski/agency-agents" target="_blank" rel="noopener">agency-agents</a>
+          </div>
+          <div class="card-tags">
+            <span class="tag ai">AI</span>
+            <span class="tag">Tool</span>
+          </div>
+          <p class="card-desc">
+            <span class="i18n-en">A <strong>full AI agency in your terminal</strong> &mdash; specialized agents for frontend, backend, DevOps, and security red-teaming, orchestrated together as one command.</span>
+            <span class="i18n-zh">在终端里运营<strong>整套 AI 智能体团队</strong>：前端、后端、运维、安全红队，一条命令即可调度全部专家。</span>
+          </p>
+          <div class="card-bar-row">
+            <div class="card-meta">
+              <span class="card-stars-today"><i class="fa-solid fa-star"></i> +1,599</span>
+              <span><span class="lang-dot lang-Shell"></span>Shell</span>
+              <span>111.5k &#9733;</span>
+            </div>
+            <div class="card-bar-track"><div class="card-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- #5 -->
+      <div class="card" data-bar="40" data-delay="320">
+        <div class="card-rank">5</div>
+        <div class="card-main">
+          <div class="card-titlerow">
+            <span class="card-org">obra /</span>
+            <a class="card-name" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">superpowers</a>
+          </div>
+          <div class="card-tags">
+            <span class="tag ai">AI</span>
+            <span class="tag">Tool</span>
+          </div>
+          <p class="card-desc">
+            <span class="i18n-en">A universal <strong>agentic skills framework</strong> and dev methodology compatible with any AI coding agent &mdash; structured roles, conventions, and prompts for consistent output.</span>
+            <span class="i18n-zh">兼容任意 AI 编程智能体的<strong>通用技能框架与开发方法论</strong>，通过规范化角色与提示词实现稳定可复现的输出。</span>
+          </p>
+          <div class="card-bar-row">
+            <div class="card-meta">
+              <span class="card-stars-today"><i class="fa-solid fa-star"></i> +1,322</span>
+              <span><span class="lang-dot lang-Shell"></span>Shell</span>
+              <span>224.8k &#9733;</span>
+            </div>
+            <div class="card-bar-track"><div class="card-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- #6 -->
+      <div class="card" data-bar="20" data-delay="400">
+        <div class="card-rank">6</div>
+        <div class="card-main">
+          <div class="card-titlerow">
+            <span class="card-org">soxoj /</span>
+            <a class="card-name" href="https://github.com/soxoj/maigret" target="_blank" rel="noopener">maigret</a>
+          </div>
+          <div class="card-tags">
+            <span class="tag">Tool</span>
+            <span class="tag sec">Sec</span>
+          </div>
+          <p class="card-desc">
+            <span class="i18n-en">An <strong>OSINT investigation tool</strong> that traces a digital footprint across 3,000+ platforms using a single username &mdash; generates rich, linked profile reports.</span>
+            <span class="i18n-zh">仅凭一个用户名即可跨 3000+ 平台追踪数字足迹的 <strong>OSINT 侦查工具</strong>，自动生成完整关联人物档案。</span>
+          </p>
+          <div class="card-bar-row">
+            <div class="card-meta">
+              <span class="card-stars-today"><i class="fa-solid fa-star"></i> +661</span>
+              <span><span class="lang-dot lang-Python"></span>Python</span>
+              <span>32.6k &#9733;</span>
+            </div>
+            <div class="card-bar-track"><div class="card-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- #7 -->
+      <div class="card" data-bar="18" data-delay="480">
+        <div class="card-rank">7</div>
+        <div class="card-main">
+          <div class="card-titlerow">
+            <span class="card-org">refactoringhq /</span>
+            <a class="card-name" href="https://github.com/refactoringhq/tolaria" target="_blank" rel="noopener">tolaria</a>
+          </div>
+          <div class="card-tags">
+            <span class="tag">Tool</span>
+            <span class="tag">OSS</span>
+          </div>
+          <p class="card-desc">
+            <span class="i18n-en">A <strong>local-first desktop app</strong> for building Markdown knowledge bases &mdash; clean editor, instant full-text search, zero cloud dependency.</span>
+            <span class="i18n-zh">专注本地优先的 <strong>Markdown 知识库管理桌面应用</strong>，流畅编辑体验与即时全文检索，无需云端依赖。</span>
+          </p>
+          <div class="card-bar-row">
+            <div class="card-meta">
+              <span class="card-stars-today"><i class="fa-solid fa-star"></i> +604</span>
+              <span><span class="lang-dot lang-TypeScript"></span>TypeScript</span>
+              <span>15.4k &#9733;</span>
+            </div>
+            <div class="card-bar-track"><div class="card-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- #8 -->
+      <div class="card" data-bar="15" data-delay="560">
+        <div class="card-rank">8</div>
+        <div class="card-main">
+          <div class="card-titlerow">
+            <span class="card-org">masterking32 /</span>
+            <a class="card-name" href="https://github.com/masterking32/MasterDnsVPN" target="_blank" rel="noopener">MasterDnsVPN</a>
+          </div>
+          <div class="card-tags">
+            <span class="tag">Infra</span>
+            <span class="tag">Tool</span>
+          </div>
+          <p class="card-desc">
+            <span class="i18n-en">A high-performance <strong>DNS tunneling VPN</strong> written in Go &mdash; outperforms DNS2TCP in throughput and reliability for bypassing network restrictions.</span>
+            <span class="i18n-zh">Go 编写的高性能 <strong>DNS 隧道 VPN</strong>，在吞吐量与稳定性上全面超越 DNS2TCP，专为穿透网络封锁而设计。</span>
+          </p>
+          <div class="card-bar-row">
+            <div class="card-meta">
+              <span class="card-stars-today"><i class="fa-solid fa-star"></i> +507</span>
+              <span><span class="lang-dot lang-Go"></span>Go</span>
+              <span>5.7k &#9733;</span>
+            </div>
+            <div class="card-bar-track"><div class="card-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- #9 -->
+      <div class="card" data-bar="13" data-delay="640">
+        <div class="card-rank">9</div>
+        <div class="card-main">
+          <div class="card-titlerow">
+            <span class="card-org">maziyarpanahi /</span>
+            <a class="card-name" href="https://github.com/maziyarpanahi/openmed" target="_blank" rel="noopener">openmed</a>
+          </div>
+          <div class="card-tags">
+            <span class="tag ai">AI</span>
+            <span class="tag">ML</span>
+          </div>
+          <p class="card-desc">
+            <span class="i18n-en">An open-source <strong>healthcare AI platform</strong> for medical LLM fine-tuning, clinical NLP pipelines, and diagnostic tooling &mdash; built for the research community.</span>
+            <span class="i18n-zh">完全开源的<strong>医疗 AI 平台</strong>，整合医疗大模型微调、临床 NLP 与诊断工具，面向学术研究与开放社区。</span>
+          </p>
+          <div class="card-bar-row">
+            <div class="card-meta">
+              <span class="card-stars-today"><i class="fa-solid fa-star"></i> +426</span>
+              <span><span class="lang-dot lang-Python"></span>Python</span>
+              <span>2.7k &#9733;</span>
+            </div>
+            <div class="card-bar-track"><div class="card-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- #10 -->
+      <div class="card" data-bar="11" data-delay="720">
+        <div class="card-rank">10</div>
+        <div class="card-main">
+          <div class="card-titlerow">
+            <span class="card-org">x1xhlol /</span>
+            <a class="card-name" href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools" target="_blank" rel="noopener">system-prompts-and-models-of-ai-tools</a>
+          </div>
+          <div class="card-tags">
+            <span class="tag ai">AI</span>
+            <span class="tag">Tool</span>
+          </div>
+          <p class="card-desc">
+            <span class="i18n-en">A growing <strong>leak collection of system prompts</strong> from Cursor, Claude Code, Devin, and 10+ other AI coding tools &mdash; raw model instructions, fully exposed.</span>
+            <span class="i18n-zh">持续更新的 Cursor、Claude Code、Devin 等 10+ AI 编程工具<strong>系统提示词泄露合集</strong>，原始指令一览无余。</span>
+          </p>
+          <div class="card-bar-row">
+            <div class="card-meta">
+              <span class="card-stars-today"><i class="fa-solid fa-star"></i> +368</span>
+              <span><span class="lang-dot lang-None"></span>—</span>
+              <span>139.9k &#9733;</span>
+            </div>
+            <div class="card-bar-track"><div class="card-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /cards -->
+  </section>
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+
+    <!-- Language chart -->
+    <div class="sidebar-block">
+      <div class="sidebar-title">
+        <span class="i18n-en">Languages by Stars</span>
+        <span class="i18n-zh">语言热度分布</span>
+      </div>
+      <div class="lang-chart">
+        <div class="lc-row">
+          <span class="lc-name"><span class="lang-dot lang-Shell"></span>Shell</span>
+          <div class="lc-track"><div class="lc-fill" style="background:var(--amber);" data-w="47.1"></div></div>
+          <span class="lc-pct">47%</span>
+        </div>
+        <div class="lc-row">
+          <span class="lc-name"><span class="lang-dot lang-Swift"></span>Swift</span>
+          <div class="lc-track"><div class="lc-fill" style="background:#f05138;" data-w="18.4"></div></div>
+          <span class="lc-pct">18%</span>
+        </div>
+        <div class="lc-row">
+          <span class="lc-name"><span class="lang-dot lang-None"></span>Other</span>
+          <div class="lc-track"><div class="lc-fill" style="background:#888;" data-w="17.8"></div></div>
+          <span class="lc-pct">18%</span>
+        </div>
+        <div class="lc-row">
+          <span class="lc-name"><span class="lang-dot lang-Python"></span>Python</span>
+          <div class="lc-track"><div class="lc-fill" style="background:#3572A5;" data-w="8.2"></div></div>
+          <span class="lc-pct">8%</span>
+        </div>
+        <div class="lc-row">
+          <span class="lc-name"><span class="lang-dot lang-TypeScript"></span>TypeScript</span>
+          <div class="lc-track"><div class="lc-fill" style="background:#3178c6;" data-w="4.6"></div></div>
+          <span class="lc-pct">5%</span>
+        </div>
+        <div class="lc-row">
+          <span class="lc-name"><span class="lang-dot lang-Go"></span>Go</span>
+          <div class="lc-track"><div class="lc-fill" style="background:#00ADD8;" data-w="3.8"></div></div>
+          <span class="lc-pct">4%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trend insight -->
+    <div class="sidebar-block">
+      <div class="sidebar-title">
+        <span class="i18n-en">Trend Insight</span>
+        <span class="i18n-zh">今日洞察</span>
+      </div>
+      <div class="insight-body">
+        <span class="i18n-en"><strong>Agent skill libraries</strong> claim six of ten spots today, with Shell overtaking Python as the dominant language &mdash; the community is converging on composable, CLI-first skill primitives. Apple&rsquo;s container tool at #2 signals macOS is becoming a serious platform for Linux workloads without Docker.</span>
+        <span class="i18n-zh"><strong>智能体技能库</strong>今日占据六席，Shell 超越 Python 成为最热语言，开源社区正向 CLI 优先的可组合技能原语加速收敛。苹果 container 工具跻身第二，标志着 macOS 正成为无需 Docker 的严肃 Linux 工作负载平台。</span>
+      </div>
+    </div>
+
+    <!-- Data source -->
+    <div class="sidebar-block">
+      <div class="sidebar-title">
+        <span class="i18n-en">Data Source</span>
+        <span class="i18n-zh">数据来源</span>
+      </div>
+      <div class="insight-body" style="font-size:10px;color:var(--dim);line-height:1.6;">
+        <span class="i18n-en">Scraped from <a href="https://github.com/trending" style="color:var(--muted)">github.com/trending</a> on June 12, 2026. Stars reflect a 24-hour window. Descriptions are editorial rewrites.</span>
+        <span class="i18n-zh">数据抓取自 <a href="https://github.com/trending" style="color:var(--muted)">github.com/trending</a>，时间：2026 年 6 月 12 日。Star 数反映过去 24 小时增量，简介为编辑改写。</span>
+      </div>
+    </div>
+
+  </aside>
+</main>
+
+<div class="footer-wrap">
+<footer>
+  <span><span class="i18n-en">GitHub Trending Archive &mdash; June 12, 2026</span><span class="i18n-zh">GitHub Trending 归档 &mdash; 2026 年 6 月 12 日</span></span>
+  <span><a href="../../../index.html"><span class="i18n-en">&larr; Back to Archive</span><span class="i18n-zh">&larr; 返回归档首页</span></a></span>
+</footer>
+</div>
+
+<script>
+(function(){
+  // IntersectionObserver for card animations
+  var cards = document.querySelectorAll('.card');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var el = e.target;
+        var delay = parseInt(el.getAttribute('data-delay')||0);
+        setTimeout(function(){
+          el.classList.add('in');
+          // Animate bar
+          var fill = el.querySelector('.card-bar-fill');
+          if(fill){
+            var pct = parseInt(el.getAttribute('data-bar')||0);
+            fill.style.width = pct + '%';
+          }
+        }, delay);
+        io.unobserve(el);
+      }
+    });
+  },{threshold:0.1});
+  cards.forEach(function(c){ io.observe(c); });
+
+  // Animate lang chart bars on scroll
+  var lcFills = document.querySelectorAll('.lc-fill');
+  var lcIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var el = e.target;
+        el.style.width = el.getAttribute('data-w') + '%';
+        lcIo.unobserve(el);
+      }
+    });
+  },{threshold:0.1});
+  lcFills.forEach(function(f){ lcIo.observe(f); });
+})();
+</script>
+
+<script>(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();</script>
+</body>
+</html>
