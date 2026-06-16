@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending · June 16, 2026</title>
+<meta name="description" content="GitHub Trending daily archive · June 16, 2026 · Risograph Zine edition — iptv-org/iptv leads with 2,657 stars as free public resources and AI agent tooling dominate today's chart.">
+<script src="https://kit.fontawesome.com/371954d95b.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=Fira+Code:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:      #F5F0E4;
+  --cream-card: #FDFAF2;
+  --ink:        #1C1917;
+  --ink-mid:    #3D3530;
+  --muted:      #7A6E64;
+  --coral:      #E85535;
+  --coral-soft: rgba(232,85,53,.12);
+  --teal:       #1B7A6A;
+  --teal-soft:  rgba(27,122,106,.1);
+  --border:     rgba(28,25,23,.1);
+  --border-strong: rgba(28,25,23,.2);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Noto Sans SC',sans-serif;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  /* halftone dot pattern */
+  background-image:
+    radial-gradient(circle, rgba(232,85,53,.06) 1px, transparent 1px),
+    radial-gradient(circle, rgba(27,122,106,.04) 1px, transparent 1px);
+  background-size:24px 24px, 36px 36px;
+  background-position:0 0, 12px 18px;
+}
+
+/* i18n */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:64px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
+
+/* arc-nav */
+.arc-nav{position:sticky;top:0;z-index:9999;height:38px;display:flex;align-items:center;padding:0 20px;background:rgba(28,25,23,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07);font-family:'Fira Code',monospace;font-size:10px;letter-spacing:.06em;}
+.arc-nav-home{color:rgba(255,255,255,.4);text-decoration:none;transition:color .15s;white-space:nowrap;}
+.arc-nav-home:hover{color:rgba(255,255,255,.85);}
+.arc-nav-sep{color:rgba(255,255,255,.12);margin:0 10px;}
+.arc-nav-month{color:rgba(255,255,255,.28);white-space:nowrap;}
+.arc-nav-dates{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+.arc-nav-d{width:26px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:3px;font-size:10px;text-decoration:none;color:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.07);transition:all .15s;}
+.arc-nav-d:hover{color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.2);}
+.arc-nav-d.cur{color:#fff;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);pointer-events:none;}
+
+/* header */
+.site-header{
+  max-width:1200px;
+  margin:0 auto;
+  padding:60px 40px 48px;
+  position:relative;
+}
+.header-eyebrow{
+  font-family:'Fira Code',monospace;
+  font-size:10px;
+  letter-spacing:.25em;
+  color:var(--coral);
+  text-transform:uppercase;
+  margin-bottom:18px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.header-eyebrow::before{
+  content:'';
+  display:inline-block;
+  width:32px;
+  height:2px;
+  background:var(--coral);
+}
+.header-title{
+  font-family:'Fraunces',serif;
+  font-size:clamp(48px,7vw,84px);
+  font-weight:900;
+  line-height:.9;
+  letter-spacing:-.03em;
+  color:var(--ink);
+  margin-bottom:28px;
+}
+.header-title em{
+  font-style:italic;
+  color:var(--coral);
+}
+.header-date{
+  font-family:'Fira Code',monospace;
+  font-size:12px;
+  color:var(--muted);
+  letter-spacing:.15em;
+  margin-bottom:36px;
+}
+
+/* stat chips */
+.stat-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.stat-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 14px;
+  border-radius:4px;
+  border:1.5px solid var(--border-strong);
+  background:var(--cream-card);
+  font-family:'Fira Code',monospace;
+  font-size:11px;
+  color:var(--ink-mid);
+}
+.stat-chip i{color:var(--coral);}
+.stat-chip strong{color:var(--ink);font-weight:700;}
+
+/* risograph accent blob */
+.riso-blob{
+  position:absolute;
+  right:60px;
+  top:40px;
+  width:260px;
+  height:200px;
+  background:var(--coral);
+  opacity:.06;
+  border-radius:40% 60% 70% 30% / 50% 40% 60% 50%;
+  pointer-events:none;
+}
+.riso-blob-2{
+  position:absolute;
+  right:100px;
+  top:80px;
+  width:180px;
+  height:160px;
+  background:var(--teal);
+  opacity:.07;
+  border-radius:60% 40% 30% 70% / 40% 60% 40% 60%;
+  pointer-events:none;
+}
+
+/* divider */
+.divider{
+  max-width:1200px;
+  margin:0 auto;
+  height:2px;
+  background:linear-gradient(90deg, var(--coral) 0%, var(--teal) 40%, transparent 100%);
+}
+
+/* main layout */
+.main-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:48px 40px;
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:48px;
+  align-items:start;
+}
+
+/* section heading */
+.section-label{
+  font-family:'Fraunces',serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--coral);
+  margin-bottom:20px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.section-label::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:var(--border);
+}
+
+/* project cards */
+.card{
+  background:var(--cream-card);
+  border:1.5px solid var(--border);
+  border-left:4px solid var(--border);
+  border-radius:4px;
+  padding:22px 24px;
+  margin-bottom:12px;
+  position:relative;
+  opacity:0;
+  transform:translateY(16px);
+  transition:opacity .4s ease, transform .4s ease, border-color .2s, box-shadow .2s;
+  display:grid;
+  grid-template-columns:36px 1fr;
+  gap:16px;
+  align-items:start;
+}
+.card.visible{opacity:1;transform:translateY(0);}
+.card:hover{border-color:var(--border-strong);box-shadow:0 4px 20px rgba(28,25,23,.08);border-left-color:var(--coral);}
+.card:nth-child(1){border-left-color:var(--coral);}
+.card:nth-child(2){border-left-color:rgba(232,85,53,.7);}
+.card:nth-child(3){border-left-color:rgba(232,85,53,.5);}
+.card:nth-child(n+4){border-left-color:rgba(232,85,53,.25);}
+
+.card-rank{
+  font-family:'Fraunces',serif;
+  font-size:28px;
+  font-weight:900;
+  color:var(--border);
+  line-height:1;
+  text-align:center;
+  padding-top:4px;
+}
+.card:nth-child(1) .card-rank{color:var(--coral);}
+.card:nth-child(2) .card-rank{color:rgba(232,85,53,.65);}
+.card:nth-child(3) .card-rank{color:rgba(232,85,53,.45);}
+
+.card-content{}
+.card-meta{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:8px;
+  flex-wrap:wrap;
+}
+.card-org{
+  font-family:'Fira Code',monospace;
+  font-size:11px;
+  color:var(--muted);
+}
+.card-name{
+  font-family:'Fraunces',serif;
+  font-size:20px;
+  font-weight:700;
+  color:var(--ink);
+  text-decoration:none;
+  line-height:1.1;
+  display:block;
+  margin-bottom:8px;
+  transition:color .15s;
+}
+.card-name:hover{color:var(--coral);}
+.card-desc{
+  font-size:13px;
+  line-height:1.6;
+  color:var(--ink-mid);
+  margin-bottom:14px;
+}
+.card-desc strong{color:var(--ink);font-weight:500;}
+
+/* star bar */
+.star-bar-wrap{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+}
+.star-bar-track{
+  flex:1;
+  height:4px;
+  background:rgba(28,25,23,.08);
+  border-radius:2px;
+  overflow:hidden;
+}
+.star-bar-fill{
+  height:100%;
+  border-radius:2px;
+  background:linear-gradient(90deg, var(--coral), var(--teal));
+  width:0;
+  transition:width 1.2s cubic-bezier(.4,0,.2,1);
+}
+.star-count{
+  font-family:'Fira Code',monospace;
+  font-size:11px;
+  color:var(--coral);
+  font-weight:500;
+  white-space:nowrap;
+}
+.star-count i{margin-right:4px;}
+
+.card-footer{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.lang-dot{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  font-family:'Fira Code',monospace;
+  font-size:10px;
+  color:var(--muted);
+}
+.lang-dot::before{
+  content:'';
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--teal);
+  display:inline-block;
+  flex-shrink:0;
+}
+.tag{
+  font-family:'Fira Code',monospace;
+  font-size:9px;
+  letter-spacing:.08em;
+  padding:2px 8px;
+  border-radius:2px;
+  border:1px solid var(--border);
+  color:var(--muted);
+  text-transform:uppercase;
+}
+.tag.ai{border-color:var(--coral);color:var(--coral);}
+.total-stars{
+  margin-left:auto;
+  font-family:'Fira Code',monospace;
+  font-size:10px;
+  color:var(--muted);
+}
+.total-stars i{margin-right:3px;}
+
+/* lang colors */
+.lang-TypeScript::before{background:#3178c6;}
+.lang-Python::before{background:#3572A5;}
+.lang-Ruby::before{background:#701516;}
+.lang-Java::before{background:#b07219;}
+.lang-HTML::before{background:#e34c26;}
+.lang-Elixir::before{background:#6e4a7e;}
+.lang-null::before{background:#888;}
+
+/* sidebar */
+.sidebar{}
+.sidebar-card{
+  background:var(--cream-card);
+  border:1.5px solid var(--border);
+  border-radius:4px;
+  padding:24px;
+  margin-bottom:16px;
+}
+.sidebar-title{
+  font-family:'Fraunces',serif;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink-mid);
+  margin-bottom:16px;
+  padding-bottom:10px;
+  border-bottom:1px solid var(--border);
+}
+
+/* language chart */
+.lang-chart-item{
+  margin-bottom:12px;
+}
+.lang-chart-label{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:4px;
+  font-family:'Fira Code',monospace;
+  font-size:10px;
+  color:var(--muted);
+}
+.lang-chart-label span:last-child{color:var(--ink);}
+.lang-chart-track{
+  height:6px;
+  background:rgba(28,25,23,.07);
+  border-radius:3px;
+  overflow:hidden;
+}
+.lang-chart-fill{
+  height:100%;
+  border-radius:3px;
+  background:var(--coral);
+  width:0;
+  transition:width 1.4s cubic-bezier(.4,0,.2,1);
+}
+.lang-chart-fill.teal{background:var(--teal);}
+.lang-chart-fill.mid{background:rgba(232,85,53,.5);}
+.lang-chart-fill.muted{background:rgba(28,25,23,.2);}
+
+/* trend insight */
+.insight-text{
+  font-size:13px;
+  line-height:1.75;
+  color:var(--ink-mid);
+  font-style:italic;
+}
+.insight-text::before{
+  content:open-quote;
+  font-family:'Fraunces',serif;
+  font-size:32px;
+  color:var(--coral);
+  line-height:0;
+  vertical-align:-.5em;
+  margin-right:4px;
+}
+
+/* footer */
+.site-footer{
+  max-width:1200px;
+  margin:0 auto;
+  padding:32px 40px;
+  border-top:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.footer-text{
+  font-family:'Fira Code',monospace;
+  font-size:10px;
+  color:var(--muted);
+  letter-spacing:.08em;
+}
+.footer-text a{color:var(--muted);text-decoration:underline;}
+.footer-riso{
+  font-family:'Fraunces',serif;
+  font-size:11px;
+  font-style:italic;
+  color:var(--coral);
+  opacity:.5;
+}
+
+/* overprint stripe decoration */
+.overprint-strip{
+  height:6px;
+  background:linear-gradient(90deg,
+    var(--coral) 0%, var(--coral) 33%,
+    var(--teal) 33%, var(--teal) 66%,
+    var(--ink) 66%);
+  opacity:.15;
+  margin-top:0;
+}
+
+/* responsive */
+@media(max-width:900px){
+  .main-wrap{grid-template-columns:1fr;gap:32px;}
+  .sidebar{order:2;}
+  .site-header{padding:40px 20px 36px;}
+  .site-footer{padding:24px 20px;}
+  .main-wrap{padding:32px 20px;}
+  .riso-blob,.riso-blob-2{display:none;}
+}
+@media(max-width:560px){
+  .header-title{font-size:clamp(36px,12vw,56px);}
+  .stat-row{gap:6px;}
+  .stat-chip{padding:5px 10px;font-size:10px;}
+  .card{padding:16px;}
+}
+</style>
+</head>
+<body>
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
+
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
+
+<nav class="arc-nav">
+  <a class="arc-nav-home" href="../../../index.html">← Archive</a>
+  <span class="arc-nav-sep">/</span>
+  <span class="arc-nav-month">June 2026</span>
+  <div class="arc-nav-dates">
+    <a class="arc-nav-d cur" href="./16.html">16</a>
+    <a class="arc-nav-d" href="./12.html">12</a>
+    <a class="arc-nav-d" href="./11.html">11</a>
+    <a class="arc-nav-d" href="./10.html">10</a>
+    <a class="arc-nav-d" href="./09.html">09</a>
+    <a class="arc-nav-d" href="./08.html">08</a>
+    <a class="arc-nav-d" href="./07.html">07</a>
+    <a class="arc-nav-d" href="./06.html">06</a>
+    <a class="arc-nav-d" href="./05.html">05</a>
+    <a class="arc-nav-d" href="./04.html">04</a>
+    <a class="arc-nav-d" href="./03.html">03</a>
+    <a class="arc-nav-d" href="./02.html">02</a>
+    <a class="arc-nav-d" href="./01.html">01</a>
+  </div>
+</nav>
+
+<!-- overprint stripe -->
+<div class="overprint-strip"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="riso-blob"></div>
+  <div class="riso-blob-2"></div>
+  <div class="header-eyebrow">GitHub Trending · June 16, 2026</div>
+  <h1 class="header-title">
+    <span class="i18n-en">Today in<br><em>Open Source</em></span>
+    <span class="i18n-zh">今日<br><em>开源热榜</em></span>
+  </h1>
+  <div class="header-date">MON, 16 JUNE 2026 · RISOGRAPH ZINE EDITION</div>
+  <div class="stat-row">
+    <div class="stat-chip"><i class="fa-solid fa-layer-group"></i> <strong>10</strong> <span class="i18n-en">projects</span><span class="i18n-zh">项目</span></div>
+    <div class="stat-chip"><i class="fa-solid fa-star"></i> <strong>6,252</strong> <span class="i18n-en">stars today</span><span class="i18n-zh">今日新增星标</span></div>
+    <div class="stat-chip"><i class="fa-solid fa-code"></i> <strong>7</strong> <span class="i18n-en">languages</span><span class="i18n-zh">语言</span></div>
+    <div class="stat-chip"><i class="fa-solid fa-robot"></i> <strong>3</strong> <span class="i18n-en">AI projects</span><span class="i18n-zh">AI 项目</span></div>
+  </div>
+</header>
+
+<div class="divider"></div>
+
+<!-- MAIN -->
+<main class="main-wrap">
+
+  <!-- LEFT: Project Cards -->
+  <section>
+    <div class="section-label">
+      <span class="i18n-en">Top Repositories</span>
+      <span class="i18n-zh">热门仓库</span>
+    </div>
+
+    <!-- #1 iptv-org/iptv -->
+    <div class="card">
+      <div class="card-rank">1</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">iptv-org /</span>
+        </div>
+        <a class="card-name" href="https://github.com/iptv-org/iptv" target="_blank" rel="noopener">iptv</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="100"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+2,657</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">The world's largest crowd-sourced catalog of <strong>free public IPTV streams</strong>, organized by country, category, and language.</span>
+          <span class="i18n-zh">全球最大的公共 IPTV 频道聚合库，按国家与类别整理，<strong>无需付费即可收看海量电视直播</strong>。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag">Media</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>122.8k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #2 Panniantong/Agent-Reach -->
+    <div class="card">
+      <div class="card-rank">2</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">Panniantong /</span>
+        </div>
+        <a class="card-name" href="https://github.com/Panniantong/Agent-Reach" target="_blank" rel="noopener">Agent-Reach</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="41"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+1,100</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Give your AI agent <strong>real-time access to the open web</strong>—Twitter, Reddit, YouTube, GitHub and more—with a unified CLI and no API bills.</span>
+          <span class="i18n-zh">让 AI 智能体拥有「<strong>全网眼睛</strong>」——一条命令搜遍推特、Reddit、B站、小红书等平台，零 API 费用。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>30.1k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #3 freeCodeCamp/freeCodeCamp -->
+    <div class="card">
+      <div class="card-rank">3</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">freeCodeCamp /</span>
+        </div>
+        <a class="card-name" href="https://github.com/freeCodeCamp/freeCodeCamp" target="_blank" rel="noopener">freeCodeCamp</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="28"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+736</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">The world's most-starred open-source <strong>learn-to-code platform</strong>: free curriculum covering math, programming, and computer science.</span>
+          <span class="i18n-zh">全球星标最多的开源<strong>免费编程学习平台</strong>，涵盖数学、编程与计算机科学系统课程。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag">OSS</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>447.9k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #4 rohitg00/ai-engineering-from-scratch -->
+    <div class="card">
+      <div class="card-rank">4</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">rohitg00 /</span>
+        </div>
+        <a class="card-name" href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank" rel="noopener">ai-engineering-from-scratch</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="21"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+562</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A <strong>hands-on AI engineering curriculum</strong>—learn the fundamentals, build real projects, and ship production-grade AI systems.</span>
+          <span class="i18n-zh">从零掌握 AI 工程：<strong>学完就能上手</strong>，覆盖基础理论、项目实战到生产部署的完整链路。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI</span>
+          <span class="tag">OSS</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>33.1k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #5 chatwoot/chatwoot -->
+    <div class="card">
+      <div class="card-rank">5</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">chatwoot /</span>
+        </div>
+        <a class="card-name" href="https://github.com/chatwoot/chatwoot" target="_blank" rel="noopener">chatwoot</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="16"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+431</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Open-source <strong>omnichannel customer support</strong> platform—live chat, email, social inbox—as a self-hosted Intercom alternative.</span>
+          <span class="i18n-zh">开源全渠道<strong>客服中台</strong>：整合实时聊天、邮件与社交媒体，可私有部署，替代 Intercom、Zendesk。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Ruby">Ruby</span>
+          <span class="tag">Tool</span>
+          <span class="tag">OSS</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>31.7k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #6 jwasham/coding-interview-university -->
+    <div class="card">
+      <div class="card-rank">6</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">jwasham /</span>
+        </div>
+        <a class="card-name" href="https://github.com/jwasham/coding-interview-university" target="_blank" rel="noopener">coding-interview-university</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="14"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+364</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A <strong>complete self-study roadmap</strong> to go from software engineer wannabe to job-ready: data structures, algorithms, and interview prep.</span>
+          <span class="i18n-zh">最受欢迎的<strong>自学成程序员路线图</strong>：数据结构、算法与面试题系统梳理，帮你高效拿到 Offer。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-null">N/A</span>
+          <span class="tag">OSS</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>352.3k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #7 meshery/meshery -->
+    <div class="card">
+      <div class="card-rank">7</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">meshery /</span>
+        </div>
+        <a class="card-name" href="https://github.com/meshery/meshery" target="_blank" rel="noopener">meshery</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="9"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+228</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">The <strong>open-source cloud native management plane</strong> for Kubernetes, service meshes, and distributed infrastructure—visual and extensible.</span>
+          <span class="i18n-zh">开源<strong>云原生统一管控平台</strong>：可视化管理 Kubernetes、服务网格与分布式基础设施，扩展性强。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag">Infra</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>10.6k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #8 krahets/hello-algo -->
+    <div class="card">
+      <div class="card-rank">8</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">krahets /</span>
+        </div>
+        <a class="card-name" href="https://github.com/krahets/hello-algo" target="_blank" rel="noopener">hello-algo</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="3"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+71</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Animated, <strong>run-in-one-click algorithm tutorials</strong> in 14 languages—a beautifully illustrated data structures book for everyone.</span>
+          <span class="i18n-zh">动画图解 + 一键运行，<strong>14 种语言版本</strong>的数据结构与算法入门神书，简中繁中英日均支持。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Java">Java</span>
+          <span class="tag">OSS</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>126.9k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #9 trycua/cua -->
+    <div class="card">
+      <div class="card-rank">9</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">trycua /</span>
+        </div>
+        <a class="card-name" href="https://github.com/trycua/cua" target="_blank" rel="noopener">cua</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="3"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+70</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Open-source <strong>Computer-Use Agent infrastructure</strong>: sandboxed desktops, SDKs, and benchmarks for training AI that controls GUIs across macOS, Linux and Windows.</span>
+          <span class="i18n-zh">开源<strong>计算机操控智能体基础设施</strong>：沙盒桌面环境 + SDK + 评测基准，训练 AI 操控真实界面，覆盖 macOS/Linux/Windows。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-HTML">HTML</span>
+          <span class="tag ai">AI</span>
+          <span class="tag">Infra</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>18.1k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #10 teslamate-org/teslamate -->
+    <div class="card">
+      <div class="card-rank">10</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">teslamate-org /</span>
+        </div>
+        <a class="card-name" href="https://github.com/teslamate-org/teslamate" target="_blank" rel="noopener">teslamate</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="1"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+33</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A <strong>self-hosted Tesla data logger</strong>: tracks drives, efficiency, charge history, and software updates with rich dashboards.</span>
+          <span class="i18n-zh">可私有部署的<strong>特斯拉行车数据记录仪</strong>：追踪行程、能耗、充电历史与软件升级，搭配丰富仪表盘。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Elixir">Elixir</span>
+          <span class="tag">Tool</span>
+          <span class="tag">OSS</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>8.2k</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- RIGHT: Sidebar -->
+  <aside class="sidebar">
+
+    <!-- Language Chart -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <span class="i18n-en">Stars by Language</span>
+        <span class="i18n-zh">语言热度分布</span>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>TypeScript</span><span>3,621 · 57.9%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill" data-pct="57.9"></div></div>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>Python</span><span>1,662 · 26.6%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill teal" data-pct="26.6"></div></div>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>Ruby</span><span>431 · 6.9%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill mid" data-pct="6.9"></div></div>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>N/A</span><span>364 · 5.8%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill muted" data-pct="5.8"></div></div>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>Java</span><span>71 · 1.1%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill muted" data-pct="1.1"></div></div>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>HTML</span><span>70 · 1.1%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill muted" data-pct="1.1"></div></div>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>Elixir</span><span>33 · 0.5%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill muted" data-pct="0.5"></div></div>
+      </div>
+    </div>
+
+    <!-- Trend Insight -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <span class="i18n-en">Trend Insight</span>
+        <span class="i18n-zh">趋势洞察</span>
+      </div>
+      <p class="insight-text">
+        <span class="i18n-en">Today's chart splits between enduring crowd-favorites and fresh AI tooling — IPTV streams and open courseware claim the top three, signaling strong developer appetite for free public resources. AI infrastructure (Agent-Reach, ai-engineering-from-scratch, cua) extends its multi-week presence, now expanding from model tooling into agent perception and structured AI education.</span>
+        <span class="i18n-zh">今日榜单呈「经典长青」与「AI 工具」并重格局：IPTV 频道库与开放课程包揽前三，显示开发者对开放公共资源的旺盛需求。AI 基础设施类（Agent-Reach、ai-engineering-from-scratch、cua）延续多周强势，赛道从模型工具延伸至智能体感知与系统化 AI 教育。</span>
+      </p>
+    </div>
+
+  </aside>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <span class="footer-text">
+    <span class="i18n-en">Data from <a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · June 16, 2026</span>
+    <span class="i18n-zh">数据来源：<a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · 2026 年 6 月 16 日</span>
+  </span>
+  <span class="footer-riso">Risograph Zine</span>
+</footer>
+
+<script>(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();</script>
+
+<script>
+(function(){
+  // Animate star bars and chart fills on visibility
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var el = entry.target;
+        el.classList.add('visible');
+        // animate star bars inside this card
+        el.querySelectorAll('.star-bar-fill[data-pct]').forEach(function(bar){
+          setTimeout(function(){ bar.style.width = bar.getAttribute('data-pct') + '%'; }, 120);
+        });
+        io.unobserve(el);
+      }
+    });
+  }, {threshold: 0.1});
+
+  document.querySelectorAll('.card').forEach(function(card, i){
+    card.style.transitionDelay = (i * 60) + 'ms';
+    io.observe(card);
+  });
+
+  // animate language chart bars
+  var chartIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.querySelectorAll('.lang-chart-fill[data-pct]').forEach(function(bar){
+          setTimeout(function(){ bar.style.width = bar.getAttribute('data-pct') + '%'; }, 200);
+        });
+        chartIo.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.2});
+
+  document.querySelectorAll('.sidebar-card').forEach(function(c){ chartIo.observe(c); });
+})();
+</script>
+
+</body>
+</html>
