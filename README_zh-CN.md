@@ -5,8 +5,8 @@
 **开源世界每天都在变，这里把每一天最值得关注的那一刻留下来。**
 
 [![报告校验](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![报告数量](https://img.shields.io/badge/报告-19份-7b2fff.svg)](#-浏览报告)
-[![最近更新](https://img.shields.io/badge/最近更新-2026--06--16-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/16.html)
+[![报告数量](https://img.shields.io/badge/报告-20份-7b2fff.svg)](#-浏览报告)
+[![最近更新](https://img.shields.io/badge/最近更新-2026--06--17-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/17.html)
 [![许可证: MIT](https://img.shields.io/badge/许可证-MIT-00f5d4.svg)](LICENSE)
 
 [English](README.md) · [在线浏览 →](https://jigexiansen.github.io/github-trending-archive/)
@@ -45,10 +45,11 @@ GitHub Trending 每 24 小时重置一次。那些今天备受瞩目的项目，
 ## 📂 浏览报告
 
 <details open>
-<summary><strong>2026 年 6 月</strong> — 13 份报告</summary>
+<summary><strong>2026 年 6 月</strong> — 14 份报告</summary>
 
 | 日期 | 当日榜首 | 亮点 |
 |------|---------|------|
+| [2026-06-17](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/17.html) | iptv-org/iptv +1,197⭐ | 免费公共基础设施登顶——IPTV 频道库与 freeCodeCamp 课程力压所有 AI 项目，长期口碑型开发工具占据榜单余下席位 |
 | [2026-06-16](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/16.html) | iptv-org/iptv +2,657⭐ | 免费公共资源强势回归前三——IPTV 频道库与开放课程领跑，AI 智能体工具（Agent-Reach、cua）延续多周连榜 |
 | [2026-06-12](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/12.html) | agent-skills +3,278⭐ | 智能体技能库占据六席，Shell 超越 Python 成最热语言——开源社区正向 CLI 优先的可组合技能原语加速收敛 |
 | [2026-06-11](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/11.html) | last30days-skill +2,535⭐ | 智能体技能包与 Agent 框架霸占八席，可复用技能原语正取代 LLM 封装工具成为 AI 工程的主流单元 |

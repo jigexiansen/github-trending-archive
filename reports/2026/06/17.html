@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending · June 17, 2026</title>
+<meta name="description" content="GitHub Trending daily archive · June 17, 2026 — iptv-org/iptv leads with 1,197 stars today as free media catalogs, dev tooling, and a tokenizer-free TTS model top the chart.">
+<script src="https://kit.fontawesome.com/371954d95b.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
+<style>
+:root{
+  --paper:#F2EFE9;
+  --paper-card:#FCFAF5;
+  --ink:#0B0B0B;
+  --ink-mid:#3A3735;
+  --muted:#6B6660;
+  --red:#E8341C;
+  --yellow:#FFC400;
+  --border:#0B0B0B;
+  --border-soft:rgba(11,11,11,.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Noto Sans SC',sans-serif;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(11,11,11,.035) 0, rgba(11,11,11,.035) 1px, transparent 1px, transparent 28px),
+    repeating-linear-gradient(90deg, rgba(11,11,11,.035) 0, rgba(11,11,11,.035) 1px, transparent 1px, transparent 28px);
+}
+
+/* i18n */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:64px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
+
+/* arc-nav */
+.arc-nav{position:sticky;top:0;z-index:9999;height:38px;display:flex;align-items:center;padding:0 20px;background:rgba(11,11,11,.94);backdrop-filter:blur(10px);border-bottom:3px solid var(--red);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;}
+.arc-nav-home{color:rgba(255,255,255,.45);text-decoration:none;transition:color .15s;white-space:nowrap;}
+.arc-nav-home:hover{color:#fff;}
+.arc-nav-sep{color:rgba(255,255,255,.15);margin:0 10px;}
+.arc-nav-month{color:rgba(255,255,255,.3);white-space:nowrap;}
+.arc-nav-dates{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+.arc-nav-d{width:26px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:0;font-size:10px;text-decoration:none;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.15);transition:all .15s;}
+.arc-nav-d:hover{color:#fff;border-color:rgba(255,255,255,.4);}
+.arc-nav-d.cur{color:#0B0B0B;background:var(--yellow);border-color:var(--yellow);pointer-events:none;}
+
+/* header */
+.site-header{
+  max-width:1200px;
+  margin:0 auto;
+  padding:56px 40px 40px;
+  position:relative;
+  border-bottom:4px solid var(--ink);
+}
+.header-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--paper-card);
+  background:var(--ink);
+  padding:6px 14px;
+  margin-bottom:26px;
+}
+.header-eyebrow i{color:var(--red);}
+.header-title{
+  font-family:'Anton',sans-serif;
+  font-weight:400;
+  font-size:clamp(46px,8vw,92px);
+  line-height:.92;
+  letter-spacing:-.01em;
+  text-transform:uppercase;
+  color:var(--ink);
+  margin-bottom:24px;
+}
+.header-title .hl{
+  color:var(--paper);
+  background:var(--red);
+  padding:0 10px;
+  display:inline-block;
+}
+.header-date{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+  font-weight:500;
+  color:var(--ink-mid);
+  letter-spacing:.12em;
+  margin-bottom:32px;
+  text-transform:uppercase;
+}
+
+/* stat chips */
+.stat-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0;
+  border:3px solid var(--ink);
+}
+.stat-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 18px;
+  border-right:3px solid var(--ink);
+  background:var(--paper-card);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  color:var(--ink-mid);
+}
+.stat-chip:last-child{border-right:0;}
+.stat-chip i{color:var(--red);}
+.stat-chip strong{color:var(--ink);font-weight:700;font-size:13px;}
+
+/* divider */
+.divider{display:none;}
+
+/* main layout */
+.main-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:44px 40px 60px;
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:40px;
+  align-items:start;
+}
+
+/* section heading */
+.section-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--ink);
+  margin-bottom:20px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding-bottom:10px;
+  border-bottom:3px solid var(--ink);
+}
+.section-label::before{
+  content:'■';
+  color:var(--red);
+  font-size:9px;
+}
+
+/* project cards */
+.card{
+  background:var(--paper-card);
+  border:3px solid var(--ink);
+  border-left:10px solid var(--ink);
+  border-radius:0;
+  padding:22px 24px;
+  margin-bottom:18px;
+  position:relative;
+  opacity:0;
+  transform:translate(-10px,10px);
+  transition:opacity .35s ease, transform .35s ease, box-shadow .2s;
+  display:grid;
+  grid-template-columns:42px 1fr;
+  gap:16px;
+  align-items:start;
+  box-shadow:6px 6px 0 var(--ink);
+}
+.card.visible{opacity:1;transform:translate(0,0);}
+.card:hover{box-shadow:9px 9px 0 var(--red);border-left-color:var(--red);}
+.card:nth-child(1){border-left-color:var(--red);}
+.card:nth-child(1):hover{box-shadow:9px 9px 0 var(--red);}
+
+.card-rank{
+  font-family:'Anton',sans-serif;
+  font-size:30px;
+  color:var(--ink);
+  line-height:1;
+  text-align:center;
+  padding-top:2px;
+}
+.card:nth-child(1) .card-rank{color:var(--red);}
+.card:nth-child(2) .card-rank,
+.card:nth-child(3) .card-rank{color:var(--ink-mid);}
+
+.card-content{}
+.card-meta{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:6px;
+  flex-wrap:wrap;
+}
+.card-org{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  color:var(--muted);
+}
+.card-name{
+  font-family:'Anton',sans-serif;
+  font-size:21px;
+  text-transform:uppercase;
+  color:var(--ink);
+  text-decoration:none;
+  line-height:1.1;
+  display:block;
+  margin-bottom:10px;
+  transition:color .15s;
+}
+.card-name:hover{color:var(--red);}
+.card-desc{
+  font-size:13px;
+  line-height:1.65;
+  color:var(--ink-mid);
+  margin-bottom:14px;
+}
+.card-desc strong{color:var(--ink);font-weight:700;background:var(--yellow);padding:0 3px;}
+
+/* star bar */
+.star-bar-wrap{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+}
+.star-bar-track{
+  flex:1;
+  height:10px;
+  background:var(--paper);
+  border:2px solid var(--ink);
+  border-radius:0;
+  overflow:hidden;
+}
+.star-bar-fill{
+  height:100%;
+  background:repeating-linear-gradient(45deg, var(--red) 0 6px, var(--ink) 6px 12px);
+  width:0;
+  transition:width 1.1s cubic-bezier(.4,0,.2,1);
+}
+.star-count{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  color:var(--ink);
+  font-weight:700;
+  white-space:nowrap;
+}
+.star-count i{margin-right:4px;color:var(--red);}
+
+.card-footer{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.lang-dot{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+  color:var(--muted);
+}
+.lang-dot::before{
+  content:'';
+  width:9px;
+  height:9px;
+  border-radius:0;
+  background:var(--ink-mid);
+  display:inline-block;
+  flex-shrink:0;
+  border:1px solid var(--ink);
+}
+.tag{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;
+  letter-spacing:.08em;
+  padding:3px 9px;
+  border-radius:0;
+  border:1.5px solid var(--ink);
+  color:var(--ink);
+  text-transform:uppercase;
+  font-weight:600;
+}
+.tag.ai{background:var(--ink);color:var(--yellow);border-color:var(--ink);}
+.total-stars{
+  margin-left:auto;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+  color:var(--muted);
+  font-weight:600;
+}
+.total-stars i{margin-right:3px;}
+
+/* lang colors */
+.lang-TypeScript::before{background:#3178c6;}
+.lang-Python::before{background:#3572A5;}
+.lang-Rust::before{background:#dea584;}
+.lang-Elixir::before{background:#6e4a7e;}
+.lang-null::before{background:#888;}
+
+/* sidebar */
+.sidebar{}
+.sidebar-card{
+  background:var(--paper-card);
+  border:3px solid var(--ink);
+  border-radius:0;
+  padding:24px;
+  margin-bottom:18px;
+  box-shadow:6px 6px 0 var(--ink);
+}
+.sidebar-title{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--ink);
+  margin-bottom:18px;
+  padding-bottom:10px;
+  border-bottom:2px solid var(--ink);
+}
+
+/* language chart */
+.lang-chart-item{
+  margin-bottom:14px;
+}
+.lang-chart-label{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:5px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+  font-weight:600;
+  color:var(--muted);
+}
+.lang-chart-label span:last-child{color:var(--ink);}
+.lang-chart-track{
+  height:9px;
+  background:var(--paper);
+  border:1.5px solid var(--ink);
+  border-radius:0;
+  overflow:hidden;
+}
+.lang-chart-fill{
+  height:100%;
+  border-radius:0;
+  background:var(--red);
+  width:0;
+  transition:width 1.3s cubic-bezier(.4,0,.2,1);
+}
+.lang-chart-fill.yellow{background:var(--yellow);}
+.lang-chart-fill.mid{background:var(--ink-mid);}
+.lang-chart-fill.muted{background:var(--ink);}
+
+/* trend insight */
+.insight-text{
+  font-size:13px;
+  line-height:1.75;
+  color:var(--ink-mid);
+}
+.insight-text strong{color:var(--ink);background:var(--yellow);padding:0 3px;font-weight:700;}
+
+/* footer */
+.site-footer{
+  max-width:1200px;
+  margin:0 auto;
+  padding:28px 40px;
+  border-top:4px solid var(--ink);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.footer-text{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+  color:var(--muted);
+  letter-spacing:.06em;
+}
+.footer-text a{color:var(--ink);text-decoration:underline;}
+.footer-mark{
+  font-family:'Anton',sans-serif;
+  font-size:13px;
+  letter-spacing:.04em;
+  color:var(--ink);
+  background:var(--yellow);
+  padding:3px 10px;
+}
+
+/* responsive */
+@media(max-width:900px){
+  .main-wrap{grid-template-columns:1fr;gap:32px;}
+  .sidebar{order:2;}
+  .site-header{padding:40px 20px 32px;}
+  .site-footer{padding:24px 20px;}
+  .main-wrap{padding:32px 20px 48px;}
+  .stat-row{flex-direction:column;}
+  .stat-chip{border-right:0;border-bottom:3px solid var(--ink);}
+  .stat-chip:last-child{border-bottom:0;}
+}
+@media(max-width:560px){
+  .header-title{font-size:clamp(34px,12vw,52px);}
+  .card{padding:16px;grid-template-columns:32px 1fr;}
+}
+</style>
+</head>
+<body>
+
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
+
+<nav class="arc-nav">
+  <a class="arc-nav-home" href="../../../index.html">← Archive</a>
+  <span class="arc-nav-sep">/</span>
+  <span class="arc-nav-month">June 2026</span>
+  <div class="arc-nav-dates">
+    <a class="arc-nav-d cur" href="./17.html">17</a>
+    <a class="arc-nav-d" href="./16.html">16</a>
+    <a class="arc-nav-d" href="./12.html">12</a>
+    <a class="arc-nav-d" href="./11.html">11</a>
+    <a class="arc-nav-d" href="./10.html">10</a>
+    <a class="arc-nav-d" href="./09.html">09</a>
+    <a class="arc-nav-d" href="./08.html">08</a>
+    <a class="arc-nav-d" href="./07.html">07</a>
+    <a class="arc-nav-d" href="./06.html">06</a>
+    <a class="arc-nav-d" href="./05.html">05</a>
+    <a class="arc-nav-d" href="./04.html">04</a>
+    <a class="arc-nav-d" href="./03.html">03</a>
+    <a class="arc-nav-d" href="./02.html">02</a>
+    <a class="arc-nav-d" href="./01.html">01</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-eyebrow"><i class="fa-solid fa-circle-exclamation"></i> GitHub Trending · June 17, 2026</div>
+  <h1 class="header-title">
+    <span class="i18n-en">Today's<br>Open <span class="hl">Source</span></span>
+    <span class="i18n-zh">今日<br>开源<span class="hl">热榜</span></span>
+  </h1>
+  <div class="header-date">WED, 17 JUNE 2026</div>
+  <div class="stat-row">
+    <div class="stat-chip"><i class="fa-solid fa-layer-group"></i> <strong>10</strong> <span class="i18n-en">projects</span><span class="i18n-zh">项目</span></div>
+    <div class="stat-chip"><i class="fa-solid fa-star"></i> <strong>3,073</strong> <span class="i18n-en">stars today</span><span class="i18n-zh">今日新增星标</span></div>
+    <div class="stat-chip"><i class="fa-solid fa-code"></i> <strong>4</strong> <span class="i18n-en">languages</span><span class="i18n-zh">语言</span></div>
+    <div class="stat-chip"><i class="fa-solid fa-robot"></i> <strong>1</strong> <span class="i18n-en">AI project</span><span class="i18n-zh">AI 项目</span></div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="main-wrap">
+
+  <!-- LEFT: Project Cards -->
+  <section>
+    <div class="section-label">
+      <span class="i18n-en">Top Repositories</span>
+      <span class="i18n-zh">热门仓库</span>
+    </div>
+
+    <!-- #1 iptv-org/iptv -->
+    <div class="card">
+      <div class="card-rank">1</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">iptv-org /</span>
+        </div>
+        <a class="card-name" href="https://github.com/iptv-org/iptv" target="_blank" rel="noopener">iptv</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="100"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+1,197</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A community-curated index of <strong>free-to-air IPTV streams</strong>, spanning thousands of channels from every country.</span>
+          <span class="i18n-zh">由社区维护的全球<strong>免费IPTV频道</strong>索引，汇集数千个可直接观看的公开直播源。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag">Media</span>
+          <span class="tag">OSS</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>124.0k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #2 freeCodeCamp/freeCodeCamp -->
+    <div class="card">
+      <div class="card-rank">2</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">freeCodeCamp /</span>
+        </div>
+        <a class="card-name" href="https://github.com/freeCodeCamp/freeCodeCamp" target="_blank" rel="noopener">freeCodeCamp</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="53"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+633</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">The open-source curriculum and platform behind freeCodeCamp, teaching <strong>millions</strong> to code for free.</span>
+          <span class="i18n-zh">freeCodeCamp 官方开源课程与平台代码，已助力<strong>数百万人</strong>免费学习编程。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag">OSS</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>448.5k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #3 OpenBMB/VoxCPM -->
+    <div class="card">
+      <div class="card-rank">3</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">OpenBMB /</span>
+        </div>
+        <a class="card-name" href="https://github.com/OpenBMB/VoxCPM" target="_blank" rel="noopener">VoxCPM</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="34"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+408</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A tokenizer-free TTS model delivering <strong>natural, true-to-life</strong> multilingual voice cloning and creative voice design.</span>
+          <span class="i18n-zh">无需分词器的语音合成模型，支持多语言<strong>逼真克隆</strong>与创意声音设计。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>30.1k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #4 meshery/meshery -->
+    <div class="card">
+      <div class="card-rank">4</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">meshery /</span>
+        </div>
+        <a class="card-name" href="https://github.com/meshery/meshery" target="_blank" rel="noopener">meshery</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="19"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+228</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A cloud-native management plane that lets teams design, visualize, and operate <strong>service meshes</strong> across any infrastructure.</span>
+          <span class="i18n-zh">云原生管理平台，帮助团队跨任意基础设施设计、可视化并运维<strong>服务网格</strong>。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag">Infra</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>10.8k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #5 teslamate-org/teslamate -->
+    <div class="card">
+      <div class="card-rank">5</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">teslamate-org /</span>
+        </div>
+        <a class="card-name" href="https://github.com/teslamate-org/teslamate" target="_blank" rel="noopener">teslamate</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="18"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+215</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A self-hosted logger that turns your <strong>Tesla's</strong> trip and battery data into rich, private dashboards.</span>
+          <span class="i18n-zh">自托管的特斯拉数据记录工具，把行程与电池数据变成<strong>私有</strong>可视化看板。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Elixir">Elixir</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>8.4k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #6 music-assistant/server -->
+    <div class="card">
+      <div class="card-rank">6</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">music-assistant /</span>
+        </div>
+        <a class="card-name" href="https://github.com/music-assistant/server" target="_blank" rel="noopener">server</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="13"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+157</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">An open-source media hub that unifies your streaming services and speakers into <strong>one</strong> always-on music server.</span>
+          <span class="i18n-zh">开源音乐中枢，将各类流媒体服务与音箱整合进<strong>一套</strong>常驻运行的服务器。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag">Media</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>2.6k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #7 Universal-Debloater-Alliance/universal-android-debloater-next-generation -->
+    <div class="card">
+      <div class="card-rank">7</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">Universal-Debloater-Alliance /</span>
+        </div>
+        <a class="card-name" href="https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation" target="_blank" rel="noopener">universal-android-debloater-next-generation</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="12"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+146</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A cross-platform GUI for stripping bloatware off <strong>non-rooted</strong> Android phones via ADB.</span>
+          <span class="i18n-zh">跨平台图形工具，借助 ADB 在<strong>无需root</strong>的安卓设备上精简预装应用。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Rust">Rust</span>
+          <span class="tag">Sec</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>7.3k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #8 puppeteer/puppeteer -->
+    <div class="card">
+      <div class="card-rank">8</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">puppeteer /</span>
+        </div>
+        <a class="card-name" href="https://github.com/puppeteer/puppeteer" target="_blank" rel="noopener">puppeteer</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="5"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+56</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Google's <strong>battle-tested</strong> Node API for driving headless Chrome and Firefox automation.</span>
+          <span class="i18n-zh">谷歌出品、<strong>久经考验</strong>的 Node API，用于驱动无头 Chrome 与 Firefox 自动化。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>94.9k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #9 swc-project/swc -->
+    <div class="card">
+      <div class="card-rank">9</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">swc-project /</span>
+        </div>
+        <a class="card-name" href="https://github.com/swc-project/swc" target="_blank" rel="noopener">swc</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="2"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+20</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A Rust-powered compiler that makes JavaScript and TypeScript builds dramatically <strong>faster</strong>.</span>
+          <span class="i18n-zh">基于 Rust 打造的编译器，让 JavaScript / TypeScript 构建速度<strong>大幅</strong>提升。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Rust">Rust</span>
+          <span class="tag">Tool</span>
+          <span class="tag">Infra</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>34.0k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #10 cypress-io/cypress -->
+    <div class="card">
+      <div class="card-rank">10</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">cypress-io /</span>
+        </div>
+        <a class="card-name" href="https://github.com/cypress-io/cypress" target="_blank" rel="noopener">cypress</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="1"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+13</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">An end-to-end testing framework built for <strong>fast, reliable</strong> browser test automation.</span>
+          <span class="i18n-zh">面向浏览器自动化测试的端到端框架，主打<strong>快速可靠</strong>。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>50.2k</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- RIGHT: Sidebar -->
+  <aside class="sidebar">
+
+    <!-- Language Chart -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <span class="i18n-en">Stars by Language</span>
+        <span class="i18n-zh">语言热度分布</span>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>TypeScript</span><span>2,127 · 69.2%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill" data-pct="69.2"></div></div>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>Python</span><span>565 · 18.4%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill yellow" data-pct="18.4"></div></div>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>Elixir</span><span>215 · 7.0%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill mid" data-pct="7.0"></div></div>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>Rust</span><span>166 · 5.4%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill muted" data-pct="5.4"></div></div>
+      </div>
+    </div>
+
+    <!-- Trend Insight -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <span class="i18n-en">Trend Insight</span>
+        <span class="i18n-zh">趋势洞察</span>
+      </div>
+      <p class="insight-text">
+        <span class="i18n-en">Free public infrastructure dominates today: an IPTV channel catalog and freeCodeCamp's learning platform pull in nearly <strong>60% of all stars today</strong>, well ahead of any single AI launch. The lone AI entry, VoxCPM, is a notably narrow but well-starred tokenizer-free TTS model — sandwiched between a wave of steady developer-tooling repos (meshery, puppeteer, swc, cypress) that keep climbing on long-term reputation rather than hype.</span>
+        <span class="i18n-zh">今日榜单由<strong>免费公共基础设施</strong>主导：IPTV 频道库与 freeCodeCamp 学习平台合计拿下近 60% 的今日新增星标，远超任何单一 AI 项目。唯一上榜的 AI 项目 VoxCPM 是一款小而精的无分词器语音合成模型；其余席位被 meshery、puppeteer、swc、cypress 等长期口碑型开发工具占据，靠稳定积累而非话题热度取胜。</span>
+      </p>
+    </div>
+
+  </aside>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <span class="footer-text">
+    <span class="i18n-en">Data from <a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · June 17, 2026</span>
+    <span class="i18n-zh">数据来源：<a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · 2026 年 6 月 17 日</span>
+  </span>
+  <span class="footer-mark">#17</span>
+</footer>
+
+<script>(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();</script>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var el = entry.target;
+        el.classList.add('visible');
+        el.querySelectorAll('.star-bar-fill[data-pct]').forEach(function(bar){
+          setTimeout(function(){ bar.style.width = bar.getAttribute('data-pct') + '%'; }, 120);
+        });
+        io.unobserve(el);
+      }
+    });
+  }, {threshold: 0.1});
+
+  document.querySelectorAll('.card').forEach(function(card, i){
+    card.style.transitionDelay = (i * 60) + 'ms';
+    io.observe(card);
+  });
+
+  var chartIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.querySelectorAll('.lang-chart-fill[data-pct]').forEach(function(bar){
+          setTimeout(function(){ bar.style.width = bar.getAttribute('data-pct') + '%'; }, 200);
+        });
+        chartIo.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.2});
+
+  document.querySelectorAll('.sidebar-card').forEach(function(c){ chartIo.observe(c); });
+})();
+</script>
+
+</body>
+</html>
