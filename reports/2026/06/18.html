@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending · June 18, 2026 — Agent Tooling Tops the Chart</title>
+<meta name="description" content="GitHub Trending daily archive · June 18, 2026 — mattpocock/skills leads with 1,523 stars today as Claude skills frameworks, agent web-access CLIs, and a time-series foundation model dominate the chart.">
+<script src="https://kit.fontawesome.com/371954d95b.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Red+Hat+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
+<style>
+:root{
+  --sky-1:#cfe9ff;
+  --sky-2:#e3f4ff;
+  --sky-3:#dff7f0;
+  --glass:rgba(255,255,255,.58);
+  --glass-strong:rgba(255,255,255,.82);
+  --border:rgba(255,255,255,.9);
+  --ink:#0e2a3d;
+  --ink-mid:#3c5b70;
+  --muted:#6c8696;
+  --aqua:#00c2d1;
+  --aqua-dk:#0099a8;
+  --magenta:#ff6ec7;
+  --lime:#a6ff4d;
+  --chrome:#b9d7e6;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255,255,255,.9) 0, transparent 40%),
+    radial-gradient(circle at 88% 18%, rgba(166,255,77,.25) 0, transparent 45%),
+    radial-gradient(circle at 75% 85%, rgba(255,110,199,.22) 0, transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(0,194,209,.25) 0, transparent 45%),
+    linear-gradient(160deg, var(--sky-1) 0%, var(--sky-2) 45%, var(--sky-3) 100%);
+  background-attachment:fixed;
+  color:var(--ink);
+  font-family:'Noto Sans SC',sans-serif;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* i18n */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:64px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
+
+/* arc-nav */
+.arc-nav{position:sticky;top:0;z-index:9999;height:38px;display:flex;align-items:center;padding:0 20px;background:rgba(255,255,255,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.8);font-family:'Red Hat Mono',monospace;font-size:10px;letter-spacing:.06em;}
+.arc-nav-home{color:rgba(14,42,61,.5);text-decoration:none;transition:color .15s;white-space:nowrap;}
+.arc-nav-home:hover{color:var(--ink);}
+.arc-nav-sep{color:rgba(14,42,61,.18);margin:0 10px;}
+.arc-nav-month{color:rgba(14,42,61,.4);white-space:nowrap;}
+.arc-nav-dates{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+.arc-nav-d{width:26px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:10px;text-decoration:none;color:rgba(14,42,61,.4);border:1px solid rgba(14,42,61,.12);transition:all .15s;background:rgba(255,255,255,.3);}
+.arc-nav-d:hover{color:var(--ink);border-color:rgba(0,194,209,.5);}
+.arc-nav-d.cur{color:#fff;background:linear-gradient(180deg, var(--aqua) 0%, var(--aqua-dk) 100%);border-color:var(--aqua-dk);pointer-events:none;box-shadow:0 2px 6px rgba(0,194,209,.5);}
+
+/* bubble decorations */
+.bubble{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 28%, rgba(255,255,255,.95) 0%, rgba(255,255,255,.25) 35%, rgba(255,255,255,.05) 60%, transparent 75%);pointer-events:none;}
+
+/* header */
+.site-header{
+  max-width:1200px;
+  margin:0 auto;
+  padding:56px 40px 40px;
+  position:relative;
+}
+.header-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:'Red Hat Mono',monospace;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--aqua-dk);
+  background:var(--glass-strong);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:7px 16px;
+  margin-bottom:26px;
+  box-shadow:0 4px 18px rgba(0,153,168,.18), inset 0 1px 0 rgba(255,255,255,.9);
+}
+.header-eyebrow i{color:var(--magenta);}
+.header-title{
+  font-family:'Fredoka',sans-serif;
+  font-weight:700;
+  font-size:clamp(40px,7vw,76px);
+  line-height:1.02;
+  letter-spacing:-.01em;
+  color:var(--ink);
+  margin-bottom:22px;
+  text-shadow:0 1px 0 rgba(255,255,255,.6);
+}
+.header-title .hl{
+  background:linear-gradient(180deg, var(--aqua) 0%, var(--aqua-dk) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 2px 0 rgba(255,255,255,.5));
+}
+.header-date{
+  font-family:'Red Hat Mono',monospace;
+  font-size:12px;
+  font-weight:500;
+  color:var(--ink-mid);
+  letter-spacing:.1em;
+  margin-bottom:30px;
+  text-transform:uppercase;
+}
+
+/* stat chips */
+.stat-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.stat-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:12px 20px;
+  border-radius:18px;
+  background:var(--glass);
+  border:1px solid var(--border);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  font-family:'Red Hat Mono',monospace;
+  font-size:11px;
+  color:var(--ink-mid);
+  box-shadow:0 6px 20px rgba(14,42,61,.08), inset 0 1px 0 rgba(255,255,255,.9);
+}
+.stat-chip i{color:var(--aqua-dk);}
+.stat-chip strong{color:var(--ink);font-weight:700;font-size:14px;font-family:'Fredoka',sans-serif;}
+
+/* main layout */
+.main-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:30px 40px 60px;
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:36px;
+  align-items:start;
+  position:relative;
+}
+
+/* section heading */
+.section-label{
+  font-family:'Red Hat Mono',monospace;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink-mid);
+  margin-bottom:18px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.section-label::before{
+  content:'';
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, #fff, var(--magenta));
+  box-shadow:0 0 8px rgba(255,110,199,.6);
+}
+
+/* project cards */
+.card{
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:22px 24px;
+  margin-bottom:16px;
+  position:relative;
+  opacity:0;
+  transform:translateY(14px);
+  transition:opacity .45s ease, transform .45s ease, box-shadow .25s;
+  display:grid;
+  grid-template-columns:40px 1fr;
+  gap:16px;
+  align-items:start;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  box-shadow:0 10px 28px rgba(14,42,61,.1), inset 0 1px 0 rgba(255,255,255,.85);
+  overflow:hidden;
+}
+.card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:50%;
+  background:linear-gradient(180deg, rgba(255,255,255,.55) 0%, transparent 100%);
+  pointer-events:none;
+  border-radius:24px 24px 0 0;
+}
+.card.visible{opacity:1;transform:translateY(0);}
+.card:hover{box-shadow:0 16px 36px rgba(0,194,209,.22), inset 0 1px 0 rgba(255,255,255,.9);transform:translateY(-3px);}
+.card:nth-child(1){border-color:rgba(0,194,209,.55);}
+
+.card-rank{
+  font-family:'Fredoka',sans-serif;
+  font-weight:700;
+  font-size:26px;
+  color:#fff;
+  line-height:1;
+  text-align:center;
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:linear-gradient(160deg, var(--chrome) 0%, #6fa3bb 100%);
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.6), 0 4px 10px rgba(14,42,61,.18);
+  position:relative;
+  z-index:1;
+}
+.card:nth-child(1) .card-rank{background:linear-gradient(160deg, #ffe27a 0%, #ff9d2e 100%);}
+.card:nth-child(2) .card-rank{background:linear-gradient(160deg, #d9e8ee 0%, #9bc1d3 100%);}
+.card:nth-child(3) .card-rank{background:linear-gradient(160deg, #f3c98b 0%, #cc8a4a 100%);}
+
+.card-content{position:relative;z-index:1;}
+.card-meta{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:4px;
+  flex-wrap:wrap;
+}
+.card-org{
+  font-family:'Red Hat Mono',monospace;
+  font-size:11px;
+  color:var(--muted);
+}
+.card-name{
+  font-family:'Fredoka',sans-serif;
+  font-weight:600;
+  font-size:20px;
+  color:var(--ink);
+  text-decoration:none;
+  line-height:1.15;
+  display:block;
+  margin-bottom:10px;
+  transition:color .15s;
+}
+.card-name:hover{color:var(--aqua-dk);}
+.card-desc{
+  font-size:13px;
+  line-height:1.65;
+  color:var(--ink-mid);
+  margin-bottom:14px;
+}
+.card-desc strong{color:var(--ink);font-weight:700;background:linear-gradient(180deg, rgba(166,255,77,.45), rgba(166,255,77,.15));padding:0 4px;border-radius:5px;}
+
+/* star bar */
+.star-bar-wrap{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+}
+.star-bar-track{
+  flex:1;
+  height:12px;
+  background:rgba(255,255,255,.6);
+  border:1px solid rgba(14,42,61,.1);
+  border-radius:999px;
+  overflow:hidden;
+  box-shadow:inset 0 1px 2px rgba(14,42,61,.12);
+}
+.star-bar-fill{
+  height:100%;
+  border-radius:999px;
+  background:linear-gradient(90deg, var(--aqua) 0%, var(--lime) 100%);
+  width:0;
+  position:relative;
+  transition:width 1.1s cubic-bezier(.4,0,.2,1);
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.6);
+}
+.star-count{
+  font-family:'Red Hat Mono',monospace;
+  font-size:11px;
+  color:var(--ink);
+  font-weight:700;
+  white-space:nowrap;
+}
+.star-count i{margin-right:4px;color:var(--magenta);}
+
+.card-footer{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.lang-dot{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:'Red Hat Mono',monospace;
+  font-size:10px;
+  color:var(--muted);
+}
+.lang-dot::before{
+  content:'';
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--ink-mid);
+  display:inline-block;
+  flex-shrink:0;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.6);
+}
+.tag{
+  font-family:'Red Hat Mono',monospace;
+  font-size:9px;
+  letter-spacing:.06em;
+  padding:4px 11px;
+  border-radius:999px;
+  border:1px solid rgba(14,42,61,.14);
+  background:rgba(255,255,255,.55);
+  color:var(--ink-mid);
+  text-transform:uppercase;
+  font-weight:600;
+}
+.tag.ai{background:linear-gradient(160deg, var(--magenta) 0%, #ff3fa8 100%);color:#fff;border-color:transparent;box-shadow:0 3px 8px rgba(255,110,199,.4);}
+.total-stars{
+  margin-left:auto;
+  font-family:'Red Hat Mono',monospace;
+  font-size:10px;
+  color:var(--muted);
+  font-weight:600;
+}
+.total-stars i{margin-right:3px;}
+
+/* lang colors */
+.lang-Shell::before{background:#89e051;}
+.lang-Python::before{background:#3572A5;}
+.lang-TypeScript::before{background:#3178c6;}
+.lang-Rust::before{background:#dea584;}
+.lang-C::before{background:#555555;}
+.lang-Ruby::before{background:#cc342d;}
+
+/* sidebar */
+.sidebar{}
+.sidebar-card{
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:24px;
+  margin-bottom:18px;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  box-shadow:0 10px 28px rgba(14,42,61,.1), inset 0 1px 0 rgba(255,255,255,.85);
+  position:relative;
+  overflow:hidden;
+}
+.sidebar-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:40%;
+  background:linear-gradient(180deg, rgba(255,255,255,.5) 0%, transparent 100%);
+  pointer-events:none;
+}
+.sidebar-title{
+  font-family:'Fredoka',sans-serif;
+  font-weight:600;
+  font-size:13px;
+  letter-spacing:.04em;
+  color:var(--ink);
+  margin-bottom:18px;
+  position:relative;
+  z-index:1;
+}
+
+/* language chart */
+.lang-chart-item{
+  margin-bottom:14px;
+  position:relative;
+  z-index:1;
+}
+.lang-chart-label{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:5px;
+  font-family:'Red Hat Mono',monospace;
+  font-size:10px;
+  font-weight:600;
+  color:var(--muted);
+}
+.lang-chart-label span:last-child{color:var(--ink);}
+.lang-chart-track{
+  height:10px;
+  background:rgba(255,255,255,.6);
+  border:1px solid rgba(14,42,61,.1);
+  border-radius:999px;
+  overflow:hidden;
+  box-shadow:inset 0 1px 2px rgba(14,42,61,.1);
+}
+.lang-chart-fill{
+  height:100%;
+  border-radius:999px;
+  background:linear-gradient(90deg, var(--aqua) 0%, var(--aqua-dk) 100%);
+  width:0;
+  transition:width 1.3s cubic-bezier(.4,0,.2,1);
+  box-shadow:inset 0 2px 2px rgba(255,255,255,.6);
+}
+.lang-chart-fill.magenta{background:linear-gradient(90deg, var(--magenta) 0%, #ff3fa8 100%);}
+.lang-chart-fill.lime{background:linear-gradient(90deg, var(--lime) 0%, #7fd926 100%);}
+.lang-chart-fill.chrome{background:linear-gradient(90deg, var(--chrome) 0%, #6fa3bb 100%);}
+
+/* trend insight */
+.insight-text{
+  font-size:13px;
+  line-height:1.75;
+  color:var(--ink-mid);
+  position:relative;
+  z-index:1;
+}
+.insight-text strong{color:var(--ink);background:linear-gradient(180deg, rgba(166,255,77,.45), rgba(166,255,77,.15));padding:0 4px;border-radius:5px;font-weight:700;}
+
+/* footer */
+.site-footer{
+  max-width:1200px;
+  margin:0 auto;
+  padding:28px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.footer-text{
+  font-family:'Red Hat Mono',monospace;
+  font-size:10px;
+  color:var(--muted);
+  letter-spacing:.04em;
+}
+.footer-text a{color:var(--aqua-dk);text-decoration:underline;}
+.footer-mark{
+  font-family:'Fredoka',sans-serif;
+  font-weight:700;
+  font-size:13px;
+  color:#fff;
+  background:linear-gradient(160deg, var(--aqua) 0%, var(--aqua-dk) 100%);
+  padding:5px 14px;
+  border-radius:999px;
+  box-shadow:0 4px 12px rgba(0,153,168,.35);
+}
+
+/* responsive */
+@media(max-width:900px){
+  .main-wrap{grid-template-columns:1fr;gap:28px;}
+  .sidebar{order:2;}
+  .site-header{padding:40px 20px 32px;}
+  .site-footer{padding:24px 20px;}
+  .main-wrap{padding:24px 20px 48px;}
+  .bubble{display:none;}
+}
+@media(max-width:560px){
+  .header-title{font-size:clamp(32px,11vw,48px);}
+  .card{padding:16px;grid-template-columns:32px 1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="bubble" style="width:220px;height:220px;top:90px;right:6%;"></div>
+<div class="bubble" style="width:120px;height:120px;top:420px;left:3%;"></div>
+<div class="bubble" style="width:90px;height:90px;top:760px;right:14%;"></div>
+
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
+
+<nav class="arc-nav">
+  <a class="arc-nav-home" href="../../../index.html">← Archive</a>
+  <span class="arc-nav-sep">/</span>
+  <span class="arc-nav-month">June 2026</span>
+  <div class="arc-nav-dates">
+    <a class="arc-nav-d cur" href="./18.html">18</a>
+    <a class="arc-nav-d" href="./17.html">17</a>
+    <a class="arc-nav-d" href="./16.html">16</a>
+    <a class="arc-nav-d" href="./12.html">12</a>
+    <a class="arc-nav-d" href="./11.html">11</a>
+    <a class="arc-nav-d" href="./10.html">10</a>
+    <a class="arc-nav-d" href="./09.html">09</a>
+    <a class="arc-nav-d" href="./08.html">08</a>
+    <a class="arc-nav-d" href="./07.html">07</a>
+    <a class="arc-nav-d" href="./06.html">06</a>
+    <a class="arc-nav-d" href="./05.html">05</a>
+    <a class="arc-nav-d" href="./04.html">04</a>
+    <a class="arc-nav-d" href="./03.html">03</a>
+    <a class="arc-nav-d" href="./02.html">02</a>
+    <a class="arc-nav-d" href="./01.html">01</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-eyebrow"><i class="fa-solid fa-star"></i> GitHub Trending · June 18, 2026</div>
+  <h1 class="header-title">
+    <span class="i18n-en">Today's <span class="hl">Open Source</span></span>
+    <span class="i18n-zh">今日<span class="hl">开源热榜</span></span>
+  </h1>
+  <div class="header-date">THU, 18 JUNE 2026</div>
+  <div class="stat-row">
+    <div class="stat-chip"><i class="fa-solid fa-layer-group"></i> <strong>10</strong> <span class="i18n-en">projects</span><span class="i18n-zh">项目</span></div>
+    <div class="stat-chip"><i class="fa-solid fa-star"></i> <strong>6,885</strong> <span class="i18n-en">stars today</span><span class="i18n-zh">今日新增星标</span></div>
+    <div class="stat-chip"><i class="fa-solid fa-code"></i> <strong>6</strong> <span class="i18n-en">languages</span><span class="i18n-zh">语言</span></div>
+    <div class="stat-chip"><i class="fa-solid fa-robot"></i> <strong>5</strong> <span class="i18n-en">AI projects</span><span class="i18n-zh">AI 项目</span></div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="main-wrap">
+
+  <!-- LEFT: Project Cards -->
+  <section>
+    <div class="section-label">
+      <span class="i18n-en">Top Repositories</span>
+      <span class="i18n-zh">热门仓库</span>
+    </div>
+
+    <!-- #1 mattpocock/skills -->
+    <div class="card">
+      <div class="card-rank">1</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">mattpocock /</span>
+        </div>
+        <a class="card-name" href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">skills</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="100"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+1,523</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A battle-tested library of Claude Code skills, pulled straight from a working engineer's own .claude directory — <strong>copy-paste expertise</strong> for real dev workflows.</span>
+          <span class="i18n-zh">直接从一线工程师的 .claude 目录中提炼出的 Claude Code 技能库，<strong>把真实工作流程打包成可复用经验</strong>。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Shell">Shell</span>
+          <span class="tag ai">AI</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>133.5k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #2 Panniantong/Agent-Reach -->
+    <div class="card">
+      <div class="card-rank">2</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">Panniantong /</span>
+        </div>
+        <a class="card-name" href="https://github.com/Panniantong/Agent-Reach" target="_blank" rel="noopener">Agent-Reach</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="76"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+1,161</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A zero-API-fee CLI that gives AI agents <strong>eyes on the entire internet</strong> — search and read Twitter, Reddit, YouTube, GitHub, Bilibili and more from one terminal.</span>
+          <span class="i18n-zh">零 API 费用的 CLI 工具，让 AI agent <strong>拥有阅览全网的眼睛</strong>——一条命令搜索 Twitter、Reddit、YouTube、GitHub、B 站、小红书等平台。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>33.1k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #3 obra/superpowers -->
+    <div class="card">
+      <div class="card-rank">3</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">obra /</span>
+        </div>
+        <a class="card-name" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">superpowers</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="74"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+1,129</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">An agentic skills framework and development methodology that actually <strong>turns Claude into a disciplined software engineer</strong>, not just a code generator.</span>
+          <span class="i18n-zh">一套真正能落地的 agent 技能框架与开发方法论，<strong>把 Claude 训练成有章法的软件工程师</strong>，而不只是代码生成器。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Shell">Shell</span>
+          <span class="tag ai">AI</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>231.0k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #4 freeCodeCamp/freeCodeCamp -->
+    <div class="card">
+      <div class="card-rank">4</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">freeCodeCamp /</span>
+        </div>
+        <a class="card-name" href="https://github.com/freeCodeCamp/freeCodeCamp" target="_blank" rel="noopener">freeCodeCamp</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="50"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+757</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">The open-source curriculum that has taught millions to code for free, still <strong>quietly compounding stars</strong> a decade in.</span>
+          <span class="i18n-zh">免费教会数百万人编程的开源课程体系，十年过去依然在 <strong>悄悄积累着星标</strong>。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag">OSS</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>449.1k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #5 google-research/timesfm -->
+    <div class="card">
+      <div class="card-rank">5</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">google-research /</span>
+        </div>
+        <a class="card-name" href="https://github.com/google-research/timesfm" target="_blank" rel="noopener">timesfm</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="40"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+606</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Google Research's pretrained foundation model for time-series forecasting — <strong>one model, zero-shot forecasts</strong> across wildly different domains.</span>
+          <span class="i18n-zh">Google Research 推出的时间序列预测基础模型，<strong>一个模型即可零样本预测</strong>各种领域的时序数据。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>21.9k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #6 Universal-Debloater-Alliance/universal-android-debloater-next-generation -->
+    <div class="card">
+      <div class="card-rank">6</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">Universal-Debloater-Alliance /</span>
+        </div>
+        <a class="card-name" href="https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation" target="_blank" rel="noopener">universal-android-debloater-next-generation</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="30"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+457</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A cross-platform Rust GUI that uses ADB to strip bloatware from non-rooted Android phones, <strong>no root required</strong> to reclaim your privacy and battery.</span>
+          <span class="i18n-zh">基于 ADB 的跨平台 Rust 图形工具，无需 root 即可清除安卓预装臃肿应用，<strong>免 root 也能找回隐私与续航</strong>。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Rust">Rust</span>
+          <span class="tag">Sec</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>7.6k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #7 n0-computer/iroh -->
+    <div class="card">
+      <div class="card-rank">7</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">n0-computer /</span>
+        </div>
+        <a class="card-name" href="https://github.com/n0-computer/iroh" target="_blank" rel="noopener">iroh</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="28"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+421</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A modular Rust networking stack built on a simple idea: <strong>dial keys, not addresses</strong>, since IP addresses break.</span>
+          <span class="i18n-zh">基于一个简单理念构建的模块化 Rust 网络栈：IP 地址会失效，所以 <strong>该拨的是密钥，而不是地址</strong>。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Rust">Rust</span>
+          <span class="tag">Infra</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>9.6k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #8 DeusData/codebase-memory-mcp -->
+    <div class="card">
+      <div class="card-rank">8</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">DeusData /</span>
+        </div>
+        <a class="card-name" href="https://github.com/DeusData/codebase-memory-mcp" target="_blank" rel="noopener">codebase-memory-mcp</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="24"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+371</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A high-performance MCP server that indexes entire codebases into a persistent knowledge graph in milliseconds, cutting agent token usage by <strong>99% fewer tokens</strong>.</span>
+          <span class="i18n-zh">高性能 MCP 服务器，毫秒级把整个代码库索引成持久知识图谱，<strong>token 消耗直降 99%</strong>。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-C">C</span>
+          <span class="tag ai">AI</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>5.2k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #9 chatwoot/chatwoot -->
+    <div class="card">
+      <div class="card-rank">9</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">chatwoot /</span>
+        </div>
+        <a class="card-name" href="https://github.com/chatwoot/chatwoot" target="_blank" rel="noopener">chatwoot</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="17"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+264</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">An open-source live-chat and omnichannel help desk that positions itself as the <strong>self-hosted alternative to Intercom and Zendesk</strong>.</span>
+          <span class="i18n-zh">开源实时客服与全渠道工单系统，定位为 <strong>可自部署的 Intercom / Zendesk 平替</strong>。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Ruby">Ruby</span>
+          <span class="tag">Tool</span>
+          <span class="tag">OSS</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>32.4k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #10 meshery/meshery -->
+    <div class="card">
+      <div class="card-rank">10</div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-org">meshery /</span>
+        </div>
+        <a class="card-name" href="https://github.com/meshery/meshery" target="_blank" rel="noopener">meshery</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="13"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+196</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">The cloud-native management plane that helps teams <strong>design, visualize, and operate service meshes</strong> across any infrastructure.</span>
+          <span class="i18n-zh">云原生管理平台，帮助团队跨任意基础设施 <strong>设计、可视化并运维服务网格</strong>。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag">Infra</span>
+          <span class="tag">OSS</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>11.0k</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- RIGHT: Sidebar -->
+  <aside class="sidebar">
+
+    <!-- Language Chart -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <span class="i18n-en">Stars by Language</span>
+        <span class="i18n-zh">语言热度分布</span>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>Shell</span><span>2,652 · 38.5%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill" data-pct="38.5"></div></div>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>Python</span><span>1,767 · 25.7%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill magenta" data-pct="25.7"></div></div>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>TypeScript</span><span>953 · 13.8%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill lime" data-pct="13.8"></div></div>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>Rust</span><span>878 · 12.8%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill chrome" data-pct="12.8"></div></div>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>C</span><span>371 · 5.4%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill" data-pct="5.4"></div></div>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label">
+          <span>Ruby</span><span>264 · 3.8%</span>
+        </div>
+        <div class="lang-chart-track"><div class="lang-chart-fill magenta" data-pct="3.8"></div></div>
+      </div>
+    </div>
+
+    <!-- Trend Insight -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <span class="i18n-en">Trend Insight</span>
+        <span class="i18n-zh">趋势洞察</span>
+      </div>
+      <p class="insight-text">
+        <span class="i18n-en">Agent tooling dominates the top of today's chart — Claude-skills frameworks and an AI web-access CLI take the three highest single-day star counts, while TimesFM and a codebase-memory MCP server round out a strong AI/ML cluster. Established OSS staples like freeCodeCamp, Chatwoot, and Meshery keep climbing steadily underneath, proof that the agent wave hasn't displaced the platforms developers already rely on.</span>
+        <span class="i18n-zh">今日榜单被 agent 工具类项目占据头部——Claude 技能框架与 AI 网络访问 CLI 拿下今日新增星标前三，TimesFM 与代码记忆 MCP 服务器进一步强化了 AI/ML 阵营的声量。freeCodeCamp、Chatwoot、Meshery 等成熟开源项目仍在稳步攀升，说明 agent 浪潮并未取代开发者日常依赖的平台。</span>
+      </p>
+    </div>
+
+  </aside>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <span class="footer-text">
+    <span class="i18n-en">Data from <a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · June 18, 2026</span>
+    <span class="i18n-zh">数据来源：<a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · 2026 年 6 月 18 日</span>
+  </span>
+  <span class="footer-mark">#18</span>
+</footer>
+
+<script>(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();</script>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var el = entry.target;
+        el.classList.add('visible');
+        el.querySelectorAll('.star-bar-fill[data-pct]').forEach(function(bar){
+          setTimeout(function(){ bar.style.width = bar.getAttribute('data-pct') + '%'; }, 120);
+        });
+        io.unobserve(el);
+      }
+    });
+  }, {threshold: 0.1});
+
+  document.querySelectorAll('.card').forEach(function(card, i){
+    card.style.transitionDelay = (i * 60) + 'ms';
+    io.observe(card);
+  });
+
+  var chartIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.querySelectorAll('.lang-chart-fill[data-pct]').forEach(function(bar){
+          setTimeout(function(){ bar.style.width = bar.getAttribute('data-pct') + '%'; }, 200);
+        });
+        chartIo.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.2});
+
+  document.querySelectorAll('.sidebar-card').forEach(function(c){ chartIo.observe(c); });
+})();
+</script>
+
+</body>
+</html>

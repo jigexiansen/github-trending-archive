@@ -5,8 +5,8 @@
 **A permanent, beautiful record of what the open source world cared about each day.**
 
 [![Validate Reports](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![Reports](https://img.shields.io/badge/Reports-20-7b2fff.svg)](#-browse)
-[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--17-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/17.html)
+[![Reports](https://img.shields.io/badge/Reports-21-7b2fff.svg)](#-browse)
+[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--18-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/18.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-00f5d4.svg)](LICENSE)
 
 [简体中文](README_zh-CN.md) · [Live Archive →](https://jigexiansen.github.io/github-trending-archive/)
@@ -45,10 +45,11 @@ Each daily report is a single, self-contained HTML file:
 ## 📂 Browse
 
 <details open>
-<summary><strong>2026 · June</strong> — 14 reports</summary>
+<summary><strong>2026 · June</strong> — 15 reports</summary>
 
 | Date | Top Project | Highlights |
 |------|------------|-----------|
+| [2026-06-18](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/18.html) | mattpocock/skills +1,523⭐ | Agent tooling sweeps the top three — Claude skills frameworks and an AI web-access CLI outpace everything else as a strong AI/ML cluster forms beneath them |
 | [2026-06-17](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/17.html) | iptv-org/iptv +1,197⭐ | Free public infrastructure tops the chart — IPTV streams and freeCodeCamp's curriculum out-pull every AI launch as steady dev tooling fills the rest of the board |
 | [2026-06-16](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/16.html) | iptv-org/iptv +2,657⭐ | Free public resources reclaim the top 3 — IPTV streams and open courseware dominate as AI agent tooling extends its multi-week streak |
 | [2026-06-12](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/12.html) | agent-skills +3,278⭐ | Agent skill libraries claim six of ten spots and Shell dethrones Python — the community converges on composable, CLI-first skill primitives for AI agents |

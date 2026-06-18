@@ -21,6 +21,7 @@ Each file is a fully self-contained HTML document. No build step, no dependencie
 
 | Date | Top Project | Today's Stars |
 |------|------------|--------------|
+| [2026-06-18](2026/06/18.html) | mattpocock/skills | +1,523 ⭐ |
 | [2026-06-17](2026/06/17.html) | iptv-org/iptv | +1,197 ⭐ |
 | [2026-06-16](2026/06/16.html) | iptv-org/iptv | +2,657 ⭐ |
 | [2026-06-12](2026/06/12.html) | agent-skills | +3,278 ⭐ |
