@@ -5,8 +5,8 @@
 **开源世界每天都在变，这里把每一天最值得关注的那一刻留下来。**
 
 [![报告校验](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![报告数量](https://img.shields.io/badge/报告-24份-7b2fff.svg)](#-浏览报告)
-[![最近更新](https://img.shields.io/badge/最近更新-2026--06--21-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/21.html)
+[![报告数量](https://img.shields.io/badge/报告-25份-7b2fff.svg)](#-浏览报告)
+[![最近更新](https://img.shields.io/badge/最近更新-2026--06--22-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/22.html)
 [![许可证: MIT](https://img.shields.io/badge/许可证-MIT-00f5d4.svg)](LICENSE)
 
 [English](README.md) · [在线浏览 →](https://jigexiansen.github.io/github-trending-archive/)
@@ -45,10 +45,11 @@ GitHub Trending 每 24 小时重置一次。那些今天备受瞩目的项目，
 ## 📂 浏览报告
 
 <details open>
-<summary><strong>2026 年 6 月</strong> — 18 份报告</summary>
+<summary><strong>2026 年 6 月</strong> — 19 份报告</summary>
 
 | 日期 | 当日榜首 | 亮点 |
 |------|---------|------|
+| [2026-06-22](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/22.html) | chopratejas/headroom +2,624⭐ | LLM token 压缩工具的涨势是第二名的近两倍，十大热门中七席直接服务于 AI 工作流，从 MCP 代码记忆服务器到智能体视频工坊 |
 | [2026-06-21](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/21.html) | chopratejas/headroom +3,795⭐ | 上下文压缩工具再度登顶——今日十大热门中半数直接服务于 AI 工作流，从 MCP 记忆服务器到智能体视频制片工具，Rust 悄然拿下语言榜第二名 |
 | [2026-06-20](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/20.html) | chopratejas/headroom +4,005⭐ | 一款 LLM 上下文压缩工具单日狂揽逾4000星标，十个热门项目中有八个直接服务于 AI 智能体与生成模型 |
 | [2026-06-19](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/19.html) | DeusData/codebase-memory-mcp +2,322⭐ | 面向 AI 编程智能体的代码理解基础设施占据前三——十个热门项目中有六个都在为自主编程智能体打基础设施 |

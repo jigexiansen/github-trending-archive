@@ -21,6 +21,7 @@ Each file is a fully self-contained HTML document. No build step, no dependencie
 
 | Date | Top Project | Today's Stars |
 |------|------------|--------------|
+| [2026-06-22](2026/06/22.html) | chopratejas/headroom | +2,624 ⭐ |
 | [2026-06-21](2026/06/21.html) | chopratejas/headroom | +3,795 ⭐ |
 | [2026-06-20](2026/06/20.html) | chopratejas/headroom | +4,005 ⭐ |
 | [2026-06-19](2026/06/19.html) | DeusData/codebase-memory-mcp | +2,322 ⭐ |

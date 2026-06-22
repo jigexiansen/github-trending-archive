@@ -5,8 +5,8 @@
 **A permanent, beautiful record of what the open source world cared about each day.**
 
 [![Validate Reports](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![Reports](https://img.shields.io/badge/Reports-24-7b2fff.svg)](#-browse)
-[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--21-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/21.html)
+[![Reports](https://img.shields.io/badge/Reports-25-7b2fff.svg)](#-browse)
+[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--22-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/22.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-00f5d4.svg)](LICENSE)
 
 [简体中文](README_zh-CN.md) · [Live Archive →](https://jigexiansen.github.io/github-trending-archive/)
@@ -45,10 +45,11 @@ Each daily report is a single, self-contained HTML file:
 ## 📂 Browse
 
 <details open>
-<summary><strong>2026 · June</strong> — 18 reports</summary>
+<summary><strong>2026 · June</strong> — 19 reports</summary>
 
 | Date | Top Project | Highlights |
 |------|------------|-----------|
+| [2026-06-22](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/22.html) | chopratejas/headroom +2,624⭐ | A token-compression tool for LLMs doubles the runner-up's pace as seven of ten trending repos build directly for AI workflows, from MCP code-memory servers to agentic video studios |
 | [2026-06-21](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/21.html) | chopratejas/headroom +3,795⭐ | A context-compression tool tops the board again — half of today's top ten build directly for AI workflows, from MCP memory servers to agentic video studios, while Rust quietly claims second place in the language chart |
 | [2026-06-20](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/20.html) | chopratejas/headroom +4,005⭐ | An LLM context-compression tool rockets past 4,000 stars in a day — eight of ten trending repos now build directly for AI agents and generative models |
 | [2026-06-19](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/19.html) | DeusData/codebase-memory-mcp +2,322⭐ | Code-intelligence infrastructure for AI agents claims the top three spots — six of ten trending repos now build tooling for autonomous coding agents |
