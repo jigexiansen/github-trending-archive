@@ -5,8 +5,8 @@
 **A permanent, beautiful record of what the open source world cared about each day.**
 
 [![Validate Reports](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![Reports](https://img.shields.io/badge/Reports-27-7b2fff.svg)](#-browse)
-[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--24-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/24.html)
+[![Reports](https://img.shields.io/badge/Reports-28-7b2fff.svg)](#-browse)
+[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--25-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/25.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-00f5d4.svg)](LICENSE)
 
 [简体中文](README_zh-CN.md) · [Live Archive →](https://jigexiansen.github.io/github-trending-archive/)
@@ -45,10 +45,11 @@ Each daily report is a single, self-contained HTML file:
 ## 📂 Browse
 
 <details open>
-<summary><strong>2026 · June</strong> — 21 reports</summary>
+<summary><strong>2026 · June</strong> — 22 reports</summary>
 
 | Date | Top Project | Highlights |
 |------|------------|-----------|
+| [2026-06-25](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/25.html) | calesthio/OpenMontage +3,719⭐ | An open-source agentic video studio pulls roughly double Apple's new container tool as Python claims 63% of language share and eight of ten trending repos build directly for AI workflows |
 | [2026-06-24](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/24.html) | calesthio/OpenMontage +3,592⭐ | An open-source agentic video studio more than doubles the runner-up's pace as all ten of today's trending repos build directly for AI workflows, from stock analysis to website cloning, with Python claiming 56% of language share |
 | [2026-06-23](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/23.html) | calesthio/OpenMontage +2,938⭐ | Two AI-native video editors race neck-and-neck at the top, separated by less than 500 stars, while Claude Code skill libraries and an MCP code-memory server deepen the agent-tooling stack |
 | [2026-06-22](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/22.html) | chopratejas/headroom +2,624⭐ | A token-compression tool for LLMs doubles the runner-up's pace as seven of ten trending repos build directly for AI workflows, from MCP code-memory servers to agentic video studios |

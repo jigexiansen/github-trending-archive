@@ -21,6 +21,7 @@ Each file is a fully self-contained HTML document. No build step, no dependencie
 
 | Date | Top Project | Today's Stars |
 |------|------------|--------------|
+| [2026-06-25](2026/06/25.html) | calesthio/OpenMontage | +3,719 ⭐ |
 | [2026-06-24](2026/06/24.html) | calesthio/OpenMontage | +3,592 ⭐ |
 | [2026-06-23](2026/06/23.html) | calesthio/OpenMontage | +2,938 ⭐ |
 | [2026-06-22](2026/06/22.html) | chopratejas/headroom | +2,624 ⭐ |
