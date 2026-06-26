@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending · June 26, 2026 — OpenMontage Stays on Top</title>
+<meta name="description" content="GitHub Trending report for June 26, 2026. Top repos: calesthio/OpenMontage (+3,434 stars today), google-labs-code/design.md, apple/container and more.">
+<script src="https://kit.fontawesome.com/371954d95b.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
+<style>
+:root{
+  --board:      #0a1f14;
+  --board-mid:  #0e2a1c;
+  --panel:      #0f2b1d;
+  --chip:       #07140e;
+  --silk:       #eaf6ee;
+  --muted:      #7fa896;
+  --copper:     #c8843f;
+  --copper-dim: #8f5e2c;
+  --gold:       #e3b341;
+  --led:        #3ddc84;
+  --line:       #1f6b4a;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background-color:var(--board);
+  background-image:
+    radial-gradient(circle at 4px 4px, rgba(127,168,150,.12) 1px, transparent 1.4px),
+    repeating-linear-gradient(115deg, rgba(200,132,63,.035) 0px, rgba(200,132,63,.035) 1px, transparent 1px, transparent 26px);
+  background-size: 26px 26px, auto;
+  color:var(--silk);
+  font-family:'JetBrains Mono',monospace;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+
+/* i18n */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:64px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
+</style>
+<style>
+.arc-nav{position:sticky;top:0;z-index:9999;height:38px;display:flex;align-items:center;padding:0 20px;background:var(--chip);border-bottom:2px solid var(--copper);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;}
+.arc-nav-home{color:rgba(234,246,238,.5);text-decoration:none;transition:color .15s;white-space:nowrap;text-transform:uppercase;}
+.arc-nav-home:hover{color:var(--gold);}
+.arc-nav-sep{color:rgba(234,246,238,.18);margin:0 10px;}
+.arc-nav-month{color:rgba(234,246,238,.38);white-space:nowrap;text-transform:uppercase;}
+.arc-nav-dates{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+.arc-nav-d{width:26px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:2px;font-size:10px;text-decoration:none;color:rgba(234,246,238,.4);border:1px solid rgba(127,168,150,.25);transition:all .15s;}
+.arc-nav-d:hover{color:var(--gold);border-color:var(--gold);}
+.arc-nav-d.cur{color:var(--chip);background:var(--gold);border-color:var(--gold);pointer-events:none;}
+</style>
+<style>
+/* ── header ── */
+.site-header{
+  max-width:1200px;
+  margin:0 auto;
+  padding:54px 40px 34px;
+  position:relative;
+  overflow:hidden;
+}
+.site-header::before{
+  content:'';
+  position:absolute;
+  top:0; right:0;
+  width:340px;height:340px;
+  background-image:
+    radial-gradient(circle, var(--copper) 2.5px, transparent 3px);
+  background-size:34px 34px;
+  opacity:.14;
+  pointer-events:none;
+}
+.coin-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  font-family:'JetBrains Mono',monospace;
+  font-weight:700;
+  font-size:10.5px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--gold);
+  background:var(--chip);
+  border:1px solid var(--line);
+  padding:8px 16px;
+  margin-bottom:28px;
+  position:relative;
+}
+.coin-badge::before,.coin-badge::after{content:'';position:absolute;width:7px;height:7px;border-radius:50%;background:var(--copper);top:50%;transform:translateY(-50%);}
+.coin-badge::before{left:-3.5px;}
+.coin-badge::after{right:-3.5px;}
+.coin-badge i{color:var(--led);}
+.header-title{
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:900;
+  font-size:clamp(34px,6vw,62px);
+  line-height:1.02;
+  letter-spacing:-.01em;
+  color:var(--silk);
+  margin-bottom:18px;
+  position:relative;
+  z-index:1;
+}
+.header-title .hl{color:var(--gold);position:relative;border-bottom:3px solid var(--copper);}
+.header-title .i18n-zh{font-family:'Noto Sans SC',sans-serif;font-weight:900;font-size:clamp(26px,4.6vw,42px);}
+.header-sub{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11.5px;
+  font-weight:600;
+  color:var(--muted);
+  letter-spacing:.1em;
+  margin-bottom:28px;
+  text-transform:uppercase;
+  border-left:3px solid var(--copper);
+  padding-left:12px;
+}
+.header-sub .i18n-zh{font-family:'Noto Sans SC',sans-serif;text-transform:none;}
+.stat-row{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);}
+.stat-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:12px 18px;
+  border-right:1px solid var(--line);
+  background:var(--panel);
+  font-family:'JetBrains Mono',monospace;
+  font-size:10.5px;
+  font-weight:600;
+  color:var(--muted);
+  text-transform:uppercase;
+}
+.stat-chip:last-child{border-right:none;}
+.stat-chip i{color:var(--copper);width:12px;text-align:center;}
+.stat-chip strong{color:var(--gold);font-weight:900;font-family:'Space Grotesk',sans-serif;font-size:19px;margin-right:3px;}
+
+/* ── main layout ── */
+.main-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:8px 40px 60px;
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:36px;
+  align-items:start;
+}
+.section-label{
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:900;
+  font-size:21px;
+  color:var(--silk);
+  margin-bottom:20px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.section-label::before{content:'';width:9px;height:9px;background:var(--led);box-shadow:0 0 8px var(--led);display:inline-block;border-radius:50%;}
+.section-label .i18n-zh{font-family:'Noto Sans SC',sans-serif;font-weight:900;font-size:18px;}
+
+.card{
+  display:grid;
+  grid-template-columns:84px 1fr;
+  gap:0;
+  background:var(--panel);
+  border:1px solid var(--line);
+  margin-bottom:18px;
+  opacity:0;
+  transform:translateY(16px);
+  transition:opacity .5s ease, transform .5s ease;
+  position:relative;
+  box-shadow:0 8px 18px rgba(0,0,0,.28);
+}
+.card.visible{opacity:1;transform:translateY(0);}
+.call-col{
+  background:var(--chip);
+  border-right:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  padding:14px 4px;
+  position:relative;
+}
+.call-col::before,.call-col::after{content:'';position:absolute;left:8px;right:8px;height:3px;background:repeating-linear-gradient(90deg, var(--gold) 0 4px, transparent 4px 9px);}
+.call-col::before{top:-2px;}
+.call-col::after{bottom:-2px;}
+.rank-stamp{
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:900;
+  font-size:28px;
+  color:var(--silk);
+  line-height:1;
+}
+.call-number{
+  font-family:'JetBrains Mono',monospace;
+  font-size:8.5px;
+  letter-spacing:.05em;
+  color:var(--copper);
+  text-transform:uppercase;
+}
+.card-content{padding:18px 22px;}
+.card-meta{margin-bottom:2px;}
+.card-org{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);font-weight:600;}
+.card-name{
+  display:inline-block;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:800;
+  font-size:23px;
+  color:var(--silk);
+  text-decoration:none;
+  margin-bottom:14px;
+  word-break:break-word;
+  line-height:1.05;
+}
+.card-name:hover{color:var(--gold);}
+.star-bar-wrap{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.star-bar-track{
+  flex:1;
+  height:8px;
+  background:var(--chip);
+  border:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+}
+.star-bar-fill{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg, var(--copper-dim), var(--gold));
+  box-shadow:0 0 8px rgba(227,179,65,.5);
+  transition:width 1.4s cubic-bezier(.4,0,.2,1);
+}
+.star-count{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11.5px;
+  font-weight:700;
+  color:var(--led);
+  white-space:nowrap;
+}
+.star-count i{margin-right:4px;}
+.card-desc{
+  font-family:'JetBrains Mono',monospace;
+  font-size:12.5px;
+  line-height:1.65;
+  color:#cfe5d8;
+  margin-bottom:16px;
+}
+.card-desc .i18n-zh{font-family:'Noto Sans SC',sans-serif;font-size:13px;line-height:1.85;}
+.card-desc strong{color:var(--gold);font-weight:700;}
+.card-footer{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.lang-dot{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--muted);}
+.lang-dot::before{content:'';width:8px;height:8px;display:inline-block;border-radius:50%;}
+.lang-Python::before{background:#3572A5;box-shadow:0 0 6px #3572A5;}
+.lang-TypeScript::before{background:#3178c6;box-shadow:0 0 6px #3178c6;}
+.lang-Swift::before{background:#F05138;box-shadow:0 0 6px #F05138;}
+.lang-HTML::before{background:#e34c26;box-shadow:0 0 6px #e34c26;}
+.tag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:9.5px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--muted);
+  border:1px solid var(--line);
+  padding:3px 8px;
+}
+.tag.ai{color:var(--chip);background:var(--gold);border-color:var(--gold);}
+.total-stars{
+  margin-left:auto;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  font-weight:700;
+  color:var(--copper);
+}
+.total-stars i{margin-right:4px;color:var(--copper);}
+
+/* ── sidebar ── */
+.sidebar-card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:22px;
+  margin-bottom:20px;
+  box-shadow:0 8px 18px rgba(0,0,0,.28);
+}
+.sidebar-title{
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:900;
+  font-size:17px;
+  color:var(--silk);
+  margin-bottom:20px;
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+.sidebar-title::before{content:'';width:9px;height:9px;background:var(--led);box-shadow:0 0 8px var(--led);display:inline-block;border-radius:50%;}
+.sidebar-title .i18n-zh{font-family:'Noto Sans SC',sans-serif;font-weight:900;font-size:15px;}
+.lang-chart-item{margin-bottom:15px;}
+.lang-chart-label{display:flex;justify-content:space-between;margin-bottom:6px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--muted);}
+.lang-chart-label span:last-child{color:var(--silk);}
+.lang-chart-track{height:8px;background:var(--chip);border:1px solid var(--line);overflow:hidden;}
+.lang-chart-fill{height:100%;width:0;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
+.lang-chart-fill.c1{background:var(--gold);}
+.lang-chart-fill.c2{background:var(--copper);}
+.lang-chart-fill.c3{background:var(--led);}
+.lang-chart-fill.c4{background:#7fa896;}
+
+.advisory{border:1px dashed var(--line);padding:14px;position:relative;}
+.advisory::before,.advisory::after,.advisory>.corner-a,.advisory>.corner-b{content:'';}
+.insight-text{font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.75;color:#cfe5d8;}
+.insight-text.i18n-zh{font-family:'Noto Sans SC',sans-serif;font-size:13px;line-height:1.9;}
+.insight-text strong{color:var(--gold);font-weight:700;}
+.note-stamp{
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:900;
+  font-size:12px;
+  text-transform:uppercase;
+  color:var(--chip);
+  background:var(--led);
+  padding:4px 12px;
+  display:inline-block;
+  margin-bottom:14px;
+}
+
+/* ── footer ── */
+.site-footer{
+  max-width:1200px;margin:0 auto;padding:24px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+  border-top:2px solid var(--line);
+}
+.footer-text{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.02em;text-transform:uppercase;}
+.footer-text .i18n-zh{font-family:'Noto Sans SC',sans-serif;text-transform:none;}
+.footer-text a{color:var(--gold);text-decoration:underline;}
+.footer-mark{
+  font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:13px;color:var(--chip);text-transform:uppercase;
+  background:var(--gold);padding:6px 16px;
+}
+
+@media(max-width:900px){
+  .main-wrap{grid-template-columns:1fr;gap:24px;}
+  .site-header{padding:42px 20px 26px;}
+  .main-wrap{padding:8px 20px 48px;}
+  .site-footer{padding:20px 20px;}
+  .stat-row{flex-direction:column;}
+  .stat-chip{border-right:none;border-bottom:1px solid var(--line);}
+  .stat-chip:last-child{border-bottom:none;}
+}
+@media(max-width:560px){
+  .header-title{font-size:clamp(26px,8vw,36px);}
+  .card{grid-template-columns:62px 1fr;}
+  .rank-stamp{font-size:20px;}
+  .card-name{font-size:18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
+
+<nav class="arc-nav">
+  <a class="arc-nav-home" href="../../../index.html">← Archive</a>
+  <span class="arc-nav-sep">/</span>
+  <span class="arc-nav-month">June 2026</span>
+  <div class="arc-nav-dates">
+    <a class="arc-nav-d cur" href="./26.html">26</a>
+    <a class="arc-nav-d" href="./25.html">25</a>
+    <a class="arc-nav-d" href="./24.html">24</a>
+    <a class="arc-nav-d" href="./23.html">23</a>
+    <a class="arc-nav-d" href="./22.html">22</a>
+    <a class="arc-nav-d" href="./21.html">21</a>
+    <a class="arc-nav-d" href="./20.html">20</a>
+    <a class="arc-nav-d" href="./19.html">19</a>
+    <a class="arc-nav-d" href="./18.html">18</a>
+    <a class="arc-nav-d" href="./17.html">17</a>
+    <a class="arc-nav-d" href="./16.html">16</a>
+    <a class="arc-nav-d" href="./12.html">12</a>
+    <a class="arc-nav-d" href="./11.html">11</a>
+    <a class="arc-nav-d" href="./10.html">10</a>
+    <a class="arc-nav-d" href="./09.html">09</a>
+    <a class="arc-nav-d" href="./08.html">08</a>
+    <a class="arc-nav-d" href="./07.html">07</a>
+    <a class="arc-nav-d" href="./06.html">06</a>
+    <a class="arc-nav-d" href="./05.html">05</a>
+    <a class="arc-nav-d" href="./04.html">04</a>
+    <a class="arc-nav-d" href="./03.html">03</a>
+    <a class="arc-nav-d" href="./02.html">02</a>
+    <a class="arc-nav-d" href="./01.html">01</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="coin-badge"><i class="fa-solid fa-bolt"></i> GitHub Trending · June 26, 2026</div>
+  <h1 class="header-title">
+    <span class="i18n-en">OpenMontage <span class="hl">Stays on Top</span></span>
+    <span class="i18n-zh">OpenMontage <span class="hl">稳坐头筹</span></span>
+  </h1>
+  <div class="header-sub">
+    <span class="i18n-en">FRI 26 JUNE 2026 · TEN REPOS ON THE BOARD</span>
+    <span class="i18n-zh">2026年6月26日 星期五 · 十个项目，一张榜单</span>
+  </div>
+  <div class="stat-row">
+    <div class="stat-chip"><i class="fa-solid fa-layer-group"></i> <strong>10</strong> <span class="i18n-en">projects</span><span class="i18n-zh">项目</span></div>
+    <div class="stat-chip"><i class="fa-solid fa-bolt"></i> <strong>10,260</strong> <span class="i18n-en">stars today</span><span class="i18n-zh">今日新增星标</span></div>
+    <div class="stat-chip"><i class="fa-solid fa-code"></i> <strong>4</strong> <span class="i18n-en">languages</span><span class="i18n-zh">语言</span></div>
+    <div class="stat-chip"><i class="fa-solid fa-robot"></i> <strong>8</strong> <span class="i18n-en">AI projects</span><span class="i18n-zh">AI 项目</span></div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="main-wrap">
+
+  <!-- LEFT: Cards -->
+  <section>
+    <div class="section-label">
+      <span class="i18n-en">Top Repositories</span>
+      <span class="i18n-zh">热门仓库</span>
+    </div>
+
+    <!-- #1 calesthio/OpenMontage -->
+    <div class="card">
+      <div class="call-col">
+        <div class="rank-stamp">01</div>
+        <div class="call-number">OPM</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">calesthio /</span></div>
+        <a class="card-name" href="https://github.com/calesthio/OpenMontage" target="_blank" rel="noopener">OpenMontage</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="100"></div></div>
+          <span class="star-count"><i class="fa-solid fa-bolt"></i>+3,434</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">An open-source agentic video studio that hands an AI coding assistant a full production line — <strong>12 pipelines, 52 tools, 500+ skills</strong> covering cutting, scoring, and final assembly.</span>
+          <span class="i18n-zh">全球首个开源智能体视频制片系统，把AI编程助手变成一座完整制片厂——<strong>12条流水线、52个工具、500余项技能</strong>，从剪辑配乐到成片输出一手搞定。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Media</span>
+          <span class="total-stars"><i class="fa-solid fa-microchip"></i>22.0k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #2 google-labs-code/design.md -->
+    <div class="card">
+      <div class="call-col">
+        <div class="rank-stamp">02</div>
+        <div class="call-number">DMD</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">google-labs-code /</span></div>
+        <a class="card-name" href="https://github.com/google-labs-code/design.md" target="_blank" rel="noopener">design.md</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="43.0"></div></div>
+          <span class="star-count"><i class="fa-solid fa-bolt"></i>+1,475</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A file format that lets coding agents read a product's visual identity directly — giving them a <strong>persistent, structured</strong> grasp of your design system instead of guesswork.</span>
+          <span class="i18n-zh">一种让编程智能体直接读取产品视觉规范的文件格式，使其对设计系统拥有<strong>持久且结构化</strong>的理解，告别盲猜配色与间距。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-microchip"></i>19.1k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #3 apple/container -->
+    <div class="card">
+      <div class="call-col">
+        <div class="rank-stamp">03</div>
+        <div class="call-number">CTR</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">apple /</span></div>
+        <a class="card-name" href="https://github.com/apple/container" target="_blank" rel="noopener">container</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="39.3"></div></div>
+          <span class="star-count"><i class="fa-solid fa-bolt"></i>+1,351</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Apple's own container runtime — spins up <strong>lightweight Linux VMs</strong> on macOS, written in Swift and tuned for Apple silicon.</span>
+          <span class="i18n-zh">苹果官方推出的容器运行时，通过<strong>轻量级虚拟机</strong>在Mac上运行Linux容器，由Swift编写并针对Apple芯片深度优化。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Swift">Swift</span>
+          <span class="tag">Infra</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-microchip"></i>43.2k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #4 JCodesMore/ai-website-cloner-template -->
+    <div class="card">
+      <div class="call-col">
+        <div class="rank-stamp">04</div>
+        <div class="call-number">AWC</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">JCodesMore /</span></div>
+        <a class="card-name" href="https://github.com/JCodesMore/ai-website-cloner-template" target="_blank" rel="noopener">ai-website-cloner-template</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="29.8"></div></div>
+          <span class="star-count"><i class="fa-solid fa-bolt"></i>+1,024</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Point an AI coding agent at any live site and clone it in <strong>one command</strong> — layout, components, and styling reproduced automatically.</span>
+          <span class="i18n-zh">只需<strong>一条命令</strong>，让AI编程智能体自动克隆任意网站的布局、组件与样式。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-microchip"></i>20.4k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #5 garrytan/gstack -->
+    <div class="card">
+      <div class="call-col">
+        <div class="rank-stamp">05</div>
+        <div class="call-number">GST</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">garrytan /</span></div>
+        <a class="card-name" href="https://github.com/garrytan/gstack" target="_blank" rel="noopener">gstack</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="22.3"></div></div>
+          <span class="star-count"><i class="fa-solid fa-bolt"></i>+767</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Garry Tan's personal Claude Code rig, packaged up — <strong>23 opinionated tools</strong> standing in as CEO, designer, eng manager, and QA.</span>
+          <span class="i18n-zh">Garry Tan亲自打磨的Claude Code工作流套件——<strong>23个高度定制的工具</strong>，分饰CEO、设计师、工程经理与QA等多重角色。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-microchip"></i>116k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #6 opendatalab/MinerU -->
+    <div class="card">
+      <div class="call-col">
+        <div class="rank-stamp">06</div>
+        <div class="call-number">MNU</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">opendatalab /</span></div>
+        <a class="card-name" href="https://github.com/opendatalab/MinerU" target="_blank" rel="noopener">MinerU</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="18.8"></div></div>
+          <span class="star-count"><i class="fa-solid fa-bolt"></i>+644</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Turns messy PDFs and Office docs into clean, <strong>LLM-ready markdown and JSON</strong> — built for feeding agentic workflows, not just humans.</span>
+          <span class="i18n-zh">把杂乱的PDF和Office文档转换为干净的<strong>大模型可用的markdown/JSON</strong>，专为智能体工作流而生，不只是给人看。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-microchip"></i>69.5k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #7 mukul975/Anthropic-Cybersecurity-Skills -->
+    <div class="card">
+      <div class="call-col">
+        <div class="rank-stamp">07</div>
+        <div class="call-number">ACS</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">mukul975 /</span></div>
+        <a class="card-name" href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank" rel="noopener">Anthropic-Cybersecurity-Skills</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="16.6"></div></div>
+          <span class="star-count"><i class="fa-solid fa-bolt"></i>+571</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en"><strong>817 structured cybersecurity skills</strong> for AI agents, mapped across MITRE ATT&amp;CK, NIST CSF, and four other frameworks — works with Claude Code, Copilot, Cursor, and more.</span>
+          <span class="i18n-zh">面向AI智能体的<strong>817项结构化网络安全技能</strong>，覆盖MITRE ATT&amp;CK、NIST CSF等六大框架，兼容Claude Code、Copilot、Cursor等20多个平台。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Sec</span>
+          <span class="total-stars"><i class="fa-solid fa-microchip"></i>21.2k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #8 NanmiCoder/MediaCrawler -->
+    <div class="card">
+      <div class="call-col">
+        <div class="rank-stamp">08</div>
+        <div class="call-number">MDC</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">NanmiCoder /</span></div>
+        <a class="card-name" href="https://github.com/NanmiCoder/MediaCrawler" target="_blank" rel="noopener">MediaCrawler</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="11.6"></div></div>
+          <span class="star-count"><i class="fa-solid fa-bolt"></i>+398</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A scraper covering Xiaohongshu, Douyin, Kuaishou, Bilibili, Weibo, and Tieba in one toolkit — <strong>posts and comments alike</strong>, across China's biggest social platforms.</span>
+          <span class="i18n-zh">一站式覆盖小红书、抖音、快手、B站、微博和百度贴吧的爬虫工具，<strong>笔记、视频、评论全都抓</strong>，覆盖国内主流社交平台。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag">Tool</span>
+          <span class="tag">Media</span>
+          <span class="total-stars"><i class="fa-solid fa-microchip"></i>52.7k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #9 xbtlin/ai-berkshire -->
+    <div class="card">
+      <div class="call-col">
+        <div class="rank-stamp">09</div>
+        <div class="call-number">AIB</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">xbtlin /</span></div>
+        <a class="card-name" href="https://github.com/xbtlin/ai-berkshire" target="_blank" rel="noopener">ai-berkshire</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="9.0"></div></div>
+          <span class="star-count"><i class="fa-solid fa-bolt"></i>+309</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A value-investing research framework built on Claude Code, distilling <strong>Buffett, Munger, and two other masters</strong> into a multi-agent analysis pipeline.</span>
+          <span class="i18n-zh">基于Claude Code构建的价值投资研究框架，融合<strong>巴菲特、芒格等四位投资大师</strong>的方法论，通过多智能体协同完成分析。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-microchip"></i>1.8k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #10 shanraisshan/claude-code-best-practice -->
+    <div class="card">
+      <div class="call-col">
+        <div class="rank-stamp">10</div>
+        <div class="call-number">CCB</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">shanraisshan /</span></div>
+        <a class="card-name" href="https://github.com/shanraisshan/claude-code-best-practice" target="_blank" rel="noopener">claude-code-best-practice</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="8.4"></div></div>
+          <span class="star-count"><i class="fa-solid fa-bolt"></i>+287</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A field guide for the jump <strong>from vibe coding to agentic engineering</strong> — practical notes on getting more out of Claude Code.</span>
+          <span class="i18n-zh">一份从<strong>氛围编程走向智能体工程</strong>的实战指南，专注于如何把Claude Code用到极致。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-HTML">HTML</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-microchip"></i>60.5k</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- RIGHT: Sidebar -->
+  <aside class="sidebar">
+
+    <!-- Language Chart -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <span class="i18n-en">Score by Language</span>
+        <span class="i18n-zh">语言热度分布</span>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span>Python</span><span>5,356 · 52.2%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c1" data-pct="52.2"></div></div>
+      </div>
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span>TypeScript</span><span>3,266 · 31.8%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c2" data-pct="31.8"></div></div>
+      </div>
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span>Swift</span><span>1,351 · 13.2%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c3" data-pct="13.2"></div></div>
+      </div>
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span>HTML</span><span>287 · 2.8%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c4" data-pct="2.8"></div></div>
+      </div>
+    </div>
+
+    <!-- Trend Insight -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <span class="i18n-en">Trend Insight</span>
+        <span class="i18n-zh">趋势洞察</span>
+      </div>
+      <div class="advisory">
+        <span class="note-stamp"><span class="i18n-en">TOP NET</span><span class="i18n-zh">顶节点</span></span>
+        <p class="insight-text i18n-en">Python pulls in just over <strong>half of today's star total</strong>, anchored by OpenMontage's runaway lead and a string of agent-tooling repos spanning document parsing to security skills. Eight of the ten entries are explicitly AI-flavored — only Apple's container runtime and NanmiCoder's social-media crawler sit outside the agent wave. OpenMontage alone <strong>out-starred the next two repos combined</strong>, suggesting video production is becoming agentic tooling's next frontier.</p>
+        <p class="insight-text i18n-zh">Python凭借OpenMontage的遥遥领先以及从文档解析到安全技能等一系列智能体工具仓库，拿下了今日<strong>过半的新增星标</strong>。十个项目中八个明确带有AI色彩，只有苹果的container运行时和NanmiCoder的社交媒体爬虫游离在智能体浪潮之外。OpenMontage一个项目的新增星标就<strong>超过了第二、三名之和</strong>，暗示视频制作正成为智能体工具的新战场。</p>
+      </div>
+    </div>
+
+  </aside>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <span class="footer-text">
+    <span class="i18n-en">Data from <a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · June 26, 2026</span>
+    <span class="i18n-zh">数据来源：<a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · 2026 年 6 月 26 日</span>
+  </span>
+  <span class="footer-mark">REV-26</span>
+</footer>
+
+<script>(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();</script>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var el = entry.target;
+        el.classList.add('visible');
+        el.querySelectorAll('.star-bar-fill[data-pct]').forEach(function(bar){
+          setTimeout(function(){ bar.style.width = bar.getAttribute('data-pct') + '%'; }, 120);
+        });
+        io.unobserve(el);
+      }
+    });
+  }, {threshold: 0.1});
+
+  document.querySelectorAll('.card').forEach(function(card, i){
+    card.style.transitionDelay = (i * 60) + 'ms';
+    io.observe(card);
+  });
+
+  var chartIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.querySelectorAll('.lang-chart-fill[data-pct]').forEach(function(bar){
+          setTimeout(function(){ bar.style.width = bar.getAttribute('data-pct') + '%'; }, 200);
+        });
+        chartIo.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.2});
+
+  document.querySelectorAll('.sidebar-card').forEach(function(c){ chartIo.observe(c); });
+})();
+</script>
+
+</body>
+</html>
