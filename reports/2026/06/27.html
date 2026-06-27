@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending · June 27, 2026 — DESIGN.md Sets the Standard</title>
+<meta name="description" content="GitHub Trending report for June 27, 2026. Top repos: google-labs-code/design.md (+2,407 stars today), xbtlin/ai-berkshire, mauriceboe/TREK and more.">
+<script src="https://kit.fontawesome.com/371954d95b.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
+<style>
+:root{
+  --paper:      #f6f2e9;
+  --paper-deep: #ece4d3;
+  --card-line:  rgba(32,32,28,.16);
+  --ink:        #232019;
+  --ink-soft:   #6b6557;
+  --moss:       #56683f;
+  --clay:       #b6592f;
+  --slate:      #3c5872;
+  --gold-leaf:  #a9842c;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background-color:var(--paper);
+  background-image:repeating-linear-gradient(to bottom, transparent 0px, transparent 31px, rgba(32,32,28,.05) 31px, rgba(32,32,28,.05) 32px);
+  color:var(--ink);
+  font-family:'DM Sans',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+
+/* i18n */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:64px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
+</style>
+<style>
+.arc-nav{position:sticky;top:0;z-index:9999;height:38px;display:flex;align-items:center;padding:0 20px;background:rgba(246,242,233,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--card-line);font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.06em;}
+.arc-nav-home{color:var(--ink-soft);text-decoration:none;transition:color .15s;white-space:nowrap;}
+.arc-nav-home:hover{color:var(--clay);}
+.arc-nav-sep{color:rgba(32,32,28,.2);margin:0 10px;}
+.arc-nav-month{color:var(--ink-soft);opacity:.7;white-space:nowrap;}
+.arc-nav-dates{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+.arc-nav-d{width:26px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:2px;font-size:10px;text-decoration:none;color:var(--ink-soft);border:1px solid var(--card-line);transition:all .15s;}
+.arc-nav-d:hover{color:var(--clay);border-color:var(--clay);}
+.arc-nav-d.cur{color:var(--paper);background:var(--clay);border-color:var(--clay);pointer-events:none;}
+</style>
+<style>
+/* ── header ── */
+.site-header{
+  max-width:1200px;
+  margin:0 auto;
+  padding:56px 40px 30px;
+  position:relative;
+}
+.spec-label{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:'Space Mono',monospace;
+  font-weight:700;
+  font-size:10.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  border:1px solid var(--card-line);
+  padding:7px 14px;
+  margin-bottom:30px;
+}
+.spec-label i{color:var(--clay);}
+.header-title{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-style:normal;
+  font-size:clamp(36px,6.2vw,64px);
+  line-height:1.04;
+  letter-spacing:-.01em;
+  color:var(--ink);
+  margin-bottom:20px;
+}
+.header-title .hl{color:var(--clay);font-style:italic;font-weight:500;}
+.header-title .i18n-zh{font-family:'Noto Sans SC',sans-serif;font-weight:900;font-size:clamp(27px,4.6vw,44px);}
+.header-sub{
+  font-family:'Space Mono',monospace;
+  font-size:11.5px;
+  font-weight:400;
+  color:var(--ink-soft);
+  letter-spacing:.08em;
+  margin-bottom:30px;
+  text-transform:uppercase;
+  padding-left:0;
+}
+.header-sub .i18n-zh{font-family:'Noto Sans SC',sans-serif;text-transform:none;}
+.stat-row{display:flex;flex-wrap:wrap;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);}
+.stat-chip{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding:14px 18px;
+  border-right:1px solid var(--card-line);
+}
+.stat-chip:last-child{border-right:none;}
+.stat-chip .stat-label{
+  font-family:'Space Mono',monospace;
+  font-size:9.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.stat-chip strong{color:var(--clay);font-weight:700;font-family:'Fraunces',serif;font-size:25px;line-height:1;}
+
+/* ── main layout ── */
+.main-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:36px 40px 60px;
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:48px;
+  align-items:start;
+}
+.section-label{
+  font-family:'Space Mono',monospace;
+  font-weight:700;
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin-bottom:24px;
+  padding-bottom:10px;
+  border-bottom:1px solid var(--ink);
+}
+
+.card{
+  display:grid;
+  grid-template-columns:64px 1fr;
+  gap:18px;
+  padding:24px 0;
+  border-bottom:1px solid var(--card-line);
+  opacity:0;
+  transform:translateY(14px);
+  transition:opacity .5s ease, transform .5s ease;
+}
+.card:first-of-type{padding-top:0;}
+.card.visible{opacity:1;transform:translateY(0);}
+.specimen-col{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:6px;
+  padding-top:2px;
+}
+.rank-stamp{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:30px;
+  color:var(--moss);
+  line-height:1;
+}
+.specimen-tag{
+  font-family:'Space Mono',monospace;
+  font-size:8px;
+  letter-spacing:.06em;
+  color:var(--ink-soft);
+  text-transform:uppercase;
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+}
+.card-content{min-width:0;}
+.card-meta{margin-bottom:3px;}
+.card-org{font-family:'Space Mono',monospace;font-size:11px;color:var(--ink-soft);font-weight:400;}
+.card-name{
+  display:inline-block;
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:24px;
+  color:var(--ink);
+  text-decoration:none;
+  margin-bottom:14px;
+  word-break:break-word;
+  line-height:1.08;
+  border-bottom:2px solid transparent;
+}
+.card-name:hover{border-bottom-color:var(--clay);color:var(--clay);}
+.star-bar-wrap{display:flex;align-items:center;gap:12px;margin-bottom:15px;max-width:420px;}
+.star-bar-track{
+  flex:1;
+  height:5px;
+  background:var(--paper-deep);
+  position:relative;
+  overflow:hidden;
+}
+.star-bar-fill{
+  height:100%;
+  width:0;
+  background:var(--clay);
+  transition:width 1.4s cubic-bezier(.4,0,.2,1);
+}
+.star-count{
+  font-family:'Space Mono',monospace;
+  font-size:11.5px;
+  font-weight:700;
+  color:var(--moss);
+  white-space:nowrap;
+}
+.star-count i{margin-right:4px;font-size:9px;}
+.card-desc{
+  font-family:'DM Sans',sans-serif;
+  font-size:14.5px;
+  line-height:1.62;
+  color:var(--ink);
+  margin-bottom:15px;
+  max-width:560px;
+}
+.card-desc .i18n-zh{font-family:'Noto Sans SC',sans-serif;font-size:14.5px;line-height:1.85;}
+.card-desc strong{color:var(--clay);font-weight:700;}
+.card-footer{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.lang-dot{display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:var(--ink-soft);}
+.lang-dot::before{content:'';width:8px;height:8px;display:inline-block;border-radius:50%;}
+.lang-Python::before{background:#3572A5;}
+.lang-TypeScript::before{background:#3178c6;}
+.lang-Haskell::before{background:#5e5086;}
+.lang-Go::before{background:#00ADD8;}
+.lang-HTML::before{background:#e34c26;}
+.tag{
+  font-family:'Space Mono',monospace;
+  font-size:9.5px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  border:1px solid var(--card-line);
+  padding:3px 8px;
+}
+.tag.ai{color:var(--paper);background:var(--moss);border-color:var(--moss);}
+.total-stars{
+  margin-left:auto;
+  font-family:'Space Mono',monospace;
+  font-size:11px;
+  font-weight:700;
+  color:var(--gold-leaf);
+}
+.total-stars i{margin-right:4px;color:var(--gold-leaf);}
+
+/* ── sidebar ── */
+.sidebar-card{
+  background:var(--paper-deep);
+  padding:24px 22px;
+  margin-bottom:22px;
+  border-left:3px solid var(--moss);
+}
+.sidebar-title{
+  font-family:'Space Mono',monospace;
+  font-weight:700;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin-bottom:20px;
+}
+.lang-chart-item{margin-bottom:15px;}
+.lang-chart-label{display:flex;justify-content:space-between;margin-bottom:6px;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:var(--ink-soft);}
+.lang-chart-label span:last-child{color:var(--ink);}
+.lang-chart-track{height:5px;background:var(--paper);overflow:hidden;}
+.lang-chart-fill{height:100%;width:0;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
+.lang-chart-fill.c1{background:var(--clay);}
+.lang-chart-fill.c2{background:var(--moss);}
+.lang-chart-fill.c3{background:var(--slate);}
+.lang-chart-fill.c4{background:var(--gold-leaf);}
+.lang-chart-fill.c5{background:#8a8470;}
+.lang-chart-fill.c6{background:#b3ab95;}
+
+.note-stamp{
+  font-family:'Space Mono',monospace;
+  font-weight:700;
+  font-size:10.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--clay);
+  border:1px solid var(--clay);
+  padding:3px 10px;
+  display:inline-block;
+  margin-bottom:14px;
+}
+.insight-text{font-family:'DM Sans',sans-serif;font-size:13.5px;line-height:1.7;color:var(--ink);}
+.insight-text.i18n-zh{font-family:'Noto Sans SC',sans-serif;font-size:14px;line-height:1.9;}
+.insight-text strong{color:var(--clay);font-weight:700;}
+
+/* ── footer ── */
+.site-footer{
+  max-width:1200px;margin:0 auto;padding:26px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+  border-top:1px solid var(--ink);
+}
+.footer-text{font-family:'Space Mono',monospace;font-size:10px;font-weight:400;color:var(--ink-soft);letter-spacing:.02em;}
+.footer-text .i18n-zh{font-family:'Noto Sans SC',sans-serif;}
+.footer-text a{color:var(--clay);text-decoration:underline;}
+.footer-mark{
+  font-family:'Fraunces',serif;font-weight:600;font-style:italic;font-size:14px;color:var(--moss);
+}
+
+@media(max-width:900px){
+  .main-wrap{grid-template-columns:1fr;gap:30px;}
+  .site-header{padding:42px 20px 24px;}
+  .main-wrap{padding:28px 20px 48px;}
+  .site-footer{padding:20px 20px;}
+  .stat-row{flex-wrap:wrap;}
+  .stat-chip{flex:1 1 50%;border-right:none;border-bottom:1px solid var(--card-line);}
+}
+@media(max-width:560px){
+  .header-title{font-size:clamp(28px,8vw,38px);}
+  .card{grid-template-columns:40px 1fr;gap:12px;}
+  .rank-stamp{font-size:22px;}
+  .card-name{font-size:19px;}
+  .specimen-tag{display:none;}
+}
+</style>
+</head>
+<body>
+
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
+
+<nav class="arc-nav">
+  <a class="arc-nav-home" href="../../../index.html">← Archive</a>
+  <span class="arc-nav-sep">/</span>
+  <span class="arc-nav-month">June 2026</span>
+  <div class="arc-nav-dates">
+    <a class="arc-nav-d cur" href="./27.html">27</a>
+    <a class="arc-nav-d" href="./26.html">26</a>
+    <a class="arc-nav-d" href="./25.html">25</a>
+    <a class="arc-nav-d" href="./24.html">24</a>
+    <a class="arc-nav-d" href="./23.html">23</a>
+    <a class="arc-nav-d" href="./22.html">22</a>
+    <a class="arc-nav-d" href="./21.html">21</a>
+    <a class="arc-nav-d" href="./20.html">20</a>
+    <a class="arc-nav-d" href="./19.html">19</a>
+    <a class="arc-nav-d" href="./18.html">18</a>
+    <a class="arc-nav-d" href="./17.html">17</a>
+    <a class="arc-nav-d" href="./16.html">16</a>
+    <a class="arc-nav-d" href="./12.html">12</a>
+    <a class="arc-nav-d" href="./11.html">11</a>
+    <a class="arc-nav-d" href="./10.html">10</a>
+    <a class="arc-nav-d" href="./09.html">09</a>
+    <a class="arc-nav-d" href="./08.html">08</a>
+    <a class="arc-nav-d" href="./07.html">07</a>
+    <a class="arc-nav-d" href="./06.html">06</a>
+    <a class="arc-nav-d" href="./05.html">05</a>
+    <a class="arc-nav-d" href="./04.html">04</a>
+    <a class="arc-nav-d" href="./03.html">03</a>
+    <a class="arc-nav-d" href="./02.html">02</a>
+    <a class="arc-nav-d" href="./01.html">01</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="spec-label"><i class="fa-solid fa-feather-pointed"></i> GitHub Trending · June 27, 2026</div>
+  <h1 class="header-title">
+    <span class="i18n-en">DESIGN.md <span class="hl">Sets the Standard</span></span>
+    <span class="i18n-zh">DESIGN.md <span class="hl">定义新标准</span></span>
+  </h1>
+  <div class="header-sub">
+    <span class="i18n-en">SAT 27 JUNE 2026 · TEN SPECIMENS CATALOGUED</span>
+    <span class="i18n-zh">2026年6月27日 星期六 · 十份标本，一张图鉴</span>
+  </div>
+  <div class="stat-row">
+    <div class="stat-chip"><span class="stat-label"><span class="i18n-en">Projects</span><span class="i18n-zh">项目</span></span><strong>10</strong></div>
+    <div class="stat-chip"><span class="stat-label"><span class="i18n-en">Stars Today</span><span class="i18n-zh">今日新增</span></span><strong>6,893</strong></div>
+    <div class="stat-chip"><span class="stat-label"><span class="i18n-en">Languages</span><span class="i18n-zh">语言</span></span><strong>5</strong></div>
+    <div class="stat-chip"><span class="stat-label"><span class="i18n-en">AI Projects</span><span class="i18n-zh">AI 项目</span></span><strong>5</strong></div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="main-wrap">
+
+  <!-- LEFT: Cards -->
+  <section>
+    <div class="section-label">
+      <span class="i18n-en">Field Catalogue — Top Repositories</span>
+      <span class="i18n-zh">田野图鉴 · 热门仓库</span>
+    </div>
+
+    <!-- #1 google-labs-code/design.md -->
+    <div class="card">
+      <div class="specimen-col">
+        <div class="rank-stamp">01</div>
+        <div class="specimen-tag">DMD</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">google-labs-code /</span></div>
+        <a class="card-name" href="https://github.com/google-labs-code/design.md" target="_blank" rel="noopener">design.md</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="100"></div></div>
+          <span class="star-count"><i class="fa-solid fa-seedling"></i>+2,407</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A spec for handing coding agents a living style guide — DESIGN.md gives them a <strong>persistent, structured</strong> read on your visual identity instead of guessing from screenshots.</span>
+          <span class="i18n-zh">一种为编程智能体提供「活体设计规范」的文件格式——DESIGN.md 让智能体对产品视觉系统拥有<strong>持久且结构化</strong>的理解，不再靠猜配色和间距。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>21.2k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #2 xbtlin/ai-berkshire -->
+    <div class="card">
+      <div class="specimen-col">
+        <div class="rank-stamp">02</div>
+        <div class="specimen-tag">AIB</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">xbtlin /</span></div>
+        <a class="card-name" href="https://github.com/xbtlin/ai-berkshire" target="_blank" rel="noopener">ai-berkshire</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="52.9"></div></div>
+          <span class="star-count"><i class="fa-solid fa-seedling"></i>+1,274</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A Claude Code–powered research framework that distills Buffett, Munger, and two other value-investing legends into a <strong>multi-agent adversarial</strong> analysis pipeline.</span>
+          <span class="i18n-zh">基于 Claude Code 构建的价值投资研究框架，融合巴菲特、芒格、段永平、李录四位大师的方法论，通过<strong>多智能体协同分析</strong>完成研究。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>3.1k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #3 mauriceboe/TREK -->
+    <div class="card">
+      <div class="specimen-col">
+        <div class="rank-stamp">03</div>
+        <div class="specimen-tag">TRK</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">mauriceboe /</span></div>
+        <a class="card-name" href="https://github.com/mauriceboe/TREK" target="_blank" rel="noopener">TREK</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="44.0"></div></div>
+          <span class="star-count"><i class="fa-solid fa-seedling"></i>+1,060</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A self-hosted trip planner that bundles real-time collaboration, interactive maps, and budgeting into <strong>one PWA</strong> — no SaaS subscription required.</span>
+          <span class="i18n-zh">自托管旅行规划工具，把实时协作、交互地图、预算和打包清单都装进<strong>一个 PWA</strong> 应用，彻底告别订阅制 SaaS。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag">Tool</span>
+          <span class="tag">OSS</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>7.6k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #4 opendatalab/MinerU -->
+    <div class="card">
+      <div class="specimen-col">
+        <div class="rank-stamp">04</div>
+        <div class="specimen-tag">MNU</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">opendatalab /</span></div>
+        <a class="card-name" href="https://github.com/opendatalab/MinerU" target="_blank" rel="noopener">MinerU</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="39.9"></div></div>
+          <span class="star-count"><i class="fa-solid fa-seedling"></i>+960</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Turns messy PDFs and Office files into clean, <strong>LLM-ready markdown and JSON</strong> — built to feed agentic pipelines, not just human readers.</span>
+          <span class="i18n-zh">把杂乱的 PDF 和 Office 文档转换成干净的<strong>大模型可用 markdown/JSON</strong>，专为智能体工作流而生，不只是给人看。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>70.4k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #5 simplex-chat/simplex-chat -->
+    <div class="card">
+      <div class="specimen-col">
+        <div class="rank-stamp">05</div>
+        <div class="specimen-tag">SCH</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">simplex-chat /</span></div>
+        <a class="card-name" href="https://github.com/simplex-chat/simplex-chat" target="_blank" rel="noopener">simplex-chat</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="17.9"></div></div>
+          <span class="star-count"><i class="fa-solid fa-seedling"></i>+432</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A messaging network with <strong>no user identifiers at all</strong> — not even a phone number or public key — for private-by-design chat on iOS, Android, and desktop.</span>
+          <span class="i18n-zh">一个<strong>完全没有用户标识符</strong>的消息网络——连电话号码或公钥都不需要——天生隐私优先，覆盖 iOS、Android 与桌面端。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Haskell">Haskell</span>
+          <span class="tag">Sec</span>
+          <span class="tag">OSS</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>12.5k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #6 kunchenguid/no-mistakes -->
+    <div class="card">
+      <div class="specimen-col">
+        <div class="rank-stamp">06</div>
+        <div class="specimen-tag">NOM</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">kunchenguid /</span></div>
+        <a class="card-name" href="https://github.com/kunchenguid/no-mistakes" target="_blank" rel="noopener">no-mistakes</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="16.5"></div></div>
+          <span class="star-count"><i class="fa-solid fa-seedling"></i>+398</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A lightweight Go guard that intercepts <code>git push</code> to catch <strong>costly mistakes</strong> before they leave your machine.</span>
+          <span class="i18n-zh">一个轻量级 Go 工具，在 <code>git push</code> 之前拦截<strong>致命失误</strong>，防患于未然。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Go">Go</span>
+          <span class="tag">Tool</span>
+          <span class="tag">OSS</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>3.4k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #7 alchaincyf/zhangxuefeng-skill -->
+    <div class="card">
+      <div class="specimen-col">
+        <div class="rank-stamp">07</div>
+        <div class="specimen-tag">ZXS</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">alchaincyf /</span></div>
+        <a class="card-name" href="https://github.com/alchaincyf/zhangxuefeng-skill" target="_blank" rel="noopener">zhangxuefeng-skill</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="6.6"></div></div>
+          <span class="star-count"><i class="fa-solid fa-seedling"></i>+160</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A Claude Skill distilling a famous Chinese career-advisor's playbook into a <strong>reusable cognitive framework</strong> for college-major and career decisions.</span>
+          <span class="i18n-zh">一个 Claude Skill，把张雪峰的高考志愿与职业规划方法论提炼为<strong>可复用的认知框架</strong>，由女娲.skill 生成。</span>
+        </p>
+        <div class="card-footer">
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>9.2k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #8 ripienaar/free-for-dev -->
+    <div class="card">
+      <div class="specimen-col">
+        <div class="rank-stamp">08</div>
+        <div class="specimen-tag">FFD</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">ripienaar /</span></div>
+        <a class="card-name" href="https://github.com/ripienaar/free-for-dev" target="_blank" rel="noopener">free-for-dev</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="3.7"></div></div>
+          <span class="star-count"><i class="fa-solid fa-seedling"></i>+90</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A long-running, community-curated list of SaaS, PaaS, and IaaS platforms with <strong>genuinely useful free tiers</strong> for developers and infra teams.</span>
+          <span class="i18n-zh">一份长期维护、社区共建的清单，收录了对开发者和运维团队<strong>真正有用的免费额度</strong> SaaS/PaaS/IaaS 平台。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-HTML">HTML</span>
+          <span class="tag">OSS</span>
+          <span class="tag">Infra</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>123.7k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #9 commaai/openpilot -->
+    <div class="card">
+      <div class="specimen-col">
+        <div class="rank-stamp">09</div>
+        <div class="specimen-tag">OPP</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">commaai /</span></div>
+        <a class="card-name" href="https://github.com/commaai/openpilot" target="_blank" rel="noopener">openpilot</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="3.3"></div></div>
+          <span class="star-count"><i class="fa-solid fa-seedling"></i>+80</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">An open-source operating system for robotics that already upgrades the driver-assistance system on <strong>300+ supported cars</strong>.</span>
+          <span class="i18n-zh">一个开源机器人操作系统，已经为<strong>300多款受支持车型</strong>升级了驾驶辅助系统。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Infra</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>61.8k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #10 grafana/grafana -->
+    <div class="card">
+      <div class="specimen-col">
+        <div class="rank-stamp">10</div>
+        <div class="specimen-tag">GRF</div>
+      </div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">grafana /</span></div>
+        <a class="card-name" href="https://github.com/grafana/grafana" target="_blank" rel="noopener">grafana</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="1.3"></div></div>
+          <span class="star-count"><i class="fa-solid fa-seedling"></i>+32</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">The open, composable observability platform that visualizes metrics, logs, and traces from <strong>Prometheus, Loki, and a dozen other sources</strong> in one place.</span>
+          <span class="i18n-zh">开放、可组合的可观测性平台，将 <strong>Prometheus、Loki 等十余种数据源</strong>的指标、日志与追踪统一可视化呈现。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-TypeScript">TypeScript</span>
+          <span class="tag">Infra</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>74.9k</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- RIGHT: Sidebar -->
+  <aside class="sidebar">
+
+    <!-- Language Chart -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <span class="i18n-en">Weighted by Stars Today</span>
+        <span class="i18n-zh">按今日新增星标加权</span>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span>TypeScript</span><span>3,499 · 50.8%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c1" data-pct="50.8"></div></div>
+      </div>
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span>Python</span><span>2,314 · 33.6%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c2" data-pct="33.6"></div></div>
+      </div>
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span>Haskell</span><span>432 · 6.3%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c3" data-pct="6.3"></div></div>
+      </div>
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span>Go</span><span>398 · 5.8%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c4" data-pct="5.8"></div></div>
+      </div>
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span><span class="i18n-en">Other</span><span class="i18n-zh">其他</span></span><span>160 · 2.3%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c5" data-pct="2.3"></div></div>
+      </div>
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span>HTML</span><span>90 · 1.3%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c6" data-pct="1.3"></div></div>
+      </div>
+    </div>
+
+    <!-- Trend Insight -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <span class="i18n-en">Trend Insight</span>
+        <span class="i18n-zh">趋势洞察</span>
+      </div>
+      <span class="note-stamp"><span class="i18n-en">FIELD NOTE</span><span class="i18n-zh">观察笔记</span></span>
+      <p class="insight-text i18n-en">TypeScript edges out Python today, carried almost entirely by <strong>design.md's runaway lead</strong> — a project that, fittingly, is itself a spec for teaching coding agents taste. Five of the ten entries explicitly target AI agent workflows, from document parsing to investment research to a Chinese career-advisor skill, while old-guard infra names like Grafana and openpilot post modest single-digit gains. The pattern holds: tooling <strong>for</strong> agents is currently outpacing tooling agents merely run on.</p>
+      <p class="insight-text i18n-zh">TypeScript今天小胜Python，几乎全靠<strong>design.md的遥遥领先</strong>撑起——颇为巧妙的是，这个项目本身就是一份教编程智能体「懂审美」的规范文件。十个项目里有五个明确瞄准AI智能体工作流，从文档解析到投资研究，再到一个张雪峰风格的职业规划Skill；而Grafana、openpilot这类老牌基建项目只录得个位数的温和增长。趋势很清晰：<strong>服务于</strong>智能体的工具，正在跑赢智能体单纯运行其上的工具。</p>
+    </div>
+
+  </aside>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <span class="footer-text">
+    <span class="i18n-en">Data from <a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · June 27, 2026</span>
+    <span class="i18n-zh">数据来源：<a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · 2026 年 6 月 27 日</span>
+  </span>
+  <span class="footer-mark">No. 27</span>
+</footer>
+
+<script>(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();</script>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var el = entry.target;
+        el.classList.add('visible');
+        el.querySelectorAll('.star-bar-fill[data-pct]').forEach(function(bar){
+          setTimeout(function(){ bar.style.width = bar.getAttribute('data-pct') + '%'; }, 120);
+        });
+        io.unobserve(el);
+      }
+    });
+  }, {threshold: 0.1});
+
+  document.querySelectorAll('.card').forEach(function(card, i){
+    card.style.transitionDelay = (i * 60) + 'ms';
+    io.observe(card);
+  });
+
+  var chartIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.querySelectorAll('.lang-chart-fill[data-pct]').forEach(function(bar){
+          setTimeout(function(){ bar.style.width = bar.getAttribute('data-pct') + '%'; }, 200);
+        });
+        chartIo.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.2});
+
+  document.querySelectorAll('.sidebar-card').forEach(function(c){ chartIo.observe(c); });
+})();
+</script>
+
+</body>
+</html>

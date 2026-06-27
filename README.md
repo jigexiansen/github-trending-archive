@@ -5,8 +5,8 @@
 **A permanent, beautiful record of what the open source world cared about each day.**
 
 [![Validate Reports](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![Reports](https://img.shields.io/badge/Reports-29-7b2fff.svg)](#-browse)
-[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--26-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/26.html)
+[![Reports](https://img.shields.io/badge/Reports-30-7b2fff.svg)](#-browse)
+[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--27-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/27.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-00f5d4.svg)](LICENSE)
 
 [简体中文](README_zh-CN.md) · [Live Archive →](https://jigexiansen.github.io/github-trending-archive/)
@@ -45,10 +45,11 @@ Each daily report is a single, self-contained HTML file:
 ## 📂 Browse
 
 <details open>
-<summary><strong>2026 · June</strong> — 23 reports</summary>
+<summary><strong>2026 · June</strong> — 24 reports</summary>
 
 | Date | Top Project | Highlights |
 |------|------------|-----------|
+| [2026-06-27](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/27.html) | google-labs-code/design.md +2,407⭐ | A spec for giving coding agents a persistent visual-identity guide tops the day as TypeScript narrowly edges out Python, and five of ten trending repos build tooling explicitly for AI agents |
 | [2026-06-26](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/26.html) | calesthio/OpenMontage +3,434⭐ | OpenMontage stays on top for a second day, out-starring the next two repos combined, as Python claims 52% of language share and eight of ten trending repos lean explicitly AI-native |
 | [2026-06-25](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/25.html) | calesthio/OpenMontage +3,719⭐ | An open-source agentic video studio pulls roughly double Apple's new container tool as Python claims 63% of language share and eight of ten trending repos build directly for AI workflows |
 | [2026-06-24](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/24.html) | calesthio/OpenMontage +3,592⭐ | An open-source agentic video studio more than doubles the runner-up's pace as all ten of today's trending repos build directly for AI workflows, from stock analysis to website cloning, with Python claiming 56% of language share |
