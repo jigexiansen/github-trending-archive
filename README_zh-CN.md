@@ -5,8 +5,8 @@
 **开源世界每天都在变，这里把每一天最值得关注的那一刻留下来。**
 
 [![报告校验](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![报告数量](https://img.shields.io/badge/报告-30份-7b2fff.svg)](#-浏览报告)
-[![最近更新](https://img.shields.io/badge/最近更新-2026--06--27-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/27.html)
+[![报告数量](https://img.shields.io/badge/报告-31份-7b2fff.svg)](#-浏览报告)
+[![最近更新](https://img.shields.io/badge/最近更新-2026--06--28-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/28.html)
 [![许可证: MIT](https://img.shields.io/badge/许可证-MIT-00f5d4.svg)](LICENSE)
 
 [English](README.md) · [在线浏览 →](https://jigexiansen.github.io/github-trending-archive/)
@@ -45,10 +45,11 @@ GitHub Trending 每 24 小时重置一次。那些今天备受瞩目的项目，
 ## 📂 浏览报告
 
 <details open>
-<summary><strong>2026 年 6 月</strong> — 24 份报告</summary>
+<summary><strong>2026 年 6 月</strong> — 25 份报告</summary>
 
 | 日期 | 当日榜首 | 亮点 |
 |------|---------|------|
+| [2026-06-28](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/28.html) | google-labs-code/design.md +1,541⭐ | DESIGN.md 再度登顶，十大热门中六席是 AI 原生开发工具，无标识符的 SimpleX Chat 紧随其后强势上涨 |
 | [2026-06-27](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/27.html) | google-labs-code/design.md +2,407⭐ | 一份让编程智能体读懂产品视觉规范的文件格式登顶今日榜单，TypeScript 小胜 Python，十大热门中五席明确为 AI 智能体打造工具 |
 | [2026-06-26](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/26.html) | calesthio/OpenMontage +3,434⭐ | OpenMontage连续第二天登顶，新增星标超过第二、三名之和，Python拿下52%的语言份额，十大热门中八席明确带有AI色彩 |
 | [2026-06-25](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/25.html) | calesthio/OpenMontage +3,719⭐ | 开源智能体视频工坊的涨势约为苹果新发布容器工具的两倍，Python 拿下 63% 的语言份额，十大热门中八席直接服务于 AI 工作流 |
