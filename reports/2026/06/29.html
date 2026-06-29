@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending · June 29, 2026 — A Code-Memory Server Tops the Charts</title>
+<meta name="description" content="GitHub Trending report for June 29, 2026. Top repos: DeusData/codebase-memory-mcp (+2,190 stars today), xbtlin/ai-berkshire, simplex-chat/simplex-chat and more.">
+<script src="https://kit.fontawesome.com/371954d95b.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,72,500;0,72,700;1,72,500&family=IBM+Plex+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script>(function(){var s;try{s=localStorage.getItem("trending-lang");}catch(e){}var l=s||(((navigator.language||"").toLowerCase().indexOf("zh")===0)?"zh":"en");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");})();</script>
+<style>
+:root{
+  --paper:    #f2ead8;
+  --paper-d:  #e8ddc2;
+  --ink:      #1c1a16;
+  --ink-soft: #6b6354;
+  --orange:   #e8602c;
+  --blue:     #2e5fac;
+  --line:     rgba(28,26,22,.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(circle, rgba(28,26,22,.07) 1px, transparent 1.4px);
+  background-size:5px 5px;
+  color:var(--ink);
+  font-family:'IBM Plex Mono',monospace;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+
+/* i18n */
+html[data-lang="en"] .i18n-zh{display:none;}
+html[data-lang="zh"] .i18n-en{display:none;}
+#langToggle{position:fixed;bottom:64px;right:18px;z-index:10000;display:flex;gap:2px;padding:3px;border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:ui-monospace,'JetBrains Mono',monospace;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+#langToggle .lt-seg{appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.6);padding:4px 12px;border-radius:13px;transition:color .15s,background .15s;}
+#langToggle .lt-seg:hover{color:#fff;}
+html[data-lang="en"] #langToggle [data-lang="en"],
+html[data-lang="zh"] #langToggle [data-lang="zh"]{background:rgba(255,255,255,.92);color:#111;}
+</style>
+<style>
+.arc-nav{position:sticky;top:0;z-index:9999;height:38px;display:flex;align-items:center;padding:0 20px;background:rgba(242,234,216,.93);backdrop-filter:blur(10px);border-bottom:2px solid var(--ink);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;}
+.arc-nav-home{color:var(--ink-soft);text-decoration:none;transition:color .15s;white-space:nowrap;}
+.arc-nav-home:hover{color:var(--orange);}
+.arc-nav-sep{color:rgba(28,26,22,.25);margin:0 10px;}
+.arc-nav-month{color:var(--ink-soft);white-space:nowrap;}
+.arc-nav-dates{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+.arc-nav-d{width:26px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:0;font-size:10px;text-decoration:none;color:var(--ink-soft);border:1px solid var(--line);transition:all .15s;}
+.arc-nav-d:hover{color:var(--orange);border-color:var(--orange);}
+.arc-nav-d.cur{color:var(--paper);background:var(--ink);border-color:var(--ink);pointer-events:none;}
+</style>
+<style>
+/* ── overprint headline effect ── */
+.overprint{position:relative;display:inline-block;}
+.overprint .op-o,.overprint .op-b{position:absolute;top:0;left:0;width:100%;}
+.overprint .op-o{color:var(--orange);transform:translate(2px,1px);opacity:.75;}
+.overprint .op-b{color:var(--blue);transform:translate(-2px,-1px);opacity:.6;}
+.overprint .op-k{position:relative;color:var(--ink);}
+
+/* ── header ── */
+.site-header{max-width:1200px;margin:0 auto;padding:54px 40px 28px;}
+.spec-label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-weight:700;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--paper);background:var(--ink);
+  padding:7px 16px;margin-bottom:30px;
+}
+.spec-label i{color:var(--orange);}
+.header-title{
+  font-family:'Newsreader',serif;
+  font-weight:700;
+  font-size:clamp(38px,6.8vw,72px);
+  line-height:1.04;
+  letter-spacing:-.01em;
+  margin-bottom:20px;
+}
+.header-title .i18n-zh{font-family:'Noto Sans SC',sans-serif;font-style:normal;font-weight:900;font-size:clamp(28px,4.8vw,48px);}
+.header-sub{
+  font-size:11.5px;font-weight:600;color:var(--ink-soft);
+  letter-spacing:.1em;margin-bottom:30px;text-transform:uppercase;
+  border-left:3px solid var(--orange);padding-left:12px;
+}
+.header-sub .i18n-zh{font-family:'Noto Sans SC',sans-serif;text-transform:none;letter-spacing:.02em;}
+.stat-row{display:flex;flex-wrap:wrap;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);}
+.stat-chip{flex:1;display:flex;flex-direction:column;gap:5px;padding:16px 18px;border-right:1px solid var(--line);}
+.stat-chip:last-child{border-right:none;}
+.stat-chip .stat-label{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);}
+.stat-chip strong{color:var(--orange);font-weight:700;font-family:'Newsreader',serif;font-size:30px;line-height:1;}
+
+/* ── main layout ── */
+.main-wrap{max-width:1200px;margin:0 auto;padding:36px 40px 60px;display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start;}
+.section-label{font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:22px;padding-bottom:10px;border-bottom:2px solid var(--ink);}
+
+.card{
+  display:grid;grid-template-columns:60px 1fr;gap:18px;
+  padding:22px 20px;margin-bottom:16px;
+  background:var(--paper);
+  border:2px solid var(--ink);
+  box-shadow:5px 5px 0 rgba(28,26,22,.14);
+  opacity:0;transform:translateY(16px);
+  transition:opacity .5s ease, transform .5s ease;
+}
+.card.visible{opacity:1;transform:translateY(0);}
+.rank-block{
+  width:48px;height:48px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Newsreader',serif;font-weight:700;font-size:20px;
+  background:var(--ink);color:var(--paper);
+}
+.card-content{min-width:0;}
+.card-meta{margin-bottom:2px;}
+.card-org{font-size:11px;color:var(--ink-soft);font-weight:500;}
+.card-name{
+  display:inline-block;
+  font-family:'Newsreader',serif;font-weight:700;font-style:italic;font-size:24px;
+  color:var(--ink);text-decoration:none;margin-bottom:13px;
+  word-break:break-word;line-height:1.1;
+  border-bottom:2px solid transparent;
+}
+.card-name:hover{border-bottom-color:var(--orange);color:var(--orange);}
+.star-bar-wrap{display:flex;align-items:center;gap:12px;margin-bottom:14px;max-width:420px;}
+.star-bar-track{flex:1;height:7px;background:var(--paper-d);border:1px solid var(--ink);position:relative;overflow:hidden;}
+.star-bar-fill{height:100%;width:0;background:repeating-linear-gradient(45deg, var(--orange) 0 5px, var(--blue) 5px 10px);transition:width 1.4s cubic-bezier(.4,0,.2,1);}
+.star-count{font-size:11.5px;font-weight:700;color:var(--ink);white-space:nowrap;}
+.star-count i{margin-right:4px;font-size:9px;color:var(--orange);}
+.card-desc{font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.65;color:var(--ink);margin-bottom:14px;max-width:560px;}
+.card-desc .i18n-zh{font-family:'Noto Sans SC',sans-serif;font-size:14px;line-height:1.85;}
+.card-desc strong{color:var(--orange);font-weight:700;}
+.card-footer{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.lang-dot{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;color:var(--ink-soft);}
+.lang-dot::before{content:'';width:8px;height:8px;display:inline-block;border-radius:50%;}
+.lang-Python::before{background:#3572A5;}
+.lang-Haskell::before{background:#5e5086;}
+.lang-HTML::before{background:#e34c26;}
+.lang-C::before{background:#555555;}
+.lang-Swift::before{background:#FA7343;}
+.tag{
+  font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--ink-soft);border:1px solid var(--ink);padding:3px 9px;
+}
+.tag.ai{color:var(--paper);background:var(--ink);border-color:var(--ink);}
+.total-stars{margin-left:auto;font-size:11px;font-weight:700;color:var(--orange);}
+.total-stars i{margin-right:4px;color:var(--orange);}
+
+/* ── sidebar ── */
+.sidebar-card{background:var(--paper-d);padding:24px 22px;margin-bottom:22px;border:2px solid var(--ink);}
+.sidebar-title{font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:20px;}
+.lang-chart-item{margin-bottom:15px;}
+.lang-chart-label{display:flex;justify-content:space-between;margin-bottom:6px;font-size:10px;font-weight:700;color:var(--ink-soft);}
+.lang-chart-label span:last-child{color:var(--ink);}
+.lang-chart-track{height:7px;border:1px solid var(--ink);background:var(--paper);overflow:hidden;}
+.lang-chart-fill{height:100%;width:0;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
+.lang-chart-fill.c1{background:var(--orange);}
+.lang-chart-fill.c2{background:var(--blue);}
+.lang-chart-fill.c3{background:#5e5086;}
+.lang-chart-fill.c4{background:#e34c26;}
+.lang-chart-fill.c5{background:#FA7343;}
+.lang-chart-fill.c6{background:#9a8f78;}
+
+.note-stamp{
+  font-weight:700;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--paper);background:var(--orange);
+  padding:3px 10px;display:inline-block;margin-bottom:14px;
+  transform:rotate(-1.5deg);
+}
+.insight-text{font-size:13px;line-height:1.7;color:var(--ink);}
+.insight-text.i18n-zh{font-family:'Noto Sans SC',sans-serif;font-size:14px;line-height:1.9;}
+.insight-text strong{color:var(--orange);font-weight:700;}
+
+/* ── footer ── */
+.site-footer{max-width:1200px;margin:0 auto;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:2px solid var(--ink);}
+.footer-text{font-size:10px;font-weight:400;color:var(--ink-soft);letter-spacing:.02em;}
+.footer-text .i18n-zh{font-family:'Noto Sans SC',sans-serif;}
+.footer-text a{color:var(--orange);text-decoration:underline;}
+.footer-mark{font-family:'Newsreader',serif;font-weight:700;font-style:italic;font-size:15px;color:var(--ink);background:var(--orange);padding:2px 10px;}
+
+@media(max-width:900px){
+  .main-wrap{grid-template-columns:1fr;gap:30px;}
+  .site-header{padding:40px 20px 22px;}
+  .main-wrap{padding:26px 20px 48px;}
+  .site-footer{padding:20px 20px;}
+  .stat-row{flex-wrap:wrap;}
+  .stat-chip{flex:1 1 50%;border-right:none;border-bottom:1px solid var(--line);}
+}
+@media(max-width:560px){
+  .header-title{font-size:clamp(29px,8vw,40px);}
+  .card{grid-template-columns:42px 1fr;gap:12px;padding:18px 14px;}
+  .rank-block{width:34px;height:34px;font-size:14px;}
+  .card-name{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<div id="langToggle" role="group" aria-label="Language"><button type="button" class="lt-seg" data-lang="en">EN</button><button type="button" class="lt-seg" data-lang="zh">中文</button></div>
+
+<nav class="arc-nav">
+  <a class="arc-nav-home" href="../../../index.html">← Archive</a>
+  <span class="arc-nav-sep">/</span>
+  <span class="arc-nav-month">June 2026</span>
+  <div class="arc-nav-dates">
+    <a class="arc-nav-d cur" href="./29.html">29</a>
+    <a class="arc-nav-d" href="./28.html">28</a>
+    <a class="arc-nav-d" href="./27.html">27</a>
+    <a class="arc-nav-d" href="./26.html">26</a>
+    <a class="arc-nav-d" href="./25.html">25</a>
+    <a class="arc-nav-d" href="./24.html">24</a>
+    <a class="arc-nav-d" href="./23.html">23</a>
+    <a class="arc-nav-d" href="./22.html">22</a>
+    <a class="arc-nav-d" href="./21.html">21</a>
+    <a class="arc-nav-d" href="./20.html">20</a>
+    <a class="arc-nav-d" href="./19.html">19</a>
+    <a class="arc-nav-d" href="./18.html">18</a>
+    <a class="arc-nav-d" href="./17.html">17</a>
+    <a class="arc-nav-d" href="./16.html">16</a>
+    <a class="arc-nav-d" href="./12.html">12</a>
+    <a class="arc-nav-d" href="./11.html">11</a>
+    <a class="arc-nav-d" href="./10.html">10</a>
+    <a class="arc-nav-d" href="./09.html">09</a>
+    <a class="arc-nav-d" href="./08.html">08</a>
+    <a class="arc-nav-d" href="./07.html">07</a>
+    <a class="arc-nav-d" href="./06.html">06</a>
+    <a class="arc-nav-d" href="./05.html">05</a>
+    <a class="arc-nav-d" href="./04.html">04</a>
+    <a class="arc-nav-d" href="./03.html">03</a>
+    <a class="arc-nav-d" href="./02.html">02</a>
+    <a class="arc-nav-d" href="./01.html">01</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="spec-label"><i class="fa-solid fa-stamp"></i> GitHub Trending · June 29, 2026</div>
+  <h1 class="header-title">
+    <span class="i18n-en">Code Memory <span class="overprint"><span class="op-o">Takes the Crown</span><span class="op-b">Takes the Crown</span><span class="op-k">Takes the Crown</span></span></span>
+    <span class="i18n-zh">代码记忆服务器<span class="overprint"><span class="op-o">登顶榜首</span><span class="op-b">登顶榜首</span><span class="op-k">登顶榜首</span></span></span>
+  </h1>
+  <div class="header-sub">
+    <span class="i18n-en">MON 29 JUNE 2026 · TEN REPOS, RANKED BY TODAY'S STARS</span>
+    <span class="i18n-zh">2026年6月29日 星期一 · 按今日新增星标排名的十大仓库</span>
+  </div>
+  <div class="stat-row">
+    <div class="stat-chip"><span class="stat-label"><span class="i18n-en">Projects</span><span class="i18n-zh">项目</span></span><strong>10</strong></div>
+    <div class="stat-chip"><span class="stat-label"><span class="i18n-en">Stars Today</span><span class="i18n-zh">今日新增</span></span><strong>7,435</strong></div>
+    <div class="stat-chip"><span class="stat-label"><span class="i18n-en">Languages</span><span class="i18n-zh">语言</span></span><strong>5</strong></div>
+    <div class="stat-chip"><span class="stat-label"><span class="i18n-en">AI Projects</span><span class="i18n-zh">AI 项目</span></span><strong>7</strong></div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="main-wrap">
+
+  <!-- LEFT: Cards -->
+  <section>
+    <div class="section-label">
+      <span class="i18n-en">Today's Print Run — Top Repositories</span>
+      <span class="i18n-zh">今日印刷榜 · 热门仓库</span>
+    </div>
+
+    <!-- #1 DeusData/codebase-memory-mcp -->
+    <div class="card">
+      <div class="rank-block">01</div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">DeusData /</span></div>
+        <a class="card-name" href="https://github.com/DeusData/codebase-memory-mcp" target="_blank" rel="noopener">codebase-memory-mcp</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="100"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+2,190</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A blazing-fast MCP server that turns entire codebases into a persistent, queryable knowledge graph — 158 languages, sub-millisecond lookups, and <strong>99% fewer tokens</strong> burned per query.</span>
+          <span class="i18n-zh">高性能MCP代码智能服务器，把整个代码库索引为持久化的可查询知识图谱，支持158种语言、亚毫秒级查询，单次查询可<strong>节省99%的token消耗</strong>。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-C">C</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Infra</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>19.6k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #2 xbtlin/ai-berkshire -->
+    <div class="card">
+      <div class="rank-block">02</div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">xbtlin /</span></div>
+        <a class="card-name" href="https://github.com/xbtlin/ai-berkshire" target="_blank" rel="noopener">ai-berkshire</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="66.0"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+1,445</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A value-investing research framework built on Claude Code and Codex, running the playbooks of Buffett, Munger, and two China-market masters as <strong>parallel, adversarial research agents</strong>.</span>
+          <span class="i18n-zh">基于Claude Code与Codex构建的价值投资研究框架，融合巴菲特、芒格、段永平、李录四大师方法论，通过<strong>多Agent对抗式并行研究</strong>挖掘投资洞见。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>5.3k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #3 simplex-chat/simplex-chat -->
+    <div class="card">
+      <div class="rank-block">03</div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">simplex-chat /</span></div>
+        <a class="card-name" href="https://github.com/simplex-chat/simplex-chat" target="_blank" rel="noopener">simplex-chat</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="53.9"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+1,180</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">The first messaging network with <strong>zero user identifiers</strong> of any kind — fully private by design, with native apps for iOS, Android, and desktop.</span>
+          <span class="i18n-zh">全球首个<strong>不依赖任何用户标识符</strong>的消息网络，从架构上实现端到端隐私，原生支持iOS、Android与桌面端。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Haskell">Haskell</span>
+          <span class="tag">Sec</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>15.0k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #4 ripienaar/free-for-dev -->
+    <div class="card">
+      <div class="rank-block">04</div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">ripienaar /</span></div>
+        <a class="card-name" href="https://github.com/ripienaar/free-for-dev" target="_blank" rel="noopener">free-for-dev</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="22.6"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+495</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A long-running, community-curated list of free-tier SaaS, PaaS, and IaaS offerings that every devops engineer keeps <strong>quietly bookmarked</strong>.</span>
+          <span class="i18n-zh">持续更新的社区精选清单，收录各类对开发者友好的<strong>免费层</strong>SaaS/PaaS/IaaS服务，几乎人手一份。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-HTML">HTML</span>
+          <span class="tag">OSS</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>125.2k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #5 HKUDS/Vibe-Trading -->
+    <div class="card">
+      <div class="rank-block">05</div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">HKUDS /</span></div>
+        <a class="card-name" href="https://github.com/HKUDS/Vibe-Trading" target="_blank" rel="noopener">Vibe-Trading</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="22.5"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+492</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Your personal trading agent — it turns raw market signals into <strong>autonomous, hands-off</strong> trading decisions.</span>
+          <span class="i18n-zh">你的个人交易智能体，将原始市场信号转化为<strong>自主决策</strong>的交易行为，无需人工干预。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>14.3k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #6 opendatalab/MinerU -->
+    <div class="card">
+      <div class="rank-block">06</div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">opendatalab /</span></div>
+        <a class="card-name" href="https://github.com/opendatalab/MinerU" target="_blank" rel="noopener">MinerU</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="17.4"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+380</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Turns messy PDFs and Office documents into clean, <strong>LLM-ready</strong> markdown and JSON, built for agentic document pipelines.</span>
+          <span class="i18n-zh">将PDF、Office文档等复杂资料转换为干净的<strong>大模型可读</strong>markdown/JSON，专为Agentic文档工作流而生。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>71.6k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #7 Robbyant/lingbot-map -->
+    <div class="card">
+      <div class="rank-block">07</div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">Robbyant /</span></div>
+        <a class="card-name" href="https://github.com/Robbyant/lingbot-map" target="_blank" rel="noopener">lingbot-map</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="17.0"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+372</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">A feed-forward 3D foundation model that reconstructs full scenes directly from <strong>streaming sensor data</strong>.</span>
+          <span class="i18n-zh">一个前馈式3D基础模型，可直接从<strong>流式传感数据</strong>中重建完整场景。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>8.2k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #8 altic-dev/FluidVoice -->
+    <div class="card">
+      <div class="rank-block">08</div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">altic-dev /</span></div>
+        <a class="card-name" href="https://github.com/altic-dev/FluidVoice" target="_blank" rel="noopener">FluidVoice</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="16.7"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+365</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">The fastest fully offline dictation app for macOS — voice to text, <strong>entirely on-device</strong>, no cloud round-trip.</span>
+          <span class="i18n-zh">macOS上最快的纯本地语音转文字应用，<strong>完全离线</strong>运行，无需联网。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Swift">Swift</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>3.7k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #9 commaai/openpilot -->
+    <div class="card">
+      <div class="rank-block">09</div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">commaai /</span></div>
+        <a class="card-name" href="https://github.com/commaai/openpilot" target="_blank" rel="noopener">openpilot</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="12.1"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+266</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">An open-source operating system for robotics that already upgrades the driver-assistance systems on <strong>300+ supported cars</strong>.</span>
+          <span class="i18n-zh">面向机器人的开源操作系统，目前已为<strong>300多款车型</strong>的驾驶辅助系统提供升级支持。</span>
+        </p>
+        <div class="card-footer">
+          <span class="lang-dot lang-Python">Python</span>
+          <span class="tag ai">AI/ML</span>
+          <span class="tag">Infra</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>62.4k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- #10 ByteByteGoHq/system-design-101 -->
+    <div class="card">
+      <div class="rank-block">10</div>
+      <div class="card-content">
+        <div class="card-meta"><span class="card-org">ByteByteGoHq /</span></div>
+        <a class="card-name" href="https://github.com/ByteByteGoHq/system-design-101" target="_blank" rel="noopener">system-design-101</a>
+        <div class="star-bar-wrap">
+          <div class="star-bar-track"><div class="star-bar-fill" data-pct="11.4"></div></div>
+          <span class="star-count"><i class="fa-solid fa-star"></i>+250</span>
+        </div>
+        <p class="card-desc">
+          <span class="i18n-en">Explains gnarly distributed-systems concepts through clean visuals — the go-to crash course for <strong>system-design interviews</strong>.</span>
+          <span class="i18n-zh">用直观图解讲透复杂系统设计概念，是准备<strong>系统设计面试</strong>的热门速成读物。</span>
+        </p>
+        <div class="card-footer">
+          <span class="tag">OSS</span>
+          <span class="tag">Tool</span>
+          <span class="total-stars"><i class="fa-solid fa-star"></i>84.4k</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- RIGHT: Sidebar -->
+  <aside class="sidebar">
+
+    <!-- Language Chart -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <span class="i18n-en">Weighted by Stars Today</span>
+        <span class="i18n-zh">按今日新增星标加权</span>
+      </div>
+
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span>Python</span><span>2,955 · 39.7%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c1" data-pct="39.7"></div></div>
+      </div>
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span>C</span><span>2,190 · 29.5%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c2" data-pct="29.5"></div></div>
+      </div>
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span>Haskell</span><span>1,180 · 15.9%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c3" data-pct="15.9"></div></div>
+      </div>
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span>HTML</span><span>495 · 6.7%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c4" data-pct="6.7"></div></div>
+      </div>
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span>Swift</span><span>365 · 4.9%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c5" data-pct="4.9"></div></div>
+      </div>
+      <div class="lang-chart-item">
+        <div class="lang-chart-label"><span><span class="i18n-en">Other</span><span class="i18n-zh">其他</span></span><span>250 · 3.4%</span></div>
+        <div class="lang-chart-track"><div class="lang-chart-fill c6" data-pct="3.4"></div></div>
+      </div>
+    </div>
+
+    <!-- Trend Insight -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <span class="i18n-en">Trend Insight</span>
+        <span class="i18n-zh">趋势洞察</span>
+      </div>
+      <span class="note-stamp"><span class="i18n-en">PRESS NOTE</span><span class="i18n-zh">印刷笔记</span></span>
+      <p class="insight-text i18n-en">Developer infrastructure for AI agents leads the day — DeusData's codebase-memory-mcp turns entire repos into queryable knowledge graphs, pulling in <strong>2,190 stars in a single day</strong>. AI tooling dominates broadly, claiming seven of today's ten slots, from a Claude-Code-powered investment researcher to a 3D scene-reconstruction model. Yet the privacy-first network SimpleX Chat and two perennial reference lists prove not every breakout needs an LLM behind it.</p>
+      <p class="insight-text i18n-zh">面向AI Agent的开发基础设施今日称王：DeusData的codebase-memory-mcp把整个代码库转化为可查询的知识图谱，单日狂揽<strong>2,190颗星</strong>。AI工具几乎包揽全场，十席中占七席，从基于Claude Code的投研Agent到3D场景重建模型应有尽有。不过隐私优先的SimpleX Chat与两份经典清单证明，并非所有爆款都离不开大模型。</p>
+    </div>
+
+  </aside>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <span class="footer-text">
+    <span class="i18n-en">Data from <a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · June 29, 2026</span>
+    <span class="i18n-zh">数据来源：<a href="https://github.com/trending" target="_blank" rel="noopener">github.com/trending</a> · 2026 年 6 月 29 日</span>
+  </span>
+  <span class="footer-mark">No. 29</span>
+</footer>
+
+<script>(function(){var t=document.getElementById("langToggle");if(!t)return;t.addEventListener("click",function(e){var b=e.target.closest("[data-lang]");if(!b)return;var l=b.getAttribute("data-lang");var d=document.documentElement;d.setAttribute("data-lang",l);d.lang=(l==="zh"?"zh-CN":"en");try{localStorage.setItem("trending-lang",l);}catch(e){}});})();</script>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var el = entry.target;
+        el.classList.add('visible');
+        el.querySelectorAll('.star-bar-fill[data-pct]').forEach(function(bar){
+          setTimeout(function(){ bar.style.width = bar.getAttribute('data-pct') + '%'; }, 120);
+        });
+        io.unobserve(el);
+      }
+    });
+  }, {threshold: 0.1});
+
+  document.querySelectorAll('.card').forEach(function(card, i){
+    card.style.transitionDelay = (i * 60) + 'ms';
+    io.observe(card);
+  });
+
+  var chartIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.querySelectorAll('.lang-chart-fill[data-pct]').forEach(function(bar){
+          setTimeout(function(){ bar.style.width = bar.getAttribute('data-pct') + '%'; }, 200);
+        });
+        chartIo.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.2});
+
+  document.querySelectorAll('.sidebar-card').forEach(function(c){ chartIo.observe(c); });
+})();
+</script>
+
+</body>
+</html>

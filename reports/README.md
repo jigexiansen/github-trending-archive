@@ -21,6 +21,7 @@ Each file is a fully self-contained HTML document. No build step, no dependencie
 
 | Date | Top Project | Today's Stars |
 |------|------------|--------------|
+| [2026-06-29](2026/06/29.html) | DeusData/codebase-memory-mcp | +2,190 ⭐ |
 | [2026-06-28](2026/06/28.html) | google-labs-code/design.md | +1,541 ⭐ |
 | [2026-06-27](2026/06/27.html) | google-labs-code/design.md | +2,407 ⭐ |
 | [2026-06-26](2026/06/26.html) | calesthio/OpenMontage | +3,434 ⭐ |
