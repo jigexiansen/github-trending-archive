@@ -5,8 +5,8 @@
 **A permanent, beautiful record of what the open source world cared about each day.**
 
 [![Validate Reports](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml/badge.svg)](https://github.com/jigexiansen/github-trending-archive/actions/workflows/validate.yml)
-[![Reports](https://img.shields.io/badge/Reports-32-7b2fff.svg)](#-browse)
-[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--29-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/29.html)
+[![Reports](https://img.shields.io/badge/Reports-33-7b2fff.svg)](#-browse)
+[![Last Update](https://img.shields.io/badge/Last%20Update-2026--06--30-ff006e.svg)](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/30.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-00f5d4.svg)](LICENSE)
 
 [简体中文](README_zh-CN.md) · [Live Archive →](https://jigexiansen.github.io/github-trending-archive/)
@@ -45,10 +45,11 @@ Each daily report is a single, self-contained HTML file:
 ## 📂 Browse
 
 <details open>
-<summary><strong>2026 · June</strong> — 26 reports</summary>
+<summary><strong>2026 · June</strong> — 27 reports</summary>
 
 | Date | Top Project | Highlights |
 |------|------------|-----------|
+| [2026-06-30](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/30.html) | ripienaar/free-for-dev +1,935⭐ | AI agent frameworks claim four of the top five spots today — from agency builders to value-investing bots and video editors — while free-for-dev's surprise #1 ranking shows developers hunting zero-cost infrastructure |
 | [2026-06-29](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/29.html) | DeusData/codebase-memory-mcp +2,190⭐ | A code-intelligence MCP server tops the chart as AI tooling claims seven of ten spots, from value-investing research agents to a 3D scene-reconstruction model, while SimpleX Chat's identifier-free network holds strong third |
 | [2026-06-28](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/28.html) | google-labs-code/design.md +1,541⭐ | DESIGN.md tops the chart again as six of ten trending repos build AI-native dev tooling, while SimpleX Chat's identifier-free messaging network surges to a close second |
 | [2026-06-27](https://jigexiansen.github.io/github-trending-archive/reports/2026/06/27.html) | google-labs-code/design.md +2,407⭐ | A spec for giving coding agents a persistent visual-identity guide tops the day as TypeScript narrowly edges out Python, and five of ten trending repos build tooling explicitly for AI agents |
